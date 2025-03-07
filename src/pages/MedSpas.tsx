@@ -2,7 +2,7 @@
 import { useState } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import MedSpaCard from "@/components/MedSpaCard";
-import { services, locations, medSpas, type Location } from "@/lib/data";
+import { services, locations, filterMedSpas, type Location } from "@/lib/data";
 import { Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -18,11 +18,10 @@ const MedSpas = () => {
   const [selectedService, setSelectedService] = useState<string | "all">("all");
   
   // Filter medspas based on selected filters
-  const filteredMedSpas = medSpas.filter(medSpa => {
-    const matchesLocation = selectedLocation === "all" || medSpa.location === selectedLocation;
-    const matchesService = selectedService === "all" || medSpa.services.includes(selectedService);
-    return matchesLocation && matchesService;
-  });
+  const filteredMedSpas = filterMedSpas(
+    selectedService === "all" ? null : selectedService,
+    selectedLocation === "all" ? null : selectedLocation
+  );
   
   return (
     <div className="medspa-container py-12">

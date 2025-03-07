@@ -140,3 +140,28 @@ export const getLocationName = (locationSlug: Location): string => {
   const location = locations.find(loc => loc.id === locationSlug);
   return location ? location.name : "";
 };
+
+// New helper functions for filtering
+
+export const getServiceIds = (): string[] => {
+  return services.map(service => service.id);
+};
+
+export const getLocationIds = (): Location[] => {
+  return locations.map(location => location.id);
+};
+
+export const countMedSpasByServiceAndLocation = (serviceId: string, locationId: Location): number => {
+  return medSpas.filter(
+    medSpa => medSpa.location === locationId && medSpa.services.includes(serviceId)
+  ).length;
+};
+
+export const filterMedSpas = (serviceId: string | null, locationId: Location | null): MedSpa[] => {
+  return medSpas.filter(medSpa => {
+    const matchesService = !serviceId || medSpa.services.includes(serviceId);
+    const matchesLocation = !locationId || medSpa.location === locationId;
+    return matchesService && matchesLocation;
+  });
+};
+
