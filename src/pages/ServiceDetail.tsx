@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
@@ -8,11 +7,39 @@ import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { StarIcon } from "lucide-react";
+import React from "react";
+
+interface Review {
+  rating: number;
+  text: string;
+  author: string;
+  location: string;
+  date: string;
+}
+
+interface SeoContent {
+  beforeTreatment: string[];
+  afterTreatment: string[];
+  reviews: Review[];
+  [key: number]: string;
+  map: (callback: (paragraph: string, index: number) => React.ReactNode) => React.ReactNode[];
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface PricingItem {
+  type: string;
+  averagePrice: number;
+  minPrice: number;
+  maxPrice: number;
+}
 
 const ServiceDetail = () => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
   
-  // Fetch service and medspas that offer this service
   const service = serviceSlug ? getServiceBySlug(serviceSlug) : undefined;
   const medSpasWithService = serviceSlug ? getMedSpasByService(serviceSlug) : [];
   
@@ -25,14 +52,12 @@ const ServiceDetail = () => {
     );
   }
 
-  // Generate service-specific SEO content based on the service
   const seoContent = getServiceSeoContent(service.name);
   const faqs = getServiceFaqs(service.name);
   const pricingInfo = getServicePricing(service.name);
   
   return (
     <>
-      {/* SEO Metadata */}
       <Helmet>
         <title>{service.name} | Top NYC MedSpas for {service.name} | MedSpasNYC</title>
         <meta name="description" content={`Find top-rated MedSpas offering ${service.name} in NYC. Compare prices, read reviews, and book appointments with the best ${service.name} providers.`} />
@@ -84,13 +109,11 @@ const ServiceDetail = () => {
               <h2 className="text-xl font-medium mb-4">About {service.name}</h2>
               
               <div className="text-gray-700 mb-6 space-y-4">
-                {/* Fix for the TypeScript error - explicitly convert to JSX.Element[] */}
                 {seoContent.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
               
-              {/* Before & After Expectations */}
               <div className="mt-8 mb-6">
                 <h3 className="text-lg font-medium mb-3">Before & After Expectations</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -113,7 +136,6 @@ const ServiceDetail = () => {
                 </div>
               </div>
               
-              {/* Pricing Information */}
               <div className="mt-8 mb-6">
                 <h3 className="text-lg font-medium mb-3">{service.name} Pricing in NYC</h3>
                 <div className="overflow-x-auto">
@@ -142,7 +164,6 @@ const ServiceDetail = () => {
               </div>
             </div>
             
-            {/* FAQ Section */}
             <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
               <h2 className="text-xl font-medium mb-4">Frequently Asked Questions About {service.name}</h2>
               <Accordion type="single" collapsible className="w-full">
@@ -200,7 +221,6 @@ const ServiceDetail = () => {
               </div>
             </div>
             
-            {/* Reviews Section */}
             <div className="bg-white rounded-lg shadow-sm p-5 mb-6">
               <h3 className="text-lg font-medium mb-4">{service.name} Reviews in NYC</h3>
               <div className="space-y-4">
@@ -227,12 +247,11 @@ const ServiceDetail = () => {
   );
 };
 
-// Helper functions to generate SEO content based on service type
-const getServiceSeoContent = (serviceName) => {
-  let content = [];
-  let beforeTreatment = [];
-  let afterTreatment = [];
-  let reviews = [];
+const getServiceSeoContent = (serviceName: string): SeoContent => {
+  let content: string[] = [];
+  let beforeTreatment: string[] = [];
+  let afterTreatment: string[] = [];
+  let reviews: Review[] = [];
 
   switch (serviceName) {
     case "Botox":
@@ -379,18 +398,18 @@ const getServiceSeoContent = (serviceName) => {
       ];
   }
 
-  return {
-    0: content[0],
-    1: content[1],
-    2: content[2],
+  const seoContentObj: SeoContent = {
+    ...content,
     beforeTreatment,
     afterTreatment,
     reviews,
     map: (callback) => content.map(callback)
   };
+
+  return seoContentObj;
 };
 
-const getServiceFaqs = (serviceName) => {
+const getServiceFaqs = (serviceName: string): FAQ[] => {
   switch (serviceName) {
     case "Botox":
       return [
@@ -487,7 +506,7 @@ const getServiceFaqs = (serviceName) => {
   }
 };
 
-const getServicePricing = (serviceName) => {
+const getServicePricing = (serviceName: string): PricingItem[] => {
   switch (serviceName) {
     case "Botox":
       return [
