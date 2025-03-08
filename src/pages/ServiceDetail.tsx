@@ -1,5 +1,6 @@
 
-import { useParams, Helmet } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
 import MedSpaCard from "@/components/MedSpaCard";
@@ -83,6 +84,7 @@ const ServiceDetail = () => {
               <h2 className="text-xl font-medium mb-4">About {service.name}</h2>
               
               <div className="text-gray-700 mb-6 space-y-4">
+                {/* Fix for the TypeScript error - explicitly convert to JSX.Element[] */}
                 {seoContent.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}

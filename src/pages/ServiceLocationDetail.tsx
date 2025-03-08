@@ -1,5 +1,6 @@
 
-import { useParams, Helmet } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
 import MedSpaCard from "@/components/MedSpaCard";
