@@ -1,7 +1,8 @@
 
 import { Link } from "react-router-dom";
 import { type Service } from "@/lib/data";
-import { MapPin } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
+import { locations } from "@/lib/data";
 
 interface ServiceCardProps {
   service: Service;
@@ -9,8 +10,8 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ service }: ServiceCardProps) => {
   return (
-    <Link to={`/services/${service.slug}`} className="group">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all group-hover:shadow-lg h-full">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg h-full flex flex-col">
+      <Link to={`/services/${service.slug}`} className="group">
         <div className="relative">
           <img 
             src={service.imageUrl} 
@@ -28,8 +29,31 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
             <span>Available in all NYC locations</span>
           </div>
         </div>
+      </Link>
+      
+      {/* Location links */}
+      <div className="mt-auto p-4 pt-0">
+        <p className="text-sm text-gray-500 mb-2">Popular locations:</p>
+        <div className="space-y-1.5">
+          {locations.slice(0, 2).map(location => (
+            <Link 
+              key={location.id}
+              to={`/services/${service.slug}-in-${location.id}`}
+              className="flex items-center text-sm text-gray-700 hover:text-medspa-teal"
+            >
+              <ArrowRight size={12} className="mr-1.5" />
+              {service.name} in {location.name}
+            </Link>
+          ))}
+        </div>
+        <Link 
+          to={`/services/${service.slug}`}
+          className="inline-block text-sm font-medium text-medspa-teal hover:underline mt-3"
+        >
+          View all locations
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 };
 
