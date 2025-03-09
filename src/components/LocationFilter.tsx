@@ -1,7 +1,8 @@
 
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
-import { locations, type Location } from "@/lib/data";
+import { locationDetails } from "@/lib/locationData";
+import { Location } from "@/lib/data";
 
 interface LocationFilterProps {
   serviceSlug?: string;
@@ -13,10 +14,10 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
     <div className="bg-medspa-blue/50 rounded-lg p-5 mb-6">
       <h3 className="text-lg font-medium mb-3">Filter by Location</h3>
       <ul className="space-y-2">
-        {locations.map((location) => (
+        {locationDetails.map((location) => (
           <li key={location.id}>
             <Link 
-              to={serviceSlug ? `/services/${serviceSlug}-in-${location.id}` : `/locations/${location.id}`}
+              to={serviceSlug ? `/services/${serviceSlug}-in-${location.slug}` : `/locations/${location.slug}`}
               className={`flex items-center text-sm ${
                 currentLocation === location.id 
                   ? "text-medspa-teal font-medium" 
