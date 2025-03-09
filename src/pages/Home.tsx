@@ -36,15 +36,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Hero image section */}
-        <div 
-          className="absolute bottom-0 right-0 w-1/3 h-full bg-cover bg-center" 
-          style={{ 
-            backgroundImage: "url('/lovable-uploads/6fb9e1dc-1bc2-40c2-a91c-83d78ad499d0.png')", 
-            clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' 
-          }}
-        >
-          <div className="absolute inset-0 bg-medspa-blue/20 mix-blend-multiply"></div>
+        <div className="absolute bottom-0 right-0 w-1/3 h-full bg-[url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')]" style={{ backgroundPosition: 'center', backgroundSize: 'cover', clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}>
+          <div className="absolute inset-0 bg-medspa-blue/30 mix-blend-multiply"></div>
         </div>
       </section>
       
