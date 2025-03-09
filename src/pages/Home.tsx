@@ -36,12 +36,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 right-0 w-1/3 h-full" style={{ 
-          backgroundImage: `url('/lovable-uploads/6e73a095-9647-4201-93b2-9a87c0f2f795.png')`, 
-          backgroundPosition: 'center', 
-          backgroundSize: 'cover', 
-          clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' 
-        }}>
+        <div 
+          className="absolute bottom-0 right-0 w-1/3 h-full"
+          style={{
+            backgroundImage: `url(${new URL('/lovable-uploads/6e73a095-9647-4201-93b2-9a87c0f2f795.png', import.meta.url).pathname})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            clipPath: 'polygon(100% 0, 100% 100%, 0 100%)'
+          }}
+        >
           <div className="absolute inset-0 bg-medspa-blue/30 mix-blend-multiply"></div>
         </div>
       </section>
