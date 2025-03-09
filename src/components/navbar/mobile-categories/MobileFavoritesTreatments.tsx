@@ -9,11 +9,11 @@ interface MobileTreatmentCategoriesProps {
 const MobileFavoritesTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
     <div>
-      <h3 className="font-medium text-medspa-dark mb-1 flex items-center">
+      <h3 className="font-medium text-medspa-dark mb-2 flex items-center">
         <Star className="mr-2 h-4 w-4 text-medspa-gold" />
         Favorites
       </h3>
-      <div className="space-y-2 ml-2 bg-gray-50 p-2 rounded-md border border-gray-100 divide-y divide-gray-100">
+      <div className="ml-2 bg-gray-50 p-2 rounded-md border border-gray-100">
         <MobileTreatmentItem 
           title="Botox" 
           url="/services/botox" 

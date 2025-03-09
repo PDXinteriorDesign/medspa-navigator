@@ -7,7 +7,7 @@ interface MobileTreatmentCategoriesProps {
 
 const MobileInjectablesTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <div className="space-y-2 divide-y divide-gray-100">
+    <div className="bg-gray-50 p-2 rounded-md border border-gray-100">
       <MobileTreatmentItem 
         title="Botox" 
         url="/services/botox" 
