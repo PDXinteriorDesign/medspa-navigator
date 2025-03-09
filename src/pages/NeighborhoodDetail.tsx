@@ -6,6 +6,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationHero from "@/components/location/LocationHero";
 import LocationCallToAction from "@/components/location/LocationCallToAction";
 import LocationPopularServices from "@/components/location/LocationPopularServices";
+import LocationWhyVisit from "@/components/location/LocationWhyVisit";
 import NeighborhoodSchema from "@/components/location/NeighborhoodSchema";
 import NeighborhoodInsights from "@/components/location/NeighborhoodInsights";
 import NeighborhoodServices from "@/components/location/NeighborhoodServices";
@@ -128,9 +129,8 @@ const NeighborhoodDetail = () => {
           
           <div className="mt-0 md:mt-0">
             <LocationCallToAction locationName={neighborhood.name} />
-            
+            <LocationWhyVisit locationName={neighborhood.name} />
             <LocationPopularServices locationName={neighborhood.name} />
-            
             <NeighborhoodInsights 
               neighborhoodName={neighborhood.name}
               locationName={location.name}
