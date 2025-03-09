@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { locations, type Location } from "@/lib/data";
 
 interface LocationFilterProps {
-  serviceSlug: string;
+  serviceSlug?: string;
   currentLocation?: Location;
 }
 
@@ -16,7 +16,7 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
         {locations.map((location) => (
           <li key={location.id}>
             <Link 
-              to={`/services/${serviceSlug}-in-${location.id}`}
+              to={serviceSlug ? `/services/${serviceSlug}-in-${location.id}` : `/locations/${location.id}`}
               className={`flex items-center text-sm ${
                 currentLocation === location.id 
                   ? "text-medspa-teal font-medium" 
@@ -31,22 +31,24 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
             </Link>
           </li>
         ))}
-        <li>
-          <Link 
-            to={`/services/${serviceSlug}`}
-            className={`flex items-center text-sm ${
-              !currentLocation 
-                ? "text-medspa-teal font-medium" 
-                : "text-gray-700 hover:text-medspa-teal"
-            }`}
-          >
-            <ChevronRight 
-              size={16} 
-              className={!currentLocation ? "text-medspa-teal" : "text-gray-400"} 
-            />
-            <span className="ml-1">All NYC</span>
-          </Link>
-        </li>
+        {serviceSlug && (
+          <li>
+            <Link 
+              to={`/services/${serviceSlug}`}
+              className={`flex items-center text-sm ${
+                !currentLocation 
+                  ? "text-medspa-teal font-medium" 
+                  : "text-gray-700 hover:text-medspa-teal"
+              }`}
+            >
+              <ChevronRight 
+                size={16} 
+                className={!currentLocation ? "text-medspa-teal" : "text-gray-400"} 
+              />
+              <span className="ml-1">All NYC</span>
+            </Link>
+          </li>
+        )}
       </ul>
     </div>
   );

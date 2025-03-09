@@ -13,6 +13,8 @@ import ServiceDetail from "./pages/ServiceDetail";
 import ServiceLocationDetail from "./pages/ServiceLocationDetail";
 import MedSpas from "./pages/MedSpas";
 import MedSpaDetail from "./pages/MedSpaDetail";
+import Locations from "./pages/Locations";
+import LocationDetail from "./pages/LocationDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +31,8 @@ const App = () => (
             <Route path="services" element={<Services />} />
             <Route path="services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="services/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
+            <Route path="locations" element={<Locations />} />
+            <Route path="locations/:locationSlug" element={<LocationDetail />} />
             <Route path="medspas" element={<MedSpas />} />
             <Route path="medspas/:medSpaSlug" element={<MedSpaDetail />} />
             <Route path="*" element={<NotFound />} />

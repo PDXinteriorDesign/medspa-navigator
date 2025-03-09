@@ -19,6 +19,9 @@ const Navbar = () => {
             <Link to="/services" className="text-medspa-dark hover:text-medspa-teal transition">
               Services
             </Link>
+            <Link to="/locations" className="text-medspa-dark hover:text-medspa-teal transition">
+              Locations
+            </Link>
             <Link to="/medspas" className="text-medspa-dark hover:text-medspa-teal transition">
               Directory
             </Link>
@@ -52,6 +55,13 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Services
+              </Link>
+              <Link 
+                to="/locations" 
+                className="text-medspa-dark hover:text-medspa-teal transition"
+                onClick={() => setIsOpen(false)}
+              >
+                Locations
               </Link>
               <Link 
                 to="/medspas" 
