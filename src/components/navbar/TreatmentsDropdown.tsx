@@ -21,7 +21,7 @@ const TreatmentsDropdown = () => {
         Treatments
         <ChevronDown className="ml-1 h-4 w-4" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[850px] grid grid-cols-5 gap-4 p-4 bg-white">
+      <DropdownMenuContent className="w-[800px] grid grid-cols-5 gap-4 p-4 bg-white">
         <div className="space-y-2">
           <h3 className="font-semibold text-sm text-medspa-dark flex items-center">
             <Star className="mr-2 h-4 w-4 text-medspa-gold" />
@@ -56,7 +56,7 @@ const TreatmentsDropdown = () => {
         </div>
         
         <div className="space-y-2">
-          <h3 className="font-semibold text-sm text-medspa-dark flex items-center whitespace-nowrap">
+          <h3 className="font-semibold text-sm text-medspa-dark flex items-center">
             <Dumbbell className="mr-2 h-4 w-4 text-medspa-teal" />
             Skin Lift & Fat Reduction
           </h3>
