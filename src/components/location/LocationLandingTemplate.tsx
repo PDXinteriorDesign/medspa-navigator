@@ -101,7 +101,7 @@ const LocationLandingTemplate = ({
           <div className="mt-0 md:mt-0">
             <LocationWhyVisit locationName={name} />
             
-            <LocationPopularServices locationName={name} />
+            <LocationPopularServices locationName={name} services={popularServices} />
             <LocationInsights locationName={name} insights={insights} />
             <LocationCallToAction locationName={name} />
           </div>
