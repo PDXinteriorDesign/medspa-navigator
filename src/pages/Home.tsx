@@ -14,36 +14,35 @@ const Home = () => {
     <div>
       {/* Hero section */}
       <section className="relative bg-medspa-blue py-20">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medspa-dark mb-6">
-                Find the Best MedSpas in NYC
-              </h1>
-              <p className="text-lg md:text-xl text-gray-700 mb-8">
-                Discover top-rated medical spas in New York City offering premium beauty and wellness treatments.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
-                  <Link to="/medspas">
-                    Browse Directory
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" className="border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
-                  <Link to="/services">
-                    Explore Services
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="Med Spa Treatment" 
-                className="w-full h-auto rounded-lg shadow-xl"
-              />
+        <div className="medspa-container">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medspa-dark mb-6">
+              Find the Best MedSpas in NYC
+            </h1>
+            <p className="text-lg md:text-xl text-gray-700 mb-8">
+              Discover top-rated medical spas in New York City offering premium beauty and wellness treatments.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
+                <Link to="/medspas">
+                  Browse Directory
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
+                <Link to="/services">
+                  Explore Services
+                </Link>
+              </Button>
             </div>
           </div>
+        </div>
+        <div className="absolute bottom-0 right-0 w-1/3 h-full" style={{ 
+          backgroundImage: "url('/lovable-uploads/6138dab6-2c1c-4b67-9a22-6ee59191c245.png')", 
+          backgroundPosition: 'center', 
+          backgroundSize: 'cover', 
+          clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' 
+        }}>
+          <div className="absolute inset-0 bg-medspa-blue/30 mix-blend-multiply"></div>
         </div>
       </section>
       
