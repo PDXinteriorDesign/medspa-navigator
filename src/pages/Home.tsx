@@ -15,34 +15,36 @@ const Home = () => {
       {/* Hero section */}
       <section className="relative bg-medspa-blue py-20">
         <div className="medspa-container">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medspa-dark mb-6">
-              Find the Best MedSpas in NYC
-            </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8">
-              Discover top-rated medical spas in New York City offering premium beauty and wellness treatments.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
-                <Link to="/medspas">
-                  Browse Directory
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
-                <Link to="/services">
-                  Explore Services
-                </Link>
-              </Button>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medspa-dark mb-6">
+                Find the Best MedSpas in NYC
+              </h1>
+              <p className="text-lg md:text-xl text-gray-700 mb-8">
+                Discover top-rated medical spas in New York City offering premium beauty and wellness treatments.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
+                  <Link to="/medspas">
+                    Browse Directory
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
+                  <Link to="/services">
+                    Explore Services
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="relative hidden lg:block">
+              <img 
+                src="/lovable-uploads/d086d4dd-2ab7-46dc-92bf-ea282dece211.png" 
+                alt="Med Spa Treatment" 
+                className="rounded-lg shadow-xl w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-medspa-blue/10 mix-blend-multiply rounded-lg"></div>
             </div>
           </div>
-        </div>
-        <div className="absolute bottom-0 right-0 w-1/3 h-full" style={{ 
-          backgroundImage: "url('/lovable-uploads/6138dab6-2c1c-4b67-9a22-6ee59191c245.png')", 
-          backgroundPosition: 'center', 
-          backgroundSize: 'cover', 
-          clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' 
-        }}>
-          <div className="absolute inset-0 bg-medspa-blue/30 mix-blend-multiply"></div>
         </div>
       </section>
       
