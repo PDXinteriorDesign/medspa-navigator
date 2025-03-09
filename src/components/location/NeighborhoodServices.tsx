@@ -28,7 +28,7 @@ const NeighborhoodServices = ({ services: popularServices, neighborhoodName }: N
           >
             <h4 className="font-medium text-medspa-teal">{service.name}</h4>
             <p className="text-sm text-gray-600 mt-1">
-              Starting from ${service.priceRange.min}
+              Starting from $99
             </p>
           </Link>
         ))}
