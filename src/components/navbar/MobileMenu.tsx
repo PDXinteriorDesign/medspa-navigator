@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { MobileTreatmentsList } from "./MobileTreatmentsList";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -14,17 +15,16 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
   return (
     <div className="md:hidden pb-4">
       <div className="flex flex-col space-y-4">
-        <details className="group">
-          <summary className="flex items-center justify-between text-medspa-dark hover:text-medspa-teal transition cursor-pointer">
-            Treatments
-            <span className="transform group-open:rotate-180 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </summary>
-          <MobileTreatmentsList setIsOpen={setIsOpen} />
-        </details>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="treatments" className="border-none">
+            <AccordionTrigger className="py-2 text-medspa-dark hover:text-medspa-teal transition">
+              Treatments
+            </AccordionTrigger>
+            <AccordionContent>
+              <MobileTreatmentsList setIsOpen={setIsOpen} />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
         
         <Link 
           to="/services" 

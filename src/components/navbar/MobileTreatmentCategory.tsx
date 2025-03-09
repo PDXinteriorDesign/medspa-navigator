@@ -21,19 +21,3 @@ export const MobileTreatmentItem = ({ title, url, icon: Icon, onClick }: MobileT
     </Link>
   );
 };
-
-interface MobileTreatmentCategoryProps {
-  title: string;
-  children: React.ReactNode;
-}
-
-export const MobileTreatmentCategory = ({ title, children }: MobileTreatmentCategoryProps) => {
-  return (
-    <div className="mb-2">
-      <h3 className="font-medium text-medspa-dark mb-1">{title}</h3>
-      <div className="space-y-2 ml-2">
-        {children}
-      </div>
-    </div>
-  );
-};

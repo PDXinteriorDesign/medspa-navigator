@@ -11,7 +11,7 @@ import {
   Stethoscope,
   Star
 } from "lucide-react";
-import { MobileTreatmentCategory, MobileTreatmentItem } from "./MobileTreatmentCategory";
+import { MobileTreatmentItem } from "./MobileTreatmentCategory";
 
 interface MobileTreatmentCategoriesProps {
   setIsOpen: (isOpen: boolean) => void;
@@ -19,32 +19,35 @@ interface MobileTreatmentCategoriesProps {
 
 export const MobileFavoritesTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <MobileTreatmentCategory title="Favorites">
-      <MobileTreatmentItem 
-        title="Botox" 
-        url="/services/botox" 
-        icon={Star} 
-        onClick={() => setIsOpen(false)} 
-      />
-      <MobileTreatmentItem 
-        title="Fillers" 
-        url="/services/fillers" 
-        icon={Star} 
-        onClick={() => setIsOpen(false)} 
-      />
-      <MobileTreatmentItem 
-        title="Laser Hair Removal" 
-        url="/services/laser-hair-removal" 
-        icon={Star} 
-        onClick={() => setIsOpen(false)} 
-      />
-    </MobileTreatmentCategory>
+    <div>
+      <h3 className="font-medium text-medspa-dark mb-1">Favorites</h3>
+      <div className="space-y-2 ml-2">
+        <MobileTreatmentItem 
+          title="Botox" 
+          url="/services/botox" 
+          icon={Star} 
+          onClick={() => setIsOpen(false)} 
+        />
+        <MobileTreatmentItem 
+          title="Fillers" 
+          url="/services/fillers" 
+          icon={Star} 
+          onClick={() => setIsOpen(false)} 
+        />
+        <MobileTreatmentItem 
+          title="Laser Hair Removal" 
+          url="/services/laser-hair-removal" 
+          icon={Star} 
+          onClick={() => setIsOpen(false)} 
+        />
+      </div>
+    </div>
   );
 };
 
 export const MobileInjectablesTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <MobileTreatmentCategory title="Injectables">
+    <div className="space-y-2">
       <MobileTreatmentItem 
         title="Botox" 
         url="/services/botox" 
@@ -75,13 +78,13 @@ export const MobileInjectablesTreatments = ({ setIsOpen }: MobileTreatmentCatego
         icon={Droplet} 
         onClick={() => setIsOpen(false)} 
       />
-    </MobileTreatmentCategory>
+    </div>
   );
 };
 
 export const MobileLaserTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <MobileTreatmentCategory title="Laser Services">
+    <div className="space-y-2">
       <MobileTreatmentItem 
         title="Photofacials" 
         url="/services/photofacials" 
@@ -118,13 +121,13 @@ export const MobileLaserTreatments = ({ setIsOpen }: MobileTreatmentCategoriesPr
         icon={Zap} 
         onClick={() => setIsOpen(false)} 
       />
-    </MobileTreatmentCategory>
+    </div>
   );
 };
 
 export const MobileSkinLiftTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <MobileTreatmentCategory title="Skin Lift & Fat Reduction">
+    <div className="space-y-2">
       <MobileTreatmentItem 
         title="Weight Management Programs" 
         url="/services/weight-management" 
@@ -143,13 +146,13 @@ export const MobileSkinLiftTreatments = ({ setIsOpen }: MobileTreatmentCategorie
         icon={Waves} 
         onClick={() => setIsOpen(false)} 
       />
-    </MobileTreatmentCategory>
+    </div>
   );
 };
 
 export const MobileFacialTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <MobileTreatmentCategory title="Facials">
+    <div className="space-y-2">
       <MobileTreatmentItem 
         title="Chemical Peels" 
         url="/services/chemical-peels" 
@@ -192,6 +195,6 @@ export const MobileFacialTreatments = ({ setIsOpen }: MobileTreatmentCategoriesP
         icon={Stethoscope} 
         onClick={() => setIsOpen(false)} 
       />
-    </MobileTreatmentCategory>
+    </div>
   );
 };
