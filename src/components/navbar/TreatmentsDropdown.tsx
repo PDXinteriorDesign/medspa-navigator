@@ -21,7 +21,7 @@ const TreatmentsDropdown = () => {
         Treatments
         <ChevronDown className="ml-1 h-4 w-4" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[950px] grid grid-cols-5 gap-4 p-4 bg-white">
+      <DropdownMenuContent className="w-[1000px] grid grid-cols-5 gap-4 p-4 bg-white">
         <div className="space-y-2">
           <h3 className="font-semibold text-sm text-medspa-dark flex items-center">
             <Star className="mr-2 h-4 w-4 text-medspa-gold" />
