@@ -9,7 +9,8 @@ import LocationSubAreas from "@/components/location/LocationSubAreas";
 import LocationCallToAction from "@/components/location/LocationCallToAction";
 import LocationPopularServices from "@/components/location/LocationPopularServices";
 import LocationInsights from "@/components/location/LocationInsights";
-import { Star } from "lucide-react";
+import { Star, Award, Clock, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const LocationDetail = () => {
   const { locationSlug } = useParams<{ locationSlug: string }>();
@@ -81,21 +82,73 @@ const LocationDetail = () => {
           tagline={getLocationTagline(location.name)}
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           <div className="md:col-span-2">
             <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-              <div className="mb-2">
+              <div className="mb-6">
                 <div className="inline-block bg-medspa-teal/10 px-3 py-1 rounded-full text-xs font-medium text-medspa-teal mb-4">
-                  Curated Selection
+                  Curator's Selection
+                </div>
+                <h2 className="text-2xl font-serif font-medium mb-5">The Definitive Guide to {location.name} MedSpas</h2>
+                
+                <div className="text-gray-700 space-y-4">
+                  <p className="leading-relaxed">{location.description}</p>
+                  <p className="text-sm border-l-2 border-medspa-gold/60 pl-4 py-1 italic text-gray-600 my-6">
+                    "{location.name} represents the pinnacle of aesthetic excellence, where discerning clients expect nothing less than transformative results in settings of uncompromising luxury."
+                  </p>
                 </div>
               </div>
-              <h2 className="text-2xl font-serif font-medium mb-5">The Definitive Guide to {location.name} MedSpas</h2>
               
-              <div className="text-gray-700 space-y-4 mb-6">
-                <p>{location.description}</p>
-                <p className="text-sm border-l-2 border-medspa-gold/60 pl-4 py-1 italic text-gray-600 my-6">
-                  "{location.name} represents the pinnacle of aesthetic excellence, where discerning clients expect nothing less than transformative results in settings of uncompromising luxury."
-                </p>
+              {/* Luxury Treatments Section */}
+              <div className="mb-8">
+                <h3 className="text-xl font-serif font-medium mb-4">Signature Treatments</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="bg-medspa-blue/10 p-5 rounded-lg">
+                    <div className="flex items-center mb-3">
+                      <Award size={18} className="text-medspa-teal mr-2" />
+                      <h4 className="font-medium">Premium Facials</h4>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      {location.name} is renowned for its luxury facials using cutting-edge technology and rare ingredients for unparalleled results.
+                    </p>
+                  </div>
+                  <div className="bg-medspa-blue/10 p-5 rounded-lg">
+                    <div className="flex items-center mb-3">
+                      <Award size={18} className="text-medspa-teal mr-2" />
+                      <h4 className="font-medium">Advanced Injectables</h4>
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      Expert practitioners deliver subtle, refined results using the latest injectable techniques for a natural enhancement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Timing Section */}
+              <div className="mb-8">
+                <h3 className="text-xl font-serif font-medium mb-4">When to Visit</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="flex items-start">
+                    <Clock size={18} className="text-medspa-teal mt-1 mr-3" />
+                    <div>
+                      <h4 className="font-medium text-sm mb-1">Optimal Hours</h4>
+                      <p className="text-sm text-gray-700">
+                        For the most attentive service, book midweek appointments between 10am-2pm when clinics are less busy.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Calendar size={18} className="text-medspa-teal mt-1 mr-3" />
+                    <div>
+                      <h4 className="font-medium text-sm mb-1">Seasonal Considerations</h4>
+                      <p className="text-sm text-gray-700">
+                        {location.name === "The Hamptons" ? 
+                          "Summer brings the highest demand; book 3-4 weeks in advance during peak season." : 
+                          "Autumn and winter offer more availability and seasonal treatment specials."}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               <div className="mt-8 pt-6 border-t border-gray-100">
@@ -130,6 +183,16 @@ const LocationDetail = () => {
               locationName={location.name}
               insights={locationInsights}
             />
+            
+            <div className="bg-white rounded-lg shadow-sm p-5 mb-6">
+              <h3 className="text-lg font-medium mb-4">Aesthetic Concierge</h3>
+              <p className="text-sm text-gray-700 mb-4">
+                Need personalized guidance to find the perfect {location.name} MedSpa for your specific needs?
+              </p>
+              <Button className="w-full bg-medspa-teal hover:bg-medspa-teal/90">
+                Request Personalized Recommendations
+              </Button>
+            </div>
           </div>
         </div>
       </div>
