@@ -97,7 +97,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif tracking-tight;
   }
 }
 
@@ -106,9 +106,46 @@
 }
 
 .page-heading {
-  @apply text-4xl md:text-5xl font-serif font-bold text-medspa-dark mb-6;
+  @apply text-4xl md:text-5xl font-serif font-bold text-medspa-dark mb-6 tracking-tight;
 }
 
 .section-heading {
-  @apply text-2xl md:text-3xl font-serif font-medium text-medspa-dark mb-4;
+  @apply text-2xl md:text-3xl font-serif font-medium text-medspa-dark mb-4 tracking-tight;
+}
+
+/* Luxury Animations */
+@keyframes subtle-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.luxury-fade-in {
+  animation: subtle-fade-in 0.8s ease-out forwards;
+}
+
+.hover-underline {
+  @apply relative inline-block;
+}
+
+.hover-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-px bg-medspa-gold transition-all duration-300 ease-in-out;
+}
+
+.hover-underline:hover::after {
+  @apply w-full;
+}
+
+/* Luxury card styles */
+.luxury-card {
+  @apply bg-white rounded-lg shadow-sm transition-all duration-300 hover:shadow-md border border-gray-100/60;
+}
+
+/* Subtle hover effects */
+.subtle-hover {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.subtle-hover:hover {
+  @apply translate-y-[-3px] shadow-md;
 }
