@@ -11,7 +11,7 @@ import {
   SkinLiftTreatments,
   FacialTreatments,
   FavoritesTreatments 
-} from "./TreatmentCategories";
+} from "./categories";
 import { ChevronDown } from "lucide-react";
 
 const TreatmentsDropdown = () => {
