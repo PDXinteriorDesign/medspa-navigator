@@ -50,7 +50,7 @@ export const MobileTreatmentsList = ({ setIsOpen }: MobileTreatmentsListProps) =
         <AccordionItem value="skinlift" className="border-b-0">
           <AccordionTrigger className="py-2 text-medspa-dark font-medium">
             <span className="flex items-center">
-              <Dumbbell className="mr-2 h-4 w-4 text-medspa-teal" />
+              <Dumbbell className="mr-2 h-4 w-4 text-medspa-teal flex-shrink-0" />
               Skin Lift & Fat Reduction
             </span>
           </AccordionTrigger>

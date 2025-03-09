@@ -57,7 +57,7 @@ const TreatmentsDropdown = () => {
         
         <div className="space-y-2">
           <h3 className="font-semibold text-sm text-medspa-dark flex items-center whitespace-nowrap">
-            <Dumbbell className="mr-2 h-4 w-4 text-medspa-teal" />
+            <Dumbbell className="mr-2 h-4 w-4 text-medspa-teal flex-shrink-0" />
             Skin Lift & Fat Reduction
           </h3>
           <DropdownMenuSeparator className="bg-black/10 h-[2px]" />
