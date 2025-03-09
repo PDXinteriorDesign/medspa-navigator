@@ -1,0 +1,58 @@
+
+import { Droplet, Snowflake, Sparkles, Heart, Stethoscope } from "lucide-react";
+import { MobileTreatmentItem } from "../MobileTreatmentCategory";
+
+interface MobileTreatmentCategoriesProps {
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const MobileFacialTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
+  return (
+    <div className="space-y-2">
+      <MobileTreatmentItem 
+        title="Chemical Peels" 
+        url="/services/chemical-peels" 
+        icon={Droplet} 
+        onClick={() => setIsOpen(false)} 
+      />
+      <MobileTreatmentItem 
+        title="Cryogenic Skin Tag Removal" 
+        url="/services/cryogenic-skin-tag-removal" 
+        icon={Snowflake} 
+        onClick={() => setIsOpen(false)} 
+      />
+      <MobileTreatmentItem 
+        title="Hydrofacials" 
+        url="/services/hydrofacials" 
+        icon={Droplet} 
+        onClick={() => setIsOpen(false)} 
+      />
+      <MobileTreatmentItem 
+        title="Microdermabrasion" 
+        url="/services/microdermabrasion" 
+        icon={Sparkles} 
+        onClick={() => setIsOpen(false)} 
+      />
+      <MobileTreatmentItem 
+        title="Microneedling" 
+        url="/services/microneedling" 
+        icon={Heart} 
+        onClick={() => setIsOpen(false)} 
+      />
+      <MobileTreatmentItem 
+        title="Oxygen Facials" 
+        url="/services/oxygen-facials" 
+        icon={Droplet} 
+        onClick={() => setIsOpen(false)} 
+      />
+      <MobileTreatmentItem 
+        title="Placenta Facials" 
+        url="/services/placenta-facials" 
+        icon={Stethoscope} 
+        onClick={() => setIsOpen(false)} 
+      />
+    </div>
+  );
+};
+
+export default MobileFacialTreatments;

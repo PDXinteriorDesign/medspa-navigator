@@ -1,4 +1,3 @@
-
 import {
   MobileFavoritesTreatments,
   MobileInjectablesTreatments,
