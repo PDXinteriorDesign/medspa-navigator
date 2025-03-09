@@ -1,28 +1,24 @@
 
 import { Link } from "react-router-dom";
-import { Dumbbell, Snowflake, Waves } from "lucide-react";
 import {
   DropdownMenuItem,
   DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu";
 
 const SkinLiftTreatments = () => (
-  <DropdownMenuGroup className="space-y-1">
-    <DropdownMenuItem asChild>
+  <DropdownMenuGroup className="space-y-1 divide-y divide-gray-100">
+    <DropdownMenuItem asChild className="px-2 py-1 hover:bg-medspa-blue">
       <Link to="/services/weight-management" className="flex items-center">
-        <Dumbbell className="mr-2 h-4 w-4" />
         Weight Management Programs
       </Link>
     </DropdownMenuItem>
-    <DropdownMenuItem asChild>
+    <DropdownMenuItem asChild className="px-2 py-1 hover:bg-medspa-blue">
       <Link to="/services/coolsculpting" className="flex items-center">
-        <Snowflake className="mr-2 h-4 w-4" />
         CoolSculpting
       </Link>
     </DropdownMenuItem>
-    <DropdownMenuItem asChild>
+    <DropdownMenuItem asChild className="px-2 py-1 hover:bg-medspa-blue">
       <Link to="/services/radio-ultrasound-therapy" className="flex items-center">
-        <Waves className="mr-2 h-4 w-4" />
         Radio & Ultrasound Therapy
       </Link>
     </DropdownMenuItem>

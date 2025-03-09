@@ -9,24 +9,27 @@ interface MobileTreatmentCategoriesProps {
 const MobileFavoritesTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
     <div>
-      <h3 className="font-medium text-medspa-dark mb-1">Favorites</h3>
-      <div className="space-y-2 ml-2">
+      <h3 className="font-medium text-medspa-dark mb-1 flex items-center">
+        <Star className="mr-2 h-4 w-4 text-medspa-gold" />
+        Favorites
+      </h3>
+      <div className="space-y-2 ml-2 bg-gray-50 p-2 rounded-md border border-gray-100 divide-y divide-gray-100">
         <MobileTreatmentItem 
           title="Botox" 
           url="/services/botox" 
-          icon={Star} 
+          icon={null} 
           onClick={() => setIsOpen(false)} 
         />
         <MobileTreatmentItem 
           title="Fillers" 
           url="/services/fillers" 
-          icon={Star} 
+          icon={null} 
           onClick={() => setIsOpen(false)} 
         />
         <MobileTreatmentItem 
           title="Laser Hair Removal" 
           url="/services/laser-hair-removal" 
-          icon={Star} 
+          icon={null} 
           onClick={() => setIsOpen(false)} 
         />
       </div>

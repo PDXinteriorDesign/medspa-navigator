@@ -1,5 +1,4 @@
 
-import { Droplet, Snowflake, Sparkles, Heart, Stethoscope } from "lucide-react";
 import { MobileTreatmentItem } from "../MobileTreatmentCategory";
 
 interface MobileTreatmentCategoriesProps {
@@ -8,47 +7,47 @@ interface MobileTreatmentCategoriesProps {
 
 const MobileFacialTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 divide-y divide-gray-100">
       <MobileTreatmentItem 
         title="Chemical Peels" 
         url="/services/chemical-peels" 
-        icon={Droplet} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Cryogenic Skin Tag Removal" 
         url="/services/cryogenic-skin-tag-removal" 
-        icon={Snowflake} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Hydrofacials" 
         url="/services/hydrofacials" 
-        icon={Droplet} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Microdermabrasion" 
         url="/services/microdermabrasion" 
-        icon={Sparkles} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Microneedling" 
         url="/services/microneedling" 
-        icon={Heart} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Oxygen Facials" 
         url="/services/oxygen-facials" 
-        icon={Droplet} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Placenta Facials" 
         url="/services/placenta-facials" 
-        icon={Stethoscope} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
     </div>

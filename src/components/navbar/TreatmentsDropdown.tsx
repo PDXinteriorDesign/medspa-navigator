@@ -12,7 +12,7 @@ import {
   FacialTreatments,
   FavoritesTreatments 
 } from "./categories";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Star, Droplet, Zap, Dumbbell, Sparkles } from "lucide-react";
 
 const TreatmentsDropdown = () => {
   return (
@@ -23,33 +23,58 @@ const TreatmentsDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[800px] grid grid-cols-5 gap-4 p-4 bg-white">
         <div className="space-y-2">
-          <h3 className="font-semibold text-sm text-medspa-dark">Favorites</h3>
-          <DropdownMenuSeparator />
-          <FavoritesTreatments />
+          <h3 className="font-semibold text-sm text-medspa-dark flex items-center">
+            <Star className="mr-2 h-4 w-4 text-medspa-gold" />
+            Favorites
+          </h3>
+          <DropdownMenuSeparator className="bg-black/10 h-[2px]" />
+          <div className="bg-gray-50 p-2 rounded-md border border-gray-100">
+            <FavoritesTreatments />
+          </div>
         </div>
         
         <div className="space-y-2">
-          <h3 className="font-semibold text-sm text-medspa-dark">Injectables</h3>
-          <DropdownMenuSeparator />
-          <InjectablesTreatments />
+          <h3 className="font-semibold text-sm text-medspa-dark flex items-center">
+            <Droplet className="mr-2 h-4 w-4 text-medspa-teal" />
+            Injectables
+          </h3>
+          <DropdownMenuSeparator className="bg-black/10 h-[2px]" />
+          <div className="bg-gray-50 p-2 rounded-md border border-gray-100">
+            <InjectablesTreatments />
+          </div>
         </div>
         
         <div className="space-y-2">
-          <h3 className="font-semibold text-sm text-medspa-dark">Laser Services</h3>
-          <DropdownMenuSeparator />
-          <LaserTreatments />
+          <h3 className="font-semibold text-sm text-medspa-dark flex items-center">
+            <Zap className="mr-2 h-4 w-4 text-medspa-teal" />
+            Laser Services
+          </h3>
+          <DropdownMenuSeparator className="bg-black/10 h-[2px]" />
+          <div className="bg-gray-50 p-2 rounded-md border border-gray-100">
+            <LaserTreatments />
+          </div>
         </div>
         
         <div className="space-y-2">
-          <h3 className="font-semibold text-sm text-medspa-dark">Skin Lift & Fat Reduction</h3>
-          <DropdownMenuSeparator />
-          <SkinLiftTreatments />
+          <h3 className="font-semibold text-sm text-medspa-dark flex items-center">
+            <Dumbbell className="mr-2 h-4 w-4 text-medspa-teal" />
+            Skin Lift & Fat Reduction
+          </h3>
+          <DropdownMenuSeparator className="bg-black/10 h-[2px]" />
+          <div className="bg-gray-50 p-2 rounded-md border border-gray-100">
+            <SkinLiftTreatments />
+          </div>
         </div>
         
         <div className="space-y-2">
-          <h3 className="font-semibold text-sm text-medspa-dark">Facials</h3>
-          <DropdownMenuSeparator />
-          <FacialTreatments />
+          <h3 className="font-semibold text-sm text-medspa-dark flex items-center">
+            <Sparkles className="mr-2 h-4 w-4 text-medspa-teal" />
+            Facials
+          </h3>
+          <DropdownMenuSeparator className="bg-black/10 h-[2px]" />
+          <div className="bg-gray-50 p-2 rounded-md border border-gray-100">
+            <FacialTreatments />
+          </div>
         </div>
       </DropdownMenuContent>
     </DropdownMenu>

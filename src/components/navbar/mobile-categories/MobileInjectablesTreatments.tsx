@@ -1,5 +1,4 @@
 
-import { Droplet } from "lucide-react";
 import { MobileTreatmentItem } from "../MobileTreatmentCategory";
 
 interface MobileTreatmentCategoriesProps {
@@ -8,35 +7,35 @@ interface MobileTreatmentCategoriesProps {
 
 const MobileInjectablesTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 divide-y divide-gray-100">
       <MobileTreatmentItem 
         title="Botox" 
         url="/services/botox" 
-        icon={Droplet} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="MicroBotox" 
         url="/services/micro-botox" 
-        icon={Droplet} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Fillers" 
         url="/services/fillers" 
-        icon={Droplet} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Kybella" 
         url="/services/kybella" 
-        icon={Droplet} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Platelet Rich Plasma" 
         url="/services/prp" 
-        icon={Droplet} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
     </div>

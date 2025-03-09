@@ -1,5 +1,4 @@
 
-import { Dumbbell, Snowflake, Waves } from "lucide-react";
 import { MobileTreatmentItem } from "../MobileTreatmentCategory";
 
 interface MobileTreatmentCategoriesProps {
@@ -8,23 +7,23 @@ interface MobileTreatmentCategoriesProps {
 
 const MobileSkinLiftTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) => {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 divide-y divide-gray-100">
       <MobileTreatmentItem 
         title="Weight Management Programs" 
         url="/services/weight-management" 
-        icon={Dumbbell} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="CoolSculpting" 
         url="/services/coolsculpting" 
-        icon={Snowflake} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
         title="Radio & Ultrasound Therapy" 
         url="/services/radio-ultrasound-therapy" 
-        icon={Waves} 
+        icon={null} 
         onClick={() => setIsOpen(false)} 
       />
     </div>
