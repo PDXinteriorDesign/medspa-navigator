@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Search, Droplet, Sun, Dumbbell, Snowflake, Zap, Heart, Sparkles, Stethoscope, Wave, Spray, Syringe } from "lucide-react";
+import { Menu, X, Search, Droplet, Sun, Dumbbell, Snowflake, Zap, Heart, Sparkles, Stethoscope, 
+  Waves, Spray as SprayIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -12,6 +13,10 @@ import {
   DropdownMenuTrigger,
   DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu";
+
+// Replace missing icons with available alternatives
+const Spray = SprayIcon || Droplet; // Fallback to Droplet if SprayIcon doesn't exist
+const Wave = Waves; // Use Waves instead of Wave
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,13 +40,13 @@ const Navbar = () => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <Link to="/services/botox" className="flex items-center">
-                      <Syringe className="mr-2 h-4 w-4" />
+                      <Droplet className="mr-2 h-4 w-4" />
                       Botox
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/services/micro-botox" className="flex items-center">
-                      <Syringe className="mr-2 h-4 w-4" />
+                      <Droplet className="mr-2 h-4 w-4" />
                       MicroBotox
                     </Link>
                   </DropdownMenuItem>
@@ -127,7 +132,7 @@ const Navbar = () => {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/services/radio-ultrasound-therapy" className="flex items-center">
-                      <Wave className="mr-2 h-4 w-4" />
+                      <Waves className="mr-2 h-4 w-4" />
                       Radio & Ultrasound Therapy
                     </Link>
                   </DropdownMenuItem>
@@ -170,7 +175,7 @@ const Navbar = () => {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/services/oxygen-facials" className="flex items-center">
-                      <Spray className="mr-2 h-4 w-4" />
+                      <Droplet className="mr-2 h-4 w-4" />
                       Oxygen Facials
                     </Link>
                   </DropdownMenuItem>
@@ -354,7 +359,7 @@ const Navbar = () => {
                         className="text-medspa-dark hover:text-medspa-teal transition flex items-center"
                         onClick={() => setIsOpen(false)}
                       >
-                        <Wave className="mr-2 h-4 w-4" />
+                        <Waves className="mr-2 h-4 w-4" />
                         Radio & Ultrasound Therapy
                       </Link>
                     </div>
@@ -409,7 +414,7 @@ const Navbar = () => {
                         className="text-medspa-dark hover:text-medspa-teal transition flex items-center"
                         onClick={() => setIsOpen(false)}
                       >
-                        <Spray className="mr-2 h-4 w-4" />
+                        <Droplet className="mr-2 h-4 w-4" />
                         Oxygen Facials
                       </Link>
                       <Link
