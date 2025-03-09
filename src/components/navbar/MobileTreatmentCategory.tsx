@@ -13,7 +13,7 @@ export const MobileTreatmentItem = ({ title, url, icon: Icon, onClick }: MobileT
   return (
     <Link
       to={url}
-      className="text-medspa-dark hover:text-medspa-teal transition flex items-center"
+      className="text-medspa-dark hover:text-medspa-teal transition flex items-center py-1"
       onClick={onClick}
     >
       <Icon className="mr-2 h-4 w-4" />

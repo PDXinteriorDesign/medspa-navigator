@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Search } from "lucide-react";
+import { Search, ChevronDown } from "lucide-react";
 import { MobileTreatmentsList } from "./MobileTreatmentsList";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -17,7 +17,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
       <div className="flex flex-col space-y-4">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="treatments" className="border-none">
-            <AccordionTrigger className="py-2 text-medspa-dark hover:text-medspa-teal transition">
+            <AccordionTrigger className="py-2 text-medspa-dark hover:text-medspa-teal transition flex items-center">
               Treatments
             </AccordionTrigger>
             <AccordionContent>
@@ -28,26 +28,26 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
         
         <Link 
           to="/services" 
-          className="text-medspa-dark hover:text-medspa-teal transition"
+          className="text-medspa-dark hover:text-medspa-teal transition py-2"
           onClick={() => setIsOpen(false)}
         >
           Services
         </Link>
         <Link 
           to="/locations" 
-          className="text-medspa-dark hover:text-medspa-teal transition"
+          className="text-medspa-dark hover:text-medspa-teal transition py-2"
           onClick={() => setIsOpen(false)}
         >
           Locations
         </Link>
         <Link 
           to="/medspas" 
-          className="text-medspa-dark hover:text-medspa-teal transition"
+          className="text-medspa-dark hover:text-medspa-teal transition py-2"
           onClick={() => setIsOpen(false)}
         >
           Directory
         </Link>
-        <div className="relative">
+        <div className="relative mt-2">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
           <input 
             type="text" 

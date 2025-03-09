@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { 
   Droplet, 
@@ -39,6 +38,24 @@ export const FavoritesTreatments = () => (
       <Link to="/services/laser-hair-removal" className="flex items-center">
         <Star className="mr-2 h-4 w-4" />
         Laser Hair Removal
+      </Link>
+    </DropdownMenuItem>
+    <DropdownMenuItem asChild>
+      <Link to="/services/coolsculpting" className="flex items-center">
+        <Star className="mr-2 h-4 w-4" />
+        CoolSculpting
+      </Link>
+    </DropdownMenuItem>
+    <DropdownMenuItem asChild>
+      <Link to="/services/skin-resurfacing" className="flex items-center">
+        <Star className="mr-2 h-4 w-4" />
+        Skin Rejuvenation
+      </Link>
+    </DropdownMenuItem>
+    <DropdownMenuItem asChild>
+      <Link to="/services/microneedling" className="flex items-center">
+        <Star className="mr-2 h-4 w-4" />
+        Microneedling
       </Link>
     </DropdownMenuItem>
   </DropdownMenuGroup>
