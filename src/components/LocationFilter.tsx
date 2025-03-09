@@ -49,6 +49,15 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
             </Link>
           </li>
         )}
+        <li>
+          <Link 
+            to="/locations"
+            className="flex items-center text-sm text-gray-700 hover:text-medspa-teal"
+          >
+            <ChevronRight size={16} className="text-gray-400" />
+            <span className="ml-1 font-medium">View All Locations</span>
+          </Link>
+        </li>
       </ul>
     </div>
   );

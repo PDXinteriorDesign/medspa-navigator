@@ -5,6 +5,7 @@ import MedSpaCard from "@/components/MedSpaCard";
 import { services, locations, filterMedSpas, type Location } from "@/lib/data";
 import { Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const MedSpas = () => {
+  const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState<Location | "all">("all");
   const [selectedService, setSelectedService] = useState<string | "all">("all");
   
@@ -22,6 +24,16 @@ const MedSpas = () => {
     selectedService === "all" ? null : selectedService,
     selectedLocation === "all" ? null : selectedLocation
   );
+  
+  // Handle location change
+  const handleLocationChange = (value: string) => {
+    if (value === "view-all") {
+      // Navigate to locations page
+      navigate("/locations");
+    } else {
+      setSelectedLocation(value as Location | "all");
+    }
+  };
   
   return (
     <div className="medspa-container py-12">
@@ -53,9 +65,12 @@ const MedSpas = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
-                <DropdownMenuRadioGroup value={selectedLocation} onValueChange={(value) => setSelectedLocation(value as Location | "all")}>
+                <DropdownMenuRadioGroup value={selectedLocation} onValueChange={handleLocationChange}>
                   <DropdownMenuRadioItem value="all">
                     All Locations
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="view-all">
+                    View All NYC Locations
                   </DropdownMenuRadioItem>
                   {locations.map(location => (
                     <DropdownMenuRadioItem key={location.id} value={location.id}>

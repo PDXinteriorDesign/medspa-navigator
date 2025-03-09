@@ -3,7 +3,7 @@ import { useState } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import ServiceCard from "@/components/ServiceCard";
 import { services, locations, getServicesByLocation, type Location } from "@/lib/data";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -15,10 +15,22 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const Services = () => {
+  const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState<Location | "all">("all");
+  const [selectedService, setSelectedService] = useState<string | "all">("all");
   
   // All services are displayed by default
   const displayedServices = services;
+
+  // Handle location change
+  const handleLocationChange = (value: string) => {
+    if (value === "view-all") {
+      // Navigate to locations page
+      navigate("/locations");
+    } else {
+      setSelectedLocation(value as Location | "all");
+    }
+  };
   
   return (
     <div className="medspa-container py-12">
@@ -50,9 +62,12 @@ const Services = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
-                <DropdownMenuRadioGroup value={selectedLocation} onValueChange={(value) => setSelectedLocation(value as Location | "all")}>
+                <DropdownMenuRadioGroup value={selectedLocation} onValueChange={handleLocationChange}>
                   <DropdownMenuRadioItem value="all">
                     All Locations
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="view-all">
+                    View All NYC Locations
                   </DropdownMenuRadioItem>
                   {locations.map(location => (
                     <DropdownMenuRadioItem key={location.id} value={location.id}>
@@ -63,13 +78,39 @@ const Services = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            {selectedLocation !== "all" && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="w-full sm:w-auto justify-between">
+                  {selectedService === "all" 
+                    ? "All Services" 
+                    : services.find(svc => svc.id === selectedService)?.name || "All Services"}
+                  <ChevronDown size={16} className="ml-2" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuRadioGroup value={selectedService} onValueChange={setSelectedService}>
+                  <DropdownMenuRadioItem value="all">
+                    All Services
+                  </DropdownMenuRadioItem>
+                  {services.map(service => (
+                    <DropdownMenuRadioItem key={service.id} value={service.id}>
+                      {service.name}
+                    </DropdownMenuRadioItem>
+                  ))}
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            {(selectedLocation !== "all" || selectedService !== "all") && (
               <Button 
                 variant="ghost" 
                 className="w-full sm:w-auto"
-                onClick={() => setSelectedLocation("all")}
+                onClick={() => {
+                  setSelectedLocation("all");
+                  setSelectedService("all");
+                }}
               >
-                Reset Filter
+                Reset Filters
               </Button>
             )}
           </div>
