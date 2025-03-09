@@ -6,10 +6,11 @@ import { SubArea } from "@/lib/locationData";
 
 interface LocationSubAreasProps {
   locationName: string;
+  locationSlug: string;
   subAreas: SubArea[];
 }
 
-const LocationSubAreas = ({ locationName, subAreas }: LocationSubAreasProps) => {
+const LocationSubAreas = ({ locationName, locationSlug, subAreas }: LocationSubAreasProps) => {
   return (
     <div className="mt-8">
       <h2 className="text-xl font-medium mb-6">{locationName} Neighborhoods</h2>
@@ -49,10 +50,19 @@ const LocationSubAreas = ({ locationName, subAreas }: LocationSubAreasProps) => 
                 </div>
                 
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center space-x-2">
-                    <ArrowRight size={16} className="text-medspa-teal" />
-                    <Link to="/medspas" className="text-medspa-teal hover:underline">
-                      Find MedSpas in {subArea.name}
+                  <div className="flex flex-justify-between items-center">
+                    <div className="flex items-center space-x-2">
+                      <ArrowRight size={16} className="text-medspa-teal" />
+                      <Link to="/medspas" className="text-medspa-teal hover:underline">
+                        Find MedSpas in {subArea.name}
+                      </Link>
+                    </div>
+                    <Link 
+                      to={`/locations/${locationSlug}/${subArea.id}`}
+                      className="text-medspa-teal hover:underline flex items-center ml-auto"
+                    >
+                      View {subArea.name} Details
+                      <ArrowRight size={16} className="ml-1" />
                     </Link>
                   </div>
                 </div>

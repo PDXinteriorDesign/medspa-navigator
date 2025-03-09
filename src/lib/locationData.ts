@@ -146,3 +146,22 @@ export const getLocationBySlug = (slug: string): LocationDetail | undefined => {
 export const getFeaturedLocations = (): LocationDetail[] => {
   return locationDetails.filter(location => location.featured);
 };
+
+export const getNeighborhoodBySlug = (location: LocationDetail, neighborhoodSlug: string): SubArea | undefined => {
+  return location.subAreas.find(subArea => subArea.id === neighborhoodSlug);
+};
+
+export const getAllNeighborhoods = (): { location: LocationDetail; neighborhood: SubArea }[] => {
+  const allNeighborhoods: { location: LocationDetail; neighborhood: SubArea }[] = [];
+  
+  locationDetails.forEach(location => {
+    location.subAreas.forEach(neighborhood => {
+      allNeighborhoods.push({
+        location,
+        neighborhood
+      });
+    });
+  });
+  
+  return allNeighborhoods;
+};

@@ -2,10 +2,13 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
-import { locationDetails } from "@/lib/locationData";
+import { locationDetails, getAllNeighborhoods } from "@/lib/locationData";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const Locations = () => {
+  // Get all neighborhoods from all locations
+  const allNeighborhoods = getAllNeighborhoods().slice(0, 6); // Limit to 6 for the featured neighborhoods
+  
   return (
     <>
       <Helmet>
@@ -61,7 +64,7 @@ const Locations = () => {
                   {location.subAreas.slice(0, 2).map(subArea => (
                     <Link 
                       key={subArea.id}
-                      to={`/locations/${location.slug}#${subArea.id}`}
+                      to={`/locations/${location.slug}/${subArea.id}`}
                       className="flex items-center text-sm text-gray-700 hover:text-medspa-teal"
                     >
                       <ArrowRight size={12} className="mr-1.5" />
@@ -77,6 +80,34 @@ const Locations = () => {
                 </Link>
               </div>
             </div>
+          ))}
+        </div>
+        
+        {/* Featured Neighborhoods Section */}
+        <h2 className="text-2xl font-medium mt-16 mb-8">Featured NYC Neighborhoods</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {allNeighborhoods.map(({ location, neighborhood }) => (
+            <Link 
+              key={`${location.id}-${neighborhood.id}`}
+              to={`/locations/${location.slug}/${neighborhood.id}`}
+              className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow flex items-center"
+            >
+              <div className="w-16 h-16 mr-4 rounded-full overflow-hidden flex-shrink-0">
+                <img 
+                  src={neighborhood.imageUrl} 
+                  alt={neighborhood.name}
+                  className="w-full h-full object-cover" 
+                />
+              </div>
+              <div>
+                <h3 className="font-medium text-medspa-teal">{neighborhood.name}</h3>
+                <p className="text-sm text-gray-600">{location.name}</p>
+                <div className="flex items-center mt-1 text-xs text-gray-500">
+                  <MapPin size={12} className="mr-1" />
+                  <span>{neighborhood.popularServices[0]}, {neighborhood.popularServices[1]}</span>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -70,6 +70,7 @@ const LocationDetail = () => {
             
             <LocationSubAreas 
               locationName={location.name}
+              locationSlug={location.slug}
               subAreas={location.subAreas}
             />
           </div>

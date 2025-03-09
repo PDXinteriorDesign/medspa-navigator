@@ -15,6 +15,7 @@ import MedSpas from "./pages/MedSpas";
 import MedSpaDetail from "./pages/MedSpaDetail";
 import Locations from "./pages/Locations";
 import LocationDetail from "./pages/LocationDetail";
+import NeighborhoodDetail from "./pages/NeighborhoodDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="services/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
             <Route path="locations" element={<Locations />} />
             <Route path="locations/:locationSlug" element={<LocationDetail />} />
+            <Route path="locations/:locationSlug/:neighborhoodSlug" element={<NeighborhoodDetail />} />
             <Route path="medspas" element={<MedSpas />} />
             <Route path="medspas/:medSpaSlug" element={<MedSpaDetail />} />
             <Route path="*" element={<NotFound />} />
