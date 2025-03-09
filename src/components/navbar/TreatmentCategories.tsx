@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { 
   Droplet, 
@@ -13,15 +14,11 @@ import {
 } from "lucide-react";
 import {
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu";
 
 export const FavoritesTreatments = () => (
-  <DropdownMenuGroup>
-    <DropdownMenuLabel>Favorites</DropdownMenuLabel>
-    <DropdownMenuSeparator />
+  <DropdownMenuGroup className="space-y-1">
     <DropdownMenuItem asChild>
       <Link to="/services/botox" className="flex items-center">
         <Star className="mr-2 h-4 w-4" />
@@ -62,9 +59,7 @@ export const FavoritesTreatments = () => (
 );
 
 export const InjectablesTreatments = () => (
-  <DropdownMenuGroup>
-    <DropdownMenuLabel>Injectables</DropdownMenuLabel>
-    <DropdownMenuSeparator />
+  <DropdownMenuGroup className="space-y-1">
     <DropdownMenuItem asChild>
       <Link to="/services/botox" className="flex items-center">
         <Droplet className="mr-2 h-4 w-4" />
@@ -99,9 +94,7 @@ export const InjectablesTreatments = () => (
 );
 
 export const LaserTreatments = () => (
-  <DropdownMenuGroup>
-    <DropdownMenuLabel>Laser Services</DropdownMenuLabel>
-    <DropdownMenuSeparator />
+  <DropdownMenuGroup className="space-y-1">
     <DropdownMenuItem asChild>
       <Link to="/services/photofacials" className="flex items-center">
         <Sun className="mr-2 h-4 w-4" />
@@ -142,9 +135,7 @@ export const LaserTreatments = () => (
 );
 
 export const SkinLiftTreatments = () => (
-  <DropdownMenuGroup>
-    <DropdownMenuLabel>Skin Lift & Fat Reduction</DropdownMenuLabel>
-    <DropdownMenuSeparator />
+  <DropdownMenuGroup className="space-y-1">
     <DropdownMenuItem asChild>
       <Link to="/services/weight-management" className="flex items-center">
         <Dumbbell className="mr-2 h-4 w-4" />
@@ -167,9 +158,7 @@ export const SkinLiftTreatments = () => (
 );
 
 export const FacialTreatments = () => (
-  <DropdownMenuGroup>
-    <DropdownMenuLabel>Facials</DropdownMenuLabel>
-    <DropdownMenuSeparator />
+  <DropdownMenuGroup className="space-y-1">
     <DropdownMenuItem asChild>
       <Link to="/services/chemical-peels" className="flex items-center">
         <Droplet className="mr-2 h-4 w-4" />
