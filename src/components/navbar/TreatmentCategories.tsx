@@ -9,7 +9,8 @@ import {
   Waves, 
   Sparkles, 
   Heart, 
-  Stethoscope 
+  Stethoscope,
+  Star
 } from "lucide-react";
 import {
   DropdownMenuItem,
@@ -17,6 +18,31 @@ import {
   DropdownMenuSeparator,
   DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu";
+
+export const FavoritesTreatments = () => (
+  <DropdownMenuGroup>
+    <DropdownMenuLabel>Favorites</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem asChild>
+      <Link to="/services/botox" className="flex items-center">
+        <Star className="mr-2 h-4 w-4" />
+        Botox
+      </Link>
+    </DropdownMenuItem>
+    <DropdownMenuItem asChild>
+      <Link to="/services/fillers" className="flex items-center">
+        <Star className="mr-2 h-4 w-4" />
+        Fillers
+      </Link>
+    </DropdownMenuItem>
+    <DropdownMenuItem asChild>
+      <Link to="/services/laser-hair-removal" className="flex items-center">
+        <Star className="mr-2 h-4 w-4" />
+        Laser Hair Removal
+      </Link>
+    </DropdownMenuItem>
+  </DropdownMenuGroup>
+);
 
 export const InjectablesTreatments = () => (
   <DropdownMenuGroup>

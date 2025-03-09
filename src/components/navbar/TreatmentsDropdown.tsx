@@ -9,7 +9,8 @@ import {
   InjectablesTreatments,
   LaserTreatments,
   SkinLiftTreatments,
-  FacialTreatments 
+  FacialTreatments,
+  FavoritesTreatments 
 } from "./TreatmentCategories";
 
 const TreatmentsDropdown = () => {
@@ -19,6 +20,8 @@ const TreatmentsDropdown = () => {
         Treatments
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-64">
+        <FavoritesTreatments />
+        <DropdownMenuSeparator />
         <InjectablesTreatments />
         <DropdownMenuSeparator />
         <LaserTreatments />
