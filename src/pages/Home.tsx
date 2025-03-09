@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div>
       {/* Hero section */}
-      <section className="relative bg-medspa-blue py-20">
+      <section className="relative bg-medspa-blue py-20 overflow-hidden">
         <div className="medspa-container">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medspa-dark mb-6">
@@ -39,7 +39,7 @@ const Home = () => {
         <div 
           className="absolute bottom-0 right-0 w-1/3 h-full" 
           style={{ 
-            backgroundImage: "url(/lovable-uploads/6138dab6-2c1c-4b67-9a22-6ee59191c245.png)", 
+            backgroundImage: `url(/lovable-uploads/6138dab6-2c1c-4b67-9a22-6ee59191c245.png)`, 
             backgroundPosition: 'center', 
             backgroundSize: 'cover', 
             clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' 
