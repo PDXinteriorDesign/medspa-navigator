@@ -38,7 +38,7 @@ const Home = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <img 
-                src="/lovable-uploads/6138dab6-2c1c-4b67-9a22-6ee59191c245.png" 
+                src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Med Spa Treatment" 
                 className="w-full h-auto rounded-lg shadow-xl"
               />
