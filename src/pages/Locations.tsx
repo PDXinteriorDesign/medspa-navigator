@@ -1,46 +1,11 @@
 
 import { Helmet } from "react-helmet";
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { MapPin } from "lucide-react";
 import { locationDetails } from "@/lib/locationData";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import LocationSearch from "@/components/location/LocationSearch";
-import LocationDirectory from "@/components/location/LocationDirectory";
-import FeaturedLocations from "@/components/location/FeaturedLocations";
 
 const Locations = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  
-  // Group locations by first letter for the directory style
-  const groupedLocations = locationDetails.reduce((acc, location) => {
-    const firstLetter = location.name.charAt(0).toUpperCase();
-    if (!acc[firstLetter]) {
-      acc[firstLetter] = [];
-    }
-    acc[firstLetter].push(location);
-    return acc;
-  }, {} as Record<string, typeof locationDetails>);
-  
-  // Get all unique first letters and sort them
-  const alphabet = Object.keys(groupedLocations).sort();
-  
-  // Filter locations based on search term
-  const filteredLocations = searchTerm 
-    ? locationDetails.filter(location => 
-        location.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    : locationDetails;
-  
-  // Get featured locations
-  const featuredLocations = locationDetails.filter(location => location.featured);
-  
-  // Extract all sub-locations (neighborhoods) from main locations
-  const allSubLocations = locationDetails.flatMap(location => 
-    location.subAreas.map(subArea => ({
-      name: subArea.name,
-      slug: subArea.id,
-      parentName: location.name
-    }))
-  );
-  
   return (
     <>
       <Helmet>
@@ -58,28 +23,35 @@ const Locations = () => {
           ]} 
         />
         
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">NYC MedSpa Destinations</h1>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            The definitive guide to New York's most exclusive aesthetic clinics and wellness sanctuaries.
-          </p>
-          <div className="w-20 h-1 bg-medspa-gold/70 mx-auto mt-8 mb-10"></div>
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-center">
+            Our Curated MedSpa Destinations
+          </h1>
           
-          <LocationSearch 
-            searchTerm={searchTerm} 
-            onSearchChange={setSearchTerm} 
-          />
+          <div className="w-20 h-1 bg-medspa-gold/70 mx-auto mt-8 mb-12"></div>
+          
+          <div className="space-y-4">
+            {locationDetails.map((location) => (
+              <Link
+                key={location.id}
+                to={`/locations/${location.slug}`}
+                className="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="text-medspa-teal" size={20} />
+                    <h2 className="text-xl font-serif group-hover:text-medspa-teal transition-colors">
+                      {location.name}
+                    </h2>
+                  </div>
+                  <span className="text-gray-600">
+                    {location.medspaCount} MedSpas
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-        
-        <LocationDirectory 
-          groupedLocations={groupedLocations}
-          alphabet={alphabet}
-          searchTerm={searchTerm}
-          filteredLocations={filteredLocations}
-          allSubLocations={allSubLocations}
-        />
-        
-        <FeaturedLocations locations={featuredLocations} />
       </div>
     </>
   );
