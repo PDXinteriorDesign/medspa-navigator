@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
@@ -56,7 +55,7 @@ const ServiceDetail = () => {
   // Enhanced content structure for SEO
   const enhancedContent = {
     introduction: [
-      seoContent.introduction || `${service.name} is a popular aesthetic treatment offered by top medical spas across New York City. This advanced procedure helps clients achieve their desired aesthetic goals with minimal downtime and remarkable results.`,
+      ...(seoContent.introduction || [`${service.name} is a popular aesthetic treatment offered by top medical spas across New York City. This advanced procedure helps clients achieve their desired aesthetic goals with minimal downtime and remarkable results.`]),
       `At MedSpasNYC, we've curated the finest ${service.name.toLowerCase()} providers in New York, ensuring you receive treatment from skilled professionals using the latest techniques and technology.`,
       `This comprehensive guide covers everything you need to know about ${service.name.toLowerCase()} treatments in NYC, from the procedure itself to expected results and top providers.`
     ],
