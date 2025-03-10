@@ -41,8 +41,30 @@ const Locations = () => {
           </h1>
           
           <div className="w-20 h-1 bg-medspa-gold/70 mx-auto mt-8 mb-12"></div>
-
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-10">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {allLocations.map((location) => (
+              <Link
+                key={location.id}
+                to={`/locations/${location.slug}`}
+                className="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="text-medspa-teal" size={20} />
+                    <h2 className="text-xl font-serif group-hover:text-medspa-teal transition-colors">
+                      {location.name}
+                    </h2>
+                  </div>
+                  <span className="text-gray-600">
+                    {location.medspaCount} MedSpas
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-sm p-8">
             <div className="flex items-center mb-4">
               <Sparkle className="text-medspa-gold mr-2" size={20} />
               <h2 className="text-2xl font-serif">The Elite MedSpa Experience</h2>
@@ -65,28 +87,6 @@ const Locations = () => {
                 "The distinction between an ordinary aesthetic procedure and a truly exceptional MedSpa experience lies in the artistry of the providers, the quality of the environment, and the personalized attention given to each client's unique needs and desires."
               </p>
             </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {allLocations.map((location) => (
-              <Link
-                key={location.id}
-                to={`/locations/${location.slug}`}
-                className="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="text-medspa-teal" size={20} />
-                    <h2 className="text-xl font-serif group-hover:text-medspa-teal transition-colors">
-                      {location.name}
-                    </h2>
-                  </div>
-                  <span className="text-gray-600">
-                    {location.medspaCount} MedSpas
-                  </span>
-                </div>
-              </Link>
-            ))}
           </div>
         </div>
       </div>
