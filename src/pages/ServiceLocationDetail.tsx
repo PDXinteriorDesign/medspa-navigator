@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { getServiceBySlug, getServicesByLocation, getLocationName } from "@/lib/data";
 import { type Location } from "@/lib/data";
-import EnhancedServiceSchema from "@/components/service/EnhancedServiceSchema";
+import ServiceLocationMetadata from "@/components/service/ServiceLocationMetadata";
 import ServiceLocationMainContent from "@/components/service/ServiceLocationMainContent";
 import ServiceLocationSidebar from "@/components/service/ServiceLocationSidebar";
 import { getLocationContent, getLocationFaqs } from "@/utils/locationContent";
+import { generateLocationKeywords } from "@/utils/keywordGenerator";
 
 const ServiceLocationDetail = () => {
   const { serviceSlug, location } = useParams<{ serviceSlug: string; location: Location }>();
@@ -31,31 +32,15 @@ const ServiceLocationDetail = () => {
   const locationFaqs = getLocationFaqs(service.name, locationName);
   
   // Location-specific keywords
-  const locationKeywords = [
-    `${service.name} ${locationName}`,
-    `best ${service.name} in ${locationName}`,
-    `${service.name} clinic ${locationName}`,
-    `top rated ${service.name} ${locationName}`,
-    `${locationName} ${service.name} specialist`,
-    `luxury ${service.name} ${locationName}`,
-    `affordable ${service.name} ${locationName}`,
-    `${service.name} treatment near ${locationName}`,
-    `${locationName} medical spa ${service.name}`,
-    `${service.name} before after ${locationName}`,
-    `${service.name} prices ${locationName}`,
-    `${locationName} cosmetic ${service.name.toLowerCase()}`,
-    `${service.name} experts ${locationName} NYC`,
-    `where to get ${service.name} in ${locationName}`,
-    `best ${service.name} deals ${locationName}`
-  ];
+  const locationKeywords = generateLocationKeywords(service.name, locationName);
   
   return (
     <>
-      <EnhancedServiceSchema 
-        serviceName={service.name} 
-        description={service.description}
-        keywords={locationKeywords}
-        cityName={locationName}
+      <ServiceLocationMetadata 
+        serviceName={service.name}
+        serviceDescription={service.description}
+        locationName={locationName}
+        locationKeywords={locationKeywords}
       />
     
       <div className="medspa-container py-12">
