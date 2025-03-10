@@ -31,6 +31,9 @@ const Layout = () => {
         <meta property="twitter:description" content="Discover the best medical spas in NYC offering Botox, CoolSculpting, laser hair removal and more." />
         <meta property="twitter:image" content="https://medspasnyc.com/og-image.png" />
         
+        {/* Keywords for NYC Medspa Services */}
+        <meta name="keywords" content="medical spa NYC, medspa New York, luxury medspa, Botox NYC, fillers Manhattan, laser treatment New York, CoolSculpting NYC, Upper East Side medspa, SoHo medical spa, Brooklyn aesthetic clinic, best med spa NYC, top medspa Manhattan, skincare treatments NYC, anti-aging NYC, cosmetic procedures New York, non-surgical treatments Manhattan" />
+        
         {/* Schema.org markup for Google */}
         <script type="application/ld+json">
           {JSON.stringify({

@@ -6,9 +6,9 @@ import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
 import { getServiceSeoContent, getServiceFaqs, getServicePricing } from "@/utils/serviceContent";
 
 // Import components
-import ServiceSchema from "@/components/service/ServiceSchema";
+import EnhancedServiceSchema from "@/components/service/EnhancedServiceSchema";
 import ServiceHero from "@/components/service/ServiceHero";
-import ServiceAbout from "@/components/service/ServiceAbout";
+import EnhancedServiceContent from "@/components/service/EnhancedServiceContent";
 import ServicePricing from "@/components/service/ServicePricing";
 import ServiceFaqs from "@/components/service/ServiceFaqs";
 import ServiceMedSpas from "@/components/service/ServiceMedSpas";
@@ -34,9 +34,69 @@ const ServiceDetail = () => {
   const faqs = getServiceFaqs(service.name);
   const pricingInfo = getServicePricing(service.name);
   
+  // Service-specific keywords
+  const serviceKeywords = [
+    `affordable ${service.name} NYC`,
+    `top ${service.name} providers`,
+    `${service.name} near me`,
+    `best ${service.name} Manhattan`,
+    `${service.name} cost NYC`,
+    `${service.name} results before after`,
+    `${service.name} prices New York`,
+    `certified ${service.name} specialists`,
+    `${service.name} treatment Manhattan`,
+    `luxury ${service.name} NYC`,
+    `${service.name} recovery time`,
+    `${service.name} safety information`,
+    `premium ${service.name} clinic New York`,
+    `${service.name} Upper East Side`,
+    `${service.name} SoHo`
+  ];
+  
+  // Enhanced content structure for SEO
+  const enhancedContent = {
+    introduction: [
+      seoContent.introduction || `${service.name} is a popular aesthetic treatment offered by top medical spas across New York City. This advanced procedure helps clients achieve their desired aesthetic goals with minimal downtime and remarkable results.`,
+      `At MedSpasNYC, we've curated the finest ${service.name.toLowerCase()} providers in New York, ensuring you receive treatment from skilled professionals using the latest techniques and technology.`,
+      `This comprehensive guide covers everything you need to know about ${service.name.toLowerCase()} treatments in NYC, from the procedure itself to expected results and top providers.`
+    ],
+    benefits: [
+      `Natural-looking, long-lasting results tailored to your unique features`,
+      `Performed by board-certified practitioners with specialized training`,
+      `Minimal downtime allowing you to return to your busy NYC lifestyle quickly`,
+      `Advanced techniques that prioritize both safety and aesthetic outcomes`,
+      `Customizable treatment plans to address your specific concerns`
+    ],
+    process: [
+      `Your ${service.name} journey begins with a thorough consultation at one of our vetted NYC medical spas. During this initial meeting, your provider will assess your concerns, discuss your aesthetic goals, and determine if you're an ideal candidate for the treatment.`,
+      `Before your procedure, your provider will explain each step of the treatment process, potential side effects, and answer any questions you may have. This transparent approach ensures you feel comfortable and informed throughout your experience.`,
+      `The actual ${service.name.toLowerCase()} procedure typically takes between 30-60 minutes, depending on the treatment area and your specific needs. Your provider will use precise techniques to ensure optimal results while minimizing discomfort.`
+    ],
+    recovery: [
+      `Most ${service.name} patients can return to their normal activities immediately or within 24-48 hours, making this an ideal treatment for busy New Yorkers.`,
+      `You may experience minor swelling, redness, or sensitivity at the treatment site, but these effects typically subside quickly. Your provider will give you specific aftercare instructions to ensure optimal healing and results.`,
+      `Follow-up appointments may be recommended to monitor your progress and make any necessary adjustments to your treatment plan.`
+    ],
+    results: [
+      `Results from ${service.name} treatments are designed to enhance your natural beauty while maintaining a refreshed, never overdone appearance.`,
+      `Depending on the specific treatment, results may be immediately visible or develop gradually over several weeks as your body responds to the procedure.`,
+      `To maintain optimal results, your provider may recommend periodic maintenance treatments tailored to your specific needs and goals.`
+    ],
+    considerations: [
+      `While ${service.name} is considered safe for most healthy adults, certain medical conditions or medications may affect your candidacy. Your provider will review your medical history during your consultation.`,
+      `The cost of ${service.name} in NYC varies based on the provider's expertise, location, and the extent of treatment needed. Premium providers in Manhattan neighborhoods like the Upper East Side may charge more than those in other boroughs.`,
+      `Choosing a qualified provider is essential for both safety and results. All MedSpasNYC featured providers are thoroughly vetted to ensure they meet our stringent standards for training, experience, and patient satisfaction.`
+    ]
+  };
+  
   return (
     <>
-      <ServiceSchema name={service.name} description={service.description} />
+      <EnhancedServiceSchema 
+        serviceName={service.name} 
+        description={service.description}
+        keywords={serviceKeywords}
+        cityName="NYC"
+      />
     
       <div className="medspa-container py-12">
         <BreadcrumbNav 
@@ -54,9 +114,9 @@ const ServiceDetail = () => {
               medSpasCount={medSpasWithService.length}
             />
             
-            <ServiceAbout 
+            <EnhancedServiceContent 
               serviceName={service.name}
-              seoContent={seoContent}
+              content={enhancedContent}
             />
             
             <div className="bg-white rounded-lg shadow-sm p-6 mb-6">

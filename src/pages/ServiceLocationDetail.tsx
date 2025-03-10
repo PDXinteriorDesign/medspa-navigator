@@ -1,10 +1,9 @@
 
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { getServiceBySlug, getServicesByLocation, getLocationName } from "@/lib/data";
 import { type Location } from "@/lib/data";
-import ServiceLocationSchema from "@/components/service/ServiceLocationSchema";
+import EnhancedServiceSchema from "@/components/service/EnhancedServiceSchema";
 import ServiceLocationMainContent from "@/components/service/ServiceLocationMainContent";
 import ServiceLocationSidebar from "@/components/service/ServiceLocationSidebar";
 import { getLocationContent, getLocationFaqs } from "@/utils/locationContent";
@@ -31,12 +30,32 @@ const ServiceLocationDetail = () => {
   const locationContent = getLocationContent(service.name, locationName);
   const locationFaqs = getLocationFaqs(service.name, locationName);
   
+  // Location-specific keywords
+  const locationKeywords = [
+    `${service.name} ${locationName}`,
+    `best ${service.name} in ${locationName}`,
+    `${service.name} clinic ${locationName}`,
+    `top rated ${service.name} ${locationName}`,
+    `${locationName} ${service.name} specialist`,
+    `luxury ${service.name} ${locationName}`,
+    `affordable ${service.name} ${locationName}`,
+    `${service.name} treatment near ${locationName}`,
+    `${locationName} medical spa ${service.name}`,
+    `${service.name} before after ${locationName}`,
+    `${service.name} prices ${locationName}`,
+    `${locationName} cosmetic ${service.name.toLowerCase()}`,
+    `${service.name} experts ${locationName} NYC`,
+    `where to get ${service.name} in ${locationName}`,
+    `best ${service.name} deals ${locationName}`
+  ];
+  
   return (
     <>
-      <ServiceLocationSchema 
+      <EnhancedServiceSchema 
         serviceName={service.name} 
-        locationName={locationName} 
-        description={service.description} 
+        description={service.description}
+        keywords={locationKeywords}
+        cityName={locationName}
       />
     
       <div className="medspa-container py-12">
