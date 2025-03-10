@@ -44,12 +44,28 @@ const Locations = () => {
               alt="Luxury MedSpa in NYC" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent backdrop-blur-sm"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
               <h1 className="text-3xl md:text-4xl font-serif font-bold text-white text-center mb-4 drop-shadow-md">
                 The best NYC medspas, thoughtfully curated for you.
               </h1>
               <div className="w-20 h-1 bg-medspa-gold/80 mx-auto"></div>
+            </div>
+          </div>
+          
+          {/* New paragraph section */}
+          <div className="mb-12 bg-white rounded-lg shadow-sm p-8">
+            <h2 className="text-2xl md:text-3xl font-serif text-center mb-6">Find a MedSpa in New York</h2>
+            <div className="space-y-4 text-gray-700">
+              <p>
+                Discover the top-rated MedSpas across New York with our carefully curated directory. Our goal is to make it effortless for you to find a premier medical spa that aligns with your beauty, wellness, and skincare needs. Whether you're looking for expert Botox treatments, state-of-the-art laser procedures, or luxurious facials, we connect you with the finest providers in the city.
+              </p>
+              <p>
+                With an extensive list of only the highest-rated MedSpas and continually updated profiles, we ensure you have access to trusted professionals offering cutting-edge treatments. No matter your location in NYC, there's a MedSpa ready to help you achieve your aesthetic goals.
+              </p>
+              <p>
+                Use our directory to find a MedSpa based on location, services offered, and specialization—helping you book the perfect experience with confidence. Start exploring today and take the next step toward looking and feeling your best.
+              </p>
             </div>
           </div>
           
