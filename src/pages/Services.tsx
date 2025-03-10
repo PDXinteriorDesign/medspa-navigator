@@ -213,8 +213,8 @@ const Services = () => {
         </div>
       </div>
       
-      {/* Add CSS for treatment links */}
-      <style jsx="true">{`
+      {/* Add CSS for treatment links using a regular style tag */}
+      <style>{`
         .treatment-link {
           display: block;
           padding: 0.75rem 1rem;
