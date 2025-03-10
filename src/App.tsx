@@ -18,6 +18,11 @@ import LocationDetail from "./pages/LocationDetail";
 import NeighborhoodDetail from "./pages/NeighborhoodDetail";
 import NotFound from "./pages/NotFound";
 
+// Treatment Pages
+import BotoxPage from "./pages/treatments/BotoxPage";
+import CoolSculptingPage from "./pages/treatments/CoolSculptingPage";
+import LaserHairRemovalPage from "./pages/treatments/LaserHairRemovalPage";
+
 // Location Landing Pages
 import ManhattanLanding from "./pages/locations/Manhattan";
 import SoHoLanding from "./pages/locations/SoHo";
@@ -43,6 +48,12 @@ const App = () => (
             <Route path="services" element={<Services />} />
             <Route path="services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="services/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
+            
+            {/* Standalone Treatment Pages */}
+            <Route path="services/botox" element={<BotoxPage />} />
+            <Route path="services/coolsculpting" element={<CoolSculptingPage />} />
+            <Route path="services/laser-hair-removal" element={<LaserHairRemovalPage />} />
+            
             <Route path="locations" element={<Locations />} />
             <Route path="locations/:locationSlug" element={<LocationDetail />} />
             <Route path="locations/:locationSlug/:neighborhoodSlug" element={<NeighborhoodDetail />} />

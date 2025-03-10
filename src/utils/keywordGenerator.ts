@@ -15,7 +15,15 @@ export const generateLocationKeywords = (serviceName: string, locationName: stri
     `${locationName} cosmetic ${serviceName.toLowerCase()}`,
     `${serviceName} experts ${locationName}`,
     `where to get ${serviceName} in ${locationName}`,
-    `best ${serviceName} deals ${locationName}`
+    `best ${serviceName} deals ${locationName}`,
+    `${serviceName} consultation ${locationName}`,
+    `${locationName} ${serviceName} reviews`,
+    `${serviceName} results ${locationName}`,
+    `experienced ${serviceName} providers ${locationName}`,
+    `${serviceName} cost ${locationName}`,
+    `${locationName} premium ${serviceName}`,
+    `${serviceName} doctor ${locationName}`,
+    `${locationName} ${serviceName} near me`
   ];
 };
 
@@ -45,6 +53,43 @@ export const generateNYCServiceKeywords = (serviceName: string): string[] => {
     `top-rated ${serviceName} New York City`,
     `premium ${serviceName} Manhattan`,
     `${serviceName} experts NYC`,
-    `new ${serviceName} techniques NYC`
+    `new ${serviceName} techniques NYC`,
+    `${serviceName} certified providers NYC`,
+    `${serviceName} procedures New York`,
+    `best place for ${serviceName} NYC`,
+    `${serviceName} results NYC`,
+    `${serviceName} consultation Manhattan`,
+    `${serviceName} aftercare NYC`,
+    `${serviceName} prices New York`,
+    `trusted ${serviceName} clinics NYC`,
+    `${serviceName} doctors Manhattan`,
+    `${serviceName} Upper West Side`,
+    `top ${serviceName} specialists NY`
   ];
+};
+
+// Generate treatment-specific keywords (like Botox, fillers, etc)
+export const generateTreatmentKeywords = (treatmentName: string): string[] => {
+  const baseKeywords = generateNYCServiceKeywords(treatmentName);
+  
+  // Add treatment-specific keywords
+  const treatmentSpecific = [
+    `${treatmentName} treatment NYC`,
+    `${treatmentName} procedure New York`,
+    `how much is ${treatmentName} in NYC`,
+    `${treatmentName} provider Manhattan`,
+    `${treatmentName} certified doctor NYC`,
+    `${treatmentName} safety NYC`,
+    `${treatmentName} risks and benefits NYC`,
+    `${treatmentName} for beginners NYC`,
+    `first time ${treatmentName} NYC`,
+    `${treatmentName} maintenance NYC`,
+    `${treatmentName} follow up NYC`,
+    `${treatmentName} recommended clinics NYC`,
+    `medical ${treatmentName} NYC`,
+    `${treatmentName} expert consultation NYC`,
+    `${treatmentName} frequently asked questions NYC`
+  ];
+  
+  return [...baseKeywords, ...treatmentSpecific];
 };
