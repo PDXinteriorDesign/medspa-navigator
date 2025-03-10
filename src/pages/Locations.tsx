@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Sparkle, Award, ThumbsUp, ShieldCheck, Heart } from "lucide-react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { Card, CardContent } from "@/components/ui/card";
+import MedSpaListingBanner from "@/components/location/MedSpaListingBanner";
 
 const Locations = () => {
   // Only include the specifically requested locations
@@ -142,6 +143,11 @@ const Locations = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+          
+          {/* Added the MedSpa Listing Banner component here */}
+          <div className="mt-16 mb-8">
+            <MedSpaListingBanner />
           </div>
         </div>
       </div>
