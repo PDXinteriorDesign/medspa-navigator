@@ -3,7 +3,8 @@ import React from 'react';
 
 const ServiceStyles: React.FC = () => {
   return (
-    <style>{`
+    <style>
+      {`
       .treatment-link {
         display: block;
         padding: 0.75rem 1rem;
@@ -20,7 +21,8 @@ const ServiceStyles: React.FC = () => {
         transform: translateY(-2px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
-    `}</style>
+      `}
+    </style>
   );
 };
 

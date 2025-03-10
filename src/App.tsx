@@ -23,6 +23,20 @@ import BotoxPage from "./pages/treatments/BotoxPage";
 import CoolSculptingPage from "./pages/treatments/CoolSculptingPage";
 import LaserHairRemovalPage from "./pages/treatments/LaserHairRemovalPage";
 
+// Injectable Treatment Pages
+import MicroBotoxPage from "./pages/treatments/MicroBotoxPage";
+import FillersPage from "./pages/treatments/FillersPage";
+import KybellaPage from "./pages/treatments/KybellaPage";
+import PrpPage from "./pages/treatments/PrpPage";
+
+// Laser Treatment Pages
+import PhotofacialsPage from "./pages/treatments/PhotofacialsPage";
+import TattooRemovalPage from "./pages/treatments/TattooRemovalPage";
+
+// Facial Treatment Pages
+import ChemicalPeelsPage from "./pages/treatments/ChemicalPeelsPage";
+import HydrofacialsPage from "./pages/treatments/HydrofacialsPage";
+
 // Location Landing Pages
 import ManhattanLanding from "./pages/locations/Manhattan";
 import SoHoLanding from "./pages/locations/SoHo";
@@ -49,10 +63,24 @@ const App = () => (
             <Route path="services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="services/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
             
-            {/* Standalone Treatment Pages */}
+            {/* Original Treatment Pages */}
             <Route path="services/botox" element={<BotoxPage />} />
             <Route path="services/coolsculpting" element={<CoolSculptingPage />} />
             <Route path="services/laser-hair-removal" element={<LaserHairRemovalPage />} />
+            
+            {/* Injectable Treatment Pages */}
+            <Route path="services/micro-botox" element={<MicroBotoxPage />} />
+            <Route path="services/fillers" element={<FillersPage />} />
+            <Route path="services/kybella" element={<KybellaPage />} />
+            <Route path="services/prp" element={<PrpPage />} />
+            
+            {/* Laser Treatment Pages */}
+            <Route path="services/photofacials" element={<PhotofacialsPage />} />
+            <Route path="services/tattoo-removal" element={<TattooRemovalPage />} />
+            
+            {/* Facial Treatment Pages */}
+            <Route path="services/chemical-peels" element={<ChemicalPeelsPage />} />
+            <Route path="services/hydrofacials" element={<HydrofacialsPage />} />
             
             <Route path="locations" element={<Locations />} />
             <Route path="locations/:locationSlug" element={<LocationDetail />} />
