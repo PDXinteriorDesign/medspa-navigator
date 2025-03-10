@@ -1,8 +1,9 @@
 
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { MapPin, Sparkle } from "lucide-react";
+import { MapPin, Sparkle, Award, ThumbsUp, ShieldCheck, Heart } from "lucide-react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Locations = () => {
   // Only include the specifically requested locations
@@ -86,6 +87,60 @@ const Locations = () => {
               <p className="italic border-l-3 border-medspa-gold/60 pl-4 py-1">
                 "The distinction between an ordinary aesthetic procedure and a truly exceptional MedSpa experience lies in the artistry of the providers, the quality of the environment, and the personalized attention given to each client's unique needs and desires."
               </p>
+            </div>
+          </div>
+          
+          <div className="mt-12 mb-8">
+            <h3 className="text-2xl font-serif text-center mb-8">Why NYC's Elite MedSpas Matter</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="border border-gray-100/60 shadow-sm hover:shadow-md transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Award className="text-medspa-gold" size={22} />
+                    <h4 className="font-serif text-lg">Manhattan's Premier Expertise</h4>
+                  </div>
+                  <p className="text-gray-700">
+                    Too often, clients compromise on quality due to limited options. In Manhattan, from the Upper East Side to SoHo, our directory showcases only the most prestigious medspas with board-certified physicians and master aestheticians. These exclusive Manhattan providers offer specialized treatments using cutting-edge technology that delivers transformative results for even the most discerning New York clientele.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border border-gray-100/60 shadow-sm hover:shadow-md transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Heart className="text-medspa-gold" size={22} />
+                    <h4 className="font-serif text-lg">Personalized Luxury Experience</h4>
+                  </div>
+                  <p className="text-gray-700">
+                    Aesthetic treatments are deeply personal. When New Yorkers commit to enhancing their appearance, they're often navigating busy Manhattan lifestyles and high social expectations. Our featured medspas in Tribeca, Midtown, and Brooklyn provide bespoke treatment plans addressing individual concerns while incorporating wellness approaches native to NYC's luxury aesthetic scene—combining clinical excellence with the sophisticated atmosphere expected by New York professionals.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border border-gray-100/60 shadow-sm hover:shadow-md transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <ThumbsUp className="text-medspa-gold" size={22} />
+                    <h4 className="font-serif text-lg">Diverse Treatment Options</h4>
+                  </div>
+                  <p className="text-gray-700">
+                    NYC offers unparalleled treatment diversity. From Williamsburg's innovative boutique aesthetic studios to Park Slope's wellness-focused medspas, each neighborhood brings distinct specialties. Some flagship Manhattan locations provide comprehensive day-long rejuvenation experiences, while others in Brooklyn excel in targeted express treatments for busy professionals. Whether seeking the exclusivity of Upper East Side providers or the creative edge of SoHo's aesthetic scene, our curated directory represents NYC's finest.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border border-gray-100/60 shadow-sm hover:shadow-md transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <ShieldCheck className="text-medspa-gold" size={22} />
+                    <h4 className="font-serif text-lg">Uncompromising Quality</h4>
+                  </div>
+                  <p className="text-gray-700">
+                    Quality remains paramount at New York's premier aesthetic destinations. When making the investment in your appearance—whether at a renowned Manhattan clinic or a luxury Hamptons retreat—you deserve nothing less than excellence. Our featured medspas maintain the highest medical standards while providing the attentive service expected in New York's luxury market. Each location undergoes rigorous vetting to ensure they maintain the clinical excellence and refined experience that defines New York's elite aesthetic community.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
