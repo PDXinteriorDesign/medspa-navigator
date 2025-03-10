@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin, Sparkle, Award, ThumbsUp, ShieldCheck, Heart } from "lucide-react";
@@ -29,14 +30,14 @@ const Locations = () => {
         />
       </Helmet>
       
-      <div className="medspa-container py-12">
+      <div className="px-4 sm:px-6 lg:px-10 xl:px-16 py-12">
         <BreadcrumbNav 
           items={[
             { label: "Locations", href: "/locations", current: true }
           ]} 
         />
         
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto">
           {/* Hero Image with Overlay Text */}
           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg mb-12">
             <img 
@@ -69,7 +70,7 @@ const Locations = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {allLocations.map((location) => (
               <Link
                 key={location.id}

@@ -63,7 +63,7 @@ const Layout = () => {
       </Helmet>
       
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow px-4 sm:px-6 lg:px-10 xl:px-16">
         <Outlet />
       </main>
       <Footer />
