@@ -40,7 +40,7 @@ const Locations = () => {
           {/* Hero Image with Overlay Text */}
           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg mb-12">
             <img 
-              src="https://images.unsplash.com/photo-1629776302536-c33dedf7e74d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+              src="https://images.unsplash.com/photo-1541531455306-a1008c85edd9?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
               alt="Luxury MedSpa in NYC" 
               className="w-full h-full object-cover"
             />
