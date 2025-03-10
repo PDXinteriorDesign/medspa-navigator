@@ -2,31 +2,21 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
-import { locationDetails, getAllNeighborhoods } from "@/lib/locationData";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const Locations = () => {
-  // Get all neighborhoods to display them as individual locations
-  const allNeighborhoodEntries = getAllNeighborhoods();
-  
-  // Combine main locations and neighborhoods into one list
+  // Only include the specifically requested locations
   const allLocations = [
-    ...locationDetails.map(location => ({
-      id: location.id,
-      slug: location.slug,
-      name: location.name,
-      medspaCount: location.medspaCount
-    })),
-    ...allNeighborhoodEntries.map(entry => ({
-      id: entry.neighborhood.id,
-      slug: `${entry.location.slug}/${entry.neighborhood.id}`,
-      name: entry.neighborhood.name,
-      medspaCount: Math.round(entry.location.medspaCount / entry.location.subAreas.length)
-    }))
+    { id: "manhattan", slug: "manhattan", name: "Manhattan", medspaCount: 142 },
+    { id: "soho", slug: "manhattan/soho", name: "SoHo", medspaCount: 38 },
+    { id: "upper-east-side", slug: "manhattan/upper-east-side", name: "Upper East Side", medspaCount: 45 },
+    { id: "tribeca", slug: "tribeca", name: "Tribeca", medspaCount: 28 },
+    { id: "midtown", slug: "manhattan/midtown", name: "Midtown", medspaCount: 34 },
+    { id: "brooklyn", slug: "brooklyn", name: "Brooklyn", medspaCount: 78 },
+    { id: "williamsburg", slug: "williamsburg", name: "Williamsburg", medspaCount: 29 },
+    { id: "park-slope", slug: "park-slope", name: "Park Slope", medspaCount: 19 },
+    { id: "the-hamptons", slug: "the-hamptons", name: "The Hamptons", medspaCount: 34 }
   ];
-  
-  // Sort locations alphabetically
-  allLocations.sort((a, b) => a.name.localeCompare(b.name));
   
   return (
     <>
