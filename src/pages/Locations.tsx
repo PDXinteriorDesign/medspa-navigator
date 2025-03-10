@@ -38,11 +38,22 @@ const Locations = () => {
         />
         
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-center">
+          <h1 className="text-3xl md:text-4xl font-serif font-bold mb-8 text-center">
             The best NYC medspas, thoughtfully curated for you.
           </h1>
           
-          <div className="w-20 h-1 bg-medspa-gold/70 mx-auto mt-8 mb-12"></div>
+          {/* Hero Image */}
+          <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg mb-12">
+            <img 
+              src="https://images.unsplash.com/photo-1629776302536-c33dedf7e74d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+              alt="Luxury MedSpa in NYC" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div className="absolute bottom-0 w-full p-6">
+              <div className="w-20 h-1 bg-medspa-gold/70 mx-auto mb-4"></div>
+            </div>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {allLocations.map((location) => (
