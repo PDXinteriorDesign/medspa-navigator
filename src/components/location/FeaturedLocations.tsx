@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Star } from "lucide-react";
+import { Star, MapPin } from "lucide-react";
 import { type LocationDetail } from "@/lib/locationData";
 
 interface FeaturedLocationsProps {
@@ -8,11 +8,14 @@ interface FeaturedLocationsProps {
 }
 
 const FeaturedLocations = ({ locations }: FeaturedLocationsProps) => {
+  // Make sure we have all important locations represented
+  const allLocations = locations.length > 0 ? locations : [];
+
   return (
     <div className="mb-16">
-      <h2 className="text-2xl md:text-3xl font-serif font-medium mb-8 text-center">Featured Destinations</h2>
+      <h2 className="text-2xl md:text-3xl font-serif font-medium mb-8 text-center">Our MedSpa Locations</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {locations.map(location => (
+        {allLocations.map(location => (
           <Link 
             key={location.id}
             to={`/locations/${location.slug}`}
@@ -27,8 +30,8 @@ const FeaturedLocations = ({ locations }: FeaturedLocationsProps) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                 <div className="p-6">
                   <div className="flex items-center mb-1">
-                    <Star size={14} className="text-medspa-gold mr-1" fill="currentColor" />
-                    <span className="text-white text-xs font-medium uppercase tracking-wider">Featured</span>
+                    <MapPin size={14} className="text-white mr-1" />
+                    <span className="text-white text-xs font-medium uppercase tracking-wider">NYC Location</span>
                   </div>
                   <h3 className="text-xl font-serif font-bold text-white group-hover:text-medspa-gold transition-colors">{location.name}</h3>
                   <div className="flex items-center text-white/80">
