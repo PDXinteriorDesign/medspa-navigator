@@ -2,10 +2,32 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
-import { locationDetails } from "@/lib/locationData";
+import { locationDetails, getAllNeighborhoods } from "@/lib/locationData";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const Locations = () => {
+  // Get all neighborhoods to display them as individual locations
+  const allNeighborhoodEntries = getAllNeighborhoods();
+  
+  // Combine main locations and neighborhoods into one list
+  const allLocations = [
+    ...locationDetails.map(location => ({
+      id: location.id,
+      slug: location.slug,
+      name: location.name,
+      medspaCount: location.medspaCount
+    })),
+    ...allNeighborhoodEntries.map(entry => ({
+      id: entry.neighborhood.id,
+      slug: `${entry.location.slug}/${entry.neighborhood.id}`,
+      name: entry.neighborhood.name,
+      medspaCount: Math.round(entry.location.medspaCount / entry.location.subAreas.length)
+    }))
+  ];
+  
+  // Sort locations alphabetically
+  allLocations.sort((a, b) => a.name.localeCompare(b.name));
+  
   return (
     <>
       <Helmet>
@@ -31,7 +53,7 @@ const Locations = () => {
           <div className="w-20 h-1 bg-medspa-gold/70 mx-auto mt-8 mb-12"></div>
           
           <div className="space-y-4">
-            {locationDetails.map((location) => (
+            {allLocations.map((location) => (
               <Link
                 key={location.id}
                 to={`/locations/${location.slug}`}
