@@ -10,6 +10,7 @@ export interface Review {
 }
 
 export interface SeoContent {
+  introduction: string[];  // Adding this field which was missing
   beforeTreatment: string[];
   afterTreatment: string[];
   reviews: Review[];
@@ -181,6 +182,7 @@ export const getServiceSeoContent = (serviceName: string): SeoContent => {
   }
 
   const seoContentObj: SeoContent = {
+    introduction: content, // Adding this line to include introduction property
     ...content,
     beforeTreatment,
     afterTreatment,
