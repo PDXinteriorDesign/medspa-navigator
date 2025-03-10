@@ -1,8 +1,10 @@
+
 import { useParams } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
 import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
 import { getServiceSeoContent, getServiceFaqs, getServicePricing } from "@/utils/serviceContent";
+import { generateNYCServiceKeywords } from "@/utils/keywordGenerator";
 
 // Import components
 import EnhancedServiceSchema from "@/components/service/EnhancedServiceSchema";
@@ -33,24 +35,8 @@ const ServiceDetail = () => {
   const faqs = getServiceFaqs(service.name);
   const pricingInfo = getServicePricing(service.name);
   
-  // Service-specific keywords
-  const serviceKeywords = [
-    `affordable ${service.name} NYC`,
-    `top ${service.name} providers`,
-    `${service.name} near me`,
-    `best ${service.name} Manhattan`,
-    `${service.name} cost NYC`,
-    `${service.name} results before after`,
-    `${service.name} prices New York`,
-    `certified ${service.name} specialists`,
-    `${service.name} treatment Manhattan`,
-    `luxury ${service.name} NYC`,
-    `${service.name} recovery time`,
-    `${service.name} safety information`,
-    `premium ${service.name} clinic New York`,
-    `${service.name} Upper East Side`,
-    `${service.name} SoHo`
-  ];
+  // NYC-specific service keywords for strong local SEO
+  const serviceKeywords = generateNYCServiceKeywords(service.name);
   
   // Enhanced content structure for SEO
   const enhancedContent = {
