@@ -4,7 +4,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import ServiceCard from "@/components/ServiceCard";
 import { services, locations, getServicesByLocation, type Location } from "@/lib/data";
 import { Link, useNavigate } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Filter, Grid3X3, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
   DropdownMenu,
@@ -13,15 +13,19 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Services = () => {
   const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState<Location | "all">("all");
   const [selectedService, setSelectedService] = useState<string | "all">("all");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   
-  // All services are displayed by default
-  const displayedServices = services;
-
+  // Filter services based on selections
+  const filteredServices = selectedService === "all" 
+    ? services 
+    : services.filter(service => service.id === selectedService);
+  
   // Handle location change
   const handleLocationChange = (value: string) => {
     if (value === "view-all") {
@@ -46,7 +50,7 @@ const Services = () => {
         Browse our curated selection of popular aesthetic treatments available at top-rated medical spas throughout New York City.
       </p>
       
-      {/* Location Filter */}
+      {/* Filters and View Mode */}
       <div className="bg-medspa-blue/30 p-6 rounded-lg mb-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <h2 className="text-lg font-medium mb-4 md:mb-0">Find Services By Location</h2>
@@ -101,6 +105,25 @@ const Services = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
+            <div className="flex items-center gap-2 ml-2">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                onClick={() => setViewMode("grid")}
+                className={viewMode === "grid" ? "bg-medspa-teal/10 text-medspa-teal" : ""}
+              >
+                <Grid3X3 size={16} />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="icon" 
+                onClick={() => setViewMode("list")}
+                className={viewMode === "list" ? "bg-medspa-teal/10 text-medspa-teal" : ""}
+              >
+                <List size={16} />
+              </Button>
+            </div>
+            
             {(selectedLocation !== "all" || selectedService !== "all") && (
               <Button 
                 variant="ghost" 
@@ -117,30 +140,65 @@ const Services = () => {
         </div>
       </div>
       
-      {/* Featured Treatments Section */}
+      {/* All Services Section */}
       <div className="mb-16">
-        <h2 className="text-2xl font-serif font-medium mb-6">Featured NYC Treatments</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {displayedServices.map(service => (
-            <div key={service.id} className="flex flex-col">
-              <ServiceCard service={service} />
-              {/* Add location-specific links if a location is selected */}
-              {selectedLocation !== "all" && (
-                <Link 
-                  to={`/services/${service.slug}-in-${selectedLocation}`}
-                  className="mt-2 text-center bg-medspa-teal/10 text-medspa-teal p-2 rounded-lg text-sm font-medium hover:bg-medspa-teal/20"
-                >
-                  View {service.name} in {locations.find(loc => loc.id === selectedLocation)?.name}
-                </Link>
-              )}
-            </div>
-          ))}
-        </div>
+        <h2 className="text-2xl font-serif font-medium mb-6">All NYC Aesthetic Services</h2>
+        
+        {viewMode === "grid" ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {filteredServices.map(service => (
+              <div key={service.id} className="flex flex-col">
+                <ServiceCard service={service} />
+                {selectedLocation !== "all" && (
+                  <Link 
+                    to={`/services/${service.slug}-in-${selectedLocation}`}
+                    className="mt-2 text-center bg-medspa-teal/10 text-medspa-teal p-2 rounded-lg text-sm font-medium hover:bg-medspa-teal/20"
+                  >
+                    View {service.name} in {locations.find(loc => loc.id === selectedLocation)?.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {filteredServices.map(service => (
+              <Card key={service.id} className="overflow-hidden">
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-1/4">
+                    <img 
+                      src={service.imageUrl} 
+                      alt={service.name} 
+                      className="w-full h-48 md:h-full object-cover" 
+                    />
+                  </div>
+                  <CardContent className="flex-1 p-6">
+                    <Link to={`/services/${service.slug}`} className="hover:underline">
+                      <h3 className="text-xl font-medium mb-2">{service.name}</h3>
+                    </Link>
+                    <p className="text-gray-700 mb-4">{service.description}</p>
+                    <div className="mt-auto flex items-center justify-between">
+                      <div className="text-sm text-gray-500">
+                        Available in all NYC locations
+                      </div>
+                      <Link 
+                        to={`/services/${service.slug}`}
+                        className="text-medspa-teal hover:underline font-medium"
+                      >
+                        View details
+                      </Link>
+                    </div>
+                  </CardContent>
+                </div>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
       
       {/* All Treatments by Category */}
       <div className="mb-16">
-        <h2 className="text-2xl font-serif font-medium mb-6">Browse All NYC Treatments</h2>
+        <h2 className="text-2xl font-serif font-medium mb-6">Browse NYC Treatments by Category</h2>
         
         {/* Injectables Category */}
         <div className="mb-10">
@@ -167,7 +225,7 @@ const Services = () => {
           </div>
         </div>
         
-        {/* Skin Lift/Contouring Category */}
+        {/* Body Contouring Category */}
         <div className="mb-10">
           <h3 className="text-xl font-medium mb-4 pb-2 border-b border-gray-200">Body Contouring</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
