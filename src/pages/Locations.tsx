@@ -38,8 +38,8 @@ const Locations = () => {
         />
         
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-center">
-            Our Curated MedSpa Destinations
+          <h1 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-center">
+            The best NYC medspas, thoughtfully curated for you.
           </h1>
           
           <div className="w-20 h-1 bg-medspa-gold/70 mx-auto mt-8 mb-12"></div>
