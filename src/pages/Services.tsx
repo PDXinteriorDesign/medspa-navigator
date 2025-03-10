@@ -1,22 +1,15 @@
 
 import { useState } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import ServiceCard from "@/components/ServiceCard";
-import { services, locations, getServicesByLocation, type Location } from "@/lib/data";
-import { Link, useNavigate } from "react-router-dom";
-import { ChevronDown, Filter, Grid3X3, List } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
-import { Card, CardContent } from "@/components/ui/card";
+import { services, Location } from "@/lib/data";
+import ServiceFilters from "@/components/service/ServiceFilters";
+import ServiceGrid from "@/components/service/ServiceGrid";
+import ServiceList from "@/components/service/ServiceList";
+import ServiceCategories from "@/components/service/ServiceCategories";
+import PopularLocationSearches from "@/components/service/PopularLocationSearches";
+import ServiceStyles from "@/components/service/ServiceStyles";
 
 const Services = () => {
-  const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState<Location | "all">("all");
   const [selectedService, setSelectedService] = useState<string | "all">("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
@@ -25,16 +18,6 @@ const Services = () => {
   const filteredServices = selectedService === "all" 
     ? services 
     : services.filter(service => service.id === selectedService);
-  
-  // Handle location change
-  const handleLocationChange = (value: string) => {
-    if (value === "view-all") {
-      // Navigate to locations page
-      navigate("/locations");
-    } else {
-      setSelectedLocation(value as Location | "all");
-    }
-  };
   
   return (
     <div className="medspa-container py-12">
@@ -51,245 +34,37 @@ const Services = () => {
       </p>
       
       {/* Filters and View Mode */}
-      <div className="bg-medspa-blue/30 p-6 rounded-lg mb-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-          <h2 className="text-lg font-medium mb-4 md:mb-0">Find Services By Location</h2>
-          
-          <div className="flex flex-col sm:flex-row gap-3">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="w-full sm:w-auto justify-between">
-                  {selectedLocation === "all" 
-                    ? "All Locations" 
-                    : locations.find(loc => loc.id === selectedLocation)?.name || "All Locations"}
-                  <ChevronDown size={16} className="ml-2" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                <DropdownMenuRadioGroup value={selectedLocation} onValueChange={handleLocationChange}>
-                  <DropdownMenuRadioItem value="all">
-                    All Locations
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="view-all">
-                    View All NYC Locations
-                  </DropdownMenuRadioItem>
-                  {locations.map(location => (
-                    <DropdownMenuRadioItem key={location.id} value={location.id}>
-                      {location.name}
-                    </DropdownMenuRadioItem>
-                  ))}
-                </DropdownMenuRadioGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="w-full sm:w-auto justify-between">
-                  {selectedService === "all" 
-                    ? "All Services" 
-                    : services.find(svc => svc.id === selectedService)?.name || "All Services"}
-                  <ChevronDown size={16} className="ml-2" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                <DropdownMenuRadioGroup value={selectedService} onValueChange={setSelectedService}>
-                  <DropdownMenuRadioItem value="all">
-                    All Services
-                  </DropdownMenuRadioItem>
-                  {services.map(service => (
-                    <DropdownMenuRadioItem key={service.id} value={service.id}>
-                      {service.name}
-                    </DropdownMenuRadioItem>
-                  ))}
-                </DropdownMenuRadioGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            
-            <div className="flex items-center gap-2 ml-2">
-              <Button 
-                variant="outline" 
-                size="icon" 
-                onClick={() => setViewMode("grid")}
-                className={viewMode === "grid" ? "bg-medspa-teal/10 text-medspa-teal" : ""}
-              >
-                <Grid3X3 size={16} />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="icon" 
-                onClick={() => setViewMode("list")}
-                className={viewMode === "list" ? "bg-medspa-teal/10 text-medspa-teal" : ""}
-              >
-                <List size={16} />
-              </Button>
-            </div>
-            
-            {(selectedLocation !== "all" || selectedService !== "all") && (
-              <Button 
-                variant="ghost" 
-                className="w-full sm:w-auto"
-                onClick={() => {
-                  setSelectedLocation("all");
-                  setSelectedService("all");
-                }}
-              >
-                Reset Filters
-              </Button>
-            )}
-          </div>
-        </div>
-      </div>
+      <ServiceFilters 
+        selectedLocation={selectedLocation}
+        setSelectedLocation={setSelectedLocation}
+        selectedService={selectedService}
+        setSelectedService={setSelectedService}
+        viewMode={viewMode}
+        setViewMode={setViewMode}
+      />
       
       {/* All Services Section */}
       <div className="mb-16">
         <h2 className="text-2xl font-serif font-medium mb-6">All NYC Aesthetic Services</h2>
         
         {viewMode === "grid" ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {filteredServices.map(service => (
-              <div key={service.id} className="flex flex-col">
-                <ServiceCard service={service} />
-                {selectedLocation !== "all" && (
-                  <Link 
-                    to={`/services/${service.slug}-in-${selectedLocation}`}
-                    className="mt-2 text-center bg-medspa-teal/10 text-medspa-teal p-2 rounded-lg text-sm font-medium hover:bg-medspa-teal/20"
-                  >
-                    View {service.name} in {locations.find(loc => loc.id === selectedLocation)?.name}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
+          <ServiceGrid 
+            services={filteredServices} 
+            selectedLocation={selectedLocation} 
+          />
         ) : (
-          <div className="space-y-4">
-            {filteredServices.map(service => (
-              <Card key={service.id} className="overflow-hidden">
-                <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/4">
-                    <img 
-                      src={service.imageUrl} 
-                      alt={service.name} 
-                      className="w-full h-48 md:h-full object-cover" 
-                    />
-                  </div>
-                  <CardContent className="flex-1 p-6">
-                    <Link to={`/services/${service.slug}`} className="hover:underline">
-                      <h3 className="text-xl font-medium mb-2">{service.name}</h3>
-                    </Link>
-                    <p className="text-gray-700 mb-4">{service.description}</p>
-                    <div className="mt-auto flex items-center justify-between">
-                      <div className="text-sm text-gray-500">
-                        Available in all NYC locations
-                      </div>
-                      <Link 
-                        to={`/services/${service.slug}`}
-                        className="text-medspa-teal hover:underline font-medium"
-                      >
-                        View details
-                      </Link>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-            ))}
-          </div>
+          <ServiceList services={filteredServices} />
         )}
       </div>
       
-      {/* All Treatments by Category */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-serif font-medium mb-6">Browse NYC Treatments by Category</h2>
-        
-        {/* Injectables Category */}
-        <div className="mb-10">
-          <h3 className="text-xl font-medium mb-4 pb-2 border-b border-gray-200">Injectables</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link to="/services/botox" className="treatment-link">Botox</Link>
-            <Link to="/services/micro-botox" className="treatment-link">MicroBotox</Link>
-            <Link to="/services/fillers" className="treatment-link">Fillers</Link>
-            <Link to="/services/kybella" className="treatment-link">Kybella</Link>
-            <Link to="/services/prp" className="treatment-link">Platelet Rich Plasma</Link>
-          </div>
-        </div>
-        
-        {/* Laser Treatments Category */}
-        <div className="mb-10">
-          <h3 className="text-xl font-medium mb-4 pb-2 border-b border-gray-200">Laser Treatments</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link to="/services/laser-hair-removal" className="treatment-link">Laser Hair Removal</Link>
-            <Link to="/services/photofacials" className="treatment-link">Photofacials</Link>
-            <Link to="/services/tattoo-removal" className="treatment-link">Tattoo Removal</Link>
-            <Link to="/services/skin-resurfacing" className="treatment-link">Skin Resurfacing</Link>
-            <Link to="/services/carbon-laser-facial" className="treatment-link">Carbon Laser Facial</Link>
-            <Link to="/services/vaginal-rejuvenation" className="treatment-link">Vaginal Rejuvenation</Link>
-          </div>
-        </div>
-        
-        {/* Body Contouring Category */}
-        <div className="mb-10">
-          <h3 className="text-xl font-medium mb-4 pb-2 border-b border-gray-200">Body Contouring</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link to="/services/coolsculpting" className="treatment-link">CoolSculpting</Link>
-            <Link to="/services/weight-management" className="treatment-link">Weight Management Programs</Link>
-            <Link to="/services/radio-ultrasound-therapy" className="treatment-link">Radio & Ultrasound Therapy</Link>
-          </div>
-        </div>
-        
-        {/* Facial Treatments Category */}
-        <div>
-          <h3 className="text-xl font-medium mb-4 pb-2 border-b border-gray-200">Facial Treatments</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link to="/services/chemical-peels" className="treatment-link">Chemical Peels</Link>
-            <Link to="/services/microdermabrasion" className="treatment-link">Microdermabrasion</Link>
-            <Link to="/services/microneedling" className="treatment-link">Microneedling</Link>
-            <Link to="/services/hydrofacials" className="treatment-link">Hydrofacials</Link>
-            <Link to="/services/oxygen-facials" className="treatment-link">Oxygen Facials</Link>
-            <Link to="/services/placenta-facials" className="treatment-link">Placenta Facials</Link>
-            <Link to="/services/cryogenic-skin-tag-removal" className="treatment-link">Cryogenic Skin Tag Removal</Link>
-          </div>
-        </div>
-      </div>
+      {/* Categories Section */}
+      <ServiceCategories />
       
       {/* Popular Location-Based Searches */}
-      <div className="mt-16">
-        <h2 className="text-2xl font-serif font-medium mb-6">Popular NYC Location-Based Searches</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {services.map(service => (
-            locations.slice(0, 2).map(location => (
-              <Link 
-                key={`${service.id}-${location.id}`}
-                to={`/services/${service.slug}-in-${location.id}`}
-                className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-              >
-                <h3 className="font-medium">{service.name} in {location.name}</h3>
-                <p className="text-sm text-gray-500 mt-1">
-                  {getServicesByLocation(service.id, location.id).length} MedSpas
-                </p>
-              </Link>
-            ))
-          ))}
-        </div>
-      </div>
+      <PopularLocationSearches />
       
-      {/* Add CSS for treatment links using a regular style tag */}
-      <style>{`
-        .treatment-link {
-          display: block;
-          padding: 0.75rem 1rem;
-          background-color: white;
-          border: 1px solid #edf2f7;
-          border-radius: 0.5rem;
-          transition: all 0.2s;
-          font-size: 0.95rem;
-        }
-        
-        .treatment-link:hover {
-          background-color: #f0f9ff;
-          border-color: #bae6fd;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-      `}</style>
+      {/* Add CSS for treatment links */}
+      <ServiceStyles />
     </div>
   );
 };
