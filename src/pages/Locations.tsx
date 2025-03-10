@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { locationDetails } from "@/lib/locationData";
@@ -30,6 +31,15 @@ const Locations = () => {
   
   // Get featured locations
   const featuredLocations = locationDetails.filter(location => location.featured);
+  
+  // Extract all sub-locations (neighborhoods) from main locations
+  const allSubLocations = locationDetails.flatMap(location => 
+    location.subAreas.map(subArea => ({
+      name: subArea.name,
+      slug: subArea.id,
+      parentName: location.name
+    }))
+  );
   
   return (
     <>
@@ -66,6 +76,7 @@ const Locations = () => {
           alphabet={alphabet}
           searchTerm={searchTerm}
           filteredLocations={filteredLocations}
+          allSubLocations={allSubLocations}
         />
         
         <FeaturedLocations locations={featuredLocations} />
