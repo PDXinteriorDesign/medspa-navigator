@@ -15,6 +15,7 @@ import ServiceFaqs from "@/components/service/ServiceFaqs";
 import ServiceMedSpas from "@/components/service/ServiceMedSpas";
 import ServiceCallToAction from "@/components/service/ServiceCallToAction";
 import ServiceReviews from "@/components/service/ServiceReviews";
+import ServiceStyles from "@/components/service/ServiceStyles";
 
 interface TreatmentPageTemplateProps {
   treatmentName: string;
@@ -37,15 +38,17 @@ const TreatmentPageTemplate = ({
   const service = getServiceBySlug(serviceSlug);
   const medSpasWithService = getMedSpasByService(serviceSlug);
   
-  if (!service) {
-    return (
-      <div className="medspa-container py-12">
-        <h1 className="page-heading">Service Not Found</h1>
-        <p>The service you're looking for doesn't exist or has been removed.</p>
-      </div>
-    );
-  }
-
+  // If service isn't found in the database, create a fallback service object
+  const fallbackService = {
+    id: serviceSlug,
+    name: treatmentName,
+    slug: serviceSlug,
+    description: enhancedContent.introduction[0] || `${treatmentName} is a popular aesthetic treatment in NYC.`,
+    imageUrl: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+  };
+  
+  const effectiveService = service || fallbackService;
+  
   const seoContent = getServiceSeoContent(treatmentName);
   const faqs = getServiceFaqs(treatmentName);
   const pricingInfo = getServicePricing(treatmentName);
@@ -55,9 +58,10 @@ const TreatmentPageTemplate = ({
   
   return (
     <>
+      <ServiceStyles />
       <EnhancedServiceSchema 
         serviceName={treatmentName} 
-        description={service.description}
+        description={effectiveService.description}
         keywords={treatmentKeywords}
         cityName="NYC"
       />
@@ -73,7 +77,7 @@ const TreatmentPageTemplate = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <ServiceHero 
-              imageUrl={service.imageUrl} 
+              imageUrl={effectiveService.imageUrl} 
               name={treatmentName} 
               medSpasCount={medSpasWithService.length}
             />
