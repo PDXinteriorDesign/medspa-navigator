@@ -1,4 +1,3 @@
-
 import React from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
@@ -6,7 +5,6 @@ import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
 import { getServiceSeoContent, getServiceFaqs, getServicePricing } from "@/utils/serviceContent";
 import { generateTreatmentKeywords } from "@/utils/keywordGenerator";
 
-// Import components
 import EnhancedServiceSchema from "@/components/service/EnhancedServiceSchema";
 import ServiceHero from "@/components/service/ServiceHero";
 import EnhancedServiceContent from "@/components/service/EnhancedServiceContent";
@@ -36,7 +34,6 @@ const BotoxPage = () => {
   const faqs = getServiceFaqs(treatmentName);
   const pricingInfo = getServicePricing(treatmentName);
   
-  // Botox vs Dysport comparison data
   const botoxVsDysportItems = [
     {
       category: "Best For",
@@ -60,39 +57,8 @@ const BotoxPage = () => {
     }
   ];
   
-  // What to Expect section data
-  const whatToExpectItems = [
-    {
-      category: "Consultation",
-      option1Value: "Discuss goals with injectors (e.g., 'softened vs. dramatic')",
-      option2Value: ""
-    },
-    {
-      category: "Mapping",
-      option1Value: "Injector marks muscles while you animate your face",
-      option2Value: ""
-    },
-    {
-      category: "Procedure",
-      option1Value: "Ultra-fine needles + ice/numbing cream (10–15 mins)",
-      option2Value: ""
-    },
-    {
-      category: "Recovery",
-      option1Value: "Mild redness fades by lunch – avoid hot yoga for 24hrs",
-      option2Value: ""
-    },
-    {
-      category: "Results",
-      option1Value: "Subtle changes in 72hrs; full effect at 14 days",
-      option2Value: ""
-    }
-  ];
-  
-  // Treatment-specific keywords
   const treatmentKeywords = generateTreatmentKeywords(treatmentName);
   
-  // Enhanced content structure for SEO
   const enhancedContent = {
     introduction: [
       `Botox is the most popular injectable cosmetic treatment in New York City, known for its ability to temporarily reduce the appearance of fine lines and wrinkles. As a purified form of botulinum toxin, Botox works by relaxing the facial muscles that cause dynamic wrinkles when you make expressions.`,
@@ -167,7 +133,6 @@ const BotoxPage = () => {
               />
             </div>
             
-            {/* Botox vs Dysport Comparison */}
             <ServiceComparison
               title="Botox vs. Dysport in NYC: Which Is Better?"
               option1Name="Botox"
@@ -175,21 +140,6 @@ const BotoxPage = () => {
               items={botoxVsDysportItems}
               footnote="Most NYC providers offer both – consult for personalized recommendations."
             />
-            
-            {/* What to Expect Section */}
-            <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-              <h3 className="text-xl font-serif font-medium mb-4">
-                What to Expect: Your NYC Botox Journey
-              </h3>
-              <div className="space-y-4">
-                {whatToExpectItems.map((item, index) => (
-                  <div key={index} className="flex border-b border-gray-100 pb-3">
-                    <div className="w-1/3 font-medium text-gray-700">{item.category}</div>
-                    <div className="w-2/3 text-gray-600">{item.option1Value}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
             
             <ServiceFaqs 
               serviceName={treatmentName}
