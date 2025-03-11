@@ -13,7 +13,7 @@ const ServiceHero = ({ imageUrl, name, medSpasCount }: ServiceHeroProps) => {
       <img 
         src={imageUrl} 
         alt={name} 
-        className="w-full h-full object-cover blur-[1.5px]" 
+        className="w-full h-full object-cover object-bottom blur-[1.5px]" 
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex items-end">
         <div className="p-6 md:p-10 w-full luxury-fade-in">
