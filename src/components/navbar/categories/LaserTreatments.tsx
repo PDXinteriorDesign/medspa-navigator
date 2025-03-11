@@ -13,11 +13,6 @@ const LaserTreatments = () => (
       </Link>
     </DropdownMenuItem>
     <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">
-      <Link to="/services/tattoo-removal" className="flex items-center w-full">
-        Tattoo Removal
-      </Link>
-    </DropdownMenuItem>
-    <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">
       <Link to="/services/skin-resurfacing" className="flex items-center w-full">
         Skin Resurfacing
       </Link>
