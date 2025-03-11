@@ -67,7 +67,7 @@ export const medSpas: MedSpa[] = [
     imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
     address: "123 5th Avenue, New York, NY 10010",
     location: "manhattan",
-    services: ["botox", "coolsculpting", "laser-hair-removal", "tattoo-removal", "micro-botox"],
+    services: ["botox", "coolsculpting", "laser-hair-removal", "micro-botox"],
     featured: true,
     rating: 4.8,
     reviewCount: 124
@@ -80,7 +80,7 @@ export const medSpas: MedSpa[] = [
     imageUrl: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
     address: "456 Madison Avenue, New York, NY 10022",
     location: "manhattan",
-    services: ["botox", "coolsculpting", "tattoo-removal", "fillers", "kybella"],
+    services: ["botox", "coolsculpting", "laser-hair-removal", "fillers", "kybella"],
     featured: true,
     rating: 4.7,
     reviewCount: 98
@@ -106,7 +106,7 @@ export const medSpas: MedSpa[] = [
     imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
     address: "101 Queens Blvd, Queens, NY 11375",
     location: "queens",
-    services: ["laser-hair-removal", "tattoo-removal", "hydrofacials"],
+    services: ["laser-hair-removal", "hydrofacials"],
     featured: false,
     rating: 4.3,
     reviewCount: 62

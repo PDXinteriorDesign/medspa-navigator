@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
@@ -19,11 +18,10 @@ const Services = () => {
   // Laser treatments
   const laserTreatments = [
     { id: "photofacials", name: "Photofacials", slug: "photofacials", description: "Intense pulsed light treatments to address sun damage, rosacea, and uneven skin tone." },
-    { id: "tattoo-removal", name: "Tattoo Removal", slug: "tattoo-removal", description: "Advanced laser technology to safely fade unwanted tattoos with minimal side effects." },
+    { id: "laser-hair-removal", name: "Laser Hair Removal", slug: "laser-hair-removal", description: "Long-lasting solution for unwanted hair on any part of the body." },
     { id: "skin-resurfacing", name: "Skin Resurfacing", slug: "skin-resurfacing", description: "Reduce fine lines, scars, and sun damage by removing damaged skin cells." },
     { id: "carbon-laser-facial", name: "Carbon Laser Facial", slug: "carbon-laser-facial", description: "Also known as the 'Hollywood Peel', this treatment gives skin an immediate glow." },
-    { id: "vaginal-rejuvenation", name: "Vaginal Rejuvenation", slug: "vaginal-rejuvenation", description: "Non-surgical treatment to address vaginal laxity and improve tissue quality." },
-    { id: "laser-hair-removal", name: "Laser Hair Removal", slug: "laser-hair-removal", description: "Long-lasting solution for unwanted hair on any part of the body." }
+    { id: "vaginal-rejuvenation", name: "Vaginal Rejuvenation", slug: "vaginal-rejuvenation", description: "Non-surgical treatment to address vaginal laxity and improve tissue quality." }
   ];
   
   // Skin lift & fat reduction treatments

@@ -15,8 +15,8 @@ const MobileLaserTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) =>
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
-        title="Tattoo Removal" 
-        url="/services/tattoo-removal" 
+        title="Laser Hair Removal" 
+        url="/services/laser-hair-removal" 
         icon={null} 
         onClick={() => setIsOpen(false)} 
       />
@@ -35,12 +35,6 @@ const MobileLaserTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) =>
       <MobileTreatmentItem 
         title="Vaginal Rejuvenation" 
         url="/services/vaginal-rejuvenation" 
-        icon={null} 
-        onClick={() => setIsOpen(false)} 
-      />
-      <MobileTreatmentItem 
-        title="Laser Hair Removal" 
-        url="/services/laser-hair-removal" 
         icon={null} 
         onClick={() => setIsOpen(false)} 
       />

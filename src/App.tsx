@@ -31,7 +31,6 @@ import PrpPage from "./pages/treatments/PrpPage";
 
 // Laser Treatment Pages
 import PhotofacialsPage from "./pages/treatments/PhotofacialsPage";
-import TattooRemovalPage from "./pages/treatments/TattooRemovalPage";
 
 // Facial Treatment Pages
 import ChemicalPeelsPage from "./pages/treatments/ChemicalPeelsPage";
@@ -76,7 +75,6 @@ const App = () => (
             
             {/* Laser Treatment Pages */}
             <Route path="services/photofacials" element={<PhotofacialsPage />} />
-            <Route path="services/tattoo-removal" element={<TattooRemovalPage />} />
             
             {/* Facial Treatment Pages */}
             <Route path="services/chemical-peels" element={<ChemicalPeelsPage />} />
