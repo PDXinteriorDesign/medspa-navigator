@@ -1,11 +1,10 @@
-
 import React from "react";
 import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 
 const VaginalRejuvenationPage = () => {
   const treatmentName = "Vaginal Rejuvenation";
   const serviceSlug = "vaginal-rejuvenation";
-  const customHeroImage = "https://images.pexels.com/photos/5938362/pexels-photo-5938362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/2302908/pexels-photo-2302908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   const enhancedContent = {
     introduction: [
