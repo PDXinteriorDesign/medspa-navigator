@@ -5,7 +5,7 @@ import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 const CarbonLaserFacialPage = () => {
   const treatmentName = "Carbon Laser Facial";
   const serviceSlug = "carbon-laser-facial";
-  const customHeroImage = "https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/12556701/pexels-photo-12556701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   const enhancedContent = {
     introduction: [
