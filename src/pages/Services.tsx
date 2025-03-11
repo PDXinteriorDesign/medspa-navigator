@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Droplet, Zap, Dumbbell, Sparkles } from "lucide-react";
+import { MapPin, Droplet, Zap, Dumbbell, Sparkles, Star } from "lucide-react";
 
 const Services = () => {
   // Injectable treatments
@@ -146,6 +146,19 @@ const Services = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {facialTreatments.map(treatment => renderTreatmentCard(treatment))}
+            </div>
+          </section>
+          
+          {/* New Section: Treatment Excellence */}
+          <section className="mb-16 bg-white rounded-lg shadow-sm p-8">
+            <div className="flex items-center mb-6">
+              <Star className="text-medspa-teal mr-2" size={24} />
+              <h2 className="text-2xl font-serif">NYC's Excellence in Aesthetic Innovation</h2>
+            </div>
+            <div className="text-gray-700">
+              <p className="mb-4">
+                Experience why New York City remains at the forefront of aesthetic innovation with our directory's most sought-after medspa treatments. From precision-driven Botox and Microbotox for wrinkle reduction to luxe hydrafacials and LED therapy for glowing skin, our partnered providers specialize in the procedures dominating NYC's beauty scene. Whether you're targeting non-surgical body sculpting, laser hair removal, or medical-grade peels, trust our vetted experts to deliver safe, natural-looking results aligned with the latest advancements. Ready to elevate your aesthetic journey? Explore our directory today to book personalized consultations at NYC's top-rated medspas—where cutting-edge science meets artistry for transformative outcomes.
+              </p>
             </div>
           </section>
         </div>
