@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +21,7 @@ import NotFound from "./pages/NotFound";
 import BotoxPage from "./pages/treatments/BotoxPage";
 import CoolSculptingPage from "./pages/treatments/CoolSculptingPage";
 import LaserHairRemovalPage from "./pages/treatments/LaserHairRemovalPage";
+import SkinResurfacingPage from "./pages/treatments/SkinResurfacingPage";
 
 // Injectable Treatment Pages
 import MicroBotoxPage from "./pages/treatments/MicroBotoxPage";
@@ -66,6 +66,7 @@ const App = () => (
             <Route path="services/botox" element={<BotoxPage />} />
             <Route path="services/coolsculpting" element={<CoolSculptingPage />} />
             <Route path="services/laser-hair-removal" element={<LaserHairRemovalPage />} />
+            <Route path="services/skin-resurfacing" element={<SkinResurfacingPage />} />
             
             {/* Injectable Treatment Pages */}
             <Route path="services/micro-botox" element={<MicroBotoxPage />} />
@@ -86,7 +87,6 @@ const App = () => (
             <Route path="medspas" element={<MedSpas />} />
             <Route path="medspas/:medSpaSlug" element={<MedSpaDetail />} />
             
-            {/* Location Landing Pages */}
             <Route path="locations/manhattan" element={<ManhattanLanding />} />
             <Route path="locations/soho" element={<SoHoLanding />} />
             <Route path="locations/upper-east-side" element={<UpperEastSideLanding />} />
