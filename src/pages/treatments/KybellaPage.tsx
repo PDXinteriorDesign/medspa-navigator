@@ -5,6 +5,7 @@ import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 const KybellaPage = () => {
   const treatmentName = "Kybella";
   const serviceSlug = "kybella";
+  const customHeroImage = "https://images.pexels.com/photos/7582555/pexels-photo-7582555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   // Enhanced content structure for SEO
   const enhancedContent = {
@@ -52,6 +53,7 @@ const KybellaPage = () => {
       treatmentName={treatmentName}
       serviceSlug={serviceSlug}
       enhancedContent={enhancedContent}
+      customHeroImage={customHeroImage}
     />
   );
 };
