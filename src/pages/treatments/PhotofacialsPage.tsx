@@ -1,10 +1,11 @@
+
 import React from "react";
 import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 
 const PhotofacialsPage = () => {
   const treatmentName = "Photofacials";
   const serviceSlug = "photofacials";
-  const customHeroImage = "https://images.pexels.com/photos/4586751/pexels-photo-4586751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/7446657/pexels-photo-7446657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   const enhancedContent = {
     introduction: [
