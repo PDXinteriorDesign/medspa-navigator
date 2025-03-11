@@ -5,6 +5,7 @@ import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 const FillersPage = () => {
   const treatmentName = "Dermal Fillers";
   const serviceSlug = "fillers";
+  const customHeroImage = "https://images.pexels.com/photos/4586711/pexels-photo-4586711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   // Enhanced content structure for SEO
   const enhancedContent = {
@@ -52,6 +53,7 @@ const FillersPage = () => {
       treatmentName={treatmentName}
       serviceSlug={serviceSlug}
       enhancedContent={enhancedContent}
+      customHeroImage={customHeroImage}
     />
   );
 };
