@@ -75,7 +75,7 @@ const Locations = () => {
               <Link
                 key={location.id}
                 to={`/locations/${location.slug}`}
-                className="block bg-medspa-blue/30 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
+                className="block bg-medspa-cream/40 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
