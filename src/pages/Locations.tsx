@@ -79,7 +79,9 @@ const Locations = () => {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <MapPin className="text-medspa-teal" size={20} />
+                    <span className="location-icon-button">
+                      <MapPin size={18} />
+                    </span>
                     <h2 className="text-xl font-serif group-hover:text-medspa-teal transition-colors">
                       {location.name}
                     </h2>
