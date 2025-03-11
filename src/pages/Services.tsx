@@ -1,8 +1,10 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Droplet, Zap, Dumbbell, Sparkles, Star } from "lucide-react";
+import { MapPin, Droplet, Zap, Dumbbell, Sparkles, Star, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   // Injectable treatments
@@ -160,6 +162,20 @@ const Services = () => {
                 Experience why New York City remains at the forefront of aesthetic innovation with our directory's most sought-after medspa treatments. From precision-driven Botox and Microbotox for wrinkle reduction to luxe hydrafacials and LED therapy for glowing skin, our partnered providers specialize in the procedures dominating NYC's beauty scene. Whether you're targeting non-surgical body sculpting, laser hair removal, or medical-grade peels, trust our vetted experts to deliver safe, natural-looking results aligned with the latest advancements. Ready to elevate your aesthetic journey? Explore our directory today to book personalized consultations at NYC's top-rated medspas—where cutting-edge science meets artistry for transformative outcomes.
               </p>
             </div>
+          </section>
+          
+          {/* CTA Section */}
+          <section className="mb-8 bg-medspa-teal/10 rounded-lg shadow-lg p-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-serif mb-4">Ready to Book? Explore Providers Offering These Treatments</h2>
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              Find the best medical spas in NYC offering premium aesthetic treatments. Compare providers, read reviews, and book your appointment today.
+            </p>
+            <Button asChild size="lg" className="bg-medspa-teal hover:bg-medspa-teal/90">
+              <Link to="/medspas" className="inline-flex items-center">
+                <Search size={18} className="mr-2" />
+                Browse Our MedSpa Directory
+              </Link>
+            </Button>
           </section>
         </div>
       </div>
