@@ -64,7 +64,7 @@ const BotoxPage = () => {
   const whatToExpectItems = [
     {
       category: "Consultation",
-      option1Value: "Discuss goals with injectors (e.g., "softened vs. dramatic")",
+      option1Value: "Discuss goals with injectors (e.g., 'softened vs. dramatic')",
       option2Value: ""
     },
     {
