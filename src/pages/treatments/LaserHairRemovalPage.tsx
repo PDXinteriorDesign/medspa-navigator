@@ -1,10 +1,10 @@
-
 import React from "react";
 import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 
 const LaserHairRemovalPage = () => {
   const treatmentName = "Laser Hair Removal";
   const serviceSlug = "laser-hair-removal";
+  const customHeroImage = "https://images.unsplash.com/photo-1700760933574-9f0f4ea9aa3b?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   
   // Enhanced content structure for SEO
   const enhancedContent = {
@@ -53,6 +53,7 @@ const LaserHairRemovalPage = () => {
       treatmentName={treatmentName}
       serviceSlug={serviceSlug}
       enhancedContent={enhancedContent}
+      customHeroImage={customHeroImage}
     />
   );
 };
