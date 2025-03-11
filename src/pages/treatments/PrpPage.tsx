@@ -5,6 +5,7 @@ import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 const PrpPage = () => {
   const treatmentName = "Platelet Rich Plasma";
   const serviceSlug = "prp";
+  const customHeroImage = "https://images.pexels.com/photos/7446683/pexels-photo-7446683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   // Enhanced content structure for SEO
   const enhancedContent = {
@@ -53,6 +54,7 @@ const PrpPage = () => {
       treatmentName={treatmentName}
       serviceSlug={serviceSlug}
       enhancedContent={enhancedContent}
+      customHeroImage={customHeroImage}
     />
   );
 };
