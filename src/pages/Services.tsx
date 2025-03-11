@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
@@ -78,7 +77,7 @@ const Services = () => {
         <div className="mx-auto">
           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg mb-12">
             <img 
-              src="https://images.unsplash.com/photo-1614859275798-461e3e6adac1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              src="https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
               alt="Luxury MedSpa Treatments" 
               className="w-full h-full object-cover"
             />
