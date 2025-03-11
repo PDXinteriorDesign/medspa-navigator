@@ -9,7 +9,7 @@ interface ServiceCallToActionProps {
 const ServiceCallToAction = ({ serviceName }: ServiceCallToActionProps) => {
   return (
     <div className="bg-white rounded-lg shadow-sm p-5 mb-6">
-      <h3 className="text-lg font-medium mb-4">Looking for {serviceName} providers?</h3>
+      <h3 className="text-lg font-medium mb-4">Looking for {serviceName} providers near you?</h3>
       <p className="text-gray-700 text-sm mb-4">
         Find the top-rated medical spas offering {serviceName} in your area of NYC.
       </p>
