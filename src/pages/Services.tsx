@@ -46,14 +46,12 @@ const Services = () => {
   const renderTreatmentCard = (treatment: any) => (
     <Card key={treatment.id} className="luxury-card flex flex-col border border-black/10 hover:shadow-md transition-all duration-300">
       <Link to={`/services/${treatment.slug}`} className="group h-full">
-        <div className="flex flex-col h-full md:flex-row">
-          <div className="p-6 flex-1">
-            <h3 className="text-xl font-serif mb-2 group-hover:text-medspa-teal transition-colors">{treatment.name}</h3>
-            <p className="text-gray-700 text-sm mb-4">{treatment.description}</p>
-            <div className="flex items-center text-medspa-teal text-sm mt-auto">
-              <MapPin size={16} className="mr-1.5 flex-shrink-0" /> 
-              <span>Available in all NYC locations</span>
-            </div>
+        <div className="p-6 flex-1">
+          <h3 className="text-xl font-serif mb-2 group-hover:text-medspa-teal transition-colors">{treatment.name}</h3>
+          <p className="text-gray-700 text-sm mb-4">{treatment.description}</p>
+          <div className="flex items-center text-medspa-teal text-sm mt-auto">
+            <MapPin size={16} className="mr-1.5 flex-shrink-0" /> 
+            <span>Available in all NYC locations</span>
           </div>
         </div>
       </Link>
@@ -114,7 +112,7 @@ const Services = () => {
               <Droplet className="text-medspa-teal mr-2" size={24} />
               <h2 className="text-2xl font-serif">Injectables</h2>
             </div>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {injectableTreatments.map(treatment => renderTreatmentCard(treatment))}
             </div>
           </section>
@@ -125,7 +123,7 @@ const Services = () => {
               <Zap className="text-medspa-teal mr-2" size={24} />
               <h2 className="text-2xl font-serif">Laser Services</h2>
             </div>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {laserTreatments.map(treatment => renderTreatmentCard(treatment))}
             </div>
           </section>
@@ -136,7 +134,7 @@ const Services = () => {
               <Dumbbell className="text-medspa-teal mr-2" size={24} />
               <h2 className="text-2xl font-serif">Skin Lift & Fat Reduction</h2>
             </div>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {skinLiftTreatments.map(treatment => renderTreatmentCard(treatment))}
             </div>
           </section>
@@ -147,7 +145,7 @@ const Services = () => {
               <Sparkles className="text-medspa-teal mr-2" size={24} />
               <h2 className="text-2xl font-serif">Facials</h2>
             </div>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {facialTreatments.map(treatment => renderTreatmentCard(treatment))}
             </div>
           </section>
