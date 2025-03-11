@@ -42,11 +42,15 @@ const MicroBotoxPage = () => {
     ]
   };
   
+  // Custom hero image URL
+  const customHeroImage = "https://images.pexels.com/photos/3985311/pexels-photo-3985311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  
   return (
     <TreatmentPageTemplate
       treatmentName={treatmentName}
       serviceSlug={serviceSlug}
       enhancedContent={enhancedContent}
+      customHeroImage={customHeroImage}
     />
   );
 };

@@ -27,13 +27,15 @@ interface TreatmentPageTemplateProps {
     considerations: string[];
   };
   customContent?: ReactNode;
+  customHeroImage?: string;
 }
 
 const TreatmentPageTemplate = ({ 
   treatmentName, 
   serviceSlug,
   enhancedContent,
-  customContent
+  customContent,
+  customHeroImage
 }: TreatmentPageTemplateProps) => {
   const service = getServiceBySlug(serviceSlug);
   const medSpasWithService = getMedSpasByService(serviceSlug);
@@ -48,6 +50,9 @@ const TreatmentPageTemplate = ({
   };
   
   const effectiveService = service || fallbackService;
+  
+  // Use the custom hero image if provided, otherwise use the service image
+  const heroImageUrl = customHeroImage || effectiveService.imageUrl;
   
   const seoContent = getServiceSeoContent(treatmentName);
   const faqs = getServiceFaqs(treatmentName);
@@ -77,7 +82,7 @@ const TreatmentPageTemplate = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <ServiceHero 
-              imageUrl={effectiveService.imageUrl} 
+              imageUrl={heroImageUrl} 
               name={treatmentName} 
               medSpasCount={medSpasWithService.length}
             />
