@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin, Sparkle, Award, ThumbsUp, ShieldCheck, Heart } from "lucide-react";
@@ -7,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import MedSpaListingBanner from "@/components/location/MedSpaListingBanner";
 
 const Locations = () => {
-  // Only include the specifically requested locations
   const allLocations = [
     { id: "manhattan", slug: "manhattan", name: "Manhattan", medspaCount: 142 },
     { id: "soho", slug: "manhattan/soho", name: "SoHo", medspaCount: 38 },
@@ -38,7 +36,6 @@ const Locations = () => {
         />
         
         <div className="mx-auto">
-          {/* Hero Image with Overlay Text */}
           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg mb-12">
             <img 
               src="https://images.unsplash.com/photo-1541531455306-a1008c85edd9?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
@@ -54,7 +51,6 @@ const Locations = () => {
             </div>
           </div>
           
-          {/* New paragraph section */}
           <div className="mb-12 bg-white rounded-lg shadow-sm p-8">
             <h2 className="text-2xl md:text-3xl font-serif text-center mb-6">Find a MedSpa in New York</h2>
             <div className="space-y-4 text-gray-700">
@@ -75,7 +71,7 @@ const Locations = () => {
               <Link
                 key={location.id}
                 to={`/locations/${location.slug}`}
-                className="block bg-medspa-cream/40 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
+                className="block bg-medspa-cream/60 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -171,7 +167,6 @@ const Locations = () => {
             </div>
           </div>
           
-          {/* Added the MedSpa Listing Banner component here */}
           <div className="mt-16 mb-8">
             <MedSpaListingBanner />
           </div>
