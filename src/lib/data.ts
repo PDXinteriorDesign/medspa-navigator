@@ -1,3 +1,4 @@
+
 export type Location = "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island";
 
 export type Service = {
@@ -29,7 +30,7 @@ export const services: Service[] = [
     name: "Botox",
     slug: "botox",
     description: "Botox is a popular cosmetic treatment that temporarily reduces or eliminates facial fine lines and wrinkles.",
-    imageUrl: "https://images.unsplash.com/photo-1731355771418-f10ab62c9f86?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    imageUrl: "https://images.pexels.com/photos/3985311/pexels-photo-3985311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "coolsculpting",
