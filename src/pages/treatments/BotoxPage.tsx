@@ -85,18 +85,16 @@ const BotoxPage = () => {
         cityName="NYC"
       />
     
-      <div className="medspa-container">
-        <div className="py-8">
-          <BreadcrumbNav 
-            items={[
-              { label: "Services", href: "/services" },
-              { label: treatmentName, href: `/services/${serviceSlug}`, current: true }
-            ]} 
-          />
-        </div>
+      <div className="medspa-container py-12">
+        <BreadcrumbNav 
+          items={[
+            { label: "Services", href: "/services" },
+            { label: treatmentName, href: `/services/${serviceSlug}`, current: true }
+          ]} 
+        />
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-16">
-          <div className="md:col-span-9">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
             <ServiceHero 
               imageUrl={service.imageUrl} 
               name={treatmentName} 
@@ -108,7 +106,7 @@ const BotoxPage = () => {
               content={enhancedContent}
             />
             
-            <div className="bg-white rounded-lg shadow-sm p-8 lg:p-10 mb-8">
+            <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
               <ServicePricing
                 serviceName={treatmentName}
                 pricingInfo={pricingInfo}
@@ -126,11 +124,10 @@ const BotoxPage = () => {
             />
           </div>
           
-          <div className="md:col-span-3">
-            <div className="sticky top-8">
-              <LocationFilter serviceSlug={serviceSlug} />
-              <ServiceCallToAction serviceName={treatmentName} />
-            </div>
+          <div className="mt-8 md:mt-0">
+            <LocationFilter serviceSlug={serviceSlug} />
+            
+            <ServiceCallToAction serviceName={treatmentName} />
           </div>
         </div>
       </div>

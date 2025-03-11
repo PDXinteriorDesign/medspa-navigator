@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
@@ -5,6 +6,7 @@ import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
 import { getServiceSeoContent, getServiceFaqs, getServicePricing } from "@/utils/serviceContent";
 import { generateNYCServiceKeywords } from "@/utils/keywordGenerator";
 
+// Import components
 import EnhancedServiceSchema from "@/components/service/EnhancedServiceSchema";
 import ServiceHero from "@/components/service/ServiceHero";
 import EnhancedServiceContent from "@/components/service/EnhancedServiceContent";
@@ -32,8 +34,10 @@ const ServiceDetail = () => {
   const faqs = getServiceFaqs(service.name);
   const pricingInfo = getServicePricing(service.name);
   
+  // NYC-specific service keywords for strong local SEO
   const serviceKeywords = generateNYCServiceKeywords(service.name);
   
+  // Enhanced content structure for SEO
   const enhancedContent = {
     introduction: [
       ...(seoContent.introduction || [`${service.name} is a popular aesthetic treatment offered by top medical spas across New York City. This advanced procedure helps clients achieve their desired aesthetic goals with minimal downtime and remarkable results.`]),
@@ -78,18 +82,16 @@ const ServiceDetail = () => {
         cityName="NYC"
       />
     
-      <div className="medspa-container">
-        <div className="py-8">
-          <BreadcrumbNav 
-            items={[
-              { label: "Services", href: "/services" },
-              { label: service.name, href: `/services/${service.slug}`, current: true }
-            ]} 
-          />
-        </div>
+      <div className="medspa-container py-12">
+        <BreadcrumbNav 
+          items={[
+            { label: "Services", href: "/services" },
+            { label: service.name, href: `/services/${service.slug}`, current: true }
+          ]} 
+        />
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-16">
-          <div className="md:col-span-9">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
             <ServiceHero 
               imageUrl={service.imageUrl} 
               name={service.name} 
@@ -101,7 +103,7 @@ const ServiceDetail = () => {
               content={enhancedContent}
             />
             
-            <div className="bg-white rounded-lg shadow-sm p-8 lg:p-10 mb-8">
+            <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
               <ServicePricing
                 serviceName={service.name}
                 pricingInfo={pricingInfo}
@@ -119,11 +121,10 @@ const ServiceDetail = () => {
             />
           </div>
           
-          <div className="md:col-span-3">
-            <div className="sticky top-8">
-              <LocationFilter serviceSlug={service.slug} />
-              <ServiceCallToAction serviceName={service.name} />
-            </div>
+          <div className="mt-8 md:mt-0">
+            <LocationFilter serviceSlug={service.slug} />
+            
+            <ServiceCallToAction serviceName={service.name} />
           </div>
         </div>
       </div>
