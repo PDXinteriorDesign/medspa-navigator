@@ -1,10 +1,11 @@
+
 import React from "react";
 import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 
 const SkinResurfacingPage = () => {
   const treatmentName = "Skin Resurfacing";
   const serviceSlug = "skin-resurfacing";
-  const customHeroImage = "https://images.pexels.com/photos/18209809/pexels-photo-18209809/free-photo-of-woman-getting-a-facial-treatment.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   // Enhanced content structure for SEO
   const enhancedContent = {
