@@ -14,7 +14,6 @@ import ServicePricing from "@/components/service/ServicePricing";
 import ServiceFaqs from "@/components/service/ServiceFaqs";
 import ServiceMedSpas from "@/components/service/ServiceMedSpas";
 import ServiceCallToAction from "@/components/service/ServiceCallToAction";
-import ServiceReviews from "@/components/service/ServiceReviews";
 import ServiceStyles from "@/components/service/ServiceStyles";
 
 interface TreatmentPageTemplateProps {
@@ -109,11 +108,6 @@ const TreatmentPageTemplate = ({
             <LocationFilter serviceSlug={serviceSlug} />
             
             <ServiceCallToAction serviceName={treatmentName} />
-            
-            <ServiceReviews 
-              serviceName={treatmentName}
-              reviews={seoContent.reviews}
-            />
           </div>
         </div>
       </div>
