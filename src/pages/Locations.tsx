@@ -75,13 +75,11 @@ const Locations = () => {
               <Link
                 key={location.id}
                 to={`/locations/${location.slug}`}
-                className="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
+                className="block bg-medspa-blue/30 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="location-icon-button">
-                      <MapPin size={18} />
-                    </span>
+                    <MapPin className="text-medspa-teal" size={20} />
                     <h2 className="text-xl font-serif group-hover:text-medspa-teal transition-colors">
                       {location.name}
                     </h2>
