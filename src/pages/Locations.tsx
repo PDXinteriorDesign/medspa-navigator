@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin, Sparkle, Award, ThumbsUp, ShieldCheck, Heart } from "lucide-react";
@@ -71,7 +72,7 @@ const Locations = () => {
               <Link
                 key={location.id}
                 to={`/locations/${location.slug}`}
-                className="block bg-medspa-cream/60 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover"
+                className="block bg-medspa-cream/60 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover border border-black/10"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
