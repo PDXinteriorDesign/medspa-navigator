@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MapPin } from "lucide-react";
 import { locationDetails } from "@/lib/locationData";
 import { Location } from "@/lib/data";
 
@@ -24,10 +24,9 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
                   : "text-gray-700 hover:text-medspa-teal"
               }`}
             >
-              <ChevronRight 
-                size={16} 
-                className={currentLocation === location.id ? "text-medspa-teal" : "text-gray-400"} 
-              />
+              <span className="location-icon-button mr-2">
+                <MapPin size={14} />
+              </span>
               <span className="ml-1">{location.name}</span>
             </Link>
           </li>
@@ -42,10 +41,9 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
                   : "text-gray-700 hover:text-medspa-teal"
               }`}
             >
-              <ChevronRight 
-                size={16} 
-                className={!currentLocation ? "text-medspa-teal" : "text-gray-400"} 
-              />
+              <span className="location-icon-button mr-2">
+                <MapPin size={14} />
+              </span>
               <span className="ml-1">All NYC</span>
             </Link>
           </li>
@@ -55,7 +53,9 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
             to="/locations"
             className="flex items-center text-sm text-gray-700 hover:text-medspa-teal"
           >
-            <ChevronRight size={16} className="text-gray-400" />
+            <span className="location-icon-button mr-2">
+              <MapPin size={14} />
+            </span>
             <span className="ml-1 font-medium">View All Locations</span>
           </Link>
         </li>

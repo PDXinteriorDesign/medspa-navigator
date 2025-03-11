@@ -21,6 +21,23 @@ const ServiceStyles: React.FC = () => {
         transform: translateY(-2px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
+
+      .location-icon-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F1F0FB;
+        color: #66B2B2;
+        border-radius: 0.375rem;
+        padding: 0.5rem;
+        transition: all 0.2s;
+      }
+      
+      .location-icon-button:hover {
+        background-color: #E5DEFF;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
       `}
     </style>
   );

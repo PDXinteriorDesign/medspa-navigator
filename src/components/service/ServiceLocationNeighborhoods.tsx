@@ -28,7 +28,9 @@ const ServiceLocationNeighborhoods = ({
               href={`/services/${serviceSlug}-in-${neighborhood.slug}`}
               className="flex items-center text-sm text-gray-700 hover:text-medspa-teal"
             >
-              <MapPin size={14} className="mr-1 text-gray-400" />
+              <span className="location-icon-button mr-2">
+                <MapPin size={14} />
+              </span>
               {serviceName} in {neighborhood.name}
             </a>
           </li>
