@@ -1,12 +1,11 @@
 
-import React from "react";
+import React, { ReactNode } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
 import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
 import { getServiceSeoContent, getServiceFaqs, getServicePricing } from "@/utils/serviceContent";
 import { generateTreatmentKeywords } from "@/utils/keywordGenerator";
 
-// Import components
 import EnhancedServiceSchema from "@/components/service/EnhancedServiceSchema";
 import ServiceHero from "@/components/service/ServiceHero";
 import EnhancedServiceContent from "@/components/service/EnhancedServiceContent";
@@ -27,12 +26,14 @@ interface TreatmentPageTemplateProps {
     results: string[];
     considerations: string[];
   };
+  customContent?: ReactNode;
 }
 
 const TreatmentPageTemplate = ({ 
   treatmentName, 
   serviceSlug,
-  enhancedContent 
+  enhancedContent,
+  customContent
 }: TreatmentPageTemplateProps) => {
   const service = getServiceBySlug(serviceSlug);
   const medSpasWithService = getMedSpasByService(serviceSlug);
@@ -92,6 +93,12 @@ const TreatmentPageTemplate = ({
                 pricingInfo={pricingInfo}
               />
             </div>
+            
+            {customContent && (
+              <div className="mb-6">
+                {customContent}
+              </div>
+            )}
             
             <ServiceFaqs 
               serviceName={treatmentName}
