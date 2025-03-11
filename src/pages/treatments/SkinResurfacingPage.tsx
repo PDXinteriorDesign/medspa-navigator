@@ -1,13 +1,11 @@
-
 import React from "react";
 import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 
 const SkinResurfacingPage = () => {
   const treatmentName = "Skin Resurfacing";
   const serviceSlug = "skin-resurfacing";
-  const customHeroImage = "https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/12556701/pexels-photo-12556701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
-  // Enhanced content structure for SEO
   const enhancedContent = {
     introduction: [
       `Skin Resurfacing is one of NYC's premier aesthetic treatments, designed to rejuvenate and transform your skin's appearance by addressing issues such as fine lines, wrinkles, acne scars, and uneven texture. This advanced treatment uses cutting-edge laser technology to precisely remove damaged skin layers, promoting collagen production and revealing fresher, younger-looking skin beneath.`,
