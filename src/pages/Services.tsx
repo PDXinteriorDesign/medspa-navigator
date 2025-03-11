@@ -84,7 +84,7 @@ const Services = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent backdrop-blur-sm"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
               <h1 className="text-3xl md:text-4xl font-serif font-bold text-white text-center mb-4 drop-shadow-md">
-                Luxury Treatments Curated for Discerning Clients
+                Discover the Most Popular MedSpa Treatments in NYC, Expertly Curated
               </h1>
               <div className="w-20 h-1 bg-medspa-gold/80 mx-auto"></div>
             </div>
