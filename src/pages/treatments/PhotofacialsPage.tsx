@@ -1,12 +1,11 @@
-
 import React from "react";
 import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 
 const PhotofacialsPage = () => {
   const treatmentName = "Photofacials";
   const serviceSlug = "photofacials";
+  const customHeroImage = "https://images.pexels.com/photos/4586751/pexels-photo-4586751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
-  // Enhanced content structure for SEO
   const enhancedContent = {
     introduction: [
       `Photofacials (also known as IPL or Intense Pulsed Light treatments) are among New York City's most sought-after non-invasive skin rejuvenation procedures. This innovative light-based treatment uses multiple wavelengths of light to target various skin concerns simultaneously, making it extremely popular among Manhattan and Brooklyn residents seeking comprehensive skin improvement without downtime.`,
@@ -52,6 +51,7 @@ const PhotofacialsPage = () => {
       treatmentName={treatmentName}
       serviceSlug={serviceSlug}
       enhancedContent={enhancedContent}
+      customHeroImage={customHeroImage}
     />
   );
 };
