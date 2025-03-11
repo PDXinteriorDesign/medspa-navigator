@@ -125,9 +125,11 @@ const BotoxPage = () => {
           </div>
           
           <div className="mt-8 md:mt-0">
-            <LocationFilter serviceSlug={serviceSlug} />
-            
-            <ServiceCallToAction serviceName={treatmentName} />
+            <div className="md:sticky md:top-24 space-y-6">
+              <LocationFilter serviceSlug={serviceSlug} />
+              
+              <ServiceCallToAction serviceName={treatmentName} />
+            </div>
           </div>
         </div>
       </div>

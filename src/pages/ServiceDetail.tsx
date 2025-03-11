@@ -122,9 +122,11 @@ const ServiceDetail = () => {
           </div>
           
           <div className="mt-8 md:mt-0">
-            <LocationFilter serviceSlug={service.slug} />
-            
-            <ServiceCallToAction serviceName={service.name} />
+            <div className="md:sticky md:top-24 space-y-6">
+              <LocationFilter serviceSlug={service.slug} />
+              
+              <ServiceCallToAction serviceName={service.name} />
+            </div>
           </div>
         </div>
       </div>

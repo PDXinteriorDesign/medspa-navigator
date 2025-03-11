@@ -23,7 +23,7 @@ const ServiceLocationSidebar = ({
   locationContent
 }: ServiceLocationSidebarProps) => {
   return (
-    <>
+    <div className="md:sticky md:top-24 space-y-6">
       <LocationFilter serviceSlug={serviceSlug} currentLocation={location} />
       
       <ServiceCallToAction serviceName={`${serviceName} in ${locationName}`} />
@@ -40,7 +40,7 @@ const ServiceLocationSidebar = ({
         neighborhoods={locationContent.nearbyNeighborhoods}
         serviceSlug={serviceSlug}
       />
-    </>
+    </div>
   );
 };
 
