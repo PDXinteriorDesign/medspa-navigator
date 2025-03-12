@@ -46,9 +46,9 @@ const ServiceLocationDetail = () => {
       <div className="medspa-container py-12">
         <BreadcrumbNav 
           items={[
-            { label: "Services", href: "/services" },
-            { label: service.name, href: `/services/${service.slug}` },
-            { label: locationName, href: `/services/${service.slug}-in-${location}`, current: true }
+            { label: "Treatments", href: "/treatments" },
+            { label: service.name, href: `/treatments/${service.slug}` },
+            { label: locationName, href: `/treatments/${service.slug}-in-${location}`, current: true }
           ]} 
         />
         

@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
@@ -41,7 +42,7 @@ const Services = () => {
   
   const renderTreatmentCard = (treatment: any) => (
     <Card key={treatment.id} className="luxury-card flex flex-col border border-black/10 hover:shadow-md transition-all duration-300 bg-medspa-cream/60">
-      <Link to={`/services/${treatment.slug}`} className="group h-full">
+      <Link to={`/treatments/${treatment.slug}`} className="group h-full">
         <div className="p-6 flex-1">
           <h3 className="text-xl font-serif mb-2 group-hover:text-medspa-teal transition-colors">{treatment.name}</h3>
           <p className="text-gray-700 text-sm mb-4">{treatment.description}</p>
@@ -67,7 +68,7 @@ const Services = () => {
       <div className="px-4 sm:px-6 lg:px-10 xl:px-16 py-12">
         <BreadcrumbNav 
           items={[
-            { label: "Services", href: "/services", current: true }
+            { label: "Treatments", href: "/treatments", current: true }
           ]} 
         />
         

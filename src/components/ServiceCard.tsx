@@ -11,7 +11,7 @@ interface ServiceCardProps {
 const ServiceCard = ({ service }: ServiceCardProps) => {
   return (
     <div className="luxury-card h-full flex flex-col subtle-hover overflow-hidden">
-      <Link to={`/services/${service.slug}`} className="group">
+      <Link to={`/treatments/${service.slug}`} className="group">
         <div className="relative overflow-hidden">
           <img 
             src={service.imageUrl} 
@@ -38,7 +38,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
           {locations.slice(0, 2).map(location => (
             <Link 
               key={location.id}
-              to={`/services/${service.slug}-in-${location.id}`}
+              to={`/treatments/${service.slug}-in-${location.id}`}
               className="flex items-center text-sm text-gray-700 hover:text-medspa-teal transition-colors"
             >
               <ArrowRight size={12} className="mr-1.5 text-medspa-gold" />
@@ -47,7 +47,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
           ))}
         </div>
         <Link 
-          to={`/services/${service.slug}`}
+          to={`/treatments/${service.slug}`}
           className="inline-block text-sm font-medium text-medspa-teal hover-underline mt-3"
         >
           View all locations

@@ -42,7 +42,7 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
           {/* All NYC option */}
           {serviceSlug && (
             <DropdownMenuItem asChild className={!currentLocation ? "text-medspa-teal font-medium" : ""}>
-              <Link to={`/services/${serviceSlug}`} className="w-full">
+              <Link to={`/treatments/${serviceSlug}`} className="w-full">
                 <span className="flex items-center">
                   <MapPin size={14} className="mr-2" />
                   <span>All NYC</span>
@@ -59,7 +59,7 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
               className={currentLocation === location.id ? "text-medspa-teal font-medium" : ""}
             >
               <Link 
-                to={serviceSlug ? `/services/${serviceSlug}-in-${location.slug}` : `/locations/${location.slug}`}
+                to={serviceSlug ? `/treatments/${serviceSlug}-in-${location.slug}` : `/locations/${location.slug}`}
                 className="w-full"
               >
                 <span className="flex items-center">
@@ -85,7 +85,7 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
       {/* Display current selection summary */}
       {currentLocation && (
         <div className="mt-3 text-sm text-gray-600">
-          <p>Showing {serviceSlug || "services"} in {getCurrentLocationName()}</p>
+          <p>Showing {serviceSlug || "treatments"} in {getCurrentLocationName()}</p>
           <p className="text-xs mt-1">
             All spas in this area and nearby neighborhoods will be displayed
           </p>

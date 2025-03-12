@@ -29,7 +29,7 @@ const NeighborhoodServices = ({ services: popularServices, neighborhoodName }: N
         {matchedServices.map(service => (
           <Link 
             key={service.id}
-            to={`/services/${service.slug}-in-${normalizedNeighborhoodSlug}`}
+            to={`/treatments/${service.slug}-in-${normalizedNeighborhoodSlug}`}
             className="bg-medspa-cream hover:bg-white border border-medspa-teal/10 rounded-lg p-5 transition-all hover:shadow-md group"
           >
             <div className="flex items-start">

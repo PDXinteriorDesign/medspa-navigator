@@ -14,7 +14,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
     <div className="md:hidden pb-4">
       <div className="flex flex-col space-y-4">
         <Link 
-          to="/services" 
+          to="/treatments" 
           className="text-medspa-dark hover:text-medspa-teal transition py-2"
           onClick={() => setIsOpen(false)}
         >

@@ -26,7 +26,7 @@ const LocationPopularServices = ({ locationName, services }: LocationPopularServ
         {popularServices.map((service, index) => (
           <li key={index}>
             <Link 
-              to={`/services/${service.toLowerCase().replace(/\s+/g, "-")}`}
+              to={`/treatments/${service.toLowerCase().replace(/\s+/g, "-")}`}
               className="flex items-center text-sm text-gray-700 hover:text-medspa-teal"
             >
               <ArrowRight size={14} className="mr-2 text-gray-400" />
