@@ -74,8 +74,8 @@ const TreatmentPageTemplate = ({
       <div className="medspa-container py-12">
         <BreadcrumbNav 
           items={[
-            { label: "Services", href: "/services" },
-            { label: treatmentName, href: `/services/${serviceSlug}`, current: true }
+            { label: "Treatments", href: "/treatments" },
+            { label: treatmentName, href: `/treatments/${serviceSlug}`, current: true }
           ]} 
         />
         
