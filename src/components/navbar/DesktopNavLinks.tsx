@@ -1,14 +1,11 @@
 
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
-import TreatmentsDropdown from "./TreatmentsDropdown";
 
 const DesktopNavLinks = () => {
   return (
     <div className="hidden md:flex items-center space-x-6">
       <div className="flex items-center space-x-6">
-        <TreatmentsDropdown />
-        
         <Link to="/services" className="text-medspa-dark hover:text-medspa-teal transition">
           Services
         </Link>
