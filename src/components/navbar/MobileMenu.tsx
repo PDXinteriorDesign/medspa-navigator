@@ -18,7 +18,7 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
           className="text-medspa-dark hover:text-medspa-teal transition py-2"
           onClick={() => setIsOpen(false)}
         >
-          Services
+          Treatments
         </Link>
         <Link 
           to="/locations" 
