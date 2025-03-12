@@ -52,6 +52,10 @@ import {
   getVaginalRejuvenationFaqs,
   getVaginalRejuvenationPricing
 } from "./serviceContent/vaginalRejuvenationContent";
+import {
+  getRadioUltrasoundFaqs,
+  getRadioUltrasoundPricing
+} from "./serviceContent/radioUltrasoundContent";
 
 export * from "./serviceTypes";
 
@@ -110,6 +114,8 @@ export const getServiceFaqs = (serviceName: string): FAQ[] => {
       return getCarbonLaserFacialFaqs();
     case "Vaginal Rejuvenation":
       return getVaginalRejuvenationFaqs();
+    case "Radio & Ultrasound Therapy":
+      return getRadioUltrasoundFaqs();
     default:
       return getDefaultServiceFaqs(serviceName);
   }
@@ -139,6 +145,8 @@ export const getServicePricing = (serviceName: string): PricingItem[] => {
       return getCarbonLaserFacialPricing();
     case "Vaginal Rejuvenation":
       return getVaginalRejuvenationPricing();
+    case "Radio & Ultrasound Therapy":
+      return getRadioUltrasoundPricing();
     default:
       return getDefaultServicePricing(serviceName);
   }
