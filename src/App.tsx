@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -61,26 +60,26 @@ const App = () => (
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
-            <Route path="services/:serviceSlug" element={<ServiceDetail />} />
-            <Route path="services/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
+            <Route path="treatments" element={<Services />} />
+            <Route path="treatments/:serviceSlug" element={<ServiceDetail />} />
+            <Route path="treatments/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
             
-            <Route path="services/botox" element={<BotoxPage />} />
-            <Route path="services/coolsculpting" element={<CoolSculptingPage />} />
-            <Route path="services/laser-hair-removal" element={<LaserHairRemovalPage />} />
-            <Route path="services/carbon-laser-facial" element={<CarbonLaserFacialPage />} />
-            <Route path="services/vaginal-rejuvenation" element={<VaginalRejuvenationPage />} />
-            <Route path="services/weight-management" element={<WeightManagementPage />} />
+            <Route path="treatments/botox" element={<BotoxPage />} />
+            <Route path="treatments/coolsculpting" element={<CoolSculptingPage />} />
+            <Route path="treatments/laser-hair-removal" element={<LaserHairRemovalPage />} />
+            <Route path="treatments/carbon-laser-facial" element={<CarbonLaserFacialPage />} />
+            <Route path="treatments/vaginal-rejuvenation" element={<VaginalRejuvenationPage />} />
+            <Route path="treatments/weight-management" element={<WeightManagementPage />} />
             
-            <Route path="services/micro-botox" element={<MicroBotoxPage />} />
-            <Route path="services/fillers" element={<FillersPage />} />
-            <Route path="services/kybella" element={<KybellaPage />} />
-            <Route path="services/prp" element={<PrpPage />} />
+            <Route path="treatments/micro-botox" element={<MicroBotoxPage />} />
+            <Route path="treatments/fillers" element={<FillersPage />} />
+            <Route path="treatments/kybella" element={<KybellaPage />} />
+            <Route path="treatments/prp" element={<PrpPage />} />
             
-            <Route path="services/photofacials" element={<PhotofacialsPage />} />
+            <Route path="treatments/photofacials" element={<PhotofacialsPage />} />
             
-            <Route path="services/chemical-peels" element={<ChemicalPeelsPage />} />
-            <Route path="services/hydrofacials" element={<HydrofacialsPage />} />
+            <Route path="treatments/chemical-peels" element={<ChemicalPeelsPage />} />
+            <Route path="treatments/hydrofacials" element={<HydrofacialsPage />} />
             
             <Route path="locations" element={<Locations />} />
             <Route path="locations/:locationSlug" element={<LocationDetail />} />
