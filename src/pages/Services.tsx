@@ -19,7 +19,6 @@ const Services = () => {
   const laserTreatments = [
     { id: "photofacials", name: "Photofacials", slug: "photofacials", description: "Intense pulsed light treatments to address sun damage, rosacea, and uneven skin tone." },
     { id: "laser-hair-removal", name: "Laser Hair Removal", slug: "laser-hair-removal", description: "Long-lasting solution for unwanted hair on any part of the body." },
-    { id: "skin-resurfacing", name: "Skin Resurfacing", slug: "skin-resurfacing", description: "Reduce fine lines, scars, and sun damage by removing damaged skin cells." },
     { id: "carbon-laser-facial", name: "Carbon Laser Facial", slug: "carbon-laser-facial", description: "Also known as the 'Hollywood Peel', this treatment gives skin an immediate glow." },
     { id: "vaginal-rejuvenation", name: "Vaginal Rejuvenation", slug: "vaginal-rejuvenation", description: "Non-surgical treatment to address vaginal laxity and improve tissue quality." }
   ];
@@ -37,9 +36,7 @@ const Services = () => {
     { id: "microdermabrasion", name: "Microdermabrasion", slug: "microdermabrasion", description: "Gentle exfoliation to improve texture and tone for a fresh glow." },
     { id: "microneedling", name: "Microneedling", slug: "microneedling", description: "Create micro-injuries to stimulate collagen production and skin renewal." },
     { id: "hydrofacials", name: "Hydrofacials", slug: "hydrofacials", description: "Multi-step treatment to cleanse, extract, and hydrate skin for immediate results." },
-    { id: "oxygen-facials", name: "Oxygen Facials", slug: "oxygen-facials", description: "Infuse skin with oxygen and specialized serums for instant luminosity." },
-    { id: "placenta-facials", name: "Placenta Facials", slug: "placenta-facials", description: "Harness growth factors for deep skin rejuvenation and repair." },
-    { id: "cryogenic-skin-tag-removal", name: "Cryogenic Skin Tag Removal", slug: "cryogenic-skin-tag-removal", description: "Quick, effective removal of skin tags using precise freezing technology." }
+    { id: "placenta-facials", name: "Placenta Facials", slug: "placenta-facials", description: "Harness growth factors for deep skin rejuvenation and repair." }
   ];
   
   const renderTreatmentCard = (treatment: any) => (

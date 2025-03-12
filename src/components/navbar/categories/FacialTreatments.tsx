@@ -13,11 +13,6 @@ const FacialTreatments = () => (
       </Link>
     </DropdownMenuItem>
     <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">
-      <Link to="/services/cryogenic-skin-tag-removal" className="flex items-center w-full">
-        Cryogenic Skin Tag Removal
-      </Link>
-    </DropdownMenuItem>
-    <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">
       <Link to="/services/hydrofacials" className="flex items-center w-full">
         Hydrofacials
       </Link>
@@ -30,11 +25,6 @@ const FacialTreatments = () => (
     <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">
       <Link to="/services/microneedling" className="flex items-center w-full">
         Microneedling
-      </Link>
-    </DropdownMenuItem>
-    <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">
-      <Link to="/services/oxygen-facials" className="flex items-center w-full">
-        Oxygen Facials
       </Link>
     </DropdownMenuItem>
     <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">

@@ -15,12 +15,6 @@ const MobileFacialTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) =
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
-        title="Cryogenic Skin Tag Removal" 
-        url="/services/cryogenic-skin-tag-removal" 
-        icon={null} 
-        onClick={() => setIsOpen(false)} 
-      />
-      <MobileTreatmentItem 
         title="Hydrofacials" 
         url="/services/hydrofacials" 
         icon={null} 
@@ -35,12 +29,6 @@ const MobileFacialTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) =
       <MobileTreatmentItem 
         title="Microneedling" 
         url="/services/microneedling" 
-        icon={null} 
-        onClick={() => setIsOpen(false)} 
-      />
-      <MobileTreatmentItem 
-        title="Oxygen Facials" 
-        url="/services/oxygen-facials" 
         icon={null} 
         onClick={() => setIsOpen(false)} 
       />
