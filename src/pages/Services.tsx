@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
@@ -21,7 +20,8 @@ const Services = () => {
     { id: "photofacials", name: "Photofacials", slug: "photofacials", description: "Intense pulsed light treatments to address sun damage, rosacea, and uneven skin tone." },
     { id: "laser-hair-removal", name: "Laser Hair Removal", slug: "laser-hair-removal", description: "Long-lasting solution for unwanted hair on any part of the body." },
     { id: "carbon-laser-facial", name: "Carbon Laser Facial", slug: "carbon-laser-facial", description: "Also known as the 'Hollywood Peel', this treatment gives skin an immediate glow." },
-    { id: "vaginal-rejuvenation", name: "Vaginal Rejuvenation", slug: "vaginal-rejuvenation", description: "Non-surgical treatment to address vaginal laxity and improve tissue quality." }
+    { id: "vaginal-rejuvenation", name: "Vaginal Rejuvenation", slug: "vaginal-rejuvenation", description: "Non-surgical treatment to address vaginal laxity and improve tissue quality." },
+    { id: "laser-resurfacing", name: "Laser Resurfacing", slug: "laser-resurfacing", description: "Powerful skin rejuvenation that removes damaged skin layers and stimulates collagen production." }
   ];
   
   // Skin lift & fat reduction treatments

@@ -25,6 +25,7 @@ import CarbonLaserFacialPage from "./pages/treatments/CarbonLaserFacialPage";
 import VaginalRejuvenationPage from "./pages/treatments/VaginalRejuvenationPage";
 import WeightManagementPage from "./pages/treatments/WeightManagementPage";
 import RadioUltrasoundTherapyPage from "./pages/treatments/RadioUltrasoundTherapyPage";
+import LaserResurfacingPage from "./pages/treatments/LaserResurfacingPage";
 
 // Injectable Treatment Pages
 import MicroBotoxPage from "./pages/treatments/MicroBotoxPage";
@@ -73,6 +74,7 @@ const App = () => (
             <Route path="treatments/vaginal-rejuvenation" element={<VaginalRejuvenationPage />} />
             <Route path="treatments/weight-management" element={<WeightManagementPage />} />
             <Route path="treatments/radio-ultrasound-therapy" element={<RadioUltrasoundTherapyPage />} />
+            <Route path="treatments/laser-resurfacing" element={<LaserResurfacingPage />} />
             
             <Route path="treatments/micro-botox" element={<MicroBotoxPage />} />
             <Route path="treatments/fillers" element={<FillersPage />} />
