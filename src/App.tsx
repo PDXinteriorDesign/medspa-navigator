@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +23,7 @@ import CoolSculptingPage from "./pages/treatments/CoolSculptingPage";
 import LaserHairRemovalPage from "./pages/treatments/LaserHairRemovalPage";
 import CarbonLaserFacialPage from "./pages/treatments/CarbonLaserFacialPage";
 import VaginalRejuvenationPage from "./pages/treatments/VaginalRejuvenationPage";
+import WeightManagementPage from "./pages/treatments/WeightManagementPage";
 
 // Injectable Treatment Pages
 import MicroBotoxPage from "./pages/treatments/MicroBotoxPage";
@@ -68,6 +70,7 @@ const App = () => (
             <Route path="services/laser-hair-removal" element={<LaserHairRemovalPage />} />
             <Route path="services/carbon-laser-facial" element={<CarbonLaserFacialPage />} />
             <Route path="services/vaginal-rejuvenation" element={<VaginalRejuvenationPage />} />
+            <Route path="services/weight-management" element={<WeightManagementPage />} />
             
             <Route path="services/micro-botox" element={<MicroBotoxPage />} />
             <Route path="services/fillers" element={<FillersPage />} />
