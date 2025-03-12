@@ -12,8 +12,8 @@ const DesktopNavLinks = () => {
         <Link to="/locations" className="text-medspa-dark hover:text-medspa-teal transition">
           Locations
         </Link>
-        <Link to="/medspas" className="text-medspa-dark hover:text-medspa-teal transition">
-          Directory
+        <Link to="/about" className="text-medspa-dark hover:text-medspa-teal transition">
+          About Us
         </Link>
       </div>
       

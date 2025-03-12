@@ -28,11 +28,11 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
           Locations
         </Link>
         <Link 
-          to="/medspas" 
+          to="/about" 
           className="text-medspa-dark hover:text-medspa-teal transition py-2"
           onClick={() => setIsOpen(false)}
         >
-          Directory
+          About Us
         </Link>
         <div className="relative mt-2">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
