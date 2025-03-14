@@ -1,4 +1,3 @@
-
 import { SeoContent, FAQ, PricingItem } from "./serviceTypes";
 import { 
   getBotoxContent, 
@@ -60,6 +59,10 @@ import {
   getLaserResurfacingFaqs,
   getLaserResurfacingPricing
 } from "./serviceContent/laserResurfacingContent";
+import {
+  getMicrodermabrasionFaqs,
+  getMicrodermabrasionPricing
+} from "./serviceContent/microdermabrasionContent";
 
 export * from "./serviceTypes";
 
@@ -122,6 +125,8 @@ export const getServiceFaqs = (serviceName: string): FAQ[] => {
       return getRadioUltrasoundFaqs();
     case "Laser Resurfacing":
       return getLaserResurfacingFaqs();
+    case "Microdermabrasion":
+      return getMicrodermabrasionFaqs();
     default:
       return getDefaultServiceFaqs(serviceName);
   }
@@ -155,6 +160,8 @@ export const getServicePricing = (serviceName: string): PricingItem[] => {
       return getRadioUltrasoundPricing();
     case "Laser Resurfacing":
       return getLaserResurfacingPricing();
+    case "Microdermabrasion":
+      return getMicrodermabrasionPricing();
     default:
       return getDefaultServicePricing(serviceName);
   }
