@@ -27,6 +27,7 @@ import WeightManagementPage from "./pages/treatments/WeightManagementPage";
 import RadioUltrasoundTherapyPage from "./pages/treatments/RadioUltrasoundTherapyPage";
 import LaserResurfacingPage from "./pages/treatments/LaserResurfacingPage";
 import MicrodermabrasionPage from "./pages/treatments/MicrodermabrasionPage";
+import MicroneedlingPage from "./pages/treatments/MicroneedlingPage";
 
 // Injectable Treatment Pages
 import MicroBotoxPage from "./pages/treatments/MicroBotoxPage";
@@ -76,6 +77,8 @@ const App = () => (
             <Route path="treatments/weight-management" element={<WeightManagementPage />} />
             <Route path="treatments/radio-ultrasound-therapy" element={<RadioUltrasoundTherapyPage />} />
             <Route path="treatments/laser-resurfacing" element={<LaserResurfacingPage />} />
+            <Route path="treatments/microdermabrasion" element={<MicrodermabrasionPage />} />
+            <Route path="treatments/microneedling" element={<MicroneedlingPage />} />
             
             <Route path="treatments/micro-botox" element={<MicroBotoxPage />} />
             <Route path="treatments/fillers" element={<FillersPage />} />
@@ -86,8 +89,6 @@ const App = () => (
             
             <Route path="treatments/chemical-peels" element={<ChemicalPeelsPage />} />
             <Route path="treatments/hydrofacials" element={<HydrofacialsPage />} />
-            
-            <Route path="treatments/microdermabrasion" element={<MicrodermabrasionPage />} />
             
             <Route path="locations" element={<Locations />} />
             <Route path="locations/:locationSlug" element={<LocationDetail />} />
