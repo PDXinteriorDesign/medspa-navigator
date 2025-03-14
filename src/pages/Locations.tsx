@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin, Sparkle, Award, ThumbsUp, ShieldCheck, Heart } from "lucide-react";
@@ -15,7 +14,6 @@ const Locations = () => {
     { id: "midtown", slug: "manhattan/midtown", name: "Midtown", medspaCount: 34 },
     { id: "brooklyn", slug: "brooklyn", name: "Brooklyn", medspaCount: 78 },
     { id: "williamsburg", slug: "williamsburg", name: "Williamsburg", medspaCount: 29 },
-    { id: "park-slope", slug: "park-slope", name: "Park Slope", medspaCount: 19 },
     { id: "the-hamptons", slug: "the-hamptons", name: "The Hamptons", medspaCount: 34 }
   ];
   

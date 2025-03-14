@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -50,7 +51,6 @@ import TribecaLanding from "./pages/locations/Tribeca";
 import MidtownLanding from "./pages/locations/Midtown";
 import BrooklynLanding from "./pages/locations/Brooklyn";
 import WilliamsburgLanding from "./pages/locations/Williamsburg";
-import ParkSlopeLanding from "./pages/locations/ParkSlope";
 import HamptonsLanding from "./pages/locations/Hamptons";
 
 const queryClient = new QueryClient();
@@ -102,7 +102,6 @@ const App = () => (
             <Route path="locations/midtown" element={<MidtownLanding />} />
             <Route path="locations/brooklyn" element={<BrooklynLanding />} />
             <Route path="locations/williamsburg" element={<WilliamsburgLanding />} />
-            <Route path="locations/park-slope" element={<ParkSlopeLanding />} />
             <Route path="locations/the-hamptons" element={<HamptonsLanding />} />
             
             <Route path="*" element={<NotFound />} />
