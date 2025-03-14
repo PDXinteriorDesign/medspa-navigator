@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,6 +26,7 @@ import VaginalRejuvenationPage from "./pages/treatments/VaginalRejuvenationPage"
 import WeightManagementPage from "./pages/treatments/WeightManagementPage";
 import RadioUltrasoundTherapyPage from "./pages/treatments/RadioUltrasoundTherapyPage";
 import LaserResurfacingPage from "./pages/treatments/LaserResurfacingPage";
+import MicrodermabrasionPage from "./pages/treatments/MicrodermabrasionPage";
 
 // Injectable Treatment Pages
 import MicroBotoxPage from "./pages/treatments/MicroBotoxPage";
