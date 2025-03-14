@@ -1,5 +1,4 @@
-
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
 import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
@@ -37,10 +36,13 @@ const TreatmentPageTemplate = ({
   customContent,
   customHeroImage
 }: TreatmentPageTemplateProps) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const service = getServiceBySlug(serviceSlug);
   const medSpasWithService = getMedSpasByService(serviceSlug);
   
-  // If service isn't found in the database, create a fallback service object
   const fallbackService = {
     id: serviceSlug,
     name: treatmentName,
@@ -51,14 +53,12 @@ const TreatmentPageTemplate = ({
   
   const effectiveService = service || fallbackService;
   
-  // Use the custom hero image if provided, otherwise use the service image
   const heroImageUrl = customHeroImage || effectiveService.imageUrl;
   
   const seoContent = getServiceSeoContent(treatmentName);
   const faqs = getServiceFaqs(treatmentName);
   const pricingInfo = getServicePricing(treatmentName);
   
-  // Treatment-specific keywords
   const treatmentKeywords = generateTreatmentKeywords(treatmentName);
   
   return (

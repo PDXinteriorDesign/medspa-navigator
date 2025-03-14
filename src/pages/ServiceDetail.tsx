@@ -1,5 +1,4 @@
-
-import { useParams } from "react-router-dom";
+import { useParams, useEffect } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
 import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
@@ -18,6 +17,10 @@ import ServiceCallToAction from "@/components/service/ServiceCallToAction";
 const ServiceDetail = () => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [serviceSlug]);
+  
   const service = serviceSlug ? getServiceBySlug(serviceSlug) : undefined;
   const medSpasWithService = serviceSlug ? getMedSpasByService(serviceSlug) : [];
   
@@ -34,10 +37,8 @@ const ServiceDetail = () => {
   const faqs = getServiceFaqs(service.name);
   const pricingInfo = getServicePricing(service.name);
   
-  // NYC-specific service keywords for strong local SEO
   const serviceKeywords = generateNYCServiceKeywords(service.name);
   
-  // Enhanced content structure for SEO
   const enhancedContent = {
     introduction: [
       ...(seoContent.introduction || [`${service.name} is a popular aesthetic treatment offered by top medical spas across New York City. This advanced procedure helps clients achieve their desired aesthetic goals with minimal downtime and remarkable results.`]),
