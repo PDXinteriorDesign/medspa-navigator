@@ -27,11 +27,6 @@ const FacialTreatments = () => (
         Microneedling
       </Link>
     </DropdownMenuItem>
-    <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">
-      <Link to="/services/placenta-facials" className="flex items-center w-full">
-        Placenta Facials
-      </Link>
-    </DropdownMenuItem>
   </DropdownMenuGroup>
 );
 

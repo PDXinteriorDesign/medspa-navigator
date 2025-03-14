@@ -50,7 +50,6 @@ const ServiceCategories = () => {
           <Link to="/services/microneedling" className="treatment-link">Microneedling</Link>
           <Link to="/services/hydrofacials" className="treatment-link">Hydrofacials</Link>
           <Link to="/services/oxygen-facials" className="treatment-link">Oxygen Facials</Link>
-          <Link to="/services/placenta-facials" className="treatment-link">Placenta Facials</Link>
           <Link to="/services/cryogenic-skin-tag-removal" className="treatment-link">Cryogenic Skin Tag Removal</Link>
         </div>
       </div>

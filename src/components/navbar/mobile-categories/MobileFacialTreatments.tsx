@@ -32,12 +32,6 @@ const MobileFacialTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) =
         icon={null} 
         onClick={() => setIsOpen(false)} 
       />
-      <MobileTreatmentItem 
-        title="Placenta Facials" 
-        url="/services/placenta-facials" 
-        icon={null} 
-        onClick={() => setIsOpen(false)} 
-      />
     </div>
   );
 };

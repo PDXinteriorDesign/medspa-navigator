@@ -36,8 +36,7 @@ const Services = () => {
     { id: "chemical-peels", name: "Chemical Peels", slug: "chemical-peels", description: "Remove damaged outer layers of skin to reveal a smoother, more refined complexion." },
     { id: "microdermabrasion", name: "Microdermabrasion", slug: "microdermabrasion", description: "Gentle exfoliation to improve texture and tone for a fresh glow." },
     { id: "microneedling", name: "Microneedling", slug: "microneedling", description: "Create micro-injuries to stimulate collagen production and skin renewal." },
-    { id: "hydrofacials", name: "Hydrofacials", slug: "hydrofacials", description: "Multi-step treatment to cleanse, extract, and hydrate skin for immediate results." },
-    { id: "placenta-facials", name: "Placenta Facials", slug: "placenta-facials", description: "Harness growth factors for deep skin rejuvenation and repair." }
+    { id: "hydrofacials", name: "Hydrofacials", slug: "hydrofacials", description: "Multi-step treatment to cleanse, extract, and hydrate skin for immediate results." }
   ];
   
   const renderTreatmentCard = (treatment: any) => (
