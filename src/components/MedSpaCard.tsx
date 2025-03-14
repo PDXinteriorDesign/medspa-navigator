@@ -9,6 +9,24 @@ interface MedSpaCardProps {
 }
 
 const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
+  // Extract location from address to determine the location route
+  const getLocationRoute = () => {
+    // This is a simplified approach - you may need a more robust mapping
+    if (medSpa.address.includes("Manhattan")) return "/locations/manhattan";
+    if (medSpa.address.includes("Brooklyn")) return "/locations/brooklyn";
+    if (medSpa.address.includes("SoHo")) return "/locations/soho";
+    if (medSpa.address.includes("Upper East Side")) return "/locations/upper-east-side";
+    if (medSpa.address.includes("Tribeca")) return "/locations/tribeca"; 
+    if (medSpa.address.includes("Midtown")) return "/locations/midtown";
+    if (medSpa.address.includes("Williamsburg")) return "/locations/williamsburg";
+    if (medSpa.address.includes("Hamptons")) return "/locations/the-hamptons";
+    
+    // Default fallback
+    return "/locations";
+  };
+
+  const locationRoute = getLocationRoute();
+
   return (
     <div className="luxury-card group overflow-hidden subtle-hover">
       <div className="relative">
@@ -24,7 +42,7 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
         )}
       </div>
       <div className="p-5">
-        <Link to={`/medspas/${medSpa.slug}`} className="group">
+        <Link to={locationRoute} className="group">
           <h3 className="text-lg font-serif mb-2 group-hover:text-medspa-teal transition-colors">{medSpa.name}</h3>
         </Link>
         
@@ -44,10 +62,10 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
         <p className="text-sm text-gray-700 line-clamp-2 mb-4">{medSpa.description}</p>
         
         <Link 
-          to={`/medspas/${medSpa.slug}`}
+          to={locationRoute}
           className="text-medspa-teal hover:text-medspa-teal/80 text-sm font-medium hover-underline inline-flex items-center"
         >
-          View Details <span className="ml-1">→</span>
+          View Location <span className="ml-1">→</span>
         </Link>
       </div>
     </div>

@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { StarIcon } from "lucide-react";
 import MedSpaCard from "@/components/MedSpaCard";
 import { MedSpa } from "@/lib/data";
@@ -30,9 +29,9 @@ const ServiceMedSpas = ({ serviceName, medSpas }: ServiceMedSpasProps) => {
         
         {medSpas.length > 3 && (
           <div className="text-center">
-            <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
-              <a href="/medspas">View All MedSpas</a>
-            </Button>
+            <a href="/locations" className="inline-block bg-medspa-teal hover:bg-medspa-teal/90 text-white font-medium px-4 py-2 rounded-md">
+              View All Locations
+            </a>
           </div>
         )}
       </div>
