@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,6 +15,7 @@ import Locations from "./pages/Locations";
 import LocationDetail from "./pages/LocationDetail";
 import NeighborhoodDetail from "./pages/NeighborhoodDetail";
 import NotFound from "./pages/NotFound";
+import FAQ from "./pages/FAQ";
 
 // Treatment Pages
 import BotoxPage from "./pages/treatments/BotoxPage";
@@ -68,6 +68,7 @@ const App = () => (
             <Route path="treatments" element={<Services />} />
             <Route path="treatments/:serviceSlug" element={<ServiceDetail />} />
             <Route path="treatments/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
+            <Route path="faq" element={<FAQ />} />
             
             <Route path="treatments/botox" element={<BotoxPage />} />
             <Route path="treatments/coolsculpting" element={<CoolSculptingPage />} />
