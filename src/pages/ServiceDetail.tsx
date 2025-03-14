@@ -1,4 +1,6 @@
-import { useParams, useEffect } from "react-router-dom";
+
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
 import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
