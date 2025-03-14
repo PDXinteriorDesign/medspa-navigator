@@ -94,7 +94,7 @@ const MicroneedlingPage = () => {
       serviceSlug={serviceSlug}
       enhancedContent={enhancedContent}
       customContent={<CustomContent />}
-      customHeroImage="https://images.unsplash.com/photo-1614859875372-13c11413b896?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      customHeroImage="https://images.pexels.com/photos/29648626/pexels-photo-29648626/free-photo-of-microneedling-facial-treatment-procedure.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     />
   );
 };
