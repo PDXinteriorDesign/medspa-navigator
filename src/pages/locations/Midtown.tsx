@@ -11,7 +11,7 @@ const MidtownLanding = () => {
     <>
       <LocationHeroOnly
         name="Midtown"
-        imageUrl="https://images.unsplash.com/photo-1605304978115-40267b3a9ebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+        imageUrl="https://images.pexels.com/photos/1388069/pexels-photo-1388069.jpeg?auto=compress&cs=tinysrgb&w=1200"
         shortDescription="Luxury Rejuvenation for Manhattan's Discerning Professionals"
         medspaCount={midtownMedSpas.length}
       />
