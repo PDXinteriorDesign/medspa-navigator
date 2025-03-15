@@ -57,7 +57,7 @@ export const locations: { id: Location; name: string }[] = [
   { id: "staten-island", name: "Staten Island" }
 ];
 
-// Mock MedSpas data - Removed Brooklyn Beauty Clinic, only Queens Laser Spa remains
+// MedSpas data
 export const medSpas: MedSpa[] = [
   {
     id: "queens-laser-spa",
@@ -68,9 +68,61 @@ export const medSpas: MedSpa[] = [
     address: "101 Queens Blvd, Queens, NY 11375",
     location: "queens",
     services: ["laser-hair-removal", "hydrofacials"],
-    featured: true, // Making Queens Laser Spa featured since Brooklyn Beauty Clinic was removed
+    featured: true,
     rating: 4.3,
     reviewCount: 62
+  },
+  {
+    id: "manhattan-laser-studio",
+    name: "Manhattan Laser Studio",
+    slug: "manhattan-laser-studio",
+    description: "Luxury medspa offering cutting-edge treatments and personalized care in Midtown Manhattan.",
+    imageUrl: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    address: "123 5th Avenue, Manhattan, NY 10010",
+    location: "manhattan",
+    services: ["botox", "coolsculpting", "laser-hair-removal"],
+    featured: true,
+    rating: 4.8,
+    reviewCount: 124
+  },
+  {
+    id: "upper-east-aesthetics",
+    name: "Upper East Aesthetics",
+    slug: "upper-east-aesthetics",
+    description: "Exclusive Upper East Side clinic providing premium anti-aging and skin rejuvenation treatments.",
+    imageUrl: "https://images.unsplash.com/photo-1562516155-e0c1ee44059b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    address: "456 Madison Avenue, Manhattan, NY 10022",
+    location: "manhattan",
+    services: ["botox", "fillers", "microneedling"],
+    featured: false,
+    rating: 4.7,
+    reviewCount: 98
+  },
+  {
+    id: "soho-beauty-lounge",
+    name: "SoHo Beauty Lounge",
+    slug: "soho-beauty-lounge",
+    description: "Trendsetting SoHo medspa specializing in natural-looking enhancements and innovative treatments.",
+    imageUrl: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    address: "200 Spring Street, Manhattan, NY 10012",
+    location: "manhattan",
+    services: ["laser-hair-removal", "botox", "hydrofacials"],
+    featured: false,
+    rating: 4.5,
+    reviewCount: 87
+  },
+  {
+    id: "tribeca-medical-spa",
+    name: "Tribeca Medical Spa",
+    slug: "tribeca-medical-spa",
+    description: "Discreet, high-end medspa catering to an exclusive clientele with personalized treatment plans.",
+    imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    address: "77 Worth Street, Manhattan, NY 10013",
+    location: "manhattan",
+    services: ["coolsculpting", "botox", "chemical-peels"],
+    featured: false,
+    rating: 4.9,
+    reviewCount: 76
   }
 ];
 
@@ -125,3 +177,9 @@ export const filterMedSpas = (serviceId: string | null, locationId: Location | n
     return matchesService && matchesLocation;
   });
 };
+
+// New helper function to get MedSpas by location
+export const getMedSpasByLocation = (location: Location): MedSpa[] => {
+  return medSpas.filter(medSpa => medSpa.location === location);
+};
+
