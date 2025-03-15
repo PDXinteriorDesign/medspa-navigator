@@ -11,7 +11,7 @@ const SoHoLanding = () => {
     <>
       <LocationHeroOnly
         name="SoHo"
-        imageUrl="https://images.unsplash.com/photo-1595467959776-6eb7a123d2e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+        imageUrl="https://images.pexels.com/photos/4451518/pexels-photo-4451518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         shortDescription="The Epicenter of Trendsetting Beauty Innovations"
         medspaCount={sohoMedSpas.length}
       />
