@@ -38,10 +38,10 @@ const ManhattanLanding = () => {
       </div>
       
       <div className="medspa-container mb-12">
-        <div className="bg-white rounded-lg shadow-sm p-8 max-w-5xl mx-auto">
-          <h2 className="text-2xl font-serif font-medium mb-6 text-center">Additional Information</h2>
+        <div className="bg-gradient-to-r from-medspa-cream to-white rounded-lg shadow-sm p-8 max-w-5xl mx-auto border border-medspa-teal/10">
+          <h2 className="text-2xl font-serif font-medium mb-6 text-center text-medspa-dark">Additional Information</h2>
           
-          <div className="text-gray-700">
+          <div className="text-gray-700 bg-medspa-teal/5 p-6 rounded-lg">
             <p className="leading-relaxed mb-4">
               Despite the high-energy pace and challenges of urban life, Manhattan's medspa scene is pioneering a new era of beauty and wellness. Although the fast-paced city environment can sometimes leave little time for self-care, our curated medspas are redefining how New Yorkers rejuvenate, offering cutting-edge treatments that bring balance and a renewed glow.
             </p>
