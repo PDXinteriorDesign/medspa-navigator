@@ -1,4 +1,3 @@
-
 import { Review, SeoContent } from "../serviceTypes";
 
 export const getCoolSculptingContent = (): { 
@@ -31,14 +30,14 @@ export const getCoolSculptingContent = (): {
   const reviews = [
     {
       rating: 5,
-      text: "After three sessions of CoolSculpting at Elite Aesthetic Center, my stubborn love handles are finally gone. Worth every penny!",
+      text: "After three sessions of CoolSculpting at Brooklyn Beauty Clinic, my stubborn love handles are finally gone. Worth every penny!",
       author: "David L.",
       location: "Manhattan",
       date: "April 2023"
     },
     {
       rating: 4,
-      text: "Glow MedSpa did an amazing job with my CoolSculpting treatments. The staff was informative and made me feel comfortable throughout.",
+      text: "Queens Laser Spa did an amazing job with my CoolSculpting treatments. The staff was informative and made me feel comfortable throughout.",
       author: "Sarah J.",
       location: "Queens",
       date: "July 2023"

@@ -1,4 +1,3 @@
-
 export type Location = "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island";
 
 export type Service = {
@@ -57,34 +56,8 @@ export const locations: { id: Location; name: string }[] = [
   { id: "staten-island", name: "Staten Island" }
 ];
 
-// Mock MedSpas data
+// Mock MedSpas data - Removed Glow MedSpa and Elite Aesthetic Center
 export const medSpas: MedSpa[] = [
-  {
-    id: "glow-medspa-midtown",
-    name: "Glow MedSpa",
-    slug: "glow-medspa-midtown",
-    description: "Luxury medical spa offering premium cosmetic treatments in the heart of Midtown.",
-    imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    address: "123 5th Avenue, New York, NY 10010",
-    location: "manhattan",
-    services: ["botox", "coolsculpting", "laser-hair-removal", "micro-botox"],
-    featured: true,
-    rating: 4.8,
-    reviewCount: 124
-  },
-  {
-    id: "elite-aesthetic-center",
-    name: "Elite Aesthetic Center",
-    slug: "elite-aesthetic-center",
-    description: "Premium aesthetic treatments delivered by board-certified professionals.",
-    imageUrl: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    address: "456 Madison Avenue, New York, NY 10022",
-    location: "manhattan",
-    services: ["botox", "coolsculpting", "laser-hair-removal", "fillers", "kybella"],
-    featured: true,
-    rating: 4.7,
-    reviewCount: 98
-  },
   {
     id: "brooklyn-beauty-clinic",
     name: "Brooklyn Beauty Clinic",
@@ -94,7 +67,7 @@ export const medSpas: MedSpa[] = [
     address: "789 Bedford Ave, Brooklyn, NY 11211",
     location: "brooklyn",
     services: ["botox", "laser-hair-removal", "prp", "photofacials", "chemical-peels"],
-    featured: false,
+    featured: true,
     rating: 4.5,
     reviewCount: 75
   },

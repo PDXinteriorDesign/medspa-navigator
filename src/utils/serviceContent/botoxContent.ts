@@ -1,4 +1,3 @@
-
 import { Review, SeoContent } from "../serviceTypes";
 
 export const getBotoxContent = (): { 
@@ -31,14 +30,14 @@ export const getBotoxContent = (): {
   const reviews = [
     {
       rating: 5,
-      text: "I've been getting Botox at Glow MedSpa for over a year now. The results are always natural looking—exactly what I wanted.",
+      text: "Brooklyn Beauty Clinic provides the most natural-looking Botox results I've ever had. Their attention to detail is unmatched.",
       author: "Jennifer K.",
       location: "Manhattan",
       date: "May 2023"
     },
     {
       rating: 4,
-      text: "Elite Aesthetic Center has the best Botox technicians. Minimal bruising and the results last me a full 4 months.",
+      text: "Queens Laser Spa has excellent Botox technicians. Minimal bruising and the results last me a full 4 months.",
       author: "Michael T.",
       location: "Brooklyn",
       date: "June 2023"

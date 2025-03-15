@@ -1,4 +1,3 @@
-
 import { Review, SeoContent } from "../serviceTypes";
 
 export const getLaserHairRemovalContent = (): { 

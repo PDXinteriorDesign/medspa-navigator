@@ -58,8 +58,8 @@ export const getLocationContent = (serviceName: string, locationName: string): L
     case "Manhattan":
       content.paragraphs.push(`Manhattan's ${serviceName} providers are known for their cutting-edge techniques and celebrity clientele. From luxury MedSpas in the Upper East Side to trendy aesthetic studios in SoHo, you'll find a wide range of options for your ${serviceName} needs.`);
       content.popularProviders = [
-        { name: "Glow MedSpa", address: "123 5th Avenue, Midtown", rating: 4.8, reviewCount: 124 },
-        { name: "Elite Aesthetic Center", address: "456 Madison Avenue, Upper East Side", rating: 4.7, reviewCount: 98 }
+        { name: "Manhattan Laser Studio", address: "123 5th Avenue, Midtown", rating: 4.8, reviewCount: 124 },
+        { name: "Upper East Side Aesthetics", address: "456 Madison Avenue, Upper East Side", rating: 4.7, reviewCount: 98 }
       ];
       content.nearbyNeighborhoods = [
         { name: "Brooklyn", slug: "brooklyn" },
@@ -148,7 +148,7 @@ export const getLocationFaqs = (serviceName: string, locationName: string): Loca
 const getTopProviders = (locationName: string): string => {
   switch (locationName) {
     case "Manhattan":
-      return "Glow MedSpa, Elite Aesthetic Center, and Manhattan Laser Studio";
+      return "Manhattan Laser Studio, Upper East Side Aesthetics, and SoHo Beauty Lounge";
     case "Brooklyn":
       return "Brooklyn Beauty Clinic, Williamsburg Aesthetic Center, and Park Slope MedSpa";
     case "Queens":
