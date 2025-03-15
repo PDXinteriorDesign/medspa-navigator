@@ -87,7 +87,7 @@ const Home = () => {
                   <span>Diode and Alexandrite laser hair removal for all skin types</span>
                 </li>
               </ul>
-              <div className="flex flex-col sm:flex-row items-center mt-8 p-4 bg-medspa-cream rounded-lg">
+              <div className="flex flex-col sm:flex-row items-center justify-center mt-8 p-4 bg-medspa-cream rounded-lg">
                 <div className="flex items-center mr-4 mb-4 sm:mb-0">
                   <Shield size={20} className="text-medspa-teal mr-2" />
                   <span className="font-medium">Licensed Providers</span>
