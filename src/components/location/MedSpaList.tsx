@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, MapPin, Sparkles, CalendarDays } from "lucide-react";
+import { Star, MapPin, Sparkles, CalendarDays, Info, Phone, CreditCard } from "lucide-react";
 import { MedSpa } from "@/lib/data";
 
 interface MedSpaListProps {
@@ -48,14 +48,19 @@ const MedSpaList = ({ medSpas, locationName }: MedSpaListProps) => {
                   <MapPin size={14} className="text-medspa-teal mr-1 mt-0.5 flex-shrink-0" />
                   {medSpa.address}
                 </CardDescription>
+                <CardDescription className="text-sm text-gray-600 flex items-start mt-1">
+                  <Phone size={14} className="text-medspa-teal mr-1 mt-0.5 flex-shrink-0" />
+                  212-555-{Math.floor(1000 + Math.random() * 9000)}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-gray-700 mb-4">{medSpa.description}</p>
+                
                 {medSpa.services && medSpa.services.length > 0 && (
-                  <div className="flex items-start mb-2">
+                  <div className="flex items-start mb-4">
                     <Sparkles size={14} className="text-medspa-gold mr-2 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-xs font-medium text-gray-600 mb-1">Signature Treatments</p>
+                      <p className="text-xs font-medium text-gray-600 mb-1">Offers the following services for:</p>
                       <div className="flex flex-wrap gap-1">
                         {medSpa.services.map((serviceId) => (
                           <span 
@@ -69,8 +74,20 @@ const MedSpaList = ({ medSpas, locationName }: MedSpaListProps) => {
                     </div>
                   </div>
                 )}
+                
+                <div className="flex items-start mb-2">
+                  <CreditCard size={14} className="text-medspa-teal mr-2 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-xs font-medium text-gray-600 mb-1">Payments Accepted:</p>
+                    <p className="text-xs text-gray-700">Cash or self-payment, Credit cards, Insurance plans, Financing options available</p>
+                  </div>
+                </div>
               </CardContent>
-              <CardFooter className="flex justify-end pt-0">
+              <CardFooter className="flex justify-between pt-0">
+                <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10">
+                  <Info size={16} className="mr-2" />
+                  View Additional Information
+                </Button>
                 <Button className="bg-medspa-teal hover:bg-medspa-teal/90">
                   <CalendarDays size={16} className="mr-2" />
                   Book Appointment
