@@ -47,7 +47,7 @@ const ManhattanLanding = () => {
         ]}
       />
       
-      <div className="medspa-container py-8 mb-12">
+      <div className="medspa-container py-8 -mt-12 mb-12">
         <div className="bg-white rounded-lg shadow-sm p-8">
           <h2 className="text-2xl font-serif font-medium mb-6">Manhattan MedSpas & Aesthetic Clinics</h2>
           
