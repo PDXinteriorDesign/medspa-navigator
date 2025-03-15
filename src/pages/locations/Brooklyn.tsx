@@ -11,7 +11,7 @@ const BrooklynLanding = () => {
     <>
       <LocationHeroOnly
         name="Brooklyn"
-        imageUrl="https://images.unsplash.com/photo-1567552261736-4b808a7997f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+        imageUrl="https://images.unsplash.com/photo-1565867254334-10280784ff69?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         shortDescription="Where Innovative Aesthetics Meet Authentic Brooklyn Style"
         medspaCount={brooklynMedSpas.length}
       />
