@@ -23,10 +23,10 @@ const TribecaLanding = () => {
           <div className="bg-medspa-teal/10 border border-medspa-teal/20 rounded-lg p-6 mb-8">
             <h3 className="text-lg font-medium text-medspa-teal mb-2">Welcome to Tribeca</h3>
             <p className="text-gray-700">
-              Discover Tribeca's exclusive aesthetic scene, where luxury and privacy converge in New York's most discreet neighborhood. Our carefully curated selection showcases Tribeca's premier medspas—sophisticated sanctuaries where innovative treatments meet unparalleled service. Each establishment featured maintains the highest standards of excellence, catering to a clientele that values privacy, personalized care, and exceptional results.
+              Tribeca is a neighborhood immersed in beauty—a place where art, luxury, and relentless creativity converge to form a vibrant culture. Nestled in the heart of Lower Manhattan, this iconic district enchants with its charming cobblestone streets, historic lofts, and a lively culinary and art scene that feels both timeless and innovative.
             </p>
             <p className="text-gray-700 mt-4">
-              Tribeca's aesthetic clinics specialize in bespoke treatment plans, cutting-edge technology, and a holistic approach to beauty and wellness. From celebrity-favored anti-aging procedures to revolutionary skin rejuvenation techniques, our directory presents the very best of what this exclusive enclave has to offer.
+              Our carefully curated list of medspas features exclusive clinics that capture the very soul of Tribeca. Each clinic seamlessly blends personalized wellness with unparalleled quality, offering premium, transformative treatments in settings that truly reflect the district's sophisticated, creative spirit.
             </p>
           </div>
           
