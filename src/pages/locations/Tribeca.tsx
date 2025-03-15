@@ -11,7 +11,7 @@ const TribecaLanding = () => {
     <>
       <LocationHeroOnly
         name="Tribeca"
-        imageUrl="https://images.unsplash.com/photo-1565876427315-7086480146d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+        imageUrl="https://images.pexels.com/photos/971326/pexels-photo-971326.jpeg?auto=compress&cs=tinysrgb&w=1200"
         shortDescription="Discreet Luxury and Unparalleled Aesthetic Excellence"
         medspaCount={tribecaMedSpas.length}
       />
