@@ -1,5 +1,4 @@
-
-export type Location = "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island";
+export type Location = "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island" | "tribeca";
 
 export type Service = {
   id: string;
@@ -54,7 +53,8 @@ export const locations: { id: Location; name: string }[] = [
   { id: "brooklyn", name: "Brooklyn" },
   { id: "queens", name: "Queens" },
   { id: "bronx", name: "Bronx" },
-  { id: "staten-island", name: "Staten Island" }
+  { id: "staten-island", name: "Staten Island" },
+  { id: "tribeca", name: "Tribeca" }
 ];
 
 // MedSpas data
@@ -182,4 +182,3 @@ export const filterMedSpas = (serviceId: string | null, locationId: Location | n
 export const getMedSpasByLocation = (location: Location): MedSpa[] => {
   return medSpas.filter(medSpa => medSpa.location === location);
 };
-
