@@ -38,40 +38,18 @@ const ManhattanLanding = () => {
       </div>
       
       <div className="medspa-container mb-12">
-        <LocationDetails 
-          name="Manhattan"
-          description="Manhattan is home to some of the world's most prestigious medical spas and aesthetic centers, offering cutting-edge treatments in sleek, luxurious settings. From the Upper East Side's high-end clientele seeking premium anti-aging treatments to SoHo's trend-conscious crowd embracing the latest innovations in skincare technology, Manhattan's medspa landscape is as diverse as its neighborhoods."
-          popularServices={[
-            "Botox",
-            "Dermal Fillers",
-            "Laser Resurfacing",
-            "Microneedling",
-            "Facial Treatments",
-            "Body Contouring"
-          ]}
-          neighborhoods={[
-            {
-              name: "Upper East Side",
-              slug: "upper-east-side",
-              description: "Renowned for ultra-luxury medspas catering to New York's elite"
-            },
-            {
-              name: "SoHo",
-              slug: "soho",
-              description: "Trendsetting skincare innovations in design-forward spaces"
-            },
-            {
-              name: "Midtown",
-              slug: "midtown",
-              description: "Efficient, high-impact treatments for busy professionals"
-            },
-            {
-              name: "Tribeca",
-              slug: "tribeca",
-              description: "Exclusive, discreet luxury experiences for discerning clientele"
-            }
-          ]}
-        />
+        <div className="bg-white rounded-lg shadow-sm p-8 max-w-5xl mx-auto">
+          <h2 className="text-2xl font-serif font-medium mb-6 text-center">Additional Information</h2>
+          
+          <div className="text-gray-700">
+            <p className="leading-relaxed mb-4">
+              Despite the high-energy pace and challenges of urban life, Manhattan's medspa scene is pioneering a new era of beauty and wellness. Although the fast-paced city environment can sometimes leave little time for self-care, our curated medspas are redefining how New Yorkers rejuvenate, offering cutting-edge treatments that bring balance and a renewed glow.
+            </p>
+            <p className="leading-relaxed mb-4">
+              Recent insights reveal that Manhattan's medspa services consistently rank among the nation's best in quality, innovation, and personalized care—truly setting the standard in luxury aesthetics.
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );
