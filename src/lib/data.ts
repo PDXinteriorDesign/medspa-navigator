@@ -1,4 +1,4 @@
-export type Location = "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island" | "tribeca";
+export type Location = "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island" | "tribeca" | "williamsburg";
 
 export type Service = {
   id: string;
@@ -54,7 +54,8 @@ export const locations: { id: Location; name: string }[] = [
   { id: "queens", name: "Queens" },
   { id: "bronx", name: "Bronx" },
   { id: "staten-island", name: "Staten Island" },
-  { id: "tribeca", name: "Tribeca" }
+  { id: "tribeca", name: "Tribeca" },
+  { id: "williamsburg", name: "Williamsburg" }
 ];
 
 // MedSpas data
