@@ -18,8 +18,8 @@ const ManhattanLanding = () => {
       />
       
       <div className="medspa-container py-8 -mt-12 mb-12">
-        <div className="bg-white rounded-lg shadow-sm p-8">
-          <h2 className="text-2xl font-serif font-medium mb-6">Manhattan MedSpas & Aesthetic Clinics</h2>
+        <div className="bg-white rounded-lg shadow-sm p-8 max-w-4xl mx-auto">
+          <h2 className="text-2xl font-serif font-medium mb-6 text-center">Manhattan MedSpas & Aesthetic Clinics</h2>
           
           <div className="bg-medspa-teal/10 border border-medspa-teal/20 rounded-lg p-6 mb-8">
             <h3 className="text-lg font-medium text-medspa-teal mb-2">Finding Your Perfect Manhattan MedSpa</h3>
@@ -28,7 +28,9 @@ const ManhattanLanding = () => {
             </p>
           </div>
           
-          <MedSpaList medSpas={manhattanMedSpas} locationName="Manhattan" />
+          <div className="border border-gray-200 rounded-lg bg-gray-50 p-5">
+            <MedSpaList medSpas={manhattanMedSpas} locationName="Manhattan" />
+          </div>
         </div>
       </div>
       
