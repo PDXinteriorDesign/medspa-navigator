@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { MapPin, ChevronDown } from "lucide-react";
 import { locationDetails } from "@/lib/locationData";
-import { Location } from "@/lib/data";
+import { Location, locations } from "@/lib/data";
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -20,9 +20,35 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
   // Get current location name for display
   const getCurrentLocationName = () => {
     if (!currentLocation) return "All NYC";
-    const location = locationDetails.find(loc => loc.id === currentLocation);
+    
+    // Check in locationDetails first
+    const locationDetail = locationDetails.find(loc => loc.id === currentLocation);
+    if (locationDetail) return locationDetail.name;
+    
+    // If not found, check in locations array
+    const location = locations.find(loc => loc.id === currentLocation);
     return location ? location.name : "All NYC";
   };
+
+  // Combine locations from both sources
+  // First, get locations from locationDetails
+  const allLocations = locationDetails.map(location => ({
+    id: location.id,
+    name: location.name,
+    slug: location.slug
+  }));
+  
+  // Then add locations from the locations array in data.ts that aren't already included
+  locations.forEach(location => {
+    // Only add if not already in the list
+    if (!allLocations.some(loc => loc.id === location.id)) {
+      allLocations.push({
+        id: location.id,
+        name: location.name,
+        slug: location.id // Use id as slug for these locations
+      });
+    }
+  });
 
   return (
     <div className="bg-medspa-blue/50 rounded-lg p-5 mb-6">
@@ -51,8 +77,8 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
             </DropdownMenuItem>
           )}
           
-          {/* All locations from the data */}
-          {locationDetails.map((location) => (
+          {/* All locations from the combined sources */}
+          {allLocations.map((location) => (
             <DropdownMenuItem 
               key={location.id} 
               asChild 
