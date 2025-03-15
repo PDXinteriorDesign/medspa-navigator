@@ -11,7 +11,7 @@ const UpperEastSideLanding = () => {
     <>
       <LocationHeroOnly
         name="Upper East Side"
-        imageUrl="https://images.unsplash.com/photo-1595625516077-3228563ccec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+        imageUrl="https://images.unsplash.com/photo-1625556841726-ee3959350033?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         shortDescription="Where Timeless Elegance Meets Cutting-Edge Aesthetics"
         medspaCount={upperEastSideMedSpas.length}
       />
