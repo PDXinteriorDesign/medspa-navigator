@@ -1,8 +1,68 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { Search, MapPin, Grid3X3 } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { locations } from "@/lib/data";
+import { locationDetails } from "@/lib/locationData";
+import { services } from "@/lib/data";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("");
+
+  // Combine locations from both sources
+  const allLocations = locationDetails.map(location => ({
+    id: location.id,
+    name: location.name,
+    slug: location.slug
+  }));
+  
+  // Add locations from the locations array that aren't already included
+  locations.forEach(location => {
+    if (!allLocations.some(loc => loc.id === location.id)) {
+      allLocations.push({
+        id: location.id,
+        name: location.name,
+        slug: location.id
+      });
+    }
+  });
+
+  const handleSearch = () => {
+    if (selectedService && selectedLocation) {
+      // Navigate to specific service in specific location
+      const service = services.find(s => s.id === selectedService);
+      const location = allLocations.find(l => l.id === selectedLocation);
+      if (service && location) {
+        navigate(`/treatments/${service.slug}-in-${location.slug}`);
+      }
+    } else if (selectedService) {
+      // Navigate to service page
+      const service = services.find(s => s.id === selectedService);
+      if (service) {
+        navigate(`/treatments/${service.slug}`);
+      }
+    } else if (selectedLocation) {
+      // Navigate to location page
+      const location = allLocations.find(l => l.id === selectedLocation);
+      if (location) {
+        navigate(`/locations/${location.slug}`);
+      }
+    } else {
+      // Navigate to general directory
+      navigate("/locations");
+    }
+  };
+
   return (
     <section className="relative bg-medspa-blue py-20">
       <div className="medspa-container">
@@ -13,6 +73,56 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-gray-700 mb-8">
             Discover top-rated medical spas in New York City offering premium beauty and wellness treatments.
           </p>
+          
+          {/* Search Filter */}
+          <div className="bg-white p-4 rounded-lg shadow-md mb-8">
+            <div className="flex flex-col md:flex-row gap-3">
+              <div className="flex-1">
+                <Select value={selectedService} onValueChange={setSelectedService}>
+                  <SelectTrigger className="w-full">
+                    <div className="flex items-center">
+                      <Grid3X3 size={16} className="mr-2 text-medspa-teal" />
+                      <SelectValue placeholder="By Service" />
+                    </div>
+                  </SelectTrigger>
+                  <SelectContent className="max-h-[300px] overflow-y-auto bg-white">
+                    {services.map((service) => (
+                      <SelectItem key={service.id} value={service.id}>
+                        {service.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              
+              <div className="flex-1">
+                <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+                  <SelectTrigger className="w-full">
+                    <div className="flex items-center">
+                      <MapPin size={16} className="mr-2 text-medspa-teal" />
+                      <SelectValue placeholder="By Location" />
+                    </div>
+                  </SelectTrigger>
+                  <SelectContent className="max-h-[300px] overflow-y-auto bg-white">
+                    {allLocations.map((location) => (
+                      <SelectItem key={location.id} value={location.id}>
+                        {location.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              
+              <Button 
+                onClick={handleSearch}
+                className="bg-medspa-teal hover:bg-medspa-teal/90 text-white"
+              >
+                <Search size={18} />
+                <span className="ml-1">Search</span>
+              </Button>
+            </div>
+          </div>
+          
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
               <Link to="/locations">
