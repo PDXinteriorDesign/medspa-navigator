@@ -21,19 +21,19 @@ const MedSpaList = ({ medSpas, locationName }: MedSpaListProps) => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {medSpas.map((medSpa) => (
         <Card key={medSpa.id} className="overflow-hidden">
           <div className="md:flex">
-            <div className="md:w-1/3">
+            <div className="md:w-1/3 max-h-48 md:max-h-40">
               <img 
                 src={medSpa.imageUrl} 
                 alt={medSpa.name} 
-                className="h-full w-full object-cover aspect-video md:aspect-auto" 
+                className="h-full w-full object-cover" 
               />
             </div>
             <div className="md:w-2/3">
-              <CardHeader>
+              <CardHeader className="py-4">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-xl font-serif">{medSpa.name}</CardTitle>
                   <div className="flex items-center">
@@ -53,11 +53,11 @@ const MedSpaList = ({ medSpas, locationName }: MedSpaListProps) => {
                   212-555-{Math.floor(1000 + Math.random() * 9000)}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-700 mb-4">{medSpa.description}</p>
+              <CardContent className="py-2">
+                <p className="text-sm text-gray-700 mb-3 line-clamp-2">{medSpa.description}</p>
                 
                 {medSpa.services && medSpa.services.length > 0 && (
-                  <div className="flex items-start mb-4">
+                  <div className="flex items-start mb-3">
                     <Sparkles size={14} className="text-medspa-gold mr-2 mt-1 flex-shrink-0" />
                     <div>
                       <p className="text-xs font-medium text-gray-600 mb-1">Offers the following services for:</p>
@@ -83,7 +83,7 @@ const MedSpaList = ({ medSpas, locationName }: MedSpaListProps) => {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-between pt-0">
+              <CardFooter className="flex justify-between py-3">
                 <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10">
                   <Info size={16} className="mr-2" />
                   View Additional Information
