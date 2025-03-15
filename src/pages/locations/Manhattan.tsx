@@ -1,8 +1,9 @@
 
 import React from "react";
-import LocationLandingTemplate from "@/components/location/LocationLandingTemplate";
 import MedSpaList from "@/components/location/MedSpaList";
 import { getMedSpasByLocation } from "@/lib/data";
+import LocationHeroOnly from "@/components/location/LocationHeroOnly";
+import LocationDetails from "@/components/location/LocationDetails";
 
 const ManhattanLanding = () => {
   const manhattanMedSpas = getMedSpasByLocation("manhattan");
