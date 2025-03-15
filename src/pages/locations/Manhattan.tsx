@@ -45,8 +45,8 @@ const ManhattanLanding = () => {
             <p className="leading-relaxed mb-4">
               Despite the high-energy pace and challenges of urban life, Manhattan's medspa scene is pioneering a new era of beauty and wellness. Although the fast-paced city environment can sometimes leave little time for self-care, our curated medspas are redefining how New Yorkers rejuvenate, offering cutting-edge treatments that bring balance and a renewed glow.
             </p>
-            <p className="leading-relaxed mb-4">
-              Recent insights reveal that Manhattan's medspa services consistently rank among the nation's best in quality, innovation, and personalized care—truly setting the standard in luxury aesthetics.
+            <p className="leading-relaxed">
+              Manhattan's medspa services consistently rank among the nation's best in quality, innovation, and personalized care—truly setting the standard in luxury aesthetics and MedSpasNYC connects you with those high quality clinics, making it easy to find the perfect clinic for your aesthetic goals.
             </p>
           </div>
         </div>
