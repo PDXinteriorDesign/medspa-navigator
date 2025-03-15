@@ -13,8 +13,6 @@ import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import ServiceLocationDetail from "./pages/ServiceLocationDetail";
 import Locations from "./pages/Locations";
-import LocationDetail from "./pages/LocationDetail";
-import NeighborhoodDetail from "./pages/NeighborhoodDetail";
 import NotFound from "./pages/NotFound";
 import FAQ from "./pages/FAQ";
 
@@ -92,9 +90,8 @@ const App = () => (
             <Route path="treatments/hydrofacials" element={<HydrofacialsPage />} />
             
             <Route path="locations" element={<Locations />} />
-            <Route path="locations/:locationSlug" element={<LocationDetail />} />
-            <Route path="locations/:locationSlug/:neighborhoodSlug" element={<NeighborhoodDetail />} />
             
+            {/* Standalone location routes */}
             <Route path="locations/manhattan" element={<ManhattanLanding />} />
             <Route path="locations/soho" element={<SoHoLanding />} />
             <Route path="locations/upper-east-side" element={<UpperEastSideLanding />} />

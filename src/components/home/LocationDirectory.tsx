@@ -81,34 +81,34 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
             </Link>
           </div>
           
-          {/* Upper East Side Section */}
+          {/* SoHo Section - Changed from Upper East Side */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-serif font-bold mb-4">Highly Rated Med Spas in the Upper East Side</h3>
+            <h3 className="text-xl font-serif font-bold mb-4">Highly Rated Med Spas in SoHo</h3>
             <ul className="space-y-4">
               <li className="flex">
                 <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">Park Avenue Skin Clinic</p>
-                  <p className="text-sm text-gray-600">VIP Botox & Skin Tightening</p>
+                  <p className="font-medium">SoHo Beauty Lounge</p>
+                  <p className="text-sm text-gray-600">Natural Enhancements & Innovative Treatments</p>
                 </div>
               </li>
               <li className="flex">
                 <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">Luxury Aesthetics UES</p>
+                  <p className="font-medium">Spring Street Aesthetics</p>
                   <p className="text-sm text-gray-600">Microneedling, PRP & Facials</p>
                 </div>
               </li>
               <li className="flex">
                 <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">Skin Perfection NYC</p>
+                  <p className="font-medium">SoHo Skin Care</p>
                   <p className="text-sm text-gray-600">Laser Skin Rejuvenation & RF Treatments</p>
                 </div>
               </li>
             </ul>
-            <Link to="/locations/upper-east-side" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
-              Search Med Spas in Upper East Side
+            <Link to="/locations/soho" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
+              Search Med Spas in SoHo
               <ArrowRight size={16} className="ml-1" />
             </Link>
           </div>

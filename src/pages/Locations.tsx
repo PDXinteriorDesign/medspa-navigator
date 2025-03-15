@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin, Sparkle, Award, ThumbsUp, ShieldCheck, Heart } from "lucide-react";
@@ -8,10 +9,10 @@ import MedSpaListingBanner from "@/components/location/MedSpaListingBanner";
 const Locations = () => {
   const allLocations = [
     { id: "manhattan", slug: "manhattan", name: "Manhattan", medspaCount: 142 },
-    { id: "soho", slug: "manhattan/soho", name: "SoHo", medspaCount: 38 },
-    { id: "upper-east-side", slug: "manhattan/upper-east-side", name: "Upper East Side", medspaCount: 45 },
+    { id: "soho", slug: "soho", name: "SoHo", medspaCount: 38 },
+    { id: "upper-east-side", slug: "upper-east-side", name: "Upper East Side", medspaCount: 45 },
     { id: "tribeca", slug: "tribeca", name: "Tribeca", medspaCount: 28 },
-    { id: "midtown", slug: "manhattan/midtown", name: "Midtown", medspaCount: 34 },
+    { id: "midtown", slug: "midtown", name: "Midtown", medspaCount: 34 },
     { id: "brooklyn", slug: "brooklyn", name: "Brooklyn", medspaCount: 78 },
     { id: "williamsburg", slug: "williamsburg", name: "Williamsburg", medspaCount: 29 },
     { id: "the-hamptons", slug: "the-hamptons", name: "The Hamptons", medspaCount: 34 }
@@ -23,7 +24,7 @@ const Locations = () => {
         <title>Elite MedSpa Locations | Manhattan, Brooklyn, The Hamptons | MedSpasNYC</title>
         <meta 
           name="description" 
-          content="Discover top MedSpas in NYC's most exclusive neighborhoods including Manhattan, SoHo, Upper East Side, and more. Find luxury treatments in your area." 
+          content="Discover top MedSpas in NYC's most exclusive locations including Manhattan, SoHo, Upper East Side, and more. Find luxury treatments in your area." 
         />
       </Helmet>
       

@@ -1,4 +1,5 @@
-export type Location = "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island" | "tribeca" | "williamsburg" | "soho";
+
+export type Location = "manhattan" | "brooklyn" | "soho" | "tribeca" | "williamsburg" | "midtown" | "upper-east-side" | "the-hamptons";
 
 export type Service = {
   id: string;
@@ -47,19 +48,19 @@ export const services: Service[] = [
   }
 ];
 
-// Mock locations data
+// Updated locations data with only the specified locations
 export const locations: { id: Location; name: string }[] = [
   { id: "manhattan", name: "Manhattan" },
   { id: "brooklyn", name: "Brooklyn" },
-  { id: "queens", name: "Queens" },
-  { id: "bronx", name: "Bronx" },
-  { id: "staten-island", name: "Staten Island" },
+  { id: "soho", name: "SoHo" },
   { id: "tribeca", name: "Tribeca" },
   { id: "williamsburg", name: "Williamsburg" },
-  { id: "soho", name: "SoHo" }
+  { id: "midtown", name: "Midtown" },
+  { id: "upper-east-side", name: "Upper East Side" },
+  { id: "the-hamptons", name: "The Hamptons" }
 ];
 
-// MedSpas data
+// MedSpas data with updated locations
 export const medSpas: MedSpa[] = [
   {
     id: "queens-laser-spa",
@@ -68,7 +69,7 @@ export const medSpas: MedSpa[] = [
     description: "Specialized in laser treatments and non-invasive procedures for all skin types.",
     imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
     address: "101 Queens Blvd, Queens, NY 11375",
-    location: "queens",
+    location: "brooklyn", // Reassigned to Brooklyn for now
     services: ["laser-hair-removal", "hydrofacials"],
     featured: true,
     rating: 4.3,
@@ -94,7 +95,7 @@ export const medSpas: MedSpa[] = [
     description: "Exclusive Upper East Side clinic providing premium anti-aging and skin rejuvenation treatments.",
     imageUrl: "https://images.unsplash.com/photo-1562516155-e0c1ee44059b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
     address: "456 Madison Avenue, Manhattan, NY 10022",
-    location: "manhattan",
+    location: "upper-east-side",
     services: ["botox", "fillers", "microneedling"],
     featured: false,
     rating: 4.7,
@@ -119,12 +120,51 @@ export const medSpas: MedSpa[] = [
     slug: "tribeca-medical-spa",
     description: "Discreet, high-end medspa catering to an exclusive clientele with personalized treatment plans.",
     imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    address: "77 Worth Street, Manhattan, NY 10013",
-    location: "manhattan",
+    address: "77 Worth Street, Tribeca, NY 10013",
+    location: "tribeca",
     services: ["coolsculpting", "botox", "chemical-peels"],
     featured: false,
     rating: 4.9,
     reviewCount: 76
+  },
+  {
+    id: "midtown-wellness",
+    name: "Midtown Wellness Spa",
+    slug: "midtown-wellness",
+    description: "Premium medspa in the heart of Midtown, catering to busy professionals with efficient treatments.",
+    imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    address: "350 Fifth Avenue, Midtown, NY 10118",
+    location: "midtown",
+    services: ["botox", "laser-hair-removal", "coolsculpting"],
+    featured: false,
+    rating: 4.6,
+    reviewCount: 92
+  },
+  {
+    id: "williamsburg-aesthetic",
+    name: "Williamsburg Aesthetic Studio",
+    slug: "williamsburg-aesthetic",
+    description: "Boutique aesthetic clinic offering cutting-edge treatments in a trendy Williamsburg setting.",
+    imageUrl: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    address: "120 North 7th Street, Williamsburg, NY 11249",
+    location: "williamsburg",
+    services: ["botox", "hydrofacials", "microneedling"],
+    featured: true,
+    rating: 4.8,
+    reviewCount: 45
+  },
+  {
+    id: "hamptons-luxury-spa",
+    name: "Hamptons Luxury MedSpa",
+    slug: "hamptons-luxury-spa",
+    description: "Exclusive aesthetic center catering to Hamptons clientele with premium treatments and services.",
+    imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    address: "42 Main Street, East Hampton, NY 11937",
+    location: "the-hamptons",
+    services: ["botox", "fillers", "coolsculpting"],
+    featured: true,
+    rating: 5.0,
+    reviewCount: 58
   }
 ];
 
