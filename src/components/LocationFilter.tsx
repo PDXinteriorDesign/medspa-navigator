@@ -24,22 +24,6 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
     return location ? location.name : "All NYC";
   };
 
-  // Filter to include only the specific locations we want to show
-  const locationsToShow = [
-    'manhattan',
-    'tribeca',
-    'hamptons',
-    'upper-east-side',
-    'brooklyn',
-    'soho',
-    'midtown',
-    'williamsburg'
-  ];
-  
-  const filteredLocations = locationDetails.filter(loc => 
-    locationsToShow.includes(loc.id as string)
-  );
-
   return (
     <div className="bg-medspa-blue/50 rounded-lg p-5 mb-6">
       <h3 className="text-lg font-medium mb-3">Filter by Location</h3>
@@ -67,8 +51,8 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
             </DropdownMenuItem>
           )}
           
-          {/* Specific locations from our filter */}
-          {filteredLocations.map((location) => (
+          {/* All locations from the data */}
+          {locationDetails.map((location) => (
             <DropdownMenuItem 
               key={location.id} 
               asChild 
