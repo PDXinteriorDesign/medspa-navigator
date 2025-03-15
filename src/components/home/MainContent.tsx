@@ -47,7 +47,7 @@ const MainContent = () => {
             <TrustSignals />
             <div className="mt-8 text-center">
               <Button asChild size="lg" className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
-                <Link to="/medspas">
+                <Link to="/locations">
                   Browse NYC Med Spas Now
                 </Link>
               </Button>
@@ -99,7 +99,7 @@ const MainContent = () => {
           </div>
           <div className="mt-8 text-center">
             <Button asChild className="bg-medspa-cream text-medspa-teal border border-medspa-teal hover:bg-medspa-teal/10">
-              <Link to="/medspas" className="flex items-center">
+              <Link to="/locations" className="flex items-center">
                 <Search size={18} className="mr-2" />
                 Search Med Spas Near You
               </Link>

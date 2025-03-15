@@ -15,7 +15,7 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
-              <Link to="/medspas">
+              <Link to="/locations">
                 Browse Directory
               </Link>
             </Button>
