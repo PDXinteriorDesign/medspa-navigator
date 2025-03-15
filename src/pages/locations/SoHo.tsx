@@ -26,7 +26,7 @@ const SoHoLanding = () => {
               SoHo stands as a beacon of innovation in New York's beauty landscape, where art and aesthetics converge in perfect harmony. This trendsetting neighborhood has become the epicenter for cutting-edge beauty treatments, housed in design-forward spaces that mirror the district's artistic heritage and forward-thinking ethos.
             </p>
             <p className="text-gray-700 mt-4">
-              Our carefully curated selection highlights SoHo's most exceptional medspas, where skilled practitioners combine clinical expertise with an artistic approach to beauty. Each clinic represents the neighborhood's commitment to innovation, offering transformative treatments that balance scientific advancement with an appreciation for natural beauty.
+              Our carefully curated selection highlights SoHo's most exceptional medspas, where skilled practitioners combine clinical expertise with an artistic approach to beauty. Each clinic represents the commitment to innovation, offering transformative treatments that balance scientific advancement with an appreciation for natural beauty.
             </p>
           </div>
           
@@ -42,10 +42,10 @@ const SoHoLanding = () => {
           
           <div className="text-gray-700 bg-medspa-teal/5 p-6 rounded-lg">
             <p className="leading-relaxed mb-4">
-              SoHo's vibrant streets are lined with some of New York's most innovative medspas, where aesthetics professionals push boundaries and redefine beauty standards. In this dynamic neighborhood, beauty and wellness merge with fashion and art, creating spaces that are as visually striking as they are clinically advanced.
+              SoHo's vibrant streets are lined with some of New York's most innovative medspas, where aesthetics professionals push boundaries and redefine beauty standards. In this dynamic area, beauty and wellness merge with fashion and art, creating spaces that are as visually striking as they are clinically advanced.
             </p>
             <p className="leading-relaxed mb-4">
-              The neighborhood's aesthetic clinics are known for their signature treatments, including "SoHo Glow" facials, sculptural facial contouring, collagen-boosting therapies, and bespoke skincare protocols that draw inspiration from global beauty innovations. Many clinics emphasize preventative treatments and subtle enhancements that preserve and highlight natural beauty.
+              The area's aesthetic clinics are known for their signature treatments, including "SoHo Glow" facials, sculptural facial contouring, collagen-boosting therapies, and bespoke skincare protocols that draw inspiration from global beauty innovations. Many clinics emphasize preventative treatments and subtle enhancements that preserve and highlight natural beauty.
             </p>
             <p className="leading-relaxed">
               MedSpasNYC connects you with SoHo's most exceptional aesthetic providers, each selected for their commitment to excellence, innovation, and personalized care. Whether you're seeking the latest in beauty technology or timeless treatments delivered with modern precision, SoHo's medspas offer an unparalleled experience at the intersection of art and science.
