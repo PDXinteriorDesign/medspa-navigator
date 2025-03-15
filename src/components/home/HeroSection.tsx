@@ -82,15 +82,44 @@ const HeroSection = () => {
                   <SelectTrigger className="w-full">
                     <div className="flex items-center">
                       <Grid3X3 size={16} className="mr-2 text-medspa-teal" />
-                      <SelectValue placeholder="By Service" />
+                      <SelectValue placeholder="By Treatment" />
                     </div>
                   </SelectTrigger>
-                  <SelectContent className="max-h-[300px] overflow-y-auto bg-white">
-                    {services.map((service) => (
-                      <SelectItem key={service.id} value={service.id}>
-                        {service.name}
-                      </SelectItem>
-                    ))}
+                  <SelectContent className="w-[400px] max-h-[300px] overflow-y-auto bg-white">
+                    <div className="p-2">
+                      <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2">Popular Treatments</h3>
+                      <div className="grid grid-cols-2 gap-1 mb-3">
+                        {services.slice(0, 3).map((service) => (
+                          <SelectItem key={`popular-${service.id}`} value={service.id} className="cursor-pointer">
+                            {service.name}
+                          </SelectItem>
+                        ))}
+                      </div>
+                      
+                      <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pt-2 border-t border-gray-100">Injectables</h3>
+                      <div className="grid grid-cols-2 gap-1 mb-3">
+                        <SelectItem value="botox" className="cursor-pointer">Botox</SelectItem>
+                        <SelectItem value="micro-botox" className="cursor-pointer">MicroBotox</SelectItem>
+                        <SelectItem value="fillers" className="cursor-pointer">Fillers</SelectItem>
+                        <SelectItem value="kybella" className="cursor-pointer">Kybella</SelectItem>
+                      </div>
+                      
+                      <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pt-2 border-t border-gray-100">Laser Treatments</h3>
+                      <div className="grid grid-cols-2 gap-1 mb-3">
+                        <SelectItem value="laser-hair-removal" className="cursor-pointer">Laser Hair Removal</SelectItem>
+                        <SelectItem value="photofacials" className="cursor-pointer">Photofacials</SelectItem>
+                        <SelectItem value="carbon-laser-facial" className="cursor-pointer">Carbon Laser Facial</SelectItem>
+                        <SelectItem value="laser-resurfacing" className="cursor-pointer">Laser Resurfacing</SelectItem>
+                      </div>
+                      
+                      <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pt-2 border-t border-gray-100">Body Treatments</h3>
+                      <div className="grid grid-cols-2 gap-1">
+                        <SelectItem value="coolsculpting" className="cursor-pointer">CoolSculpting</SelectItem>
+                        <SelectItem value="weight-management" className="cursor-pointer">Weight Management</SelectItem>
+                        <SelectItem value="radio-ultrasound-therapy" className="cursor-pointer">Radio & Ultrasound</SelectItem>
+                        <SelectItem value="vaginal-rejuvenation" className="cursor-pointer">Vaginal Rejuvenation</SelectItem>
+                      </div>
+                    </div>
                   </SelectContent>
                 </Select>
               </div>
