@@ -29,7 +29,7 @@ const PopularTreatments = () => {
               <span><span className="font-medium">Jawline Contouring & Chin Augmentation</span> – Define & lift the face.</span>
             </li>
           </ul>
-          <Link to="/services/botox" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center">
+          <Link to="/treatments/botox" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center">
             Find Botox Providers in NYC
             <ArrowRight size={16} className="ml-1" />
           </Link>
@@ -54,7 +54,7 @@ const PopularTreatments = () => {
               <span><span className="font-medium">Laser Skin Resurfacing & IPL Photofacials</span> – Reduce wrinkles & sunspots.</span>
             </li>
           </ul>
-          <Link to="/services" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center">
+          <Link to="/treatments" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center">
             Explore Skin Treatments in NYC
             <ArrowRight size={16} className="ml-1" />
           </Link>
@@ -79,7 +79,7 @@ const PopularTreatments = () => {
               <span><span className="font-medium">RF Skin Tightening & Morpheus8</span> – Non-surgical lifting.</span>
             </li>
           </ul>
-          <Link to="/services/coolsculpting" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center">
+          <Link to="/treatments/coolsculpting" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center">
             Find Body Contouring Experts in NYC
             <ArrowRight size={16} className="ml-1" />
           </Link>
@@ -100,7 +100,7 @@ const PopularTreatments = () => {
               <span><span className="font-medium">Ultherapy & Sofwave</span> – Non-invasive skin lifting & collagen boost.</span>
             </li>
           </ul>
-          <Link to="/services/laser-hair-removal" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center">
+          <Link to="/treatments/laser-hair-removal" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center">
             Compare Laser Hair Removal Clinics in NYC
             <ArrowRight size={16} className="ml-1" />
           </Link>
