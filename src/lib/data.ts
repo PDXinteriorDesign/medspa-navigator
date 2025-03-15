@@ -1,3 +1,4 @@
+
 export type Location = "manhattan" | "brooklyn" | "queens" | "bronx" | "staten-island";
 
 export type Service = {
@@ -56,21 +57,8 @@ export const locations: { id: Location; name: string }[] = [
   { id: "staten-island", name: "Staten Island" }
 ];
 
-// Mock MedSpas data - Removed Glow MedSpa and Elite Aesthetic Center
+// Mock MedSpas data - Removed Brooklyn Beauty Clinic, only Queens Laser Spa remains
 export const medSpas: MedSpa[] = [
-  {
-    id: "brooklyn-beauty-clinic",
-    name: "Brooklyn Beauty Clinic",
-    slug: "brooklyn-beauty-clinic",
-    description: "Boutique medical spa offering personalized beauty treatments in Williamsburg.",
-    imageUrl: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    address: "789 Bedford Ave, Brooklyn, NY 11211",
-    location: "brooklyn",
-    services: ["botox", "laser-hair-removal", "prp", "photofacials", "chemical-peels"],
-    featured: true,
-    rating: 4.5,
-    reviewCount: 75
-  },
   {
     id: "queens-laser-spa",
     name: "Queens Laser Spa",
@@ -80,7 +68,7 @@ export const medSpas: MedSpa[] = [
     address: "101 Queens Blvd, Queens, NY 11375",
     location: "queens",
     services: ["laser-hair-removal", "hydrofacials"],
-    featured: false,
+    featured: true, // Making Queens Laser Spa featured since Brooklyn Beauty Clinic was removed
     rating: 4.3,
     reviewCount: 62
   }

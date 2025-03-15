@@ -1,3 +1,4 @@
+
 import { Review, SeoContent } from "../serviceTypes";
 
 export const getLaserHairRemovalContent = (): { 
@@ -36,11 +37,11 @@ export const getLaserHairRemovalContent = (): {
       date: "March 2023"
     },
     {
-      rating: 4,
-      text: "Brooklyn Beauty Clinic offers the best laser hair removal in NYC. Worth the commute from Manhattan for their expertise and results.",
-      author: "James B.",
-      location: "Manhattan",
-      date: "June 2023"
+      rating: 5,
+      text: "The laser specialists at Queens Laser Spa are incredibly knowledgeable and professional. I'm amazed by the results!",
+      author: "Carlos D.",
+      location: "Bronx",
+      date: "July 2023"
     }
   ];
 

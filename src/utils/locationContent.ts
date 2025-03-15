@@ -69,7 +69,8 @@ export const getLocationContent = (serviceName: string, locationName: string): L
     case "Brooklyn":
       content.paragraphs.push(`Brooklyn has emerged as a hotspot for boutique ${serviceName} providers offering personalized experiences at competitive prices. Williamsburg and Park Slope in particular host several highly-rated MedSpas specializing in ${serviceName}.`);
       content.popularProviders = [
-        { name: "Brooklyn Beauty Clinic", address: "789 Bedford Ave, Williamsburg", rating: 4.5, reviewCount: 75 }
+        { name: "Williamsburg Aesthetic Center", address: "555 Bedford Ave, Williamsburg", rating: 4.4, reviewCount: 65 },
+        { name: "Park Slope MedSpa", address: "777 5th Ave, Park Slope", rating: 4.2, reviewCount: 58 }
       ];
       content.nearbyNeighborhoods = [
         { name: "Manhattan", slug: "manhattan" },

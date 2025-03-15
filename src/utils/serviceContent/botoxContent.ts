@@ -1,3 +1,4 @@
+
 import { Review, SeoContent } from "../serviceTypes";
 
 export const getBotoxContent = (): { 
@@ -29,18 +30,18 @@ export const getBotoxContent = (): {
 
   const reviews = [
     {
-      rating: 5,
-      text: "Brooklyn Beauty Clinic provides the most natural-looking Botox results I've ever had. Their attention to detail is unmatched.",
-      author: "Jennifer K.",
-      location: "Manhattan",
-      date: "May 2023"
-    },
-    {
       rating: 4,
       text: "Queens Laser Spa has excellent Botox technicians. Minimal bruising and the results last me a full 4 months.",
       author: "Michael T.",
       location: "Brooklyn",
       date: "June 2023"
+    },
+    {
+      rating: 5,
+      text: "The team at Queens Laser Spa takes their time to ensure perfect Botox placement. I've never had a bad experience.",
+      author: "Rebecca S.",
+      location: "Manhattan",
+      date: "August 2023"
     }
   ];
 
