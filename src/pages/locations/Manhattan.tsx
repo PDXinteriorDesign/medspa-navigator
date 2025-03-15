@@ -22,9 +22,12 @@ const ManhattanLanding = () => {
           <h2 className="text-2xl font-serif font-medium mb-6 text-center">Manhattan MedSpas & Aesthetic Clinics</h2>
           
           <div className="bg-medspa-teal/10 border border-medspa-teal/20 rounded-lg p-6 mb-8">
-            <h3 className="text-lg font-medium text-medspa-teal mb-2">Finding Your Perfect Manhattan MedSpa</h3>
+            <h3 className="text-lg font-medium text-medspa-teal mb-2">Welcome to Manhattan</h3>
             <p className="text-gray-700">
-              Browse our curated selection of Manhattan's premier MedSpas and aesthetic clinics. Each listing provides essential information to help you find the perfect provider for your beauty and wellness needs in Manhattan. Click "Book Appointment" to schedule your consultation directly.
+              Welcome to Manhattan, the beating heart of New York City's luxury aesthetics scene. In this iconic borough, our curated directory showcases the top medspas in Manhattan—from exclusive clinics renowned for their luxury anti-aging treatments to trendsetting centers offering innovative skincare therapies. Each clinic is handpicked for its cutting-edge technology, impeccable credentials, and personalized approach, ensuring you receive transformative treatments that reflect Manhattan's unique blend of timeless sophistication and modern innovation.
+            </p>
+            <p className="text-gray-700 mt-4">
+              Explore our guide to discover bespoke wellness experiences, state-of-the-art injectables, rejuvenating facials, and a wide range of aesthetic services tailored to your needs. With detailed profiles highlighting clinic specialties, client testimonials, and local insights, MedSpasNYC directory is your definitive resource for finding the best in luxury and results-driven care in NYC.
             </p>
           </div>
           
