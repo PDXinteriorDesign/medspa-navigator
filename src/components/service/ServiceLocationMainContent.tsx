@@ -113,29 +113,38 @@ const ServiceLocationMainContent = ({
       <div className="bg-white rounded-lg shadow-sm p-8 md:p-10 mb-8 border border-gray-100/80">
         {getBotoxIntro()}
         
-        <ServiceLocationProviders 
-          locationName={locationName} 
-          serviceName={serviceName}
-          providers={locationContent.popularProviders}
-        />
+        {/* Removed ServiceLocationProviders section for Botox in Manhattan */}
+        {!(serviceSlug === "botox" && locationName === "Manhattan") && (
+          <ServiceLocationProviders 
+            locationName={locationName} 
+            serviceName={serviceName}
+            providers={locationContent.popularProviders}
+          />
+        )}
         
-        <ServiceLocationTiming 
-          locationName={locationName} 
-          serviceName={serviceName}
-          timing={locationContent.timing}
-        />
+        {/* Removed ServiceLocationTiming section for Botox in Manhattan */}
+        {!(serviceSlug === "botox" && locationName === "Manhattan") && (
+          <ServiceLocationTiming 
+            locationName={locationName} 
+            serviceName={serviceName}
+            timing={locationContent.timing}
+          />
+        )}
         
-        <div className="mt-10 pt-6 border-t border-gray-100">
-          <div className="flex items-center mb-4">
-            <Star size={20} className="text-medspa-gold mr-2" fill="currentColor" />
-            <h3 className="text-xl font-serif font-medium">Expert Insight</h3>
+        {/* Removed Expert Insight section for Botox in Manhattan */}
+        {!(serviceSlug === "botox" && locationName === "Manhattan") && (
+          <div className="mt-10 pt-6 border-t border-gray-100">
+            <div className="flex items-center mb-4">
+              <Star size={20} className="text-medspa-gold mr-2" fill="currentColor" />
+              <h3 className="text-xl font-serif font-medium">Expert Insight</h3>
+            </div>
+            <div className="bg-medspa-blue/20 p-6 rounded-lg text-gray-700 border border-medspa-blue/10">
+              <p>
+                When selecting a {serviceName} provider in {locationName}, consider their specialized training, the technology they utilize, and their aesthetic philosophy. The finest practitioners will offer a thorough consultation and create a bespoke treatment plan tailored to your unique features and desired outcomes.
+              </p>
+            </div>
           </div>
-          <div className="bg-medspa-blue/20 p-6 rounded-lg text-gray-700 border border-medspa-blue/10">
-            <p>
-              When selecting a {serviceName} provider in {locationName}, consider their specialized training, the technology they utilize, and their aesthetic philosophy. The finest practitioners will offer a thorough consultation and create a bespoke treatment plan tailored to your unique features and desired outcomes.
-            </p>
-          </div>
-        </div>
+        )}
       </div>
       
       <ServiceFaqs 
