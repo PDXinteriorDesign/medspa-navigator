@@ -79,9 +79,11 @@ const BotoxManhattanContent = ({
         {getBotoxIntro()}
       </div>
       
-      <h2 className="text-2xl font-serif font-medium mb-6 tracking-tight">
-        Handpicked {serviceName} Providers in {locationName}
-      </h2>
+      <div className="mb-6">
+        <span className="text-sm font-medium text-medspa-teal">
+          {medSpasInLocation.length} {serviceName} Clinics & Med Spas in {locationName}
+        </span>
+      </div>
       
       {medSpasInLocation.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 mb-8">
