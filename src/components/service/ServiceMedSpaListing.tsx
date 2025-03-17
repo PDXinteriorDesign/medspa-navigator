@@ -25,7 +25,7 @@ const ServiceMedSpaListing = ({
       {showCount && (
         <div className="mb-6">
           <span className="text-sm font-medium text-medspa-teal">
-            {medSpasInLocation.length} {serviceName} Clinics & Med Spas in {locationName}
+            Showing {medSpasInLocation.length} {serviceName} Clinics & Med Spas in {locationName}
           </span>
         </div>
       )}
