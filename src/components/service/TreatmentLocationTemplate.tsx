@@ -1,4 +1,3 @@
-
 import React from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { getServiceBySlug, getServicesByLocation, getLocationName, type MedSpa, type Location } from "@/lib/data";
@@ -7,6 +6,7 @@ import ServiceLocationMainContent from "@/components/service/ServiceLocationMain
 import ServiceLocationSidebar from "@/components/service/ServiceLocationSidebar";
 import { getLocationContent, getLocationFaqs, type LocationContent } from "@/utils/locationContent";
 import { generateLocationKeywords } from "@/utils/keywordGenerator";
+import { useNavigate } from "react-router-dom";
 
 interface TreatmentLocationTemplateProps {
   serviceSlug: string;
@@ -19,16 +19,38 @@ const TreatmentLocationTemplate = ({
   location,
   customContent
 }: TreatmentLocationTemplateProps) => {
+  const navigate = useNavigate();
+  
   // Fetch service, location name, and medspas
   const service = getServiceBySlug(serviceSlug);
   const locationName = getLocationName(location);
   const medSpasInLocation = getServicesByLocation(serviceSlug, location);
   
   if (!service) {
+    console.error(`Service not found: ${serviceSlug}`);
+    // After a short delay, redirect to NotFound page
+    setTimeout(() => {
+      navigate("/not-found", { replace: true });
+    }, 100);
+    
     return (
       <div className="medspa-container py-12">
         <h1 className="page-heading">Service Not Found</h1>
-        <p>The service you're looking for doesn't exist or has been removed.</p>
+        <p>The service "{serviceSlug}" you're looking for doesn't exist or has been removed.</p>
+      </div>
+    );
+  }
+
+  if (!locationName) {
+    console.error(`Location not found: ${location}`);
+    setTimeout(() => {
+      navigate("/not-found", { replace: true });
+    }, 100);
+    
+    return (
+      <div className="medspa-container py-12">
+        <h1 className="page-heading">Location Not Found</h1>
+        <p>The location "{location}" you're looking for doesn't exist or has been removed.</p>
       </div>
     );
   }

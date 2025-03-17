@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -66,6 +67,8 @@ const App = () => (
             <Route path="treatments" element={<Services />} />
             <Route path="treatments/:serviceSlug" element={<ServiceDetail />} />
             <Route path="treatments/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
+            {/* Add the new route format */}
+            <Route path="treatments/*" element={<ServiceLocationDetail />} />
             <Route path="faq" element={<FAQ />} />
             
             <Route path="treatments/botox" element={<BotoxPage />} />
