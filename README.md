@@ -1,3 +1,4 @@
+
 # Welcome to your Lovable project
 
 ## Project info
@@ -62,7 +63,28 @@ This project is built with .
 
 ## How can I deploy this project?
 
+### Using Lovable
 Simply open [Lovable](https://lovable.dev/projects/fa21903d-ba80-438b-8c2f-c17e7e40f11d) and click on Share -> Publish.
+
+### Using Netlify
+To deploy this project to Netlify:
+
+1. Build the project for production:
+```sh
+npm run build
+```
+
+2. The build output will be in the `dist` directory, which you can then deploy to Netlify.
+
+3. If using Netlify CLI:
+```sh
+netlify deploy --prod
+```
+
+4. Or configure your Netlify site to use the following settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Node version: 18.x (or higher)
 
 ## I want to use a custom domain - is that possible?
 
