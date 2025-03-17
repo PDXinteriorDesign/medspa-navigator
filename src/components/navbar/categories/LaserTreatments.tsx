@@ -27,6 +27,11 @@ const LaserTreatments = () => (
         Laser Hair Removal
       </Link>
     </DropdownMenuItem>
+    <DropdownMenuItem asChild className="px-3 py-2 hover:bg-medspa-blue">
+      <Link to="/services/laser-resurfacing" className="flex items-center w-full">
+        Laser Resurfacing
+      </Link>
+    </DropdownMenuItem>
   </DropdownMenuGroup>
 );
 

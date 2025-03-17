@@ -21,8 +21,8 @@ const MobileLaserTreatments = ({ setIsOpen }: MobileTreatmentCategoriesProps) =>
         onClick={() => setIsOpen(false)} 
       />
       <MobileTreatmentItem 
-        title="Skin Resurfacing" 
-        url="/services/skin-resurfacing" 
+        title="Laser Resurfacing" 
+        url="/services/laser-resurfacing" 
         icon={null} 
         onClick={() => setIsOpen(false)} 
       />
