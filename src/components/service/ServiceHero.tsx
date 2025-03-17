@@ -21,7 +21,7 @@ const ServiceHero = ({ imageUrl, name, medSpasCount, reducedHeight = false }: Se
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-3 tracking-tight">{name}</h1>
           <div className="flex items-center">
             <span className="inline-block h-0.5 w-10 bg-medspa-gold mr-3"></span>
-            <p className="text-white/90">{medSpasCount} MedSpas offering this premium service in NYC</p>
+            <p className="text-white/90">{medSpasCount} MedSpas offering {name.split(" in ")[0]} treatment in {name.split(" in ")[1]}</p>
           </div>
         </div>
       </div>
