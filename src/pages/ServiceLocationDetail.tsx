@@ -2,9 +2,14 @@
 import { useParams } from "react-router-dom";
 import { type Location } from "@/lib/data";
 import TreatmentLocationTemplate from "@/components/service/TreatmentLocationTemplate";
+import { useEffect } from "react";
 
 const ServiceLocationDetail = () => {
   const { serviceSlug, location } = useParams<{ serviceSlug: string; location: string }>();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [serviceSlug, location]);
   
   if (!serviceSlug || !location) {
     return (
