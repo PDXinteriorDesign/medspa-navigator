@@ -44,6 +44,13 @@ export const services: Service[] = [
     slug: "laser-hair-removal",
     description: "Laser hair removal is a medical procedure that uses a concentrated beam of light to remove unwanted hair.",
     imageUrl: "https://images.unsplash.com/photo-1598963668990-70ff4eb44252?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+  },
+  {
+    id: "photofacials",
+    name: "Photofacials",
+    slug: "photofacials",
+    description: "Photofacials (IPL treatments) use intense pulsed light to reduce skin discoloration, sun damage, and improve overall complexion.",
+    imageUrl: "https://images.pexels.com/photos/7446657/pexels-photo-7446657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   }
 ];
 

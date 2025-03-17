@@ -31,7 +31,7 @@ const TreatmentLocationTemplate = ({
   const medSpasInLocation = getServicesByLocation(serviceSlug, location);
   
   if (!service) {
-    console.error(`Service not found: ${serviceSlug}`);
+    console.error(`Treatment not found: ${serviceSlug}`);
     // After a short delay, redirect to NotFound page
     setTimeout(() => {
       navigate("/not-found", { replace: true });
@@ -39,8 +39,8 @@ const TreatmentLocationTemplate = ({
     
     return (
       <div className="medspa-container py-12">
-        <h1 className="page-heading">Service Not Found</h1>
-        <p>The service "{serviceSlug}" you're looking for doesn't exist or has been removed.</p>
+        <h1 className="page-heading">Treatment Not Found</h1>
+        <p>The treatment "{serviceSlug}" you're looking for doesn't exist or has been removed.</p>
       </div>
     );
   }
