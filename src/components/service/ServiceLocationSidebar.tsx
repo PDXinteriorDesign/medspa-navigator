@@ -81,12 +81,18 @@ const ServiceLocationSidebar = ({
       {getExtraContent()}
       
       <div className="bg-white rounded-lg shadow-sm p-5 mb-6">
-        <h3 className="text-lg font-medium mb-4">Best Time to Book</h3>
-        <p className="text-sm text-gray-700 mb-3">{locationContent.timing.bestTimes}</p>
-        <div className="bg-medspa-blue/10 p-3 rounded text-sm text-gray-600 border border-medspa-blue/10">
-          <span className="font-medium block mb-1">Pro Tip:</span>
-          {locationContent.timing.tip}
-        </div>
+        <h3 className="text-lg font-medium mb-4">Provider Information</h3>
+        <ul className="space-y-3 text-sm text-gray-700">
+          <li className="pb-2">
+            {serviceName} providers in {locationName} frequently offer package deals and membership options for repeat clients.
+          </li>
+          <li className="pb-2">
+            Many {locationName} aesthetic clinics participate in seasonal promotions, typically in January and September.
+          </li>
+          <li>
+            First-time {serviceName} clients in {locationName} can often request a brief consultation before committing to treatment.
+          </li>
+        </ul>
       </div>
 
       <ServiceLocationNeighborhoods
