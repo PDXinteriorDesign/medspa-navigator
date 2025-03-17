@@ -11,6 +11,13 @@ export const services: Service[] = [
     imageUrl: "https://images.pexels.com/photos/3985311/pexels-photo-3985311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
+    id: "micro-botox",
+    name: "MicroBotox",
+    slug: "micro-botox",
+    description: "MicroBotox is an advanced technique that involves injecting multiple micro-droplets of diluted Botox into the dermis layer of the skin for subtle, natural-looking results.",
+    imageUrl: "https://images.pexels.com/photos/3985311/pexels-photo-3985311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
     id: "coolsculpting",
     name: "CoolSculpting",
     slug: "coolsculpting",

@@ -61,6 +61,13 @@ import BotoxMidtown from "./pages/treatments/locations/BotoxMidtown";
 import BotoxUpperEastSide from "./pages/treatments/locations/BotoxUpperEastSide";
 import BotoxHamptons from "./pages/treatments/locations/BotoxHamptons";
 
+// MicroBotox Location Pages
+import MicroBotoxManhattan from "./pages/treatments/locations/MicroBotoxManhattan";
+import MicroBotoxBrooklyn from "./pages/treatments/locations/MicroBotoxBrooklyn";
+import MicroBotoxSoHo from "./pages/treatments/locations/MicroBotoxSoHo";
+import MicroBotoxTribeca from "./pages/treatments/locations/MicroBotoxTribeca";
+import MicroBotoxUpperEastSide from "./pages/treatments/locations/MicroBotoxUpperEastSide";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -121,6 +128,12 @@ const App = () => (
             <Route path="treatments/botox/midtown" element={<BotoxMidtown />} />
             <Route path="treatments/botox/upper-east-side" element={<BotoxUpperEastSide />} />
             <Route path="treatments/botox/the-hamptons" element={<BotoxHamptons />} />
+            
+            <Route path="treatments/micro-botox/manhattan" element={<MicroBotoxManhattan />} />
+            <Route path="treatments/micro-botox/brooklyn" element={<MicroBotoxBrooklyn />} />
+            <Route path="treatments/micro-botox/soho" element={<MicroBotoxSoHo />} />
+            <Route path="treatments/micro-botox/tribeca" element={<MicroBotoxTribeca />} />
+            <Route path="treatments/micro-botox/upper-east-side" element={<MicroBotoxUpperEastSide />} />
             
             <Route path="locations" element={<Locations />} />
             
