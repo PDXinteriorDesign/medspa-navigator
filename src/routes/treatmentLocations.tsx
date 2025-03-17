@@ -82,6 +82,16 @@ import CarbonLaserFacialBrooklyn from "../pages/treatments/locations/CarbonLaser
 import CarbonLaserFacialWilliamsburg from "../pages/treatments/locations/CarbonLaserFacialWilliamsburg";
 import CarbonLaserFacialHamptons from "../pages/treatments/locations/CarbonLaserFacialHamptons";
 
+// Vaginal Rejuvenation Location Pages
+import VaginalRejuvenationManhattan from "../pages/treatments/locations/VaginalRejuvenationManhattan";
+import VaginalRejuvenationSoHo from "../pages/treatments/locations/VaginalRejuvenationSoHo";
+import VaginalRejuvenationTribeca from "../pages/treatments/locations/VaginalRejuvenationTribeca";
+import VaginalRejuvenationUpperEastSide from "../pages/treatments/locations/VaginalRejuvenationUpperEastSide";
+import VaginalRejuvenationMidtown from "../pages/treatments/locations/VaginalRejuvenationMidtown";
+import VaginalRejuvenationBrooklyn from "../pages/treatments/locations/VaginalRejuvenationBrooklyn";
+import VaginalRejuvenationWilliamsburg from "../pages/treatments/locations/VaginalRejuvenationWilliamsburg";
+import VaginalRejuvenationHamptons from "../pages/treatments/locations/VaginalRejuvenationHamptons";
+
 const TreatmentLocationRoutes = (
   <>
     {/* Botox Location Routes */}
@@ -163,6 +173,16 @@ const TreatmentLocationRoutes = (
     <Route path="carbon-laser-facial/brooklyn" element={<CarbonLaserFacialBrooklyn />} />
     <Route path="carbon-laser-facial/williamsburg" element={<CarbonLaserFacialWilliamsburg />} />
     <Route path="carbon-laser-facial/the-hamptons" element={<CarbonLaserFacialHamptons />} />
+    
+    {/* Vaginal Rejuvenation Location Routes */}
+    <Route path="vaginal-rejuvenation/manhattan" element={<VaginalRejuvenationManhattan />} />
+    <Route path="vaginal-rejuvenation/soho" element={<VaginalRejuvenationSoHo />} />
+    <Route path="vaginal-rejuvenation/tribeca" element={<VaginalRejuvenationTribeca />} />
+    <Route path="vaginal-rejuvenation/upper-east-side" element={<VaginalRejuvenationUpperEastSide />} />
+    <Route path="vaginal-rejuvenation/midtown" element={<VaginalRejuvenationMidtown />} />
+    <Route path="vaginal-rejuvenation/brooklyn" element={<VaginalRejuvenationBrooklyn />} />
+    <Route path="vaginal-rejuvenation/williamsburg" element={<VaginalRejuvenationWilliamsburg />} />
+    <Route path="vaginal-rejuvenation/the-hamptons" element={<VaginalRejuvenationHamptons />} />
   </>
 );
 

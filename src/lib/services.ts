@@ -58,6 +58,13 @@ export const services: Service[] = [
     slug: "carbon-laser-facial",
     description: "Carbon Laser Facial is an advanced skin rejuvenation treatment that combines liquid carbon with laser technology for deep cleansing, exfoliation, and improved skin tone and texture.",
     imageUrl: "https://images.pexels.com/photos/12556701/pexels-photo-12556701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "vaginal-rejuvenation",
+    name: "Vaginal Rejuvenation",
+    slug: "vaginal-rejuvenation",
+    description: "Vaginal Rejuvenation encompasses non-surgical treatments designed to address vaginal laxity, dryness, and other intimate concerns using advanced technologies.",
+    imageUrl: "https://images.pexels.com/photos/2302908/pexels-photo-2302908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   }
 ];
 
