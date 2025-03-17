@@ -1,5 +1,5 @@
 
-import { Review, SeoContent } from "../serviceTypes";
+import { Review, SeoContent, FAQ, PricingItem } from "../serviceTypes";
 
 export const getLaserHairRemovalContent = (): { 
   content: string[], 
@@ -48,7 +48,7 @@ export const getLaserHairRemovalContent = (): {
   return { content, beforeTreatment, afterTreatment, reviews };
 };
 
-export const getLaserHairRemovalFaqs = (): { question: string, answer: string }[] => {
+export const getLaserHairRemovalFaqs = (): FAQ[] => {
   return [
     {
       question: "How many laser hair removal sessions will I need?",
@@ -73,12 +73,7 @@ export const getLaserHairRemovalFaqs = (): { question: string, answer: string }[
   ];
 };
 
-export const getLaserHairRemovalPricing = (): { 
-  type: string, 
-  averagePrice: number, 
-  minPrice: number, 
-  maxPrice: number 
-}[] => {
+export const getLaserHairRemovalPricing = (): PricingItem[] => {
   return [
     { type: "Upper Lip", averagePrice: 150, minPrice: 100, maxPrice: 200 },
     { type: "Underarms", averagePrice: 200, minPrice: 150, maxPrice: 250 },

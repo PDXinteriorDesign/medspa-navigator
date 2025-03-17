@@ -62,6 +62,16 @@ import PhotofacialsBrooklyn from "../pages/treatments/locations/PhotofacialsBroo
 import PhotofacialsWilliamsburg from "../pages/treatments/locations/PhotofacialsWilliamsburg";
 import PhotofacialsHamptons from "../pages/treatments/locations/PhotofacialsHamptons";
 
+// Laser Hair Removal Location Pages
+import LaserHairRemovalManhattan from "../pages/treatments/locations/LaserHairRemovalManhattan";
+import LaserHairRemovalSoHo from "../pages/treatments/locations/LaserHairRemovalSoHo";
+import LaserHairRemovalTribeca from "../pages/treatments/locations/LaserHairRemovalTribeca";
+import LaserHairRemovalUpperEastSide from "../pages/treatments/locations/LaserHairRemovalUpperEastSide";
+import LaserHairRemovalMidtown from "../pages/treatments/locations/LaserHairRemovalMidtown";
+import LaserHairRemovalBrooklyn from "../pages/treatments/locations/LaserHairRemovalBrooklyn";
+import LaserHairRemovalWilliamsburg from "../pages/treatments/locations/LaserHairRemovalWilliamsburg";
+import LaserHairRemovalHamptons from "../pages/treatments/locations/LaserHairRemovalHamptons";
+
 const TreatmentLocationRoutes = (
   <>
     {/* Botox Location Routes */}
@@ -123,6 +133,16 @@ const TreatmentLocationRoutes = (
     <Route path="photofacials/brooklyn" element={<PhotofacialsBrooklyn />} />
     <Route path="photofacials/williamsburg" element={<PhotofacialsWilliamsburg />} />
     <Route path="photofacials/the-hamptons" element={<PhotofacialsHamptons />} />
+    
+    {/* Laser Hair Removal Location Routes */}
+    <Route path="laser-hair-removal/manhattan" element={<LaserHairRemovalManhattan />} />
+    <Route path="laser-hair-removal/soho" element={<LaserHairRemovalSoHo />} />
+    <Route path="laser-hair-removal/tribeca" element={<LaserHairRemovalTribeca />} />
+    <Route path="laser-hair-removal/upper-east-side" element={<LaserHairRemovalUpperEastSide />} />
+    <Route path="laser-hair-removal/midtown" element={<LaserHairRemovalMidtown />} />
+    <Route path="laser-hair-removal/brooklyn" element={<LaserHairRemovalBrooklyn />} />
+    <Route path="laser-hair-removal/williamsburg" element={<LaserHairRemovalWilliamsburg />} />
+    <Route path="laser-hair-removal/the-hamptons" element={<LaserHairRemovalHamptons />} />
   </>
 );
 
