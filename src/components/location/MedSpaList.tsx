@@ -28,45 +28,38 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
       {medSpas.map((medSpa) => (
         <Card key={medSpa.id} className="overflow-hidden">
           <div className="md:flex">
-            {/* Left column - Image and basic info */}
-            <div className="md:w-1/3 flex flex-col">
-              <div className="h-48 md:h-auto">
-                <AspectRatio ratio={4/3} className="h-full">
-                  <img 
-                    src={medSpa.imageUrl} 
-                    alt={medSpa.name} 
-                    className="h-full w-full object-cover" 
-                  />
-                </AspectRatio>
-              </div>
-              
-              <div className="p-4 bg-gray-50 flex-grow">
-                <CardTitle className="text-xl font-serif">{medSpa.name}</CardTitle>
-                
-                <div className="flex items-center mt-2">
-                  <div className="flex text-medspa-gold mr-1">
-                    <Star size={16} fill="currentColor" />
+            <div className="md:w-1/3">
+              <AspectRatio ratio={16/9} className="h-full">
+                <img 
+                  src={medSpa.imageUrl} 
+                  alt={medSpa.name} 
+                  className="h-full w-full object-cover" 
+                />
+              </AspectRatio>
+            </div>
+            <div className="md:w-2/3">
+              <CardHeader className="py-4">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-xl font-serif">{medSpa.name}</CardTitle>
+                  <div className="flex items-center">
+                    <div className="flex text-medspa-gold mr-1">
+                      <Star size={16} fill="currentColor" />
+                    </div>
+                    <span className="text-sm font-medium">{medSpa.rating}</span>
+                    <span className="text-sm text-gray-500 ml-1">({medSpa.reviewCount} reviews)</span>
                   </div>
-                  <span className="text-sm font-medium">{medSpa.rating}</span>
-                  <span className="text-sm text-gray-500 ml-1">({medSpa.reviewCount} reviews)</span>
                 </div>
-                
-                <CardDescription className="text-sm text-gray-600 flex items-start mt-2">
+                <CardDescription className="text-sm text-gray-600 flex items-start mt-1">
                   <MapPin size={14} className="text-medspa-teal mr-1 mt-0.5 flex-shrink-0" />
                   {medSpa.address}
                 </CardDescription>
-                
-                <CardDescription className="text-sm text-gray-600 flex items-start mt-2">
+                <CardDescription className="text-sm text-gray-600 flex items-start mt-1">
                   <Phone size={14} className="text-medspa-teal mr-1 mt-0.5 flex-shrink-0" />
                   212-555-{Math.floor(1000 + Math.random() * 9000)}
                 </CardDescription>
-              </div>
-            </div>
-            
-            {/* Right column - Details and actions */}
-            <div className="md:w-2/3 flex flex-col">
-              <CardContent className="py-4 px-5 flex-grow">
-                <p className="text-sm text-gray-700 mb-3">{medSpa.description}</p>
+              </CardHeader>
+              <CardContent className="py-2">
+                <p className="text-sm text-gray-700 mb-3 line-clamp-2">{medSpa.description}</p>
                 
                 {medSpa.services && medSpa.services.length > 0 && (
                   <div className="flex items-start mb-3">
@@ -89,7 +82,7 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
                   </div>
                 )}
                 
-                <div className="flex items-start">
+                <div className="flex items-start mb-2">
                   <CreditCard size={14} className="text-medspa-teal mr-2 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-gray-600 mb-1">Payments Accepted:</p>
@@ -97,12 +90,11 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
                   </div>
                 </div>
               </CardContent>
-              
-              <CardFooter className="flex justify-between py-3 bg-gray-50 border-t">
+              <CardFooter className="flex justify-between py-3">
                 <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10" asChild>
                   <Link to={`/${locationName.toLowerCase()}/${medSpa.id}`}>
                     <Info size={16} className="mr-2" />
-                    View Clinic
+                    View Additional Information
                   </Link>
                 </Button>
                 <Button className="bg-medspa-teal hover:bg-medspa-teal/90">
