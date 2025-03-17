@@ -2,7 +2,8 @@
 import { Link } from "react-router-dom";
 import { MapPin, ChevronDown } from "lucide-react";
 import { locationDetails } from "@/lib/locationData";
-import { Location, locations } from "@/lib/locations";
+import { locations } from "@/lib/locations";
+import { Location } from "@/lib/types";
 import { 
   DropdownMenu,
   DropdownMenuContent,

@@ -1,8 +1,7 @@
-
 import { Link } from "react-router-dom";
 import ServiceCard from "@/components/ServiceCard";
-import { Service } from "@/lib/types";
-import { Location, locations } from "@/lib/locations";
+import { Service, Location } from "@/lib/types";
+import { locations } from "@/lib/locations";
 
 interface ServiceGridProps {
   services: Service[];
