@@ -91,16 +91,18 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between py-3">
-                <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10" asChild>
-                  <Link to={`/${locationName.toLowerCase()}/${medSpa.id}`}>
-                    <Info size={16} className="mr-2" />
-                    View Additional Information
-                  </Link>
-                </Button>
-                <Button className="bg-medspa-teal hover:bg-medspa-teal/90">
-                  <CalendarDays size={16} className="mr-2" />
-                  Book Appointment
-                </Button>
+                <div className="space-x-4 flex items-center">
+                  <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10" asChild>
+                    <Link to={`/${locationName.toLowerCase()}/${medSpa.id}`}>
+                      <Info size={16} className="mr-2" />
+                      View Additional Information
+                    </Link>
+                  </Button>
+                  <Button className="bg-medspa-teal hover:bg-medspa-teal/90">
+                    <CalendarDays size={16} className="mr-2" />
+                    Book Appointment
+                  </Button>
+                </div>
               </CardFooter>
             </div>
           </div>
