@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -43,7 +42,7 @@ const HeroSection = () => {
       const service = services.find(s => s.id === selectedService);
       const location = allLocations.find(l => l.id === selectedLocation);
       if (service && location) {
-        navigate(`/treatments/${service.slug}-in-${location.slug}`);
+        navigate(`/${service.slug}/${location.slug}`);
       }
     } else if (selectedService) {
       // Navigate to service page

@@ -75,12 +75,12 @@ const App = () => (
             <Route path="about" element={<About />} />
             <Route path="treatments" element={<Services />} />
             <Route path="treatments/:serviceSlug" element={<ServiceDetail />} />
-            <Route path="treatments/:serviceSlug/:location" element={<ServiceLocationDetail />} />
             
-            <Route 
-              path="treatments/:serviceSlug-in-:location" 
-              element={<ServiceLocationDetail />} 
-            />
+            <Route path="treatments/:serviceSlug/:location" element={<ServiceLocationDetail />} />
+            <Route path="treatments/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
+            
+            <Route path=":serviceSlug/:location" element={<ServiceLocationDetail />} />
+            
             <Route 
               path="services/:serviceSlug-in-:location" 
               element={<Navigate to="/treatments/:serviceSlug-in-:location" replace />} 

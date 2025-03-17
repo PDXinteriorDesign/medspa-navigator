@@ -26,7 +26,7 @@ const ServiceLocationNeighborhoods = ({
         {neighborhoods.map((neighborhood, index) => (
           <li key={index}>
             <Link
-              to={`/treatments/${serviceSlug}-in-${neighborhood.slug}`}
+              to={`/${serviceSlug}/${neighborhood.slug}`}
               className="flex items-center text-sm text-gray-700 hover:text-medspa-teal"
             >
               <span className="location-icon-button mr-2">

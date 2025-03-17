@@ -38,7 +38,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
           {locations.slice(0, 2).map(location => (
             <Link 
               key={location.id}
-              to={`/treatments/${service.slug}-in-${location.id}`}
+              to={`/${service.slug}/${location.id}`}
               className="flex items-center text-sm text-gray-700 hover:text-medspa-teal transition-colors"
             >
               <ArrowRight size={12} className="mr-1.5 text-medspa-gold" />
