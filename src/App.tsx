@@ -1,9 +1,8 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Pages
 import Layout from "./components/Layout";
@@ -66,9 +65,11 @@ const App = () => (
             <Route path="about" element={<About />} />
             <Route path="treatments" element={<Services />} />
             <Route path="treatments/:serviceSlug" element={<ServiceDetail />} />
-            <Route path="treatments/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
-            {/* Add the new route format */}
-            <Route path="treatments/*" element={<ServiceLocationDetail />} />
+            <Route path="treatments/:serviceSlug/:location" element={<ServiceLocationDetail />} />
+            <Route 
+              path="treatments/:serviceSlug-in-:location" 
+              element={<Navigate to="/treatments/:serviceSlug/:location" replace />} 
+            />
             <Route path="faq" element={<FAQ />} />
             
             <Route path="treatments/botox" element={<BotoxPage />} />

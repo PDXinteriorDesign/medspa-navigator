@@ -5,27 +5,8 @@ import TreatmentLocationTemplate from "@/components/service/TreatmentLocationTem
 import { useEffect } from "react";
 
 const ServiceLocationDetail = () => {
-  const params = useParams<{ serviceSlug: string; location: string }>();
+  const { serviceSlug, location } = useParams<{ serviceSlug: string; location: string }>();
   const navigate = useNavigate();
-  
-  // Extract serviceSlug and location from URL parameters
-  let serviceSlug, location;
-  
-  // Handle both URL formats: /:serviceSlug-in-:location and /:serviceSlug/:location
-  if (params.serviceSlug && params.location) {
-    // Regular route format
-    serviceSlug = params.serviceSlug;
-    location = params.location;
-  } else if (params['*']) {
-    // Handle the format /botox-in-tribeca
-    const path = params['*'];
-    const matches = path.match(/([^-]+)-in-([^/]+)/);
-    
-    if (matches && matches.length === 3) {
-      serviceSlug = matches[1];
-      location = matches[2];
-    }
-  }
   
   useEffect(() => {
     window.scrollTo(0, 0);
