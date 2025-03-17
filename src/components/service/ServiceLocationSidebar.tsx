@@ -83,14 +83,17 @@ const ServiceLocationSidebar = ({
       <div className="bg-white rounded-lg shadow-sm p-5 mb-6">
         <h3 className="text-lg font-medium mb-4">Provider Information</h3>
         <ul className="space-y-3 text-sm text-gray-700">
-          <li className="pb-2">
-            {serviceName} providers in {locationName} frequently offer package deals and membership options for repeat clients.
+          <li className="pb-2 flex items-start">
+            <div className="h-2 w-2 rounded-full bg-medspa-teal mt-1.5 mr-2 flex-shrink-0"></div>
+            <span>{serviceName} providers in {locationName} frequently offer package deals and membership options for repeat clients.</span>
           </li>
-          <li className="pb-2">
-            Many {locationName} aesthetic clinics participate in seasonal promotions, typically in January and September.
+          <li className="pb-2 flex items-start">
+            <div className="h-2 w-2 rounded-full bg-medspa-teal mt-1.5 mr-2 flex-shrink-0"></div>
+            <span>Many {locationName} aesthetic clinics participate in seasonal promotions, typically in January and September.</span>
           </li>
-          <li>
-            First-time {serviceName} clients in {locationName} can often request a brief consultation before committing to treatment.
+          <li className="flex items-start">
+            <div className="h-2 w-2 rounded-full bg-medspa-teal mt-1.5 mr-2 flex-shrink-0"></div>
+            <span>First-time {serviceName} clients in {locationName} can often request a brief consultation before committing to treatment.</span>
           </li>
         </ul>
       </div>
