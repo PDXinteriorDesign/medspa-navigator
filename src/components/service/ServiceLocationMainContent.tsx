@@ -30,15 +30,30 @@ const ServiceLocationMainContent = ({
   locationContent,
   locationFaqs
 }: ServiceLocationMainContentProps) => {
-  return (
-    <>
-      <ServiceHero 
-        imageUrl={imageUrl} 
-        name={`${serviceName} in ${locationName}`} 
-        medSpasCount={medSpasInLocation.length} 
-      />
-      
-      <div className="bg-white rounded-lg shadow-sm p-8 md:p-10 mb-8 border border-gray-100/80">
+  
+  // Custom introduction for Botox in Manhattan
+  const getBotoxIntro = () => {
+    if (serviceSlug === "botox" && locationName === "Manhattan") {
+      return (
+        <>
+          <h2 className="text-2xl font-serif font-medium mb-5 tracking-tight">
+            Find the Best Botox Clinics in Manhattan – Expertly Curated by MedSpasNYC
+          </h2>
+          <div className="text-gray-700 space-y-4 mb-8">
+            <p>
+              Botox remains one of the most popular aesthetic treatments in Manhattan, helping clients achieve smoother skin, a more defined jawline, and subtle, natural-looking rejuvenation. Whether you're looking to soften fine lines, enhance your look with a forehead lift using Botox, or sculpt your jawline with Botox masseter, These Manhattan medspas offer expertly administered treatments tailored to your aesthetic goals.
+            </p>
+            <p>
+              MedSpasNYC connects you with the best Botox clinics in the Manhattan, ensuring you receive top-tier care from board-certified specialists.
+            </p>
+          </div>
+        </>
+      );
+    }
+    
+    // Default introduction for other locations/services
+    return (
+      <>
         <div className="mb-2">
           <div className="inline-block bg-medspa-teal/10 px-3 py-1 rounded-full text-xs font-medium text-medspa-teal mb-4">
             Curator's Selection
@@ -57,6 +72,46 @@ const ServiceLocationMainContent = ({
             "{locationName} has established itself as a premier destination for {serviceName}, with practitioners who combine artistic vision with technical mastery."
           </blockquote>
         </div>
+      </>
+    );
+  };
+  
+  // Custom FAQs for Botox in Manhattan
+  const getManhattanBotoxFAQs = () => {
+    if (serviceSlug === "botox" && locationName === "Manhattan") {
+      return [
+        {
+          question: "How long does Botox last?",
+          answer: "Most Botox treatments last between three to six months, with results gradually fading as muscle activity returns. Regular maintenance appointments can help extend the longevity of your results."
+        },
+        {
+          question: "What is Botox masseter, and how does it work?",
+          answer: "Botox for the masseter muscle is a popular treatment for jawline slimming and TMJ relief. By relaxing the masseter muscles, it can create a more contoured facial shape while reducing teeth grinding and jaw tension."
+        },
+        {
+          question: "Can Botox be used for a forehead lift?",
+          answer: "Yes! A forehead lift with Botox can subtly lift the brows and reduce forehead wrinkles, creating a more youthful and refreshed appearance without the need for surgery."
+        },
+        {
+          question: "Where can I find the best Botox providers in Manhattan?",
+          answer: "Whether you're looking for a quick touch-up or a full facial rejuvenation, explore MedSpasNYC's curated list of top-rated Manhattan Botox providers and book your appointment today!"
+        }
+      ];
+    }
+    
+    return locationFaqs;
+  };
+
+  return (
+    <>
+      <ServiceHero 
+        imageUrl={imageUrl} 
+        name={`${serviceName} in ${locationName}`} 
+        medSpasCount={medSpasInLocation.length} 
+      />
+      
+      <div className="bg-white rounded-lg shadow-sm p-8 md:p-10 mb-8 border border-gray-100/80">
+        {getBotoxIntro()}
         
         <ServiceLocationProviders 
           locationName={locationName} 
@@ -85,7 +140,7 @@ const ServiceLocationMainContent = ({
       
       <ServiceFaqs 
         serviceName={`${serviceName} in ${locationName}`}
-        faqs={locationFaqs}
+        faqs={serviceSlug === "botox" && locationName === "Manhattan" ? getManhattanBotoxFAQs() : locationFaqs}
       />
       
       <h2 className="text-2xl font-serif font-medium mt-10 mb-6 tracking-tight">
