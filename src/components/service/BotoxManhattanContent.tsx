@@ -1,4 +1,8 @@
 
+// This file is now deprecated, as we've moved to a more generic TreatmentLocationContent component.
+// It remains for reference but is no longer being used in the application.
+// Please use TreatmentLocationContent for new treatment/location pages.
+
 import React from "react";
 import ServiceHero from "./ServiceHero";
 import ServiceFaqs from "./ServiceFaqs";

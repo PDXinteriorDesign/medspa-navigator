@@ -2,7 +2,7 @@
 import React from "react";
 import { LocationContent } from "@/utils/locationContent";
 import { MedSpa } from "@/lib/types";
-import BotoxManhattanContent from "./BotoxManhattanContent";
+import TreatmentLocationContent from "./TreatmentLocationContent";
 import StandardLocationContent from "./StandardLocationContent";
 
 interface ServiceLocationMainContentProps {
@@ -25,30 +25,15 @@ const ServiceLocationMainContent = ({
   locationFaqs
 }: ServiceLocationMainContentProps) => {
   
-  // Check if this is the Botox Manhattan page
-  const isBotoxManhattan = serviceSlug === "botox" && locationName === "Manhattan";
-
-  if (isBotoxManhattan) {
-    return (
-      <BotoxManhattanContent
-        serviceName={serviceName}
-        serviceSlug={serviceSlug}
-        locationName={locationName}
-        imageUrl={imageUrl}
-        medSpasInLocation={medSpasInLocation}
-        locationFaqs={locationFaqs}
-      />
-    );
-  }
-
+  // For treatment/location combination pages, use our new template
+  // When we're in a treatment/location route like /botox/manhattan
   return (
-    <StandardLocationContent
+    <TreatmentLocationContent
       serviceName={serviceName}
       serviceSlug={serviceSlug}
       locationName={locationName}
       imageUrl={imageUrl}
       medSpasInLocation={medSpasInLocation}
-      locationContent={locationContent}
       locationFaqs={locationFaqs}
     />
   );
