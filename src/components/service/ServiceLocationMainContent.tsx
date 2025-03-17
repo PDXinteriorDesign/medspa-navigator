@@ -147,31 +147,63 @@ const ServiceLocationMainContent = ({
         )}
       </div>
       
+      {/* Moved the MedSpas section above FAQs for Botox in Manhattan */}
+      {(serviceSlug === "botox" && locationName === "Manhattan") && (
+        <>
+          <h2 className="text-2xl font-serif font-medium mb-6 tracking-tight">
+            Handpicked {serviceName} Providers in {locationName}
+          </h2>
+          
+          {medSpasInLocation.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6 mb-8">
+              {medSpasInLocation.map(medSpa => (
+                <MedSpaCard key={medSpa.id} medSpa={medSpa} />
+              ))}
+            </div>
+          ) : (
+            <div className="bg-medspa-blue/30 p-8 rounded-lg text-center border border-medspa-blue/20 mb-8">
+              <h3 className="text-xl font-medium mb-3">Personalized Recommendations</h3>
+              <p className="text-gray-700 mb-5">
+                Our curators are currently finalizing our selection of premium {serviceName} providers in {locationName}.
+              </p>
+              <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
+                <Link to={`/treatments/${serviceSlug}`}>Explore All {serviceName} Specialists</Link>
+              </Button>
+            </div>
+          )}
+        </>
+      )}
+      
       <ServiceFaqs 
         serviceName={`${serviceName} in ${locationName}`}
         faqs={serviceSlug === "botox" && locationName === "Manhattan" ? getManhattanBotoxFAQs() : locationFaqs}
       />
       
-      <h2 className="text-2xl font-serif font-medium mt-10 mb-6 tracking-tight">
-        Handpicked {serviceName} Providers in {locationName}
-      </h2>
-      
-      {medSpasInLocation.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6">
-          {medSpasInLocation.map(medSpa => (
-            <MedSpaCard key={medSpa.id} medSpa={medSpa} />
-          ))}
-        </div>
-      ) : (
-        <div className="bg-medspa-blue/30 p-8 rounded-lg text-center border border-medspa-blue/20">
-          <h3 className="text-xl font-medium mb-3">Personalized Recommendations</h3>
-          <p className="text-gray-700 mb-5">
-            Our curators are currently finalizing our selection of premium {serviceName} providers in {locationName}.
-          </p>
-          <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
-            <Link to={`/treatments/${serviceSlug}`}>Explore All {serviceName} Specialists</Link>
-          </Button>
-        </div>
+      {/* Only show this section for non-Botox Manhattan pages */}
+      {!(serviceSlug === "botox" && locationName === "Manhattan") && (
+        <>
+          <h2 className="text-2xl font-serif font-medium mt-10 mb-6 tracking-tight">
+            Handpicked {serviceName} Providers in {locationName}
+          </h2>
+          
+          {medSpasInLocation.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6">
+              {medSpasInLocation.map(medSpa => (
+                <MedSpaCard key={medSpa.id} medSpa={medSpa} />
+              ))}
+            </div>
+          ) : (
+            <div className="bg-medspa-blue/30 p-8 rounded-lg text-center border border-medspa-blue/20">
+              <h3 className="text-xl font-medium mb-3">Personalized Recommendations</h3>
+              <p className="text-gray-700 mb-5">
+                Our curators are currently finalizing our selection of premium {serviceName} providers in {locationName}.
+              </p>
+              <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
+                <Link to={`/treatments/${serviceSlug}`}>Explore All {serviceName} Specialists</Link>
+              </Button>
+            </div>
+          )}
+        </>
       )}
     </>
   );
