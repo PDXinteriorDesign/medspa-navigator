@@ -6,7 +6,7 @@ const LaserResurfacingHamptons = () => {
   return (
     <TreatmentLocationTemplate
       serviceSlug="laser-resurfacing"
-      location="hamptons"
+      location="the-hamptons"
     />
   );
 };
