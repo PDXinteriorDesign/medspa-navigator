@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -77,10 +76,20 @@ const App = () => (
             <Route path="treatments" element={<Services />} />
             <Route path="treatments/:serviceSlug" element={<ServiceDetail />} />
             <Route path="treatments/:serviceSlug/:location" element={<ServiceLocationDetail />} />
+            
             <Route 
               path="treatments/:serviceSlug-in-:location" 
+              element={<ServiceLocationDetail />} 
+            />
+            <Route 
+              path="services/:serviceSlug-in-:location" 
+              element={<Navigate to="/treatments/:serviceSlug-in-:location" replace />} 
+            />
+            <Route 
+              path="services/:serviceSlug/:location" 
               element={<Navigate to="/treatments/:serviceSlug/:location" replace />} 
             />
+            
             <Route path="faq" element={<FAQ />} />
             
             <Route path="treatments/botox" element={<BotoxPage />} />
@@ -104,7 +113,6 @@ const App = () => (
             <Route path="treatments/chemical-peels" element={<ChemicalPeelsPage />} />
             <Route path="treatments/hydrofacials" element={<HydrofacialsPage />} />
             
-            {/* Botox Location Routes */}
             <Route path="treatments/botox/manhattan" element={<BotoxManhattan />} />
             <Route path="treatments/botox/brooklyn" element={<BotoxBrooklyn />} />
             <Route path="treatments/botox/soho" element={<BotoxSoHo />} />

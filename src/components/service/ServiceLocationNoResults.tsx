@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface ServiceLocationNoResultsProps {
   serviceName: string;
@@ -20,7 +21,7 @@ const ServiceLocationNoResults = ({
         Our curators are currently finalizing our selection of premium {serviceName} providers in {locationName}.
       </p>
       <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
-        <a href={`/services/${serviceSlug}`}>Explore All {serviceName} Specialists</a>
+        <Link to={`/treatments/${serviceSlug}`}>Explore All {serviceName} Specialists</Link>
       </Button>
     </div>
   );

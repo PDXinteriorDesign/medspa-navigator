@@ -1,6 +1,6 @@
 
 import { useParams, useNavigate } from "react-router-dom";
-import { type Location } from "@/lib/data";
+import { type Location } from "@/lib/types";
 import TreatmentLocationTemplate from "@/components/service/TreatmentLocationTemplate";
 import { useEffect } from "react";
 
@@ -12,7 +12,16 @@ const ServiceLocationDetail = () => {
     window.scrollTo(0, 0);
   }, [serviceSlug, location]);
   
-  if (!serviceSlug || !location) {
+  // Parse the location from URL if it contains a dash format (serviceSlug-in-location)
+  const parsedServiceSlug = serviceSlug?.includes("-in-") 
+    ? serviceSlug.split("-in-")[0] 
+    : serviceSlug;
+    
+  const parsedLocation = serviceSlug?.includes("-in-")
+    ? serviceSlug.split("-in-")[1]
+    : location;
+  
+  if (!parsedServiceSlug || !parsedLocation) {
     return (
       <div className="medspa-container py-12">
         <h1 className="page-heading">Service or Location Not Found</h1>
@@ -23,8 +32,8 @@ const ServiceLocationDetail = () => {
 
   return (
     <TreatmentLocationTemplate
-      serviceSlug={serviceSlug}
-      location={location as Location}
+      serviceSlug={parsedServiceSlug}
+      location={parsedLocation as Location}
     />
   );
 };

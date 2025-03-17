@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import ServiceLocationProviders from "./ServiceLocationProviders";
 import ServiceLocationTiming from "./ServiceLocationTiming";
 import { LocationContent } from "@/utils/locationContent";
-import { MedSpa, Location } from "@/lib/data";
+import { MedSpa } from "@/lib/types";
 import { Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ServiceLocationMainContentProps {
   serviceName: string;
@@ -104,7 +105,7 @@ const ServiceLocationMainContent = ({
             Our curators are currently finalizing our selection of premium {serviceName} providers in {locationName}.
           </p>
           <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
-            <a href={`/services/${serviceSlug}`}>Explore All {serviceName} Specialists</a>
+            <Link to={`/treatments/${serviceSlug}`}>Explore All {serviceName} Specialists</Link>
           </Button>
         </div>
       )}

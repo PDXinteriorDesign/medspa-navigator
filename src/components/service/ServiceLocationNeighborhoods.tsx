@@ -2,6 +2,7 @@
 import React from "react";
 import { MapPin } from "lucide-react";
 import { Neighborhood } from "@/utils/locationContent";
+import { Link } from "react-router-dom";
 
 interface ServiceLocationNeighborhoodsProps {
   locationName: string;
@@ -24,15 +25,15 @@ const ServiceLocationNeighborhoods = ({
       <ul className="space-y-2">
         {neighborhoods.map((neighborhood, index) => (
           <li key={index}>
-            <a
-              href={`/services/${serviceSlug}-in-${neighborhood.slug}`}
+            <Link
+              to={`/treatments/${serviceSlug}-in-${neighborhood.slug}`}
               className="flex items-center text-sm text-gray-700 hover:text-medspa-teal"
             >
               <span className="location-icon-button mr-2">
                 <MapPin size={14} />
               </span>
               {serviceName} in {neighborhood.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
