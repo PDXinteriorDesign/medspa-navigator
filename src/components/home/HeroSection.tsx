@@ -65,8 +65,8 @@ const HeroSection = () => {
 
   return (
     <section className="relative bg-medspa-blue py-20">
-      <div className="medspa-container">
-        <div className="max-w-2xl">
+      <div className="medspa-container mx-auto max-w-6xl">
+        <div className="max-w-2xl mx-auto text-center md:text-left md:mx-0">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medspa-dark mb-6">
             Find the Best MedSpas in NYC
           </h1>
@@ -75,7 +75,7 @@ const HeroSection = () => {
           </p>
           
           {/* Search Filter */}
-          <div className="bg-white p-4 rounded-lg shadow-md mb-8">
+          <div className="bg-white p-4 rounded-lg shadow-md mb-8 mx-auto">
             <div className="flex flex-col md:flex-row gap-3">
               <div className="flex-1">
                 <Select value={selectedService} onValueChange={setSelectedService}>
@@ -167,7 +167,7 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
               <Link to="/locations">
                 Browse Directory
@@ -182,7 +182,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div 
-        className="absolute bottom-0 right-0 w-1/3 h-full" 
+        className="absolute bottom-0 right-0 w-1/3 h-full hidden md:block" 
         style={{ 
           backgroundImage: "url('https://images.unsplash.com/photo-1581182815808-b6eb627a8798?q=80&w=3205&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
           backgroundPosition: 'center', 
