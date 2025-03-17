@@ -19,16 +19,16 @@ const HeroSection = () => {
   const [selectedService, setSelectedService] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
 
-  // Combine locations from both sources
-  const allLocations = locationDetails.map(location => ({
+  // Combine locations from both sources, avoiding duplicates
+  const allLocations = [...locationDetails.map(location => ({
     id: location.id,
     name: location.name,
     slug: location.slug
-  }));
+  }))];
   
   // Add locations from the locations array that aren't already included
   locations.forEach(location => {
-    if (!allLocations.some(loc => loc.id === location.id)) {
+    if (!allLocations.some(loc => loc.id === location.id || loc.slug === location.id)) {
       allLocations.push({
         id: location.id,
         name: location.name,
