@@ -80,35 +80,51 @@ const TreatmentLocationTemplate = ({
           items={[
             { label: "Treatments", href: "/treatments" },
             { label: service.name, href: `/treatments/${service.slug}` },
-            { label: locationName, href: `/treatments/${service.slug}-in-${location}`, current: true }
+            { label: locationName, href: `/${service.slug}/${location}`, current: true }
           ]} 
         />
         
-        {customContent}
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="md:col-span-2">
-            <ServiceLocationMainContent
-              serviceName={service.name}
-              serviceSlug={service.slug}
-              locationName={locationName}
-              imageUrl={service.imageUrl}
-              medSpasInLocation={medSpasInLocation}
-              locationContent={locationContent}
-              locationFaqs={locationFaqs}
-            />
+        {customContent ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-2">
+              {customContent}
+            </div>
+            
+            <div className="mt-8 md:mt-0">
+              <ServiceLocationSidebar
+                serviceSlug={service.slug}
+                serviceName={service.name}
+                location={location}
+                locationName={locationName}
+                locationContent={locationContent}
+              />
+            </div>
           </div>
-          
-          <div className="mt-8 md:mt-0">
-            <ServiceLocationSidebar
-              serviceSlug={service.slug}
-              serviceName={service.name}
-              location={location}
-              locationName={locationName}
-              locationContent={locationContent}
-            />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-2">
+              <ServiceLocationMainContent
+                serviceName={service.name}
+                serviceSlug={service.slug}
+                locationName={locationName}
+                imageUrl={service.imageUrl}
+                medSpasInLocation={medSpasInLocation}
+                locationContent={locationContent}
+                locationFaqs={locationFaqs}
+              />
+            </div>
+            
+            <div className="mt-8 md:mt-0">
+              <ServiceLocationSidebar
+                serviceSlug={service.slug}
+                serviceName={service.name}
+                location={location}
+                locationName={locationName}
+                locationContent={locationContent}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

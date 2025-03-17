@@ -4,18 +4,20 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Sparkles, CalendarDays, Info, Phone, CreditCard } from "lucide-react";
 import { MedSpa } from "@/lib/types";
+import { Link } from "react-router-dom";
 
 interface MedSpaListProps {
   medSpas: MedSpa[];
   locationName: string;
+  treatmentName?: string;
 }
 
-const MedSpaList = ({ medSpas, locationName }: MedSpaListProps) => {
+const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) => {
   if (!medSpas || medSpas.length === 0) {
     return (
       <div className="bg-gray-50 p-8 rounded-lg text-center">
         <h3 className="text-xl font-medium mb-3">No MedSpas Found</h3>
-        <p>We're currently updating our {locationName} MedSpa listings.</p>
+        <p>We're currently updating our {treatmentName ? `${treatmentName} in ` : ''}{locationName} MedSpa listings.</p>
       </div>
     );
   }
@@ -60,7 +62,9 @@ const MedSpaList = ({ medSpas, locationName }: MedSpaListProps) => {
                   <div className="flex items-start mb-3">
                     <Sparkles size={14} className="text-medspa-gold mr-2 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-xs font-medium text-gray-600 mb-1">Offers the following services for:</p>
+                      <p className="text-xs font-medium text-gray-600 mb-1">
+                        {treatmentName ? `Also offers these treatments:` : `Offers the following services:`}
+                      </p>
                       <div className="flex flex-wrap gap-1">
                         {medSpa.services.map((serviceId) => (
                           <span 
@@ -84,9 +88,11 @@ const MedSpaList = ({ medSpas, locationName }: MedSpaListProps) => {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between py-3">
-                <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10">
-                  <Info size={16} className="mr-2" />
-                  View Additional Information
+                <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10" asChild>
+                  <Link to={`/${locationName.toLowerCase()}/${medSpa.id}`}>
+                    <Info size={16} className="mr-2" />
+                    View Additional Information
+                  </Link>
                 </Button>
                 <Button className="bg-medspa-teal hover:bg-medspa-teal/90">
                   <CalendarDays size={16} className="mr-2" />
