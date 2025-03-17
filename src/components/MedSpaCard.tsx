@@ -56,10 +56,10 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
   const clinicLink = `/${slug}/${medSpa.id}`;
 
   return (
-    <div className="luxury-card group overflow-hidden subtle-hover rounded-lg border bg-white shadow-sm">
+    <div className="luxury-card group overflow-hidden subtle-hover rounded-lg border bg-white shadow-sm flex flex-col h-full">
       <div className="relative">
         <Link to={clinicLink}>
-          <AspectRatio ratio={16/9}>
+          <AspectRatio ratio={4/3}>
             <img 
               src={medSpa.imageUrl} 
               alt={medSpa.name} 
@@ -73,7 +73,8 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
           </Badge>
         )}
       </div>
-      <div className="p-5">
+      
+      <div className="p-4 bg-gray-50 border-b">
         <Link to={clinicLink} className="group">
           <h3 className="text-lg font-serif mb-2 group-hover:text-medspa-teal transition-colors">{medSpa.name}</h3>
         </Link>
@@ -86,12 +87,14 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
           <span className="text-sm text-gray-500 ml-1">({medSpa.reviewCount} reviews)</span>
         </div>
         
-        <div className="flex items-start mb-3">
+        <div className="flex items-start">
           <MapPin size={16} className="text-medspa-teal mt-1 mr-1 flex-shrink-0" />
           <p className="text-gray-600 text-sm">{medSpa.address}</p>
         </div>
-        
-        <p className="text-sm text-gray-700 line-clamp-2 mb-4">{medSpa.description}</p>
+      </div>
+      
+      <div className="p-4 flex-grow">
+        <p className="text-sm text-gray-700 line-clamp-3 mb-4">{medSpa.description}</p>
         
         <Link 
           to={clinicLink}
