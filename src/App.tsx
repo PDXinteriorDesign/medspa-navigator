@@ -74,6 +74,9 @@ import FillersBrooklyn from "./pages/treatments/locations/FillersBrooklyn";
 import FillersSoHo from "./pages/treatments/locations/FillersSoHo";
 import FillersTribeca from "./pages/treatments/locations/FillersTribeca";
 import FillersUpperEastSide from "./pages/treatments/locations/FillersUpperEastSide";
+import FillersWilliamsburg from "./pages/treatments/locations/FillersWilliamsburg";
+import FillersMidtown from "./pages/treatments/locations/FillersMidtown";
+import FillersHamptons from "./pages/treatments/locations/FillersHamptons";
 
 const queryClient = new QueryClient();
 
@@ -147,6 +150,9 @@ const App = () => (
             <Route path="treatments/fillers/soho" element={<FillersSoHo />} />
             <Route path="treatments/fillers/tribeca" element={<FillersTribeca />} />
             <Route path="treatments/fillers/upper-east-side" element={<FillersUpperEastSide />} />
+            <Route path="treatments/fillers/williamsburg" element={<FillersWilliamsburg />} />
+            <Route path="treatments/fillers/midtown" element={<FillersMidtown />} />
+            <Route path="treatments/fillers/the-hamptons" element={<FillersHamptons />} />
             
             <Route path="locations" element={<Locations />} />
             
