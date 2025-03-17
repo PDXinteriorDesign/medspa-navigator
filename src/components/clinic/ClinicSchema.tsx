@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Helmet } from "react-helmet";
-import { MedSpa } from "@/lib/data";
+import { MedSpa } from "@/lib/types";
 
 interface ClinicSchemaProps {
   clinic: MedSpa;

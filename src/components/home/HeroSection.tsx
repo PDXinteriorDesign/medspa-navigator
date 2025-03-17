@@ -10,9 +10,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { locations } from "@/lib/data";
+import { locations } from "@/lib/locations";
 import { locationDetails } from "@/lib/locationData";
-import { services } from "@/lib/data";
+import { services } from "@/lib/services";
 
 const HeroSection = () => {
   const navigate = useNavigate();

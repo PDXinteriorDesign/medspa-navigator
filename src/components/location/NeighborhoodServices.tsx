@@ -1,6 +1,6 @@
 
 import React from "react";
-import { services } from "@/lib/data";
+import { services } from "@/lib/services";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 

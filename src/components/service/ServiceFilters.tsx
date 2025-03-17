@@ -9,7 +9,8 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-import { Location, locations, services } from "@/lib/data";
+import { Location, locations } from "@/lib/locations";
+import { services } from "@/lib/services";
 import { useNavigate } from "react-router-dom";
 
 interface ServiceFiltersProps {

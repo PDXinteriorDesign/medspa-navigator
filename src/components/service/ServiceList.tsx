@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Service } from "@/lib/data";
+import { Service } from "@/lib/types";
 
 interface ServiceListProps {
   services: Service[];

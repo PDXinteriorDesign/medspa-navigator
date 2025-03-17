@@ -1,7 +1,9 @@
+
 import React, { ReactNode, useEffect } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
-import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
+import { getServiceBySlug } from "@/lib/services";
+import { getMedSpasByService } from "@/lib/filters";
 import { getServiceSeoContent, getServiceFaqs, getServicePricing } from "@/utils/serviceContent";
 import { generateTreatmentKeywords } from "@/utils/keywordGenerator";
 

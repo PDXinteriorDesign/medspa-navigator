@@ -3,7 +3,7 @@ import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Sparkles, CalendarDays, Info, Phone, CreditCard } from "lucide-react";
-import { MedSpa } from "@/lib/data";
+import { MedSpa } from "@/lib/types";
 
 interface MedSpaListProps {
   medSpas: MedSpa[];

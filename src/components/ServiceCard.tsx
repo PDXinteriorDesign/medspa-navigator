@@ -1,8 +1,8 @@
 
 import { Link } from "react-router-dom";
-import { type Service } from "@/lib/data";
+import { type Service } from "@/lib/types";
 import { MapPin, ArrowRight } from "lucide-react";
-import { locations } from "@/lib/data";
+import { locations } from "@/lib/locations";
 
 interface ServiceCardProps {
   service: Service;

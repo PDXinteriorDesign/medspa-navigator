@@ -1,6 +1,9 @@
+
 import React from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import { getServiceBySlug, getServicesByLocation, getLocationName, type MedSpa, type Location } from "@/lib/data";
+import { getServiceBySlug } from "@/lib/services";
+import { getServicesByLocation, getLocationName } from "@/lib/filters";
+import { type MedSpa, type Location } from "@/lib/types";
 import ServiceLocationMetadata from "@/components/service/ServiceLocationMetadata";
 import ServiceLocationMainContent from "@/components/service/ServiceLocationMainContent";
 import ServiceLocationSidebar from "@/components/service/ServiceLocationSidebar";

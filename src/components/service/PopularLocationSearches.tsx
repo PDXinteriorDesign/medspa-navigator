@@ -1,6 +1,8 @@
 
 import { Link } from "react-router-dom";
-import { services, locations, getServicesByLocation } from "@/lib/data";
+import { services } from "@/lib/services";
+import { locations } from "@/lib/locations";
+import { getServicesByLocation } from "@/lib/filters";
 
 const PopularLocationSearches = () => {
   return (

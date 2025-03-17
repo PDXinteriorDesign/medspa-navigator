@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
-import { type MedSpa } from "@/lib/data";
+import { type MedSpa } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 
 interface MedSpaCardProps {

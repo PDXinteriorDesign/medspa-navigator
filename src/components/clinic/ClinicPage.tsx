@@ -1,6 +1,6 @@
 
 import React from "react";
-import { MedSpa } from "@/lib/data";
+import { MedSpa } from "@/lib/types";
 import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { Button } from "@/components/ui/button";

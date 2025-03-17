@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import MedSpaCard from "@/components/MedSpaCard";
-import { MedSpa } from "@/lib/data";
+import { MedSpa } from "@/lib/types";
 
 interface LocationDirectoryProps {
   featuredMedSpas: MedSpa[];
