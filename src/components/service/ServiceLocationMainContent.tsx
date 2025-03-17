@@ -37,7 +37,7 @@ const ServiceLocationMainContent = ({
       return (
         <>
           <h2 className="text-2xl font-serif font-medium mb-5 tracking-tight">
-            Find the Best Botox Clinics in Manhattan – Expertly Curated by MedSpasNYC
+            The Best MedSpas in Manhattan for Expert Botox
           </h2>
           <div className="text-gray-700 space-y-4 mb-8">
             <p>
