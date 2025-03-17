@@ -51,6 +51,13 @@ export const services: Service[] = [
     slug: "photofacials",
     description: "Photofacials (IPL treatments) use intense pulsed light to reduce skin discoloration, sun damage, and improve overall complexion.",
     imageUrl: "https://images.pexels.com/photos/7446657/pexels-photo-7446657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "carbon-laser-facial",
+    name: "Carbon Laser Facial",
+    slug: "carbon-laser-facial",
+    description: "Carbon Laser Facial is an advanced skin rejuvenation treatment that combines liquid carbon with laser technology for deep cleansing, exfoliation, and improved skin tone and texture.",
+    imageUrl: "https://images.pexels.com/photos/12556701/pexels-photo-12556701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   }
 ];
 
