@@ -67,6 +67,9 @@ import MicroBotoxBrooklyn from "./pages/treatments/locations/MicroBotoxBrooklyn"
 import MicroBotoxSoHo from "./pages/treatments/locations/MicroBotoxSoHo";
 import MicroBotoxTribeca from "./pages/treatments/locations/MicroBotoxTribeca";
 import MicroBotoxUpperEastSide from "./pages/treatments/locations/MicroBotoxUpperEastSide";
+import MicroBotoxWilliamsburg from "./pages/treatments/locations/MicroBotoxWilliamsburg";
+import MicroBotoxMidtown from "./pages/treatments/locations/MicroBotoxMidtown";
+import MicroBotoxHamptons from "./pages/treatments/locations/MicroBotoxHamptons";
 
 // Fillers Location Pages
 import FillersManhattan from "./pages/treatments/locations/FillersManhattan";
@@ -144,6 +147,9 @@ const App = () => (
             <Route path="treatments/micro-botox/soho" element={<MicroBotoxSoHo />} />
             <Route path="treatments/micro-botox/tribeca" element={<MicroBotoxTribeca />} />
             <Route path="treatments/micro-botox/upper-east-side" element={<MicroBotoxUpperEastSide />} />
+            <Route path="treatments/micro-botox/williamsburg" element={<MicroBotoxWilliamsburg />} />
+            <Route path="treatments/micro-botox/midtown" element={<MicroBotoxMidtown />} />
+            <Route path="treatments/micro-botox/the-hamptons" element={<MicroBotoxHamptons />} />
             
             <Route path="treatments/fillers/manhattan" element={<FillersManhattan />} />
             <Route path="treatments/fillers/brooklyn" element={<FillersBrooklyn />} />
