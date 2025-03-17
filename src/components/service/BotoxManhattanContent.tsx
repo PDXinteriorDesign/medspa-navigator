@@ -75,10 +75,6 @@ const BotoxManhattanContent = ({
         reducedHeight={true}
       />
       
-      <div className="bg-white rounded-lg shadow-sm p-8 md:p-10 mb-8 border border-gray-100/80">
-        {getBotoxIntro()}
-      </div>
-      
       <div className="mb-6">
         <span className="text-sm font-medium text-medspa-teal">
           {medSpasInLocation.length} {serviceName} Clinics & Med Spas in {locationName}
@@ -102,6 +98,10 @@ const BotoxManhattanContent = ({
           </Button>
         </div>
       )}
+      
+      <div className="bg-white rounded-lg shadow-sm p-8 md:p-10 mb-8 border border-gray-100/80">
+        {getBotoxIntro()}
+      </div>
       
       <ServiceFaqs 
         serviceName={`${serviceName} in ${locationName}`}
