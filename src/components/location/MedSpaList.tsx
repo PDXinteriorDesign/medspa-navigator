@@ -2,6 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Star, MapPin, Sparkles, CalendarDays, Info, Phone, CreditCard } from "lucide-react";
 import { MedSpa } from "@/lib/types";
 import { Link } from "react-router-dom";
@@ -27,12 +28,14 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
       {medSpas.map((medSpa) => (
         <Card key={medSpa.id} className="overflow-hidden">
           <div className="md:flex">
-            <div className="md:w-1/3 max-h-48 md:max-h-40">
-              <img 
-                src={medSpa.imageUrl} 
-                alt={medSpa.name} 
-                className="h-full w-full object-cover" 
-              />
+            <div className="md:w-1/3">
+              <AspectRatio ratio={16/9} className="h-full">
+                <img 
+                  src={medSpa.imageUrl} 
+                  alt={medSpa.name} 
+                  className="h-full w-full object-cover" 
+                />
+              </AspectRatio>
             </div>
             <div className="md:w-2/3">
               <CardHeader className="py-4">

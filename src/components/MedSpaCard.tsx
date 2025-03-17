@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { type MedSpa } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface MedSpaCardProps {
   medSpa: MedSpa;
@@ -55,14 +56,16 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
   const clinicLink = `/${slug}/${medSpa.id}`;
 
   return (
-    <div className="luxury-card group overflow-hidden subtle-hover">
+    <div className="luxury-card group overflow-hidden subtle-hover rounded-lg border bg-white shadow-sm">
       <div className="relative">
         <Link to={clinicLink}>
-          <img 
-            src={medSpa.imageUrl} 
-            alt={medSpa.name} 
-            className="w-full h-52 object-cover transition-all duration-700 group-hover:scale-105" 
-          />
+          <AspectRatio ratio={16/9}>
+            <img 
+              src={medSpa.imageUrl} 
+              alt={medSpa.name} 
+              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
+            />
+          </AspectRatio>
         </Link>
         {medSpa.featured && (
           <Badge className="absolute top-3 right-3 bg-medspa-gold/90 hover:bg-medspa-gold text-white font-medium">
