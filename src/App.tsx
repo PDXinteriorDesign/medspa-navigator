@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -51,6 +52,16 @@ import BrooklynLanding from "./pages/locations/Brooklyn";
 import WilliamsburgLanding from "./pages/locations/Williamsburg";
 import HamptonsLanding from "./pages/locations/Hamptons";
 
+// Botox Location Pages
+import BotoxManhattan from "./pages/treatments/locations/BotoxManhattan";
+import BotoxBrooklyn from "./pages/treatments/locations/BotoxBrooklyn";
+import BotoxSoHo from "./pages/treatments/locations/BotoxSoHo";
+import BotoxTribeca from "./pages/treatments/locations/BotoxTribeca";
+import BotoxWilliamsburg from "./pages/treatments/locations/BotoxWilliamsburg";
+import BotoxMidtown from "./pages/treatments/locations/BotoxMidtown";
+import BotoxUpperEastSide from "./pages/treatments/locations/BotoxUpperEastSide";
+import BotoxHamptons from "./pages/treatments/locations/BotoxHamptons";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -92,6 +103,16 @@ const App = () => (
             
             <Route path="treatments/chemical-peels" element={<ChemicalPeelsPage />} />
             <Route path="treatments/hydrofacials" element={<HydrofacialsPage />} />
+            
+            {/* Botox Location Routes */}
+            <Route path="treatments/botox/manhattan" element={<BotoxManhattan />} />
+            <Route path="treatments/botox/brooklyn" element={<BotoxBrooklyn />} />
+            <Route path="treatments/botox/soho" element={<BotoxSoHo />} />
+            <Route path="treatments/botox/tribeca" element={<BotoxTribeca />} />
+            <Route path="treatments/botox/williamsburg" element={<BotoxWilliamsburg />} />
+            <Route path="treatments/botox/midtown" element={<BotoxMidtown />} />
+            <Route path="treatments/botox/upper-east-side" element={<BotoxUpperEastSide />} />
+            <Route path="treatments/botox/the-hamptons" element={<BotoxHamptons />} />
             
             <Route path="locations" element={<Locations />} />
             
