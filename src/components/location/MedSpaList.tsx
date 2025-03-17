@@ -90,7 +90,7 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex py-3">
+              <CardFooter className="flex py-3 pr-6">
                 <div className="flex items-center">
                   <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10 mr-4" asChild>
                     <Link to={`/${locationName.toLowerCase()}/${medSpa.id}`}>
