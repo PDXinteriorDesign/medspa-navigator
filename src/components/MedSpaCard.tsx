@@ -9,32 +9,61 @@ interface MedSpaCardProps {
 }
 
 const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
-  // Extract location from address to determine the location route
-  const getLocationRoute = () => {
+  // Extract location from address to determine the location route and slug
+  const getLocationInfo = () => {
     // This is a simplified approach - you may need a more robust mapping
-    if (medSpa.address.includes("Manhattan")) return "/locations/manhattan";
-    if (medSpa.address.includes("Brooklyn")) return "/locations/brooklyn";
-    if (medSpa.address.includes("SoHo")) return "/locations/soho";
-    if (medSpa.address.includes("Upper East Side")) return "/locations/upper-east-side";
-    if (medSpa.address.includes("Tribeca")) return "/locations/tribeca"; 
-    if (medSpa.address.includes("Midtown")) return "/locations/midtown";
-    if (medSpa.address.includes("Williamsburg")) return "/locations/williamsburg";
-    if (medSpa.address.includes("Hamptons")) return "/locations/the-hamptons";
+    let route = "/locations";
+    let slug = "";
     
-    // Default fallback
-    return "/locations";
+    if (medSpa.address.includes("Manhattan")) { 
+      route = "/locations/manhattan"; 
+      slug = "manhattan";
+    }
+    else if (medSpa.address.includes("Brooklyn")) { 
+      route = "/locations/brooklyn"; 
+      slug = "brooklyn";
+    }
+    else if (medSpa.address.includes("SoHo")) { 
+      route = "/locations/soho"; 
+      slug = "soho";
+    }
+    else if (medSpa.address.includes("Upper East Side")) { 
+      route = "/locations/upper-east-side"; 
+      slug = "upper-east-side";
+    }
+    else if (medSpa.address.includes("Tribeca")) { 
+      route = "/locations/tribeca"; 
+      slug = "tribeca";
+    }
+    else if (medSpa.address.includes("Midtown")) { 
+      route = "/locations/midtown";
+      slug = "midtown";
+    }
+    else if (medSpa.address.includes("Williamsburg")) { 
+      route = "/locations/williamsburg";
+      slug = "williamsburg";
+    }
+    else if (medSpa.address.includes("Hamptons")) { 
+      route = "/locations/the-hamptons";
+      slug = "the-hamptons";
+    }
+    
+    return { route, slug };
   };
 
-  const locationRoute = getLocationRoute();
+  const { route, slug } = getLocationInfo();
+  const clinicLink = `/${slug}/${medSpa.id}`;
 
   return (
     <div className="luxury-card group overflow-hidden subtle-hover">
       <div className="relative">
-        <img 
-          src={medSpa.imageUrl} 
-          alt={medSpa.name} 
-          className="w-full h-52 object-cover transition-all duration-700 group-hover:scale-105" 
-        />
+        <Link to={clinicLink}>
+          <img 
+            src={medSpa.imageUrl} 
+            alt={medSpa.name} 
+            className="w-full h-52 object-cover transition-all duration-700 group-hover:scale-105" 
+          />
+        </Link>
         {medSpa.featured && (
           <Badge className="absolute top-3 right-3 bg-medspa-gold/90 hover:bg-medspa-gold text-white font-medium">
             Featured
@@ -42,7 +71,7 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
         )}
       </div>
       <div className="p-5">
-        <Link to={locationRoute} className="group">
+        <Link to={clinicLink} className="group">
           <h3 className="text-lg font-serif mb-2 group-hover:text-medspa-teal transition-colors">{medSpa.name}</h3>
         </Link>
         
@@ -62,10 +91,10 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
         <p className="text-sm text-gray-700 line-clamp-2 mb-4">{medSpa.description}</p>
         
         <Link 
-          to={locationRoute}
+          to={clinicLink}
           className="text-medspa-teal hover:text-medspa-teal/80 text-sm font-medium hover-underline inline-flex items-center"
         >
-          View Location <span className="ml-1">→</span>
+          View Clinic <span className="ml-1">→</span>
         </Link>
       </div>
     </div>

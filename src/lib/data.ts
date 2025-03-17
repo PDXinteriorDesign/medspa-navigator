@@ -1,4 +1,3 @@
-
 export type Location = "manhattan" | "brooklyn" | "soho" | "tribeca" | "williamsburg" | "midtown" | "upper-east-side" | "the-hamptons";
 
 export type Service = {
@@ -177,8 +176,9 @@ export const getMedSpaBySlug = (slug: string): MedSpa | undefined => {
   return medSpas.find(medSpa => medSpa.slug === slug);
 };
 
+// Helper function to get a MedSpa by ID
 export const getMedSpaById = (id: string): MedSpa | undefined => {
-  return medSpas.find(medSpa => medSpa.id === id);
+  return medSpas.find(spa => spa.id === id);
 };
 
 export const getServicesByLocation = (serviceSlug: string, location: Location): MedSpa[] => {
