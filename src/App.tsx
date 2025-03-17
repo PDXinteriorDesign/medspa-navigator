@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -92,6 +91,16 @@ import KybellaWilliamsburg from "./pages/treatments/locations/KybellaWilliamsbur
 import KybellaMidtown from "./pages/treatments/locations/KybellaMidtown";
 import KybellaHamptons from "./pages/treatments/locations/KybellaHamptons";
 
+// PRP Location Pages
+import PrpManhattan from "./pages/treatments/locations/PrpManhattan";
+import PrpBrooklyn from "./pages/treatments/locations/PrpBrooklyn";
+import PrpSoHo from "./pages/treatments/locations/PrpSoHo";
+import PrpTribeca from "./pages/treatments/locations/PrpTribeca";
+import PrpUpperEastSide from "./pages/treatments/locations/PrpUpperEastSide";
+import PrpWilliamsburg from "./pages/treatments/locations/PrpWilliamsburg";
+import PrpMidtown from "./pages/treatments/locations/PrpMidtown";
+import PrpHamptons from "./pages/treatments/locations/PrpHamptons";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -179,6 +188,16 @@ const App = () => (
             <Route path="treatments/kybella/williamsburg" element={<KybellaWilliamsburg />} />
             <Route path="treatments/kybella/midtown" element={<KybellaMidtown />} />
             <Route path="treatments/kybella/the-hamptons" element={<KybellaHamptons />} />
+            
+            {/* PRP Location Routes */}
+            <Route path="treatments/prp/manhattan" element={<PrpManhattan />} />
+            <Route path="treatments/prp/brooklyn" element={<PrpBrooklyn />} />
+            <Route path="treatments/prp/soho" element={<PrpSoHo />} />
+            <Route path="treatments/prp/tribeca" element={<PrpTribeca />} />
+            <Route path="treatments/prp/upper-east-side" element={<PrpUpperEastSide />} />
+            <Route path="treatments/prp/williamsburg" element={<PrpWilliamsburg />} />
+            <Route path="treatments/prp/midtown" element={<PrpMidtown />} />
+            <Route path="treatments/prp/the-hamptons" element={<PrpHamptons />} />
             
             <Route path="locations" element={<Locations />} />
             
