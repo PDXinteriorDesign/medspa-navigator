@@ -13,46 +13,37 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
   // Extract location from address to determine the location route and slug
   const getLocationInfo = () => {
     // This is a simplified approach - you may need a more robust mapping
-    let route = "/locations";
     let slug = "";
     
     if (medSpa.address.includes("Manhattan")) { 
-      route = "/locations/manhattan"; 
       slug = "manhattan";
     }
     else if (medSpa.address.includes("Brooklyn")) { 
-      route = "/locations/brooklyn"; 
       slug = "brooklyn";
     }
     else if (medSpa.address.includes("SoHo")) { 
-      route = "/locations/soho"; 
       slug = "soho";
     }
     else if (medSpa.address.includes("Upper East Side")) { 
-      route = "/locations/upper-east-side"; 
       slug = "upper-east-side";
     }
     else if (medSpa.address.includes("Tribeca")) { 
-      route = "/locations/tribeca"; 
       slug = "tribeca";
     }
     else if (medSpa.address.includes("Midtown")) { 
-      route = "/locations/midtown";
       slug = "midtown";
     }
     else if (medSpa.address.includes("Williamsburg")) { 
-      route = "/locations/williamsburg";
       slug = "williamsburg";
     }
     else if (medSpa.address.includes("Hamptons")) { 
-      route = "/locations/the-hamptons";
       slug = "the-hamptons";
     }
     
-    return { route, slug };
+    return { slug };
   };
 
-  const { route, slug } = getLocationInfo();
+  const { slug } = getLocationInfo();
   const clinicLink = `/${slug}/${medSpa.id}`;
 
   return (

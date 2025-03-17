@@ -45,7 +45,7 @@ const LocationDirectory = ({
           {filteredLocations.map(location => (
             <Link 
               key={location.id}
-              to={`/locations/${location.slug}`}
+              to={`/${location.slug}`}
               className="flex items-center p-3 rounded-md hover:bg-gray-50"
             >
               <MapPin size={16} className="text-medspa-teal mr-2" />
@@ -62,7 +62,7 @@ const LocationDirectory = ({
             .map(subLoc => (
               <Link 
                 key={`subloc-${subLoc.slug}`}
-                to={`/locations/${subLoc.slug}`}
+                to={`/${subLoc.slug}`}
                 className="flex items-center p-3 rounded-md hover:bg-gray-50"
               >
                 <MapPin size={16} className="text-medspa-teal mr-2" />
@@ -84,7 +84,7 @@ const LocationDirectory = ({
                 {groupedLocations[letter].map(location => (
                   <Link 
                     key={location.id}
-                    to={`/locations/${location.slug}`}
+                    to={`/${location.slug}`}
                     className="flex items-center p-3 rounded-md hover:bg-gray-50 transition-colors"
                   >
                     <MapPin size={16} className="text-medspa-teal mr-2" />
@@ -103,7 +103,7 @@ const LocationDirectory = ({
               {allSubLocations.map(subLoc => (
                 <Link 
                   key={`subloc-${subLoc.slug}`}
-                  to={`/locations/${subLoc.slug}`}
+                  to={`/${subLoc.slug}`}
                   className="flex items-center p-3 rounded-md hover:bg-gray-50 transition-colors"
                 >
                   <MapPin size={16} className="text-medspa-teal mr-2" />

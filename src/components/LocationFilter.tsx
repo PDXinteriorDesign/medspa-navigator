@@ -74,7 +74,7 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
               className={currentLocation === location.id ? "text-medspa-teal font-medium" : ""}
             >
               <Link 
-                to={serviceSlug ? `/${serviceSlug}/${location.slug}` : `/locations/${location.slug}`}
+                to={serviceSlug ? `/${serviceSlug}/${location.slug}` : `/${location.slug}`}
                 className="w-full"
               >
                 <span className="flex items-center">

@@ -18,7 +18,7 @@ const FeaturedLocations = ({ locations }: FeaturedLocationsProps) => {
         {allLocations.map(location => (
           <Link 
             key={location.id}
-            to={`/locations/${location.slug}`}
+            to={`/${location.slug}`}
             className="group block"
           >
             <div className="relative h-64 rounded-lg overflow-hidden mb-4">

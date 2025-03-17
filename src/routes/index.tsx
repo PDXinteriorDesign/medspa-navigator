@@ -16,6 +16,22 @@ import TreatmentRoutes from "./treatments";
 import TreatmentLocationRoutes from "./treatmentLocations";
 import LocationLandingRoutes from "./locationLandings";
 
+// Import individual location pages
+import ManhattanLanding from "../pages/locations/Manhattan";
+import SoHoLanding from "../pages/locations/SoHo";
+import UpperEastSideLanding from "../pages/locations/UpperEastSide";
+import TribecaLanding from "../pages/locations/Tribeca";
+import MidtownLanding from "../pages/locations/Midtown";
+import BrooklynLanding from "../pages/locations/Brooklyn";
+import WilliamsburgLanding from "../pages/locations/Williamsburg";
+import HamptonsLanding from "../pages/locations/Hamptons";
+import ChelseaLanding from "../pages/locations/Chelsea"; 
+import MontaukLanding from "../pages/locations/Montauk";
+import UpperWestSideLanding from "../pages/locations/UpperWestSide";
+import SouthamptonLanding from "../pages/locations/Southampton";
+import EastHamptonLanding from "../pages/locations/EastHampton";
+import BridgehamptonSagHarborLanding from "../pages/locations/BridgehamptonSagHarbor";
+
 const AppRoutes = () => {
   return (
     <Routes>
@@ -53,6 +69,22 @@ const AppRoutes = () => {
         
         {/* Location landing pages */}
         {LocationLandingRoutes}
+        
+        {/* Direct location URLs */}
+        <Route path="manhattan" element={<ManhattanLanding />} />
+        <Route path="soho" element={<SoHoLanding />} />
+        <Route path="upper-east-side" element={<UpperEastSideLanding />} />
+        <Route path="tribeca" element={<TribecaLanding />} />
+        <Route path="midtown" element={<MidtownLanding />} />
+        <Route path="brooklyn" element={<BrooklynLanding />} />
+        <Route path="williamsburg" element={<WilliamsburgLanding />} />
+        <Route path="the-hamptons" element={<HamptonsLanding />} />
+        <Route path="chelsea" element={<ChelseaLanding />} />
+        <Route path="montauk" element={<MontaukLanding />} />
+        <Route path="upper-west-side" element={<UpperWestSideLanding />} />
+        <Route path="southampton" element={<SouthamptonLanding />} />
+        <Route path="east-hampton" element={<EastHamptonLanding />} />
+        <Route path="bridgehampton-sag-harbor" element={<BridgehamptonSagHarborLanding />} />
         
         <Route path="*" element={<NotFound />} />
       </Route>
