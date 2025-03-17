@@ -1,4 +1,3 @@
-
 import { Service } from "./types";
 
 // Mock services data
@@ -16,6 +15,13 @@ export const services: Service[] = [
     slug: "micro-botox",
     description: "MicroBotox is an advanced technique that involves injecting multiple micro-droplets of diluted Botox into the dermis layer of the skin for subtle, natural-looking results.",
     imageUrl: "https://images.pexels.com/photos/3985311/pexels-photo-3985311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "fillers",
+    name: "Dermal Fillers",
+    slug: "fillers",
+    description: "Dermal Fillers are injectables that add volume, smooth lines, and enhance facial contours for a more youthful appearance without surgery.",
+    imageUrl: "https://images.pexels.com/photos/4586711/pexels-photo-4586711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "coolsculpting",

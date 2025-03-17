@@ -68,6 +68,13 @@ import MicroBotoxSoHo from "./pages/treatments/locations/MicroBotoxSoHo";
 import MicroBotoxTribeca from "./pages/treatments/locations/MicroBotoxTribeca";
 import MicroBotoxUpperEastSide from "./pages/treatments/locations/MicroBotoxUpperEastSide";
 
+// Fillers Location Pages
+import FillersManhattan from "./pages/treatments/locations/FillersManhattan";
+import FillersBrooklyn from "./pages/treatments/locations/FillersBrooklyn";
+import FillersSoHo from "./pages/treatments/locations/FillersSoHo";
+import FillersTribeca from "./pages/treatments/locations/FillersTribeca";
+import FillersUpperEastSide from "./pages/treatments/locations/FillersUpperEastSide";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -134,6 +141,12 @@ const App = () => (
             <Route path="treatments/micro-botox/soho" element={<MicroBotoxSoHo />} />
             <Route path="treatments/micro-botox/tribeca" element={<MicroBotoxTribeca />} />
             <Route path="treatments/micro-botox/upper-east-side" element={<MicroBotoxUpperEastSide />} />
+            
+            <Route path="treatments/fillers/manhattan" element={<FillersManhattan />} />
+            <Route path="treatments/fillers/brooklyn" element={<FillersBrooklyn />} />
+            <Route path="treatments/fillers/soho" element={<FillersSoHo />} />
+            <Route path="treatments/fillers/tribeca" element={<FillersTribeca />} />
+            <Route path="treatments/fillers/upper-east-side" element={<FillersUpperEastSide />} />
             
             <Route path="locations" element={<Locations />} />
             
