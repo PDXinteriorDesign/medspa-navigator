@@ -2,14 +2,12 @@
 import React from "react";
 import ServiceHero from "./ServiceHero";
 import ServiceFaqs from "./ServiceFaqs";
-import MedSpaCard from "@/components/MedSpaCard";
-import { Button } from "@/components/ui/button";
 import ServiceLocationProviders from "./ServiceLocationProviders";
 import ServiceLocationTiming from "./ServiceLocationTiming";
 import { LocationContent } from "@/utils/locationContent";
 import { MedSpa } from "@/lib/types";
 import { Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import ServiceMedSpaListing from "./ServiceMedSpaListing";
 
 interface StandardLocationContentProps {
   serviceName: string;
@@ -93,23 +91,13 @@ const StandardLocationContent = ({
         Handpicked {serviceName} Providers in {locationName}
       </h2>
       
-      {medSpasInLocation.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6">
-          {medSpasInLocation.map(medSpa => (
-            <MedSpaCard key={medSpa.id} medSpa={medSpa} />
-          ))}
-        </div>
-      ) : (
-        <div className="bg-medspa-blue/30 p-8 rounded-lg text-center border border-medspa-blue/20">
-          <h3 className="text-xl font-medium mb-3">Personalized Recommendations</h3>
-          <p className="text-gray-700 mb-5">
-            Our curators are currently finalizing our selection of premium {serviceName} providers in {locationName}.
-          </p>
-          <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
-            <Link to={`/treatments/${serviceSlug}`}>Explore All {serviceName} Specialists</Link>
-          </Button>
-        </div>
-      )}
+      <ServiceMedSpaListing
+        medSpasInLocation={medSpasInLocation}
+        serviceName={serviceName}
+        serviceSlug={serviceSlug}
+        locationName={locationName}
+        showCount={false}
+      />
     </>
   );
 };
