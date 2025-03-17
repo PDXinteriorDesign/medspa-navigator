@@ -28,8 +28,8 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
       {medSpas.map((medSpa) => (
         <Card key={medSpa.id} className="overflow-hidden">
           <div className="md:flex">
-            <div className="md:w-1/3">
-              <AspectRatio ratio={16/9} className="h-full">
+            <div className="md:w-1/3 flex flex-col">
+              <AspectRatio ratio={1/1} className="h-full">
                 <img 
                   src={medSpa.imageUrl} 
                   alt={medSpa.name} 
