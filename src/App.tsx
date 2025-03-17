@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -81,6 +82,16 @@ import FillersWilliamsburg from "./pages/treatments/locations/FillersWilliamsbur
 import FillersMidtown from "./pages/treatments/locations/FillersMidtown";
 import FillersHamptons from "./pages/treatments/locations/FillersHamptons";
 
+// Kybella Location Pages
+import KybellaManhattan from "./pages/treatments/locations/KybellaManhattan";
+import KybellaBrooklyn from "./pages/treatments/locations/KybellaBrooklyn";
+import KybellaSoHo from "./pages/treatments/locations/KybellaSoHo";
+import KybellaTribeca from "./pages/treatments/locations/KybellaTribeca";
+import KybellaUpperEastSide from "./pages/treatments/locations/KybellaUpperEastSide";
+import KybellaWilliamsburg from "./pages/treatments/locations/KybellaWilliamsburg";
+import KybellaMidtown from "./pages/treatments/locations/KybellaMidtown";
+import KybellaHamptons from "./pages/treatments/locations/KybellaHamptons";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -159,6 +170,15 @@ const App = () => (
             <Route path="treatments/fillers/williamsburg" element={<FillersWilliamsburg />} />
             <Route path="treatments/fillers/midtown" element={<FillersMidtown />} />
             <Route path="treatments/fillers/the-hamptons" element={<FillersHamptons />} />
+            
+            <Route path="treatments/kybella/manhattan" element={<KybellaManhattan />} />
+            <Route path="treatments/kybella/brooklyn" element={<KybellaBrooklyn />} />
+            <Route path="treatments/kybella/soho" element={<KybellaSoHo />} />
+            <Route path="treatments/kybella/tribeca" element={<KybellaTribeca />} />
+            <Route path="treatments/kybella/upper-east-side" element={<KybellaUpperEastSide />} />
+            <Route path="treatments/kybella/williamsburg" element={<KybellaWilliamsburg />} />
+            <Route path="treatments/kybella/midtown" element={<KybellaMidtown />} />
+            <Route path="treatments/kybella/the-hamptons" element={<KybellaHamptons />} />
             
             <Route path="locations" element={<Locations />} />
             

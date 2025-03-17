@@ -1,3 +1,4 @@
+
 import { Service } from "./types";
 
 // Mock services data
@@ -22,6 +23,13 @@ export const services: Service[] = [
     slug: "fillers",
     description: "Dermal Fillers are injectables that add volume, smooth lines, and enhance facial contours for a more youthful appearance without surgery.",
     imageUrl: "https://images.pexels.com/photos/4586711/pexels-photo-4586711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "kybella",
+    name: "Kybella",
+    slug: "kybella",
+    description: "Kybella is the first and only FDA-approved injectable treatment designed specifically to eliminate submental fullness, commonly known as a double chin.",
+    imageUrl: "https://images.pexels.com/photos/7582555/pexels-photo-7582555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "coolsculpting",
