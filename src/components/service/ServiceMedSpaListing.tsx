@@ -4,7 +4,6 @@ import MedSpaCard from "@/components/MedSpaCard";
 import { MedSpa } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import LocationNoResults from "./LocationNoResults";
 
 interface ServiceMedSpaListingProps {
   medSpasInLocation: MedSpa[];

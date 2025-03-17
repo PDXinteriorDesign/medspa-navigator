@@ -1,8 +1,10 @@
+
 import React from "react";
 import ServiceHero from "./ServiceHero";
 import ServiceFaqs from "./ServiceFaqs";
 import { MedSpa } from "@/lib/types";
 import ServiceMedSpaListing from "./ServiceMedSpaListing";
+import ServiceIntroSection from "./ServiceIntroSection";
 
 interface BotoxManhattanContentProps {
   serviceName: string;
@@ -79,9 +81,9 @@ const BotoxManhattanContent = ({
         locationName={locationName}
       />
       
-      <div className="bg-white rounded-lg shadow-sm p-8 md:p-10 mb-8 border border-gray-100/80">
+      <ServiceIntroSection>
         {getBotoxIntro()}
-      </div>
+      </ServiceIntroSection>
       
       <ServiceFaqs 
         serviceName={`${serviceName} in ${locationName}`}

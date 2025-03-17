@@ -8,6 +8,7 @@ import { LocationContent } from "@/utils/locationContent";
 import { MedSpa } from "@/lib/types";
 import { Star } from "lucide-react";
 import ServiceMedSpaListing from "./ServiceMedSpaListing";
+import ServiceIntroSection from "./ServiceIntroSection";
 
 interface StandardLocationContentProps {
   serviceName: string;
@@ -37,7 +38,7 @@ const StandardLocationContent = ({
         medSpasCount={medSpasInLocation.length}
       />
       
-      <div className="bg-white rounded-lg shadow-sm p-8 md:p-10 mb-8 border border-gray-100/80">
+      <ServiceIntroSection>
         <div className="mb-2">
           <div className="inline-block bg-medspa-teal/10 px-3 py-1 rounded-full text-xs font-medium text-medspa-teal mb-4">
             Curator's Selection
@@ -80,7 +81,7 @@ const StandardLocationContent = ({
             </p>
           </div>
         </div>
-      </div>
+      </ServiceIntroSection>
       
       <ServiceFaqs 
         serviceName={`${serviceName} in ${locationName}`}
