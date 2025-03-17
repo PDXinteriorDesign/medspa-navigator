@@ -20,7 +20,7 @@ interface LocationFilterProps {
 const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) => {
   // Get current location name for display
   const getCurrentLocationName = () => {
-    if (!currentLocation) return "All NYC";
+    if (!currentLocation) return "";
     
     // Check in locationDetails first
     const locationDetail = locationDetails.find(loc => loc.id === currentLocation);
@@ -28,7 +28,7 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
     
     // If not found, check in locations array
     const location = locations.find(loc => loc.id === currentLocation);
-    return location ? location.name : "All NYC";
+    return location ? location.name : "";
   };
 
   // Combine locations from both sources
@@ -60,24 +60,12 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
           <Button variant="outline" className="w-full justify-between bg-white border border-gray-200">
             <span className="flex items-center">
               <MapPin size={16} className="mr-2 text-medspa-teal" />
-              <span>{getCurrentLocationName()}</span>
+              <span>{currentLocation ? getCurrentLocationName() : "Select a location"}</span>
             </span>
             <ChevronDown size={16} />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-[200px] max-h-[300px] overflow-y-auto bg-white">
-          {/* All NYC option */}
-          {serviceSlug && (
-            <DropdownMenuItem asChild className={!currentLocation ? "text-medspa-teal font-medium" : ""}>
-              <Link to={`/treatments/${serviceSlug}`} className="w-full">
-                <span className="flex items-center">
-                  <MapPin size={14} className="mr-2" />
-                  <span>All NYC</span>
-                </span>
-              </Link>
-            </DropdownMenuItem>
-          )}
-          
           {/* All locations from the combined sources */}
           {allLocations.map((location) => (
             <DropdownMenuItem 
