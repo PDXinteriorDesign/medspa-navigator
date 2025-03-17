@@ -5,11 +5,12 @@ interface ServiceHeroProps {
   imageUrl: string;
   name: string;
   medSpasCount: number;
+  reducedHeight?: boolean; // Optional prop to reduce the hero height
 }
 
-const ServiceHero = ({ imageUrl, name, medSpasCount }: ServiceHeroProps) => {
+const ServiceHero = ({ imageUrl, name, medSpasCount, reducedHeight = false }: ServiceHeroProps) => {
   return (
-    <div className="relative h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-lg">
+    <div className={`relative ${reducedHeight ? 'h-32 md:h-48' : 'h-64 md:h-96'} mb-8 rounded-lg overflow-hidden shadow-lg`}>
       <img 
         src={imageUrl} 
         alt={name} 

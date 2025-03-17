@@ -102,19 +102,23 @@ const ServiceLocationMainContent = ({
     return locationFaqs;
   };
 
+  // Check if this is the Botox Manhattan page
+  const isBotoxManhattan = serviceSlug === "botox" && locationName === "Manhattan";
+
   return (
     <>
       <ServiceHero 
         imageUrl={imageUrl} 
         name={`${serviceName} in ${locationName}`} 
-        medSpasCount={medSpasInLocation.length} 
+        medSpasCount={medSpasInLocation.length}
+        reducedHeight={isBotoxManhattan} // Pass prop to reduce height for Botox Manhattan
       />
       
       <div className="bg-white rounded-lg shadow-sm p-8 md:p-10 mb-8 border border-gray-100/80">
         {getBotoxIntro()}
         
         {/* Removed ServiceLocationProviders section for Botox in Manhattan */}
-        {!(serviceSlug === "botox" && locationName === "Manhattan") && (
+        {!isBotoxManhattan && (
           <ServiceLocationProviders 
             locationName={locationName} 
             serviceName={serviceName}
@@ -123,7 +127,7 @@ const ServiceLocationMainContent = ({
         )}
         
         {/* Removed ServiceLocationTiming section for Botox in Manhattan */}
-        {!(serviceSlug === "botox" && locationName === "Manhattan") && (
+        {!isBotoxManhattan && (
           <ServiceLocationTiming 
             locationName={locationName} 
             serviceName={serviceName}
@@ -132,7 +136,7 @@ const ServiceLocationMainContent = ({
         )}
         
         {/* Removed Expert Insight section for Botox in Manhattan */}
-        {!(serviceSlug === "botox" && locationName === "Manhattan") && (
+        {!isBotoxManhattan && (
           <div className="mt-10 pt-6 border-t border-gray-100">
             <div className="flex items-center mb-4">
               <Star size={20} className="text-medspa-gold mr-2" fill="currentColor" />
@@ -148,7 +152,7 @@ const ServiceLocationMainContent = ({
       </div>
       
       {/* Moved the MedSpas section above FAQs for Botox in Manhattan */}
-      {(serviceSlug === "botox" && locationName === "Manhattan") && (
+      {isBotoxManhattan && (
         <>
           <h2 className="text-2xl font-serif font-medium mb-6 tracking-tight">
             Handpicked {serviceName} Providers in {locationName}
@@ -176,11 +180,11 @@ const ServiceLocationMainContent = ({
       
       <ServiceFaqs 
         serviceName={`${serviceName} in ${locationName}`}
-        faqs={serviceSlug === "botox" && locationName === "Manhattan" ? getManhattanBotoxFAQs() : locationFaqs}
+        faqs={isBotoxManhattan ? getManhattanBotoxFAQs() : locationFaqs}
       />
       
       {/* Only show this section for non-Botox Manhattan pages */}
-      {!(serviceSlug === "botox" && locationName === "Manhattan") && (
+      {!isBotoxManhattan && (
         <>
           <h2 className="text-2xl font-serif font-medium mt-10 mb-6 tracking-tight">
             Handpicked {serviceName} Providers in {locationName}
