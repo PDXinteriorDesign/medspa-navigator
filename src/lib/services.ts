@@ -1,3 +1,4 @@
+
 import { Service } from "./types";
 
 // Mock services data
@@ -105,7 +106,7 @@ export const services: Service[] = [
     name: "Microneedling",
     slug: "microneedling",
     description: "Microneedling is a procedure that uses fine needles to create hundreds of tiny, invisible puncture wounds in the top layer of skin to trigger the body's natural wound healing processes.",
-    imageUrl: "https://images.pexels.com/photos/7289740/pexels-photo-7289740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    imageUrl: "https://images.pexels.com/photos/29648626/pexels-photo-29648626/free-photo-of-microneedling-facial-treatment-procedure.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "radio-ultrasound-therapy",
