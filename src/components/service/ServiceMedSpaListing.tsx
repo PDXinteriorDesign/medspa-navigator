@@ -4,6 +4,7 @@ import MedSpaCard from "@/components/MedSpaCard";
 import { MedSpa } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ServiceMedSpaListingProps {
   medSpasInLocation: MedSpa[];
@@ -20,18 +21,20 @@ const ServiceMedSpaListing = ({
   locationName,
   showCount = true
 }: ServiceMedSpaListingProps) => {
+  const isMobile = useIsMobile();
+  
   return (
     <>
       {showCount && (
-        <div className="mb-6">
-          <span className="text-sm font-medium text-medspa-teal">
+        <div className={`mb-${isMobile ? '4' : '6'}`}>
+          <span className={`text-${isMobile ? 'xs' : 'sm'} font-medium text-medspa-teal`}>
             Showing {medSpasInLocation.length} {serviceName} Clinics & Med Spas in {locationName}
           </span>
         </div>
       )}
       
       {medSpasInLocation.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 mb-8">
+        <div className={`grid grid-cols-1 gap-${isMobile ? '4' : '6'} mb-8`}>
           {medSpasInLocation.map(medSpa => (
             <MedSpaCard key={medSpa.id} medSpa={medSpa} />
           ))}
