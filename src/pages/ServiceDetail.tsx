@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import LocationFilter from "@/components/LocationFilter";
-import { getServiceBySlug } from "@/lib/services";
-import { getMedSpasByService } from "@/lib/filters";
+import { getServiceBySlug, getMedSpasByService } from "@/lib/data";
 import { getServiceSeoContent, getServiceFaqs, getServicePricing } from "@/utils/serviceContent";
 import { generateNYCServiceKeywords } from "@/utils/keywordGenerator";
 
