@@ -48,7 +48,7 @@ const RadioUltrasoundTherapyPage = () => {
           "The quality of technology and provider expertise significantly impacts outcomes, making it important to choose reputable NYC medspas."
         ]
       }}
-      customHeroImage="https://images.pexels.com/photos/7446976/pexels-photo-7446976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      customHeroImage="https://images.pexels.com/photos/5069609/pexels-photo-5069609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     />
   );
 };
