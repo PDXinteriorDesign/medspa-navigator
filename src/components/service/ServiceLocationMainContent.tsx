@@ -1,9 +1,8 @@
 
 import React from "react";
-import { LocationContent } from "@/utils/locationContent";
-import { MedSpa } from "@/lib/types";
 import TreatmentLocationContent from "./TreatmentLocationContent";
-import StandardLocationContent from "./StandardLocationContent";
+import { type MedSpa } from "@/lib/types";
+import { type LocationContent } from "@/utils/locationContent";
 
 interface ServiceLocationMainContentProps {
   serviceName: string;
@@ -24,9 +23,6 @@ const ServiceLocationMainContent = ({
   locationContent,
   locationFaqs
 }: ServiceLocationMainContentProps) => {
-  
-  // For treatment/location combination pages, use our new template
-  // When we're in a treatment/location route like /botox/manhattan
   return (
     <TreatmentLocationContent
       serviceName={serviceName}
