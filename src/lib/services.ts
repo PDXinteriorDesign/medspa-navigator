@@ -72,6 +72,48 @@ export const services: Service[] = [
     slug: "weight-management",
     description: "Weight Management Programs combine medical expertise with personalized nutrition and lifestyle guidance, offering effective solutions beyond traditional dieting.",
     imageUrl: "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    id: "prp",
+    name: "Platelet Rich Plasma",
+    slug: "prp",
+    description: "Platelet Rich Plasma therapy uses a patient's own blood cells to accelerate healing in a specific area, promoting tissue regeneration and collagen production.",
+    imageUrl: "https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "hydrofacials",
+    name: "Hydrofacials",
+    slug: "hydrofacials",
+    description: "Hydrofacials are advanced, multi-step treatments that cleanse, extract, and hydrate the skin using patented technology for immediate, glowing results.",
+    imageUrl: "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "chemical-peels",
+    name: "Chemical Peels",
+    slug: "chemical-peels",
+    description: "Chemical peels use carefully formulated solutions to remove damaged outer layers of skin, revealing fresher, younger-looking skin underneath.",
+    imageUrl: "https://images.pexels.com/photos/3997981/pexels-photo-3997981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "microdermabrasion",
+    name: "Microdermabrasion",
+    slug: "microdermabrasion",
+    description: "Microdermabrasion is a minimally invasive procedure that uses fine crystals or a diamond-tip wand to gently exfoliate the skin, improving texture and tone.",
+    imageUrl: "https://images.pexels.com/photos/3997990/pexels-photo-3997990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "microneedling",
+    name: "Microneedling",
+    slug: "microneedling",
+    description: "Microneedling is a procedure that uses fine needles to create hundreds of tiny, invisible puncture wounds in the top layer of skin to trigger the body's natural wound healing processes.",
+    imageUrl: "https://images.pexels.com/photos/7289740/pexels-photo-7289740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "radio-ultrasound-therapy",
+    name: "Radio & Ultrasound Therapy",
+    slug: "radio-ultrasound-therapy",
+    description: "Radio frequency and ultrasound therapies use energy waves to stimulate collagen production, tighten skin, and reduce fat non-invasively.",
+    imageUrl: "https://images.pexels.com/photos/7446976/pexels-photo-7446976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   }
 ];
 
