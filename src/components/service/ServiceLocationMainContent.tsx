@@ -25,6 +25,11 @@ const ServiceLocationMainContent = ({
   locationFaqs
 }: ServiceLocationMainContentProps) => {
   
+  // Special case for microdermabrasion - use a specific image for all location pages
+  const finalImageUrl = serviceSlug === "microdermabrasion" 
+    ? "https://images.pexels.com/photos/7675410/pexels-photo-7675410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+    : imageUrl;
+  
   // For treatment/location combination pages, use our new template
   // When we're in a treatment/location route like /botox/manhattan
   return (
@@ -32,7 +37,7 @@ const ServiceLocationMainContent = ({
       serviceName={serviceName}
       serviceSlug={serviceSlug}
       locationName={locationName}
-      imageUrl={imageUrl}
+      imageUrl={finalImageUrl}
       medSpasInLocation={medSpasInLocation}
       locationFaqs={locationFaqs}
     />

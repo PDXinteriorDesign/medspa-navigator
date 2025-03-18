@@ -5,7 +5,7 @@ import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 const MicrodermabrasionPage = () => {
   const treatmentName = "Microdermabrasion";
   const serviceSlug = "microdermabrasion";
-  const customHeroImage = "https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/7675410/pexels-photo-7675410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   // Enhanced content structure for SEO
   const enhancedContent = {
