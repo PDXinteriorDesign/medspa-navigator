@@ -4,7 +4,7 @@ import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 const CoolSculptingPage = () => {
   const treatmentName = "CoolSculpting";
   const serviceSlug = "coolsculpting";
-  const customHeroImage = "https://images.pexels.com/photos/14843543/pexels-photo-14843543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/136409/pexels-photo-136409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   const enhancedContent = {
     introduction: [

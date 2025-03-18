@@ -35,7 +35,7 @@ export const services: Service[] = [
     name: "CoolSculpting",
     slug: "coolsculpting",
     description: "CoolSculpting is a non-invasive fat-reduction procedure that freezes and eliminates stubborn fat cells.",
-    imageUrl: "https://images.pexels.com/photos/14843543/pexels-photo-14843543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    imageUrl: "https://images.pexels.com/photos/136409/pexels-photo-136409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "laser-hair-removal",
