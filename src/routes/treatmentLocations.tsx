@@ -13,6 +13,7 @@ import VaginalRejuvenationRoutes from "./treatments/vaginalRejuvenationRoutes";
 import PhotofacialsRoutes from "./treatments/photofacialsRoutes";
 import LaserResurfacingRoutes from "./treatments/laserResurfacingRoutes";
 import CoolSculptingRoutes from "./treatments/coolSculptingRoutes";
+import WeightManagementRoutes from "./treatments/weightManagementRoutes";
 
 const TreatmentLocationRoutes = (
   <>
@@ -48,6 +49,9 @@ const TreatmentLocationRoutes = (
     
     {/* CoolSculpting Routes */}
     {CoolSculptingRoutes}
+    
+    {/* Weight Management Routes */}
+    {WeightManagementRoutes}
   </>
 );
 
