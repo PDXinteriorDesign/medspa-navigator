@@ -1,3 +1,4 @@
+
 import { Service } from "./types";
 
 // Mock services data
@@ -112,7 +113,7 @@ export const services: Service[] = [
     name: "Radio & Ultrasound Therapy",
     slug: "radio-ultrasound-therapy",
     description: "Radio frequency and ultrasound therapies use energy waves to stimulate collagen production, tighten skin, and reduce fat non-invasively.",
-    imageUrl: "https://images.pexels.com/photos/7446976/pexels-photo-7446976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    imageUrl: "https://images.pexels.com/photos/5069609/pexels-photo-5069609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   }
 ];
 
