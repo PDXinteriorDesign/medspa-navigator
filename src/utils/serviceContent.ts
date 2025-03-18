@@ -1,3 +1,4 @@
+
 import { SeoContent, FAQ, PricingItem } from "./serviceTypes";
 import { 
   getBotoxContent, 
@@ -67,6 +68,11 @@ import {
   getMicroneedlingFaqs,
   getMicroneedlingPricing
 } from "./serviceContent/microneedlingContent";
+import {
+  getWeightManagementFaqs,
+  getWeightManagementPricing,
+  getWeightManagementContent
+} from "./serviceContent/weightManagementContent";
 
 export * from "./serviceTypes";
 
@@ -84,7 +90,7 @@ export const getServiceSeoContent = (serviceName: string): SeoContent => {
       contentData = getLaserHairRemovalContent();
       break;
     case "Weight Management":
-      contentData = getDefaultServiceContent("Weight Management");
+      contentData = getWeightManagementContent();
       break;
     default:
       contentData = getDefaultServiceContent(serviceName);
@@ -113,7 +119,7 @@ export const getServiceFaqs = (serviceName: string): FAQ[] => {
     case "Laser Hair Removal":
       return getLaserHairRemovalFaqs();
     case "Weight Management":
-      return getDefaultServiceFaqs("Weight Management");
+      return getWeightManagementFaqs();
     case "MicroBotox":
       return getMicroBotoxFaqs();
     case "Dermal Fillers":
@@ -152,7 +158,7 @@ export const getServicePricing = (serviceName: string): PricingItem[] => {
     case "Laser Hair Removal":
       return getLaserHairRemovalPricing();
     case "Weight Management":
-      return getDefaultServicePricing("Weight Management");
+      return getWeightManagementPricing();
     case "MicroBotox":
       return getMicroBotoxPricing();
     case "Dermal Fillers":

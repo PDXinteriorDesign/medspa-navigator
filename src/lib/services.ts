@@ -65,6 +65,13 @@ export const services: Service[] = [
     slug: "vaginal-rejuvenation",
     description: "Vaginal Rejuvenation encompasses non-surgical treatments designed to address vaginal laxity, dryness, and other intimate concerns using advanced technologies.",
     imageUrl: "https://images.pexels.com/photos/2302908/pexels-photo-2302908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: "weight-management",
+    name: "Weight Management",
+    slug: "weight-management",
+    description: "Weight Management Programs combine medical expertise with personalized nutrition and lifestyle guidance, offering effective solutions beyond traditional dieting.",
+    imageUrl: "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ];
 
