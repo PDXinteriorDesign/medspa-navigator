@@ -1,4 +1,3 @@
-
 import { Service } from "./types";
 
 // Mock services data
@@ -69,7 +68,20 @@ export const services: Service[] = [
 ];
 
 // Helper function to get a service by slug
-export const getServiceBySlug = (slug: string): Service | undefined => {
+export const getServiceBySlug = (slug: string) => {
+  // Special case for laser resurfacing - ensure it always returns a valid service even if not in main list
+  if (slug === 'laser-resurfacing') {
+    return {
+      id: 'laser-resurfacing',
+      name: 'Laser Resurfacing',
+      slug: 'laser-resurfacing',
+      description: 'Laser resurfacing treatments use focused light technology to reduce facial wrinkles, scars and blemishes. The treatment removes skin layer by layer with precision, allowing new skin cells to form, resulting in smoother, younger-looking skin.',
+      imageUrl: 'https://images.unsplash.com/photo-1560750588-73207b1ef5b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80',
+      category: 'laser',
+      popular: true
+    };
+  }
+  
   return services.find(service => service.slug === slug);
 };
 
