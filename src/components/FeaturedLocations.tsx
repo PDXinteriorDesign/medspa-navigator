@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Star, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { type LocationDetail } from "@/lib/locationData";
 
 interface FeaturedLocationsProps {
@@ -25,7 +25,10 @@ const FeaturedLocations = ({ locations }: FeaturedLocationsProps) => {
               <img 
                 src={location.imageUrl} 
                 alt={location.name} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                width="400"
+                height="256"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                 <div className="p-6">

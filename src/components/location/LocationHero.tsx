@@ -14,7 +14,10 @@ const LocationHero = ({ imageUrl, name, medspaCount, tagline }: LocationHeroProp
       <img 
         src={imageUrl} 
         alt={name} 
-        className="w-full h-full object-cover" 
+        className="w-full h-full object-cover"
+        loading="lazy"
+        width="1200"
+        height="450"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end">
         <div className="p-8 md:p-10">

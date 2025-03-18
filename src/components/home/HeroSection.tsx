@@ -1,7 +1,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Search, MapPin, Grid3X3 } from "lucide-react";
 import {
   Select,
@@ -13,29 +13,36 @@ import {
 import { locations } from "@/lib/locations";
 import { locationDetails } from "@/lib/locationData";
 import { services } from "@/lib/services";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroSection = () => {
   const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
-
-  // Combine locations from both sources, avoiding duplicates
-  const allLocations = [...locationDetails.map(location => ({
-    id: location.id,
-    name: location.name,
-    slug: location.slug
-  }))];
+  const isMobile = useIsMobile();
   
-  // Add locations from the locations array that aren't already included
-  locations.forEach(location => {
-    if (!allLocations.some(loc => loc.id === location.id || loc.slug === location.id)) {
-      allLocations.push({
-        id: location.id,
-        name: location.name,
-        slug: location.id
-      });
-    }
-  });
+  // Memoize locations to avoid recalculating on every render
+  const allLocations = useMemo(() => {
+    // Combine locations from both sources, avoiding duplicates
+    const combinedLocations = [...locationDetails.map(location => ({
+      id: location.id,
+      name: location.name,
+      slug: location.slug
+    }))];
+    
+    // Add locations from the locations array that aren't already included
+    locations.forEach(location => {
+      if (!combinedLocations.some(loc => loc.id === location.id || loc.slug === location.id)) {
+        combinedLocations.push({
+          id: location.id,
+          name: location.name,
+          slug: location.id
+        });
+      }
+    });
+    
+    return combinedLocations;
+  }, []);
 
   const handleSearch = () => {
     if (selectedService && selectedLocation) {
@@ -86,7 +93,7 @@ const HeroSection = () => {
                     </div>
                   </SelectTrigger>
                   <SelectContent className="w-[800px] max-h-[400px] overflow-y-auto bg-white">
-                    <div className="p-4 grid grid-cols-4 gap-4">
+                    <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                       {/* Column 1: Popular Treatments */}
                       <div className="space-y-3">
                         <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Popular Treatments</h3>
@@ -181,17 +188,20 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div 
-        className="absolute bottom-0 right-0 w-1/3 h-full hidden md:block" 
-        style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1581182815808-b6eb627a8798?q=80&w=3205&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-          backgroundPosition: 'center', 
-          backgroundSize: 'cover', 
-          clipPath: 'polygon(100% 0, 100% 100%, 0 100%)'
-        }}
-      >
-        <div className="absolute inset-0 bg-medspa-blue/30 mix-blend-multiply"></div>
-      </div>
+      {!isMobile && (
+        <div 
+          className="absolute bottom-0 right-0 w-1/3 h-full hidden md:block" 
+          style={{ 
+            backgroundImage: "url('https://images.unsplash.com/photo-1581182815808-b6eb627a8798?q=80&w=800&auto=format&fit=crop')",
+            backgroundPosition: 'center', 
+            backgroundSize: 'cover', 
+            clipPath: 'polygon(100% 0, 100% 100%, 0 100%)'
+          }}
+          aria-hidden="true"
+        >
+          <div className="absolute inset-0 bg-medspa-blue/30 mix-blend-multiply"></div>
+        </div>
+      )}
     </section>
   );
 };

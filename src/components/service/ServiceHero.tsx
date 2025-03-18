@@ -14,7 +14,10 @@ const ServiceHero = ({ imageUrl, name, medSpasCount, reducedHeight = false }: Se
       <img 
         src={imageUrl} 
         alt={name} 
-        className="w-full h-full object-cover blur-[1.5px]" 
+        className="w-full h-full object-cover blur-[1.5px]"
+        loading="lazy"
+        width="1200" 
+        height={reducedHeight ? "200" : "400"}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex items-end">
         <div className="p-6 md:p-10 w-full luxury-fade-in">
