@@ -1,8 +1,11 @@
 
 import React from "react";
 import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
+import { getServiceBySlug } from "@/lib/services";
 
 const RadioUltrasoundTherapyPage = () => {
+  const service = getServiceBySlug("radio-ultrasound-therapy");
+  
   return (
     <TreatmentPageTemplate
       treatmentName="Radio & Ultrasound Therapy"
@@ -48,7 +51,7 @@ const RadioUltrasoundTherapyPage = () => {
           "The quality of technology and provider expertise significantly impacts outcomes, making it important to choose reputable NYC medspas."
         ]
       }}
-      customHeroImage="https://images.pexels.com/photos/5069609/pexels-photo-5069609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      customHeroImage={service?.imageUrl}
     />
   );
 };
