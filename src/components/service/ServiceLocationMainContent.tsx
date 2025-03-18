@@ -38,6 +38,8 @@ const ServiceLocationMainContent = ({
     finalImageUrl = "https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   } else if (serviceSlug === "radio-ultrasound-therapy") {
     finalImageUrl = "https://images.pexels.com/photos/5069609/pexels-photo-5069609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  } else if (serviceSlug === "laser-hair-removal") {
+    finalImageUrl = "https://images.unsplash.com/photo-1700760933574-9f0f4ea9aa3b?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   }
   
   // For treatment/location combination pages, use our new template

@@ -1,4 +1,3 @@
-
 import { Service } from "./types";
 
 // Mock services data
@@ -43,7 +42,7 @@ export const services: Service[] = [
     name: "Laser Hair Removal",
     slug: "laser-hair-removal",
     description: "Laser hair removal is a medical procedure that uses a concentrated beam of light to remove unwanted hair.",
-    imageUrl: "https://images.unsplash.com/photo-1598963668990-70ff4eb44252?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1700760933574-9f0f4ea9aa3b?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: "photofacials",
