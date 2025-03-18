@@ -70,7 +70,7 @@ const Locations = () => {
             {allLocations.map((location) => (
               <Link
                 key={location.id}
-                to={`/locations/${location.slug}`}
+                to={`/${location.slug}`}
                 className="block bg-medspa-cream/60 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 group subtle-hover border border-black/10"
               >
                 <div className="flex items-center justify-between">

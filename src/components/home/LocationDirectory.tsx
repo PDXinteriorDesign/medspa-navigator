@@ -43,7 +43,7 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
                 </div>
               </li>
             </ul>
-            <Link to="/locations/manhattan" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
+            <Link to="/manhattan" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
               See All Manhattan Med Spas
               <ArrowRight size={16} className="ml-1" />
             </Link>
@@ -75,7 +75,7 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
                 </div>
               </li>
             </ul>
-            <Link to="/locations/brooklyn" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
+            <Link to="/brooklyn" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
               Find Med Spas in Brooklyn
               <ArrowRight size={16} className="ml-1" />
             </Link>
@@ -107,7 +107,7 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
                 </div>
               </li>
             </ul>
-            <Link to="/locations/soho" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
+            <Link to="/soho" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
               Search Med Spas in SoHo
               <ArrowRight size={16} className="ml-1" />
             </Link>

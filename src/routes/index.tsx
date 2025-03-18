@@ -1,3 +1,4 @@
+
 import { Route, Routes, Navigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import Home from "../pages/Home";
@@ -6,6 +7,7 @@ import Services from "../pages/Services";
 import ServiceDetail from "../pages/ServiceDetail";
 import ServiceLocationDetail from "../pages/ServiceLocationDetail";
 import Locations from "../pages/Locations";
+import LocationDetail from "../pages/LocationDetail";
 import NotFound from "../pages/NotFound";
 import FAQ from "../pages/FAQ";
 import ClinicDetail from "../pages/ClinicDetail";
@@ -64,10 +66,10 @@ const AppRoutes = () => {
         
         <Route path="locations" element={<Locations />} />
         
-        <Route path=":location/:clinicId" element={<ClinicDetail />} />
+        {/* Redirect location pages with 'locations/' prefix to direct URL */}
+        <Route path="locations/:locationSlug" element={<Navigate to="/:locationSlug" replace />} />
         
-        {/* Location landing pages */}
-        {LocationLandingRoutes}
+        <Route path=":location/:clinicId" element={<ClinicDetail />} />
         
         {/* Direct location URLs */}
         <Route path="manhattan" element={<ManhattanLanding />} />
