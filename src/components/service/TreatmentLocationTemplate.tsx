@@ -25,12 +25,12 @@ const TreatmentLocationTemplate = ({
 }: TreatmentLocationTemplateProps) => {
   const navigate = useNavigate();
   
-  // Fetch service, location name, and medspas
-  const service = getServiceBySlug(serviceSlug);
+  // Fetch treatment, location name, and medspas
+  const treatment = getServiceBySlug(serviceSlug);
   const locationName = getLocationName(location);
   const medSpasInLocation = getServicesByLocation(serviceSlug, location);
   
-  if (!service) {
+  if (!treatment) {
     console.error(`Treatment not found: ${serviceSlug}`);
     // After a short delay, redirect to NotFound page
     setTimeout(() => {
@@ -60,17 +60,17 @@ const TreatmentLocationTemplate = ({
   }
 
   // Generate location-specific content
-  const locationContent = getLocationContent(service.name, locationName);
-  const locationFaqs = getLocationFaqs(service.name, locationName);
+  const locationContent = getLocationContent(treatment.name, locationName);
+  const locationFaqs = getLocationFaqs(treatment.name, locationName);
   
   // Location-specific keywords
-  const locationKeywords = generateLocationKeywords(service.name, locationName);
+  const locationKeywords = generateLocationKeywords(treatment.name, locationName);
   
   return (
     <>
       <ServiceLocationMetadata 
-        serviceName={service.name}
-        serviceDescription={service.description}
+        serviceName={treatment.name}
+        serviceDescription={treatment.description}
         locationName={locationName}
         locationKeywords={locationKeywords}
       />
@@ -79,8 +79,8 @@ const TreatmentLocationTemplate = ({
         <BreadcrumbNav 
           items={[
             { label: "Treatments", href: "/treatments" },
-            { label: service.name, href: `/treatments/${service.slug}` },
-            { label: locationName, href: `/${service.slug}/${location}`, current: true }
+            { label: treatment.name, href: `/treatments/${treatment.slug}` },
+            { label: locationName, href: `/${treatment.slug}/${location}`, current: true }
           ]} 
         />
         
@@ -92,8 +92,8 @@ const TreatmentLocationTemplate = ({
             
             <div className="mt-8 md:mt-0">
               <ServiceLocationSidebar
-                serviceSlug={service.slug}
-                serviceName={service.name}
+                serviceSlug={treatment.slug}
+                serviceName={treatment.name}
                 location={location}
                 locationName={locationName}
                 locationContent={locationContent}
@@ -104,10 +104,10 @@ const TreatmentLocationTemplate = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
               <ServiceLocationMainContent
-                serviceName={service.name}
-                serviceSlug={service.slug}
+                serviceName={treatment.name}
+                serviceSlug={treatment.slug}
                 locationName={locationName}
-                imageUrl={service.imageUrl}
+                imageUrl={treatment.imageUrl}
                 medSpasInLocation={medSpasInLocation}
                 locationContent={locationContent}
                 locationFaqs={locationFaqs}
@@ -116,8 +116,8 @@ const TreatmentLocationTemplate = ({
             
             <div className="mt-8 md:mt-0">
               <ServiceLocationSidebar
-                serviceSlug={service.slug}
-                serviceName={service.name}
+                serviceSlug={treatment.slug}
+                serviceName={treatment.name}
                 location={location}
                 locationName={locationName}
                 locationContent={locationContent}

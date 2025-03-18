@@ -13,7 +13,7 @@ const ServiceLocationDetail = () => {
   }, [serviceSlug, location]);
   
   // Parse the location from URL if it contains a dash format (serviceSlug-in-location)
-  const parsedServiceSlug = serviceSlug?.includes("-in-") 
+  const parsedTreatmentSlug = serviceSlug?.includes("-in-") 
     ? serviceSlug.split("-in-")[0] 
     : serviceSlug;
     
@@ -21,14 +21,14 @@ const ServiceLocationDetail = () => {
     ? serviceSlug.split("-in-")[1]
     : location;
   
-  if (!parsedServiceSlug || !parsedLocation) {
+  if (!parsedTreatmentSlug || !parsedLocation) {
     navigate("/not-found", { replace: true });
     return null;
   }
 
   return (
     <TreatmentLocationTemplate
-      serviceSlug={parsedServiceSlug}
+      serviceSlug={parsedTreatmentSlug}
       location={parsedLocation as Location}
     />
   );
