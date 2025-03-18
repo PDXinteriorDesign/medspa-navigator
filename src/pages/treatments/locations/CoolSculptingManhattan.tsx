@@ -7,7 +7,7 @@ const CoolSculptingManhattan = () => {
   return (
     <TreatmentLocationTemplate
       serviceSlug="coolsculpting"
-      location="manhattan" as Location
+      location="manhattan"
     />
   );
 };
