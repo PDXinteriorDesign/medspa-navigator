@@ -5,7 +5,7 @@ import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 const LaserResurfacingPage = () => {
   const treatmentName = "Laser Resurfacing";
   const serviceSlug = "laser-resurfacing";
-  const customHeroImage = "https://images.pexels.com/photos/7479817/pexels-photo-7479817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/4586727/pexels-photo-4586727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   // Enhanced content structure for SEO
   const enhancedContent = {
