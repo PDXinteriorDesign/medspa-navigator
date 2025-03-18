@@ -27,7 +27,7 @@ const ServiceLocationMainContent = ({
   
   // Special case for microdermabrasion - use a specific image for all location pages
   const finalImageUrl = serviceSlug === "microdermabrasion" 
-    ? "https://images.pexels.com/photos/7675410/pexels-photo-7675410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+    ? "https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
     : imageUrl;
   
   // For treatment/location combination pages, use our new template

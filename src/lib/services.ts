@@ -1,4 +1,3 @@
-
 import { Service } from "./types";
 
 // Mock services data
@@ -99,7 +98,7 @@ export const services: Service[] = [
     name: "Microdermabrasion",
     slug: "microdermabrasion",
     description: "Microdermabrasion is a minimally invasive procedure that uses fine crystals or a diamond-tip wand to gently exfoliate the skin, improving texture and tone.",
-    imageUrl: "https://images.pexels.com/photos/7675410/pexels-photo-7675410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    imageUrl: "https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "microneedling",

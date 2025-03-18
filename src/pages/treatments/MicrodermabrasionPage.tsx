@@ -1,13 +1,11 @@
-
 import React from "react";
 import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 
 const MicrodermabrasionPage = () => {
   const treatmentName = "Microdermabrasion";
   const serviceSlug = "microdermabrasion";
-  const customHeroImage = "https://images.pexels.com/photos/7675410/pexels-photo-7675410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
-  // Enhanced content structure for SEO
   const enhancedContent = {
     introduction: [
       `Microdermabrasion is a minimally invasive professional exfoliation treatment popular across NYC's premier medical spas. This revitalizing procedure buffs away the outermost layer of dead skin cells using tiny crystals or a diamond-tipped wand, leaving skin smoother, brighter, and more receptive to skincare products.`,
