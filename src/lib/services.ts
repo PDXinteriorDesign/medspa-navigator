@@ -91,7 +91,7 @@ export const services: Service[] = [
     name: "Chemical Peels",
     slug: "chemical-peels",
     description: "Chemical peels use carefully formulated solutions to remove damaged outer layers of skin, revealing fresher, younger-looking skin underneath.",
-    imageUrl: "https://images.pexels.com/photos/3997981/pexels-photo-3997981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    imageUrl: "https://images.pexels.com/photos/5069494/pexels-photo-5069494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "microdermabrasion",

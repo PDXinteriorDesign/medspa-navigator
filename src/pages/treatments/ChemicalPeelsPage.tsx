@@ -5,7 +5,7 @@ import TreatmentPageTemplate from "@/components/service/TreatmentPageTemplate";
 const ChemicalPeelsPage = () => {
   const treatmentName = "Chemical Peels";
   const serviceSlug = "chemical-peels";
-  const customHeroImage = "https://images.pexels.com/photos/5069493/pexels-photo-5069493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const customHeroImage = "https://images.pexels.com/photos/5069494/pexels-photo-5069494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
   // Enhanced content structure for SEO
   const enhancedContent = {
