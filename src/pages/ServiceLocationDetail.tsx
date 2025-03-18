@@ -22,12 +22,8 @@ const ServiceLocationDetail = () => {
     : location;
   
   if (!parsedServiceSlug || !parsedLocation) {
-    return (
-      <div className="medspa-container py-12">
-        <h1 className="page-heading">Service or Location Not Found</h1>
-        <p>The service or location you're looking for doesn't exist or has been removed.</p>
-      </div>
-    );
+    navigate("/not-found", { replace: true });
+    return null;
   }
 
   return (

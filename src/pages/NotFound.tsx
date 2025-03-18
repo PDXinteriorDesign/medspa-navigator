@@ -26,7 +26,7 @@ const NotFound = () => {
             <Link to="/">Return Home</Link>
           </Button>
           <Button asChild variant="outline" className="border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
-            <Link to="/medspas">Browse Directory</Link>
+            <Link to="/treatments">Browse Treatments</Link>
           </Button>
         </div>
       </div>

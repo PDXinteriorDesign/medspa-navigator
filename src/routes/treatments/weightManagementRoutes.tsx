@@ -14,7 +14,6 @@ import WeightManagementHamptons from "../../pages/treatments/locations/WeightMan
 
 const WeightManagementRoutes = (
   <>
-    {/* Weight Management Location Routes */}
     <Route path="weight-management/manhattan" element={<WeightManagementManhattan />} />
     <Route path="weight-management/soho" element={<WeightManagementSoHo />} />
     <Route path="weight-management/tribeca" element={<WeightManagementTribeca />} />
@@ -22,7 +21,7 @@ const WeightManagementRoutes = (
     <Route path="weight-management/midtown" element={<WeightManagementMidtown />} />
     <Route path="weight-management/brooklyn" element={<WeightManagementBrooklyn />} />
     <Route path="weight-management/williamsburg" element={<WeightManagementWilliamsburg />} />
-    <Route path="weight-management/hamptons" element={<WeightManagementHamptons />} />
+    <Route path="weight-management/the-hamptons" element={<WeightManagementHamptons />} />
   </>
 );
 

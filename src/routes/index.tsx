@@ -1,4 +1,3 @@
-
 import { Route, Routes, Navigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import Home from "../pages/Home";
@@ -86,6 +85,7 @@ const AppRoutes = () => {
         <Route path="east-hampton" element={<EastHamptonLanding />} />
         <Route path="bridgehampton-sag-harbor" element={<BridgehamptonSagHarborLanding />} />
         
+        <Route path="not-found" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
