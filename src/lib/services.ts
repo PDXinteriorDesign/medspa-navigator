@@ -1,3 +1,4 @@
+
 import { Service } from "./types";
 
 // Mock services data
@@ -35,7 +36,7 @@ export const services: Service[] = [
     name: "CoolSculpting",
     slug: "coolsculpting",
     description: "CoolSculpting is a non-invasive fat-reduction procedure that freezes and eliminates stubborn fat cells.",
-    imageUrl: "https://images.pexels.com/photos/136409/pexels-photo-136409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    imageUrl: "https://images.pexels.com/photos/7675410/pexels-photo-7675410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "laser-hair-removal",
