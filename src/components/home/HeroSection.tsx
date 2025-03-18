@@ -1,3 +1,4 @@
+
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -51,10 +52,10 @@ const HeroSection = () => {
         navigate(`/treatments/${service.slug}`);
       }
     } else if (selectedLocation) {
-      // Navigate to location page
+      // Navigate to location page - FIXED: removed "locations/" prefix
       const location = allLocations.find(l => l.id === selectedLocation);
       if (location) {
-        navigate(`/locations/${location.slug}`);
+        navigate(`/${location.slug}`);
       }
     } else {
       // Navigate to general directory
