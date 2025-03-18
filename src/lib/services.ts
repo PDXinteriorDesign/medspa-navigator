@@ -1,4 +1,3 @@
-
 import { Service } from "./types";
 
 // Mock services data
@@ -85,7 +84,7 @@ export const services: Service[] = [
     name: "Hydrofacials",
     slug: "hydrofacials",
     description: "Hydrofacials are advanced, multi-step treatments that cleanse, extract, and hydrate the skin using patented technology for immediate, glowing results.",
-    imageUrl: "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    imageUrl: "https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: "chemical-peels",
