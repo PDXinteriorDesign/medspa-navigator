@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getClinicLocations } from "@/utils/locationUtils";
+import ClinicMap from "@/components/clinic/ClinicMap";
 
 interface MedSpaCardProps {
   medSpa: MedSpa;
@@ -29,9 +30,7 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
           <Link to={clinicLink}>
             <AspectRatio ratio={16/9}>
               {medSpa.coordinates ? (
-                <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-                  <MapPin size={32} className="text-medspa-teal" />
-                </div>
+                <ClinicMap clinic={medSpa} />
               ) : (
                 <img 
                   src={medSpa.imageUrl} 
@@ -93,9 +92,7 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
         <Link to={clinicLink}>
           <AspectRatio ratio={16/9}>
             {medSpa.coordinates ? (
-              <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-                <MapPin size={48} className="text-medspa-teal" />
-              </div>
+              <ClinicMap clinic={medSpa} />
             ) : (
               <img 
                 src={medSpa.imageUrl} 

@@ -8,6 +8,7 @@ import { MedSpa } from "@/lib/types";
 import { Link } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getClinicLocations } from "@/utils/locationUtils";
+import ClinicMap from "@/components/clinic/ClinicMap";
 
 interface MedSpaListProps {
   medSpas: MedSpa[];
@@ -38,14 +39,18 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
             {isMobile ? (
               <div className="flex flex-col">
                 <AspectRatio ratio={16/9}>
-                  <img 
-                    src={medSpa.imageUrl} 
-                    alt={medSpa.name} 
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                    width="400"
-                    height="225"
-                  />
+                  {medSpa.coordinates ? (
+                    <ClinicMap clinic={medSpa} />
+                  ) : (
+                    <img 
+                      src={medSpa.imageUrl} 
+                      alt={medSpa.name} 
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      width="400"
+                      height="225"
+                    />
+                  )}
                 </AspectRatio>
                 <CardHeader className="py-3 px-4">
                   <div className="flex items-start justify-between">
@@ -97,14 +102,18 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
               <div className="md:flex">
                 <div className="md:w-1/3 flex flex-col">
                   <AspectRatio ratio={1/1} className="h-full">
-                    <img 
-                      src={medSpa.imageUrl} 
-                      alt={medSpa.name} 
-                      className="h-full w-full object-cover"
-                      loading="lazy" 
-                      width="400"
-                      height="400"
-                    />
+                    {medSpa.coordinates ? (
+                      <ClinicMap clinic={medSpa} />
+                    ) : (
+                      <img 
+                        src={medSpa.imageUrl} 
+                        alt={medSpa.name} 
+                        className="h-full w-full object-cover"
+                        loading="lazy" 
+                        width="400"
+                        height="400"
+                      />
+                    )}
                   </AspectRatio>
                 </div>
                 <div className="md:w-2/3">
