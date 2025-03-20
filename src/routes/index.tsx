@@ -1,3 +1,4 @@
+
 import { Route, Routes, Navigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import Home from "../pages/Home";
@@ -45,9 +46,6 @@ const AppRoutes = () => {
         <Route path="treatments/:serviceSlug/:location" element={<ServiceLocationDetail />} />
         <Route path="treatments/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
         
-        {/* This route should NOT catch location/:clinicId patterns */}
-        <Route path=":serviceSlug/:location" element={<ServiceLocationDetail />} />
-        
         {/* Legacy redirects */}
         <Route 
           path="services/:serviceSlug-in-:location" 
@@ -71,10 +69,7 @@ const AppRoutes = () => {
         {/* Redirect location pages with 'locations/' prefix to direct URL */}
         <Route path="locations/:locationSlug" element={<Navigate to="/:locationSlug" replace />} />
         
-        {/* Clinic detail page - explicit placement to avoid route conflicts */}
-        <Route path=":location/:clinicId" element={<ClinicDetail />} />
-        
-        {/* Direct location URLs */}
+        {/* Direct location URLs - place BEFORE the clinic detail route to avoid conflicts */}
         <Route path="manhattan" element={<ManhattanLanding />} />
         <Route path="soho" element={<SoHoLanding />} />
         <Route path="upper-east-side" element={<UpperEastSideLanding />} />
@@ -89,6 +84,12 @@ const AppRoutes = () => {
         <Route path="southampton" element={<SouthamptonLanding />} />
         <Route path="east-hampton" element={<EastHamptonLanding />} />
         <Route path="bridgehampton-sag-harbor" element={<BridgehamptonSagHarborLanding />} />
+        
+        {/* Clinic detail page AFTER specific location routes */}
+        <Route path=":location/:clinicId" element={<ClinicDetail />} />
+        
+        {/* This route should NOT catch location/:clinicId patterns */}
+        <Route path=":serviceSlug/:location" element={<ServiceLocationDetail />} />
         
         <Route path="not-found" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

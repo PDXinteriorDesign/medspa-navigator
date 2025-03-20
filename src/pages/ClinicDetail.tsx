@@ -10,8 +10,17 @@ const ClinicDetail = () => {
   const { location, clinicId } = useParams<{ location: string; clinicId: string }>();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const [debugInfo, setDebugInfo] = useState<{
+    location?: string;
+    clinicId?: string;
+    clinic?: any;
+    validLocations?: string[];
+  }>({});
   
   useEffect(() => {
+    // Log parameters for debugging
+    console.log(`ClinicDetail mounted: location=${location}, clinicId=${clinicId}`);
+    
     if (!location || !clinicId) {
       console.error("Missing location or clinicId parameters");
       toast({
@@ -25,6 +34,14 @@ const ClinicDetail = () => {
     
     // Find the clinic by ID or slug
     const clinic = getMedSpaById(clinicId);
+    
+    // Store debug info
+    setDebugInfo({
+      location,
+      clinicId,
+      clinic,
+      validLocations: clinic ? getClinicLocations(clinic.address, clinic.location) : []
+    });
     
     // If clinic doesn't exist, redirect to locations
     if (!clinic) {
@@ -40,6 +57,7 @@ const ClinicDetail = () => {
     
     // Get all valid locations for this clinic
     const validLocations = getClinicLocations(clinic.address, clinic.location);
+    console.log(`Valid locations for ${clinic.name}: ${validLocations.join(', ')}`);
     
     // Case-insensitive location check
     const normalizedLocation = location.toLowerCase();
@@ -64,6 +82,12 @@ const ClinicDetail = () => {
     return (
       <div className="medspa-container py-12 text-center">
         <p>Loading clinic information...</p>
+        {Object.keys(debugInfo).length > 0 && (
+          <div className="mt-4 p-4 bg-gray-100 rounded text-left text-xs">
+            <h3 className="font-bold mb-2">Debug Info:</h3>
+            <pre>{JSON.stringify(debugInfo, null, 2)}</pre>
+          </div>
+        )}
       </div>
     );
   }
