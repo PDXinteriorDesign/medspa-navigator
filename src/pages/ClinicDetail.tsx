@@ -11,15 +11,20 @@ const ClinicDetail = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   
-  // Find the clinic by ID or slug
-  const clinic = clinicId ? getMedSpaById(clinicId) : undefined;
-  
   useEffect(() => {
     if (!location || !clinicId) {
       console.error("Missing location or clinicId parameters");
+      toast({
+        title: "Invalid URL",
+        description: "Missing location or clinic information. Redirecting to locations page.",
+        variant: "destructive"
+      });
       navigate("/locations", { replace: true });
       return;
     }
+    
+    // Find the clinic by ID or slug
+    const clinic = getMedSpaById(clinicId);
     
     // If clinic doesn't exist, redirect to locations
     if (!clinic) {
@@ -50,7 +55,10 @@ const ClinicDetail = () => {
     }
     
     setIsLoading(false);
-  }, [clinic, clinicId, location, navigate]);
+  }, [location, clinicId, navigate]);
+  
+  // Moved this inside the component body rather than in the useEffect
+  const clinic = clinicId ? getMedSpaById(clinicId) : undefined;
   
   if (isLoading) {
     return (

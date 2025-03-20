@@ -1,4 +1,3 @@
-
 import { Route, Routes, Navigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import Home from "../pages/Home";
@@ -42,11 +41,14 @@ const AppRoutes = () => {
         <Route path="treatments" element={<Services />} />
         <Route path="treatments/:serviceSlug" element={<ServiceDetail />} />
         
+        {/* Treatment location routes */}
         <Route path="treatments/:serviceSlug/:location" element={<ServiceLocationDetail />} />
         <Route path="treatments/:serviceSlug-in-:location" element={<ServiceLocationDetail />} />
         
+        {/* This route should NOT catch location/:clinicId patterns */}
         <Route path=":serviceSlug/:location" element={<ServiceLocationDetail />} />
         
+        {/* Legacy redirects */}
         <Route 
           path="services/:serviceSlug-in-:location" 
           element={<Navigate to="/treatments/:serviceSlug-in-:location" replace />} 
@@ -69,6 +71,7 @@ const AppRoutes = () => {
         {/* Redirect location pages with 'locations/' prefix to direct URL */}
         <Route path="locations/:locationSlug" element={<Navigate to="/:locationSlug" replace />} />
         
+        {/* Clinic detail page - explicit placement to avoid route conflicts */}
         <Route path=":location/:clinicId" element={<ClinicDetail />} />
         
         {/* Direct location URLs */}
