@@ -55,7 +55,7 @@ export const medSpas: MedSpa[] = [
     ],
     featured: true,
     rating: 4.8,
-    reviewCount: 87,
+    reviewCount: 245,
     coordinates: {
       lat: 40.7191,
       lng: -74.0065
