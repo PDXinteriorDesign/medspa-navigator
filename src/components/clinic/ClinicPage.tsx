@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { MapPin, Star, Phone, Clock, ShieldCheck, ExternalLink, ChevronRight } from "lucide-react";
+import { MapPin, Star, Phone, Clock, ShieldCheck, ExternalLink, ChevronRight, Sparkles } from "lucide-react";
 import ClinicSchema from "./ClinicSchema";
 
 interface ClinicPageProps {
@@ -39,6 +39,28 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
       return `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${encodeURIComponent(clinic.address)}`;
     }
   };
+
+  // Additional treatments specific to this clinic - could be added to the MedSpa type in the future
+  const additionalTreatments = [
+    "Dysport®", 
+    "DAXXIFY™", 
+    "JUVÉDERM®", 
+    "Restylane®", 
+    "Radiesse®", 
+    "Sculptra®", 
+    "Thread Lifts", 
+    "Fraxel®", 
+    "Clear + Brilliant®", 
+    "Laser Genesis", 
+    "Ultherapy®", 
+    "IPL & Photo Rejuvenation", 
+    "CoolTone™", 
+    "VelaShape™", 
+    "Chemical Peels", 
+    "Dermaplaning", 
+    "ZO Skin Health®", 
+    "ProBLUEMD Skincare"
+  ];
 
   return (
     <>
@@ -162,6 +184,29 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
                           </Link>
                         );
                       })}
+                    </div>
+                  </div>
+                )}
+                
+                {additionalTreatments && additionalTreatments.length > 0 && (
+                  <div className="mb-8 p-5 bg-medspa-cream/50 rounded-lg border border-medspa-teal/10">
+                    <div className="flex items-center mb-4">
+                      <Sparkles size={18} className="text-medspa-gold mr-2" />
+                      <h2 className="text-xl font-medium text-medspa-dark">Additional Treatments</h2>
+                    </div>
+                    <p className="text-gray-700 mb-4">
+                      {clinic.name} also offers these premium aesthetic treatments:
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      {additionalTreatments.map((treatment, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center p-2 border border-gray-200 bg-white rounded-md"
+                        >
+                          <ChevronRight size={16} className="text-medspa-gold mr-2" />
+                          <span>{treatment}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}
