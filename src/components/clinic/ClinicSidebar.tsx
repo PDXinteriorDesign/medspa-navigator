@@ -106,7 +106,7 @@ const ClinicSidebar = ({ clinic, locationSlug }: ClinicSidebarProps) => {
             <DialogTitle className="text-xl font-serif">Claim {clinic.name}</DialogTitle>
           </DialogHeader>
           <div className="pt-4">
-            <div id="hubspot-form-container" className="min-h-[400px]"></div>
+            <div id="hubspot-form-container" className="min-h-[400px] p-3 mx-auto"></div>
           </div>
         </DialogContent>
       </Dialog>

@@ -251,7 +251,7 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
             </DialogTitle>
           </DialogHeader>
           <div className="pt-4">
-            <div id="hubspot-form-container" className="min-h-[400px]"></div>
+            <div id="hubspot-form-container" className="min-h-[400px] p-4 mx-auto"></div>
           </div>
         </DialogContent>
       </Dialog>
