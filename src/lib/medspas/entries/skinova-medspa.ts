@@ -10,6 +10,7 @@ export const skinovaMedSpa: MedSpa = {
   address: "43 West 33rd Street, Suite 400, New York, NY 10001",
   location: "midtown",
   services: [
+    "micro-botox",
     "botox",
     "fillers",
     "kybella",
