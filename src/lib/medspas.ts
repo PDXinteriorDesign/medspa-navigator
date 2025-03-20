@@ -1,5 +1,6 @@
 
 import { MedSpa, Location } from "./types";
+import { isInBroaderLocation } from "@/utils/locationUtils";
 
 // MedSpa data with real profiles
 export const medSpas: MedSpa[] = [
@@ -73,9 +74,13 @@ export const getMedSpaById = (idOrSlug: string): MedSpa | undefined => {
   return undefined;
 };
 
-// Helper function to get MedSpas by location
+// Helper function to get MedSpas by location, including neighborhoods
 export const getMedSpasByLocation = (location: Location): MedSpa[] => {
-  return medSpas.filter(medSpa => medSpa.location === location);
+  return medSpas.filter(medSpa => 
+    medSpa.location === location || 
+    isInBroaderLocation(medSpa.address, location) ||
+    (location === "manhattan" && ["upper-east-side", "upper-west-side", "midtown", "soho", "tribeca", "chelsea"].includes(medSpa.location))
+  );
 };
 
 // Helper function to create a URL-friendly slug from a name
