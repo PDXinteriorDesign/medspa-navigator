@@ -8,13 +8,16 @@ interface ClinicMapProps {
 }
 
 const ClinicMap = ({ clinic }: ClinicMapProps) => {
+  // Google Maps API Key
+  const GOOGLE_MAPS_API_KEY = "AIzaSyBpndrGylpLtRZSu42B8fCJVOs_K3HxeS8";
+  
   // Generate Google Maps Embed URL based on coordinates or address
   const getMapEmbedUrl = () => {
     if (clinic.coordinates) {
-      return `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${clinic.coordinates.lat},${clinic.coordinates.lng}`;
+      return `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=${clinic.coordinates.lat},${clinic.coordinates.lng}`;
     } else {
       // Fallback to address-based map
-      return `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${encodeURIComponent(clinic.address)}`;
+      return `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(clinic.address)}`;
     }
   };
   
