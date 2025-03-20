@@ -2,6 +2,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { MedSpa } from "@/lib/types";
+import { getLocationSlug } from "@/utils/locationUtils";
 
 interface ClinicSchemaProps {
   clinic: MedSpa;
@@ -9,21 +10,7 @@ interface ClinicSchemaProps {
 
 const ClinicSchema = ({ clinic }: ClinicSchemaProps) => {
   // Extract the location for the URL path
-  const getLocationSlug = () => {
-    if (clinic.address.includes("Manhattan")) return "manhattan";
-    if (clinic.address.includes("Brooklyn")) return "brooklyn";
-    if (clinic.address.includes("SoHo")) return "soho";
-    if (clinic.address.includes("Upper East Side")) return "upper-east-side";
-    if (clinic.address.includes("Tribeca")) return "tribeca"; 
-    if (clinic.address.includes("Midtown")) return "midtown";
-    if (clinic.address.includes("Williamsburg")) return "williamsburg";
-    if (clinic.address.includes("Hamptons")) return "the-hamptons";
-    
-    // Default fallback
-    return clinic.location.toLowerCase().replace(/\s+/g, "-");
-  };
-  
-  const locationSlug = getLocationSlug();
+  const locationSlug = getLocationSlug(clinic.address, clinic.location);
   const urlSlug = clinic.slug || clinic.id;
   
   // Format services for schema
