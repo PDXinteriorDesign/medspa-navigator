@@ -25,11 +25,15 @@ const ClinicDetail = () => {
       // Get all valid locations for this clinic
       const validLocations = getClinicLocations(clinic.address, clinic.location);
       
-      // Check if current URL location is valid for this clinic
-      if (!validLocations.includes(location.toLowerCase())) {
+      // Case-insensitive location check
+      const locationMatches = validLocations.some(
+        validLoc => validLoc.toLowerCase() === location.toLowerCase()
+      );
+      
+      if (!locationMatches) {
         console.warn(`Invalid location: ${location} for clinic: ${clinic.name}. Valid locations: ${validLocations.join(', ')}`);
         // Redirect to first valid location
-        navigate(`/${validLocations[0]}/${clinicId}`, { replace: true });
+        navigate(`/${validLocations[0]}/${clinic.slug || clinic.id}`, { replace: true });
       }
     }
   }, [clinic, clinicId, location, navigate]);
