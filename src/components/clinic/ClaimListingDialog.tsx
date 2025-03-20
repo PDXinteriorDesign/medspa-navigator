@@ -44,10 +44,10 @@ const ClaimListingDialog = ({ isOpen, onOpenChange, clinicName }: ClaimListingDi
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-xl font-serif">Claim {clinicName}</DialogTitle>
+          <DialogTitle className="text-xl font-serif">{clinicName ? `Claim ${clinicName}` : 'Claim Listing'}</DialogTitle>
         </DialogHeader>
         <div className="pt-4">
-          <div id="hubspot-form-container" className="min-h-[400px] p-3 mx-auto"></div>
+          <div id="hubspot-form-container" className="min-h-[400px] p-4 mx-auto"></div>
         </div>
       </DialogContent>
     </Dialog>
