@@ -13,6 +13,7 @@ export const medSpas: MedSpa[] = [
     address: "767 Lexington Ave, Suite 402, New York, NY 10065",
     location: "upper-east-side",
     services: [
+      "micro-botox",
       "facial-treatments",
       "microneedling",
       "radio-frequency",
@@ -41,6 +42,7 @@ export const medSpas: MedSpa[] = [
     address: "1040 Park Avenue, Suite 1BC, New York, NY 10028",
     location: "upper-east-side",
     services: [
+      "micro-botox",
       "botox", 
       "fillers", 
       "kybella", 
@@ -70,6 +72,7 @@ export const medSpas: MedSpa[] = [
     address: "114 Hudson Street, New York, NY 10013",
     location: "tribeca",
     services: [
+      "micro-botox",
       "botox", 
       "fillers", 
       "kybella", 

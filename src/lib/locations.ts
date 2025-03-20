@@ -16,7 +16,7 @@ export const locations: { id: Location; name: string }[] = [
 // Helper function to get location name
 export const getLocationName = (locationSlug: Location): string => {
   // Handle special case for Hamptons
-  if (locationSlug === "hamptons") {
+  if (locationSlug === "the-hamptons") {
     return "The Hamptons";
   }
   
