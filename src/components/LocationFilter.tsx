@@ -40,15 +40,8 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
   
   // Only add locations from the locations array that aren't already included
   locations.forEach(location => {
-    // Normalize IDs for comparison (handle "the-hamptons" vs "hamptons" case)
-    const normalizedId = location.id === "the-hamptons" ? "hamptons" : location.id;
-    
-    // Check if this location (or a variant of it) already exists in allLocations
-    const isDuplicate = allLocations.some(loc => 
-      loc.id === location.id || 
-      (loc.id === "hamptons" && normalizedId === "hamptons") ||
-      (loc.id === "the-hamptons" && normalizedId === "hamptons")
-    );
+    // Check if this location already exists in allLocations
+    const isDuplicate = allLocations.some(loc => loc.id === location.id);
     
     // Only add if not already in the list
     if (!isDuplicate) {
