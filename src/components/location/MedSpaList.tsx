@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -85,7 +86,7 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
                 </CardContent>
                 <CardFooter className="flex py-3 px-4">
                   <Button variant="outline" className="text-medspa-teal border-medspa-teal hover:bg-medspa-teal/10 w-full h-9 text-xs" asChild>
-                    <Link to={`/${locationName.toLowerCase()}/${medSpa.id}`}>
+                    <Link to={clinicLink}>
                       <Info size={14} className="mr-1" />
                       View Clinic
                     </Link>
