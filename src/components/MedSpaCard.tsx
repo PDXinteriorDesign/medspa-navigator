@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Star, MapPin } from "lucide-react";
+import { Star, MapPin, Shield } from "lucide-react";
 import { type MedSpa } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -47,7 +47,7 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
   };
 
   const { slug } = getLocationInfo();
-  const clinicLink = `/${slug}/${medSpa.id}`;
+  const clinicLink = `/${slug}/${medSpa.slug || medSpa.id}`;
 
   if (isMobile) {
     // Mobile layout
@@ -56,19 +56,30 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
         <div className="relative">
           <Link to={clinicLink}>
             <AspectRatio ratio={16/9}>
-              <img 
-                src={medSpa.imageUrl} 
-                alt={medSpa.name} 
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                loading="lazy"
-                width="400"
-                height="225" 
-              />
+              {medSpa.coordinates ? (
+                <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                  <MapPin size={32} className="text-medspa-teal" />
+                </div>
+              ) : (
+                <img 
+                  src={medSpa.imageUrl} 
+                  alt={medSpa.name} 
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  width="400"
+                  height="225" 
+                />
+              )}
             </AspectRatio>
           </Link>
           {medSpa.featured && (
             <Badge className="absolute top-2 right-2 bg-medspa-gold/90 hover:bg-medspa-gold text-white text-xs font-medium">
               Featured
+            </Badge>
+          )}
+          {medSpa.verified && (
+            <Badge className="absolute top-2 left-2 bg-medspa-teal/90 hover:bg-medspa-teal text-white text-xs font-medium">
+              <Shield size={12} className="mr-1" /> Verified
             </Badge>
           )}
         </div>
@@ -109,19 +120,30 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
       <div className="relative">
         <Link to={clinicLink}>
           <AspectRatio ratio={16/9}>
-            <img 
-              src={medSpa.imageUrl} 
-              alt={medSpa.name} 
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-              loading="lazy"
-              width="600"
-              height="338" 
-            />
+            {medSpa.coordinates ? (
+              <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                <MapPin size={48} className="text-medspa-teal" />
+              </div>
+            ) : (
+              <img 
+                src={medSpa.imageUrl} 
+                alt={medSpa.name} 
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                loading="lazy"
+                width="600"
+                height="338" 
+              />
+            )}
           </AspectRatio>
         </Link>
         {medSpa.featured && (
           <Badge className="absolute top-3 right-3 bg-medspa-gold/90 hover:bg-medspa-gold text-white font-medium">
             Featured
+          </Badge>
+        )}
+        {medSpa.verified && (
+          <Badge className="absolute top-3 left-3 bg-medspa-teal/90 hover:bg-medspa-teal text-white font-medium">
+            <Shield size={14} className="mr-1" /> Verified
           </Badge>
         )}
       </div>

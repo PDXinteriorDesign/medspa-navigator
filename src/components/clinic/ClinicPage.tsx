@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { MapPin, Star, Phone, Clock, CalendarDays, ExternalLink, ChevronRight } from "lucide-react";
+import { MapPin, Star, Phone, Clock, ShieldCheck, ExternalLink, ChevronRight } from "lucide-react";
 import ClinicSchema from "./ClinicSchema";
 
 interface ClinicPageProps {
@@ -30,6 +30,16 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
   
   const locationSlug = getLocationSlug();
 
+  // Generate Google Maps Embed URL based on coordinates or address
+  const getMapEmbedUrl = () => {
+    if (clinic.coordinates) {
+      return `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${clinic.coordinates.lat},${clinic.coordinates.lng}`;
+    } else {
+      // Fallback to address-based map
+      return `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${encodeURIComponent(clinic.address)}`;
+    }
+  };
+
   return (
     <>
       <ClinicSchema clinic={clinic} />
@@ -38,20 +48,34 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
         <BreadcrumbNav 
           items={[
             { label: "Locations", href: "/locations" },
-            { label: clinic.location, href: `/locations/${locationSlug}` },
-            { label: clinic.name, href: `/${locationSlug}/${clinic.id}`, current: true }
+            { label: clinic.location, href: `/${locationSlug}` },
+            { label: clinic.name, href: `/${locationSlug}/${clinic.slug || clinic.id}`, current: true }
           ]} 
         />
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
+              {/* Google Maps Embed */}
               <AspectRatio ratio={16/9} className="max-h-[400px]">
-                <img 
-                  src={clinic.imageUrl} 
-                  alt={clinic.name} 
-                  className="w-full h-full object-cover" 
-                />
+                {clinic.coordinates ? (
+                  <iframe
+                    title={`Map of ${clinic.name}`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    src={getMapEmbedUrl()}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                ) : (
+                  <img 
+                    src={clinic.imageUrl} 
+                    alt={clinic.name} 
+                    className="w-full h-full object-cover" 
+                  />
+                )}
               </AspectRatio>
               
               {clinic.featured && (
@@ -61,7 +85,14 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
               )}
               
               <div className="p-8">
-                <h1 className="text-3xl font-serif font-bold text-medspa-dark mb-4">{clinic.name}</h1>
+                <div className="flex items-center justify-between mb-4">
+                  <h1 className="text-3xl font-serif font-bold text-medspa-dark">{clinic.name}</h1>
+                  {clinic.verified && (
+                    <span className="flex items-center text-medspa-teal bg-medspa-teal/10 px-3 py-1 rounded-full text-sm">
+                      <ShieldCheck size={16} className="mr-1" /> Verified Listing
+                    </span>
+                  )}
+                </div>
                 
                 <div className="flex items-center mb-4">
                   <div className="flex text-medspa-gold mr-2">
@@ -99,8 +130,8 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
                 
                 <div className="flex flex-wrap gap-3 mb-8">
                   <Button className="bg-medspa-teal hover:bg-medspa-teal/90">
-                    <CalendarDays size={18} className="mr-2" />
-                    Book Appointment
+                    <ShieldCheck size={18} className="mr-2" />
+                    Claim This Listing
                   </Button>
                   <Button variant="outline" className="border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
                     <ExternalLink size={18} className="mr-2" />
@@ -140,11 +171,11 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
           
           <div className="md:sticky md:top-24 space-y-6">
             <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="text-lg font-medium mb-4">Book an Appointment</h3>
-              <p className="text-gray-700 mb-4">Schedule your consultation or treatment at {clinic.name} today.</p>
+              <h3 className="text-lg font-medium mb-4">Claim This Listing</h3>
+              <p className="text-gray-700 mb-4">Do you own or manage {clinic.name}? Claim this listing to update your business information and access premium features.</p>
               <Button className="w-full bg-medspa-teal hover:bg-medspa-teal/90">
-                <CalendarDays size={18} className="mr-2" />
-                Book Now
+                <ShieldCheck size={18} className="mr-2" />
+                Claim Now
               </Button>
             </div>
             
@@ -169,7 +200,7 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
                 })}
               </div>
               <Link 
-                to={`/locations/${locationSlug}`}
+                to={`/${locationSlug}`}
                 className="inline-block mt-4 text-medspa-teal hover-underline font-medium"
               >
                 View all treatments in {clinic.location}
@@ -179,7 +210,7 @@ const ClinicPage = ({ clinic }: ClinicPageProps) => {
             <div className="bg-white rounded-lg shadow-sm p-6">
               <h3 className="text-lg font-medium mb-4">Other MedSpas in {clinic.location}</h3>
               <Link 
-                to={`/locations/${locationSlug}`}
+                to={`/${locationSlug}`}
                 className="text-medspa-teal hover-underline font-medium"
               >
                 Browse all {clinic.location} MedSpas

@@ -21,4 +21,9 @@ export type MedSpa = {
   featured: boolean;
   rating: number;
   reviewCount: number;
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
+  verified?: boolean;
 };

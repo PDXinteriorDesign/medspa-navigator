@@ -1,14 +1,14 @@
 
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { getMedSpaById } from "@/lib/data";
+import { getMedSpaById } from "@/lib/medspas";
 import ClinicPage from "@/components/clinic/ClinicPage";
 
 const ClinicDetail = () => {
   const { location, clinicId } = useParams<{ location: string; clinicId: string }>();
   const navigate = useNavigate();
   
-  // Find the clinic by ID
+  // Find the clinic by ID or slug
   const clinic = clinicId ? getMedSpaById(clinicId) : undefined;
   
   useEffect(() => {
