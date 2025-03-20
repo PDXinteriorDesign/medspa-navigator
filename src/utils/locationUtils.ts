@@ -8,7 +8,6 @@ export const getLocationSlug = (address: string, location: string): string => {
   if (address.toLowerCase().includes("midtown")) return "midtown";
   if (address.toLowerCase().includes("williamsburg")) return "williamsburg";
   if (address.toLowerCase().includes("hamptons")) return "the-hamptons";
-  if (address.toLowerCase().includes("flatiron")) return "flatiron";
   
   // Default fallback
   return location.toLowerCase().replace(/\s+/g, "-");
@@ -30,7 +29,7 @@ export const isInBroaderLocation = (address: string, broaderLocation: string): b
   
   // Special cases for neighborhoods within broader locations
   if (normalizedLocation === "manhattan") {
-    return ["upper east side", "soho", "tribeca", "midtown", "chelsea", "upper west side", "flatiron"]
+    return ["upper east side", "soho", "tribeca", "midtown", "chelsea", "upper west side"]
       .some(neighborhood => normalizedAddress.includes(neighborhood));
   }
   
@@ -63,8 +62,7 @@ export const getClinicLocations = (address: string, primaryLocation: string): st
       address.toLowerCase().includes("tribeca") || 
       address.toLowerCase().includes("midtown") ||
       address.toLowerCase().includes("chelsea") ||
-      address.toLowerCase().includes("upper west side") ||
-      address.toLowerCase().includes("flatiron")) {
+      address.toLowerCase().includes("upper west side")) {
     if (!locations.includes("manhattan")) {
       locations.push("manhattan");
     }
