@@ -99,7 +99,7 @@ export const medSpas: MedSpa[] = [
     description: "CasaGlow MedSpa, located in New York's Flatiron District, offers scientifically advanced aesthetic and wellness treatments tailored to individual needs.",
     imageUrl: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
     address: "10 East 22nd Street, New York, NY 10010",
-    location: "manhattan",
+    location: "midtown",
     services: [
       "micro-botox",
       "botox",
