@@ -1,10 +1,10 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { MedSpa } from "@/lib/types";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, ChevronRight } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import ClaimListingDialog from "@/components/clinic/ClaimListingDialog";
 
 interface ClinicSidebarProps {
   clinic: MedSpa;
@@ -13,37 +13,6 @@ interface ClinicSidebarProps {
 
 const ClinicSidebar = ({ clinic, locationSlug }: ClinicSidebarProps) => {
   const [claimDialogOpen, setClaimDialogOpen] = useState(false);
-
-  // Load HubSpot form script
-  useEffect(() => {
-    if (claimDialogOpen) {
-      // Create script element for HubSpot forms
-      const script = document.createElement('script');
-      script.src = "//js-na2.hsforms.net/forms/embed/v2.js";
-      script.charset = "utf-8";
-      script.type = "text/javascript";
-      script.onload = () => {
-        // Initialize HubSpot form once script is loaded
-        if (window.hbspt) {
-          window.hbspt.forms.create({
-            portalId: "241947693",
-            formId: "123e05c8-4088-4535-9803-f14ed494eebc",
-            region: "na2",
-            target: "#hubspot-form-container"
-          });
-        }
-      };
-      document.head.appendChild(script);
-
-      // Cleanup function
-      return () => {
-        const hubspotContainer = document.getElementById('hubspot-form-container');
-        if (hubspotContainer) {
-          hubspotContainer.innerHTML = '';
-        }
-      };
-    }
-  }, [claimDialogOpen]);
 
   return (
     <>
@@ -100,16 +69,11 @@ const ClinicSidebar = ({ clinic, locationSlug }: ClinicSidebarProps) => {
       </div>
       
       {/* Claim Listing Dialog */}
-      <Dialog open={claimDialogOpen} onOpenChange={setClaimDialogOpen}>
-        <DialogContent className="max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-xl font-serif">Claim {clinic.name}</DialogTitle>
-          </DialogHeader>
-          <div className="pt-4">
-            <div id="hubspot-form-container" className="min-h-[400px] p-3 mx-auto"></div>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <ClaimListingDialog 
+        isOpen={claimDialogOpen} 
+        onOpenChange={setClaimDialogOpen} 
+        clinicName={clinic.name} 
+      />
     </>
   );
 };
