@@ -10,14 +10,23 @@ interface FeaturedLocationsProps {
 
 const FeaturedLocations = ({ locations }: FeaturedLocationsProps) => {
   const isMobile = useIsMobile();
-  // Make sure we have all important locations represented
-  const allLocations = locations.length > 0 ? locations : [];
+  // Check if we have locations
+  const hasLocations = locations && locations.length > 0;
+
+  if (!hasLocations) {
+    return (
+      <div className="mb-16 text-center">
+        <h2 className="text-2xl md:text-3xl font-serif font-medium mb-4 text-center">Our MedSpa Locations</h2>
+        <p className="text-gray-600 mb-8">We're currently adding our premium MedSpa locations. Check back soon!</p>
+      </div>
+    );
+  }
 
   return (
     <div className="mb-16">
       <h2 className="text-2xl md:text-3xl font-serif font-medium mb-8 text-center">Our MedSpa Locations</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {allLocations.map(location => (
+        {locations.map(location => (
           <Link 
             key={location.id}
             to={`/${location.slug}`}

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import MedSpaCard from "@/components/MedSpaCard";
 import { MedSpa } from "@/lib/types";
+import { Button } from "@/components/ui/button";
 
 interface LocationDirectoryProps {
   featuredMedSpas: MedSpa[];
@@ -24,27 +25,13 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
               <li className="flex">
                 <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">Glow Aesthetics NYC</p>
-                  <p className="text-sm text-gray-600">Botox, Fillers & Anti-Aging Experts</p>
-                </div>
-              </li>
-              <li className="flex">
-                <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-medium">Manhattan Beauty Clinic</p>
-                  <p className="text-sm text-gray-600">Laser Skin Resurfacing & Injectable Specialists</p>
-                </div>
-              </li>
-              <li className="flex">
-                <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-medium">Fifth Avenue MedSpa</p>
-                  <p className="text-sm text-gray-600">Luxury Facials & Non-Surgical Lifts</p>
+                  <p className="font-medium">Manhattan Beauty Locations</p>
+                  <p className="text-sm text-gray-600">Coming Soon</p>
                 </div>
               </li>
             </ul>
             <Link to="/manhattan" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
-              See All Manhattan Med Spas
+              See Manhattan Locations
               <ArrowRight size={16} className="ml-1" />
             </Link>
           </div>
@@ -56,22 +43,8 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
               <li className="flex">
                 <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">Brooklyn MedSpa Lounge</p>
-                  <p className="text-sm text-gray-600">Laser Skin Treatments & Hair Removal</p>
-                </div>
-              </li>
-              <li className="flex">
-                <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-medium">Williamsburg Aesthetics</p>
-                  <p className="text-sm text-gray-600">CoolSculpting, Emsculpt & Body Sculpting</p>
-                </div>
-              </li>
-              <li className="flex">
-                <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-medium">Borough Park Beauty Hub</p>
-                  <p className="text-sm text-gray-600">Hydrafacials & PRP Microneedling</p>
+                  <p className="font-medium">Brooklyn Beauty Locations</p>
+                  <p className="text-sm text-gray-600">Coming Soon</p>
                 </div>
               </li>
             </ul>
@@ -81,29 +54,15 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
             </Link>
           </div>
           
-          {/* SoHo Section - Changed from Upper East Side */}
+          {/* SoHo Section */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-serif font-bold mb-4">Highly Rated Med Spas in SoHo</h3>
             <ul className="space-y-4">
               <li className="flex">
                 <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">SoHo Beauty Lounge</p>
-                  <p className="text-sm text-gray-600">Natural Enhancements & Innovative Treatments</p>
-                </div>
-              </li>
-              <li className="flex">
-                <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-medium">Spring Street Aesthetics</p>
-                  <p className="text-sm text-gray-600">Microneedling, PRP & Facials</p>
-                </div>
-              </li>
-              <li className="flex">
-                <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-medium">SoHo Skin Care</p>
-                  <p className="text-sm text-gray-600">Laser Skin Rejuvenation & RF Treatments</p>
+                  <p className="font-medium">SoHo Beauty Locations</p>
+                  <p className="text-sm text-gray-600">Coming Soon</p>
                 </div>
               </li>
             </ul>
@@ -114,11 +73,23 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {featuredMedSpas.map(medSpa => (
-            <MedSpaCard key={medSpa.id} medSpa={medSpa} />
-          ))}
-        </div>
+        {featuredMedSpas.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {featuredMedSpas.map(medSpa => (
+              <MedSpaCard key={medSpa.id} medSpa={medSpa} />
+            ))}
+          </div>
+        ) : (
+          <div className="bg-medspa-blue/20 p-8 rounded-lg text-center">
+            <h3 className="text-xl font-medium mb-3">Premium MedSpa Profiles Coming Soon</h3>
+            <p className="text-gray-700 mb-5">
+              We're currently adding our curated selection of premium MedSpa providers across NYC.
+            </p>
+            <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
+              <Link to="/locations">Browse Locations</Link>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

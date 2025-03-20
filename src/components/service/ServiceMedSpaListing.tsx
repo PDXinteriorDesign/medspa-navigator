@@ -25,7 +25,7 @@ const ServiceMedSpaListing = ({
   
   return (
     <>
-      {showCount && (
+      {showCount && medSpasInLocation.length > 0 && (
         <div className={`mb-${isMobile ? '4' : '6'}`}>
           <span className={`text-${isMobile ? 'xs' : 'sm'} font-medium text-medspa-teal`}>
             Showing {medSpasInLocation.length} {serviceName} Clinics & Med Spas in {locationName}
@@ -41,12 +41,12 @@ const ServiceMedSpaListing = ({
         </div>
       ) : (
         <div className="bg-medspa-blue/30 p-8 rounded-lg text-center border border-medspa-blue/20 mb-8">
-          <h3 className="text-xl font-medium mb-3">Personalized Recommendations</h3>
+          <h3 className="text-xl font-medium mb-3">Coming Soon</h3>
           <p className="text-gray-700 mb-5">
-            Our curators are currently finalizing our selection of premium {serviceName} providers in {locationName}.
+            We're currently adding our curated selection of premium {serviceName} providers in {locationName}.
           </p>
           <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
-            <Link to={`/treatments/${serviceSlug}`}>Explore All {serviceName} Specialists</Link>
+            <Link to="/locations">Browse Locations</Link>
           </Button>
         </div>
       )}

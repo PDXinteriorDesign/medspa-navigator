@@ -8,7 +8,7 @@ import ReviewsSection from "@/components/home/ReviewsSection";
 import FaqSection from "@/components/home/FaqSection";
 
 const Home = () => {
-  // Only display featured MedSpas on the homepage
+  // Filter for featured MedSpas (even if there are none)
   const featuredMedSpas = medSpas.filter(spa => spa.featured);
   
   return (
