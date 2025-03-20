@@ -1,7 +1,7 @@
 
 import React from "react";
 import MedSpaList from "@/components/location/MedSpaList";
-import { getMedSpasByLocation } from "@/lib/data";
+import { getMedSpasByLocation } from "@/lib/medspas";
 import LocationHeroOnly from "@/components/location/LocationHeroOnly";
 
 const TribecaLanding = () => {
