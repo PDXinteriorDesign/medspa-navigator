@@ -1,10 +1,10 @@
-
 import { Link } from "react-router-dom";
 import { Star, MapPin, Shield } from "lucide-react";
 import { type MedSpa } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { getLocationSlug } from "@/utils/locationUtils";
 
 interface MedSpaCardProps {
   medSpa: MedSpa;
@@ -15,34 +15,8 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
   
   // Extract location from address to determine the location route and slug
   const getLocationInfo = () => {
-    // This is a simplified approach - you may need a more robust mapping
-    let slug = "";
-    
-    if (medSpa.address.includes("Manhattan")) { 
-      slug = "manhattan";
-    }
-    else if (medSpa.address.includes("Brooklyn")) { 
-      slug = "brooklyn";
-    }
-    else if (medSpa.address.includes("SoHo")) { 
-      slug = "soho";
-    }
-    else if (medSpa.address.includes("Upper East Side")) { 
-      slug = "upper-east-side";
-    }
-    else if (medSpa.address.includes("Tribeca")) { 
-      slug = "tribeca";
-    }
-    else if (medSpa.address.includes("Midtown")) { 
-      slug = "midtown";
-    }
-    else if (medSpa.address.includes("Williamsburg")) { 
-      slug = "williamsburg";
-    }
-    else if (medSpa.address.includes("Hamptons")) { 
-      slug = "the-hamptons";
-    }
-    
+    // Get the appropriate location slug based on the address
+    const slug = getLocationSlug(medSpa.address, medSpa.location);
     return { slug };
   };
 

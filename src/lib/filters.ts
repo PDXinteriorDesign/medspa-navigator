@@ -1,11 +1,13 @@
 
 import { MedSpa, Location } from "./types";
 import { medSpas } from "./medspas";
+import { isInBroaderLocation } from "@/utils/locationUtils";
 
 // Helper function to get services by location
 export const getServicesByLocation = (serviceSlug: string, location: Location): MedSpa[] => {
   return medSpas.filter(
-    medSpa => medSpa.location === location && medSpa.services.includes(serviceSlug)
+    medSpa => (medSpa.location === location || isInBroaderLocation(medSpa.address, location)) && 
+    medSpa.services.includes(serviceSlug)
   );
 };
 
@@ -17,7 +19,8 @@ export const getMedSpasByService = (serviceSlug: string): MedSpa[] => {
 // Count MedSpas by service and location
 export const countMedSpasByServiceAndLocation = (serviceId: string, locationId: Location): number => {
   return medSpas.filter(
-    medSpa => medSpa.location === locationId && medSpa.services.includes(serviceId)
+    medSpa => (medSpa.location === locationId || isInBroaderLocation(medSpa.address, locationId)) && 
+    medSpa.services.includes(serviceId)
   ).length;
 };
 
@@ -25,7 +28,9 @@ export const countMedSpasByServiceAndLocation = (serviceId: string, locationId: 
 export const filterMedSpas = (serviceId: string | null, locationId: Location | null): MedSpa[] => {
   return medSpas.filter(medSpa => {
     const matchesService = !serviceId || medSpa.services.includes(serviceId);
-    const matchesLocation = !locationId || medSpa.location === locationId;
+    const matchesLocation = !locationId || 
+                           medSpa.location === locationId || 
+                           isInBroaderLocation(medSpa.address, locationId);
     return matchesService && matchesLocation;
   });
 };
