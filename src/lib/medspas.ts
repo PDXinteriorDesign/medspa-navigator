@@ -36,17 +36,27 @@ export const medSpas: MedSpa[] = [
 
 // Helper function to get a MedSpa by slug
 export const getMedSpaBySlug = (slug: string): MedSpa | undefined => {
-  return medSpas.find(medSpa => medSpa.slug === slug);
+  return medSpas.find(medSpa => 
+    medSpa.slug?.toLowerCase() === slug.toLowerCase()
+  );
 };
 
 // Helper function to get a MedSpa by ID
 export const getMedSpaById = (idOrSlug: string): MedSpa | undefined => {
+  // Case insensitive search
+  const normalizedIdOrSlug = idOrSlug.toLowerCase();
+  
   // Try to find by ID first
-  const medSpaById = medSpas.find(spa => spa.id === idOrSlug);
+  const medSpaById = medSpas.find(spa => 
+    spa.id.toLowerCase() === normalizedIdOrSlug
+  );
+  
   if (medSpaById) return medSpaById;
   
   // If not found by ID, try to find by slug
-  return medSpas.find(spa => spa.slug === idOrSlug);
+  return medSpas.find(spa => 
+    spa.slug?.toLowerCase() === normalizedIdOrSlug
+  );
 };
 
 // Helper function to get MedSpas by location
