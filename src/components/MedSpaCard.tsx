@@ -1,10 +1,11 @@
+
 import { Link } from "react-router-dom";
 import { Star, MapPin, Shield } from "lucide-react";
 import { type MedSpa } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { getLocationSlug } from "@/utils/locationUtils";
+import { getLocationSlug, getClinicLocations } from "@/utils/locationUtils";
 
 interface MedSpaCardProps {
   medSpa: MedSpa;
@@ -13,15 +14,18 @@ interface MedSpaCardProps {
 const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
   const isMobile = useIsMobile();
   
-  // Extract location from address to determine the location route and slug
+  // Get the appropriate location slug based on the address
   const getLocationInfo = () => {
-    // Get the appropriate location slug based on the address
-    const slug = getLocationSlug(medSpa.address, medSpa.location);
-    return { slug };
+    // Get all valid locations for this clinic, use the first one as primary
+    const locations = getClinicLocations(medSpa.address, medSpa.location);
+    return { slug: locations[0] || "locations" };
   };
 
   const { slug } = getLocationInfo();
   const clinicLink = `/${slug}/${medSpa.slug || medSpa.id}`;
+  
+  // Log for debugging
+  console.log(`Generated link for ${medSpa.name}: ${clinicLink} (location: ${medSpa.location}, slug: ${slug})`);
 
   if (isMobile) {
     // Mobile layout
