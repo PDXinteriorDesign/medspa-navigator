@@ -5,6 +5,7 @@ import { deepBlueMedSpa } from "./entries/deep-blue-med-spa";
 import { tribecaMedSpa } from "./entries/tribeca-medspa";
 import { casaglowMedSpa } from "./entries/casaglow-medspa";
 import { skinneyMedSpa } from "./entries/skinney-medspa";
+import { skinovaMedSpa } from "./entries/skinova-medspa";
 
 // Combine all individual med spa entries
 export const medSpas: MedSpa[] = [
@@ -12,5 +13,6 @@ export const medSpas: MedSpa[] = [
   deepBlueMedSpa,
   tribecaMedSpa,
   casaglowMedSpa,
-  skinneyMedSpa
+  skinneyMedSpa,
+  skinovaMedSpa
 ];
