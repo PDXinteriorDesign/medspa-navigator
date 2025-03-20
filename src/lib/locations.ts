@@ -1,7 +1,7 @@
 
 import { Location } from "./types";
 
-// Updated locations data with only the specified locations
+// Updated locations data with consistent naming
 export const locations: { id: Location; name: string }[] = [
   { id: "manhattan", name: "Manhattan" },
   { id: "brooklyn", name: "Brooklyn" },
@@ -15,6 +15,11 @@ export const locations: { id: Location; name: string }[] = [
 
 // Helper function to get location name
 export const getLocationName = (locationSlug: Location): string => {
+  // Handle special case for Hamptons
+  if (locationSlug === "hamptons") {
+    return "The Hamptons";
+  }
+  
   const location = locations.find(loc => loc.id === locationSlug);
   return location ? location.name : "";
 };

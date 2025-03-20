@@ -18,6 +18,10 @@ export const isInBroaderLocation = (address: string, broaderLocation: string): b
   const normalizedAddress = address.toLowerCase();
   const normalizedLocation = broaderLocation.toLowerCase();
   
+  // Normalize the hamptons slug
+  const normalizedBroaderLocation = 
+    normalizedLocation === "hamptons" ? "the-hamptons" : normalizedLocation;
+  
   // Check if address contains the broader location name
   if (normalizedAddress.includes(normalizedLocation)) {
     return true;
@@ -34,7 +38,7 @@ export const isInBroaderLocation = (address: string, broaderLocation: string): b
       .some(neighborhood => normalizedAddress.includes(neighborhood));
   }
   
-  if (normalizedLocation === "the-hamptons" || normalizedLocation === "hamptons") {
+  if (normalizedBroaderLocation === "the-hamptons" || normalizedLocation === "hamptons") {
     return ["southampton", "east hampton", "bridgehampton", "sag harbor", "montauk"]
       .some(area => normalizedAddress.includes(area));
   }
