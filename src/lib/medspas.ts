@@ -24,8 +24,8 @@ export const medSpas: MedSpa[] = [
       "hydrofacial"
     ],
     featured: true,
-    rating: 4.9,
-    reviewCount: 127,
+    rating: 4.7,
+    reviewCount: 64,
     coordinates: {
       lat: 40.7772,
       lng: -73.9595
