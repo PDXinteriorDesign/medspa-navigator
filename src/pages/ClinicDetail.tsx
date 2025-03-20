@@ -26,7 +26,7 @@ const ClinicDetail = () => {
       const validLocations = getClinicLocations(clinic.address, clinic.location);
       
       // Check if current URL location is valid for this clinic
-      if (!validLocations.includes(location)) {
+      if (!validLocations.includes(location.toLowerCase())) {
         console.warn(`Invalid location: ${location} for clinic: ${clinic.name}. Valid locations: ${validLocations.join(', ')}`);
         // Redirect to first valid location
         navigate(`/${validLocations[0]}/${clinicId}`, { replace: true });

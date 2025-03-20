@@ -5,7 +5,7 @@ import { type MedSpa } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { getLocationSlug, getClinicLocations } from "@/utils/locationUtils";
+import { getClinicLocations } from "@/utils/locationUtils";
 
 interface MedSpaCardProps {
   medSpa: MedSpa;

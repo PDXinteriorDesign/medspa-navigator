@@ -52,7 +52,7 @@ export const getClinicLocations = (address: string, primaryLocation: string): st
     locations.push(specificLocation);
   }
   
-  // Add broader location (Manhattan) for Upper East Side and other Manhattan neighborhoods
+  // Add Manhattan for Upper East Side and other Manhattan neighborhoods
   if (address.toLowerCase().includes("upper east side") || 
       address.toLowerCase().includes("soho") || 
       address.toLowerCase().includes("tribeca") || 
