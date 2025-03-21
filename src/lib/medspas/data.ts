@@ -10,6 +10,11 @@ import { trifectaMedSpaDowntown } from "./entries/trifecta-med-spa-downtown";
 import { laVitaMedSpa } from "./entries/la-vita-medspa";
 import { sylkMedSpa } from "./entries/sylk-medspa";
 import { lolaAestheticsMediSpa } from "./entries/lola-aesthetics-medi-spa";
+import { minimaleSkin } from "./entries/minimale-skin";
+import { everBodySoho } from "./entries/ever-body-soho";
+import { fildStudio } from "./entries/fild-studio";
+import { jectBridgehampton } from "./entries/ject-bridgehampton";
+import { spaUniqueHamptons } from "./entries/spa-unique-hamptons";
 
 // Combine all individual med spa entries
 export const medSpas: MedSpa[] = [
@@ -22,5 +27,10 @@ export const medSpas: MedSpa[] = [
   trifectaMedSpaDowntown,
   laVitaMedSpa,
   sylkMedSpa,
-  lolaAestheticsMediSpa
+  lolaAestheticsMediSpa,
+  minimaleSkin,
+  everBodySoho,
+  fildStudio,
+  jectBridgehampton,
+  spaUniqueHamptons
 ];

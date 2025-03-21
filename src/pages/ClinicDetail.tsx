@@ -23,10 +23,20 @@ const ClinicDetail = () => {
     console.log(`ClinicDetail mounted: location=${location}, clinicId=${clinicId}`);
     console.log(`Current path: ${window.location.pathname}`);
     
+    // Enhanced treatment location detection
+    if (window.location.pathname.includes('/treatments/')) {
+      console.log("This is a treatment URL pattern, redirecting to correct route");
+      navigate(window.location.pathname, { replace: true });
+      return;
+    }
+    
     // Check if this is a treatment location path that was misinterpreted
-    if (location?.includes("micro-botox") || location?.includes("botox") || 
-        location?.includes("fillers") || location?.includes("prp") ||
-        location?.includes("kybella") || location?.includes("laser")) {
+    const commonTreatments = ['micro-botox', 'botox', 'fillers', 'prp', 'kybella', 'laser'];
+    const isTreatmentPath = commonTreatments.some(treatment => 
+      location?.toLowerCase().includes(treatment.toLowerCase())
+    );
+    
+    if (isTreatmentPath) {
       console.log("This appears to be a treatment URL pattern, redirecting to correct route");
       navigate(`/treatments/${location}/${clinicId}`, { replace: true });
       return;
