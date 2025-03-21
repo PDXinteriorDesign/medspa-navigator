@@ -61,7 +61,7 @@ const AppRoutes = () => {
         {/* Treatment type pages */}
         {TreatmentRoutes}
         
-        {/* Treatment location pages */}
+        {/* Treatment location pages - must be BEFORE the catch-all clinic route */}
         {TreatmentLocationRoutes}
         
         <Route path="locations" element={<Locations />} />
@@ -85,11 +85,8 @@ const AppRoutes = () => {
         <Route path="east-hampton" element={<EastHamptonLanding />} />
         <Route path="bridgehampton-sag-harbor" element={<BridgehamptonSagHarborLanding />} />
         
-        {/* Clinic detail page AFTER specific location routes */}
+        {/* This route should be more specific to avoid catching treatment location URLs */}
         <Route path=":location/:clinicId" element={<ClinicDetail />} />
-        
-        {/* This route should NOT catch location/:clinicId patterns */}
-        <Route path=":serviceSlug/:location" element={<ServiceLocationDetail />} />
         
         <Route path="not-found" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { getServiceBySlug } from "@/lib/services";
 import { getServicesByLocation } from "@/lib/filters";
@@ -24,6 +24,11 @@ const TreatmentLocationTemplate = ({
   customContent
 }: TreatmentLocationTemplateProps) => {
   const navigate = useNavigate();
+  
+  // Debug info
+  useEffect(() => {
+    console.log(`TreatmentLocationTemplate mounted: serviceSlug=${serviceSlug}, location=${location}`);
+  }, [serviceSlug, location]);
   
   // Fetch treatment, location name, and medspas
   const treatment = getServiceBySlug(serviceSlug);
@@ -80,7 +85,7 @@ const TreatmentLocationTemplate = ({
           items={[
             { label: "Treatments", href: "/treatments" },
             { label: treatment.name, href: `/treatments/${treatment.slug}` },
-            { label: locationName, href: `/${treatment.slug}/${location}`, current: true }
+            { label: locationName, href: `/treatments/${treatment.slug}/${location}`, current: true }
           ]} 
         />
         

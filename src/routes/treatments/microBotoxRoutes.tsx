@@ -15,14 +15,14 @@ import MicroBotoxHamptons from "../../pages/treatments/locations/MicroBotoxHampt
 const MicroBotoxRoutes = (
   <>
     {/* MicroBotox Location Routes */}
-    <Route path="micro-botox/manhattan" element={<MicroBotoxManhattan />} />
-    <Route path="micro-botox/soho" element={<MicroBotoxSoHo />} />
-    <Route path="micro-botox/tribeca" element={<MicroBotoxTribeca />} />
-    <Route path="micro-botox/upper-east-side" element={<MicroBotoxUpperEastSide />} />
-    <Route path="micro-botox/midtown" element={<MicroBotoxMidtown />} />
-    <Route path="micro-botox/brooklyn" element={<MicroBotoxBrooklyn />} />
-    <Route path="micro-botox/williamsburg" element={<MicroBotoxWilliamsburg />} />
-    <Route path="micro-botox/hamptons" element={<MicroBotoxHamptons />} />
+    <Route path="treatments/micro-botox/manhattan" element={<MicroBotoxManhattan />} />
+    <Route path="treatments/micro-botox/soho" element={<MicroBotoxSoHo />} />
+    <Route path="treatments/micro-botox/tribeca" element={<MicroBotoxTribeca />} />
+    <Route path="treatments/micro-botox/upper-east-side" element={<MicroBotoxUpperEastSide />} />
+    <Route path="treatments/micro-botox/midtown" element={<MicroBotoxMidtown />} />
+    <Route path="treatments/micro-botox/brooklyn" element={<MicroBotoxBrooklyn />} />
+    <Route path="treatments/micro-botox/williamsburg" element={<MicroBotoxWilliamsburg />} />
+    <Route path="treatments/micro-botox/hamptons" element={<MicroBotoxHamptons />} />
   </>
 );
 

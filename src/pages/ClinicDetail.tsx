@@ -15,11 +15,22 @@ const ClinicDetail = () => {
     clinicId?: string;
     clinic?: any;
     validLocations?: string[];
+    path?: string;
   }>({});
   
   useEffect(() => {
-    // Log parameters for debugging
+    // Log parameters and current path for debugging
     console.log(`ClinicDetail mounted: location=${location}, clinicId=${clinicId}`);
+    console.log(`Current path: ${window.location.pathname}`);
+    
+    // Check if this is a treatment location path that was misinterpreted
+    if (location?.includes("micro-botox") || location?.includes("botox") || 
+        location?.includes("fillers") || location?.includes("prp") ||
+        location?.includes("kybella") || location?.includes("laser")) {
+      console.log("This appears to be a treatment URL pattern, redirecting to correct route");
+      navigate(`/treatments/${location}/${clinicId}`, { replace: true });
+      return;
+    }
     
     if (!location || !clinicId) {
       console.error("Missing location or clinicId parameters");
@@ -40,7 +51,8 @@ const ClinicDetail = () => {
       location,
       clinicId,
       clinic,
-      validLocations: clinic ? getClinicLocations(clinic.address, clinic.location) : []
+      validLocations: clinic ? getClinicLocations(clinic.address, clinic.location) : [],
+      path: window.location.pathname
     });
     
     // If clinic doesn't exist, redirect to locations
