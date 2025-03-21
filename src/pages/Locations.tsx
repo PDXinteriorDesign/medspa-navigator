@@ -1,22 +1,23 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { MapPin, Sparkle, Award, ThumbsUp, ShieldCheck, Heart } from "lucide-react";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { Card, CardContent } from "@/components/ui/card";
 import MedSpaListingBanner from "@/components/location/MedSpaListingBanner";
+import { getMedSpasByLocation } from "@/lib/medspas";
+import { locations } from "@/lib/locations";
 
 const Locations = () => {
-  const allLocations = [
-    { id: "manhattan", slug: "manhattan", name: "Manhattan", medspaCount: 142 },
-    { id: "soho", slug: "soho", name: "SoHo", medspaCount: 38 },
-    { id: "upper-east-side", slug: "upper-east-side", name: "Upper East Side", medspaCount: 45 },
-    { id: "tribeca", slug: "tribeca", name: "Tribeca", medspaCount: 28 },
-    { id: "midtown", slug: "midtown", name: "Midtown", medspaCount: 34 },
-    { id: "brooklyn", slug: "brooklyn", name: "Brooklyn", medspaCount: 78 },
-    { id: "williamsburg", slug: "williamsburg", name: "Williamsburg", medspaCount: 29 },
-    { id: "the-hamptons", slug: "the-hamptons", name: "The Hamptons", medspaCount: 34 }
-  ];
+  // Calculate actual number of medspas for each location
+  const allLocations = locations.map(location => {
+    const medspasInLocation = getMedSpasByLocation(location.id);
+    return { 
+      id: location.id, 
+      slug: location.id, 
+      name: location.name, 
+      medspaCount: medspasInLocation.length 
+    };
+  });
   
   return (
     <>
@@ -81,7 +82,7 @@ const Locations = () => {
                     </h2>
                   </div>
                   <span className="text-gray-600">
-                    {location.medspaCount} MedSpas
+                    {location.medspaCount} {location.medspaCount === 1 ? 'MedSpa' : 'MedSpas'}
                   </span>
                 </div>
               </Link>
@@ -177,3 +178,4 @@ const Locations = () => {
 };
 
 export default Locations;
+
