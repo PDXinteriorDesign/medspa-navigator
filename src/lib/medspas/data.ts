@@ -15,6 +15,12 @@ import { everBodySoho } from "./entries/ever-body-soho";
 import { fildStudio } from "./entries/fild-studio";
 import { jectBridgehampton } from "./entries/ject-bridgehampton";
 import { spaUniqueHamptons } from "./entries/spa-unique-hamptons";
+import { springStreetDermatologySoho } from "./entries/spring-street-dermatology-soho";
+import { eviveSpaSoho } from "./entries/evive-spa-soho";
+import { sohoSanctuary } from "./entries/soho-sanctuary";
+import { studiomdSoho } from "./entries/studiomd-soho";
+import { skinStudio9 } from "./entries/skin-studio-9";
+import { sohoBubbleSpa } from "./entries/soho-bubble-spa";
 
 // Combine all individual med spa entries
 export const medSpas: MedSpa[] = [
@@ -32,5 +38,11 @@ export const medSpas: MedSpa[] = [
   everBodySoho,
   fildStudio,
   jectBridgehampton,
-  spaUniqueHamptons
+  spaUniqueHamptons,
+  springStreetDermatologySoho,
+  eviveSpaSoho,
+  sohoSanctuary,
+  studiomdSoho,
+  skinStudio9,
+  sohoBubbleSpa
 ];
