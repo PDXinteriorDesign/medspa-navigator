@@ -21,6 +21,11 @@ import { sohoSanctuary } from "./entries/soho-sanctuary";
 import { studiomdSoho } from "./entries/studiomd-soho";
 import { skinStudio9 } from "./entries/skin-studio-9";
 import { sohoBubbleSpa } from "./entries/soho-bubble-spa";
+import { beautyAndFlyAestheticWellnessBronxville } from "./entries/beauty-and-fly-aesthetic-wellness-bronxville";
+import { rejuvaliftAestheticsSouthampton } from "./entries/rejuvalift-aesthetics-southampton";
+import { hamptonsSkinCosmeticsWesthamptonBeach } from "./entries/hamptons-skin-cosmetics-westhampton-beach";
+import { roweMedspaHamptons } from "./entries/rowe-medspa-hamptons";
+import { airemAestheticSpaBridgehampton } from "./entries/airem-aesthetic-spa-bridgehampton";
 
 // Combine all individual med spa entries
 export const medSpas: MedSpa[] = [
@@ -44,5 +49,10 @@ export const medSpas: MedSpa[] = [
   sohoSanctuary,
   studiomdSoho,
   skinStudio9,
-  sohoBubbleSpa
+  sohoBubbleSpa,
+  beautyAndFlyAestheticWellnessBronxville,
+  rejuvaliftAestheticsSouthampton,
+  hamptonsSkinCosmeticsWesthamptonBeach,
+  roweMedspaHamptons,
+  airemAestheticSpaBridgehampton
 ];
