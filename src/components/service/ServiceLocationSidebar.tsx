@@ -1,7 +1,7 @@
 
 import React from "react";
 import LocationFilter from "@/components/LocationFilter";
-import ServiceLocationNeighborhoods from "./ServiceLocationNeighborhoods";
+import ServiceLocationMoreTreatments from "./ServiceLocationMoreTreatments";
 import { LocationContent } from "@/utils/locationContent";
 import { type Location } from "@/lib/types";
 import { Calendar, Clock, DollarSign, Star, AlertTriangle } from "lucide-react";
@@ -98,11 +98,11 @@ const ServiceLocationSidebar = ({
         </ul>
       </div>
 
-      <ServiceLocationNeighborhoods
+      {/* Replace ServiceLocationNeighborhoods with ServiceLocationMoreTreatments */}
+      <ServiceLocationMoreTreatments
         locationName={locationName}
-        serviceName={serviceName}
-        neighborhoods={locationContent.nearbyNeighborhoods}
-        serviceSlug={serviceSlug}
+        locationSlug={location}
+        currentServiceSlug={serviceSlug}
       />
     </div>
   );
