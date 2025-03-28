@@ -20,8 +20,8 @@ const ReviewsSection = () => {
               <Star size={18} fill="currentColor" />
               <Star size={18} fill="currentColor" />
             </div>
-            <p className="mb-4 italic text-gray-700">"Best Botox in NYC! My forehead lines disappeared instantly."</p>
-            <p className="text-sm font-medium">– Michelle R.</p>
+            <p className="mb-4 italic text-gray-700">"I found Berry Blonde Spa that has THE best laser hair removal treatments! Amazing price and amazing service."</p>
+            <p className="text-sm font-medium">– Crystal <span className="text-gray-500 text-xs">9 months ago</span></p>
           </div>
           
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -32,8 +32,8 @@ const ReviewsSection = () => {
               <Star size={18} fill="currentColor" />
               <Star size={18} fill="currentColor" />
             </div>
-            <p className="mb-4 italic text-gray-700">"CoolSculpting actually worked! Lost inches without surgery."</p>
-            <p className="text-sm font-medium">– Jason W.</p>
+            <p className="mb-4 italic text-gray-700">"Very thorough in explaining all of my options about my skin concerns."</p>
+            <p className="text-sm font-medium">– Lisa C. <span className="text-gray-500 text-xs">3 months ago</span></p>
           </div>
           
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -44,8 +44,8 @@ const ReviewsSection = () => {
               <Star size={18} fill="currentColor" />
               <Star size={18} fill="currentColor" />
             </div>
-            <p className="mb-4 italic text-gray-700">"I found the perfect laser hair removal clinic through this directory!"</p>
-            <p className="text-sm font-medium">– Lisa D.</p>
+            <p className="mb-4 italic text-gray-700">"Clean office, great doctors, friendly staff, and wait time is usually minimal."</p>
+            <p className="text-sm font-medium">– Annie Goodman <span className="text-gray-500 text-xs">6 months ago</span></p>
           </div>
         </div>
         
