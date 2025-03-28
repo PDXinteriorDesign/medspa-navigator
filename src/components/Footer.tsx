@@ -29,7 +29,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/treatments/botox-in-manhattan" className="text-gray-600 hover:text-medspa-teal transition">Manhattan</Link></li>
               <li><Link to="/treatments/botox-in-brooklyn" className="text-gray-600 hover:text-medspa-teal transition">Brooklyn</Link></li>
-              <li><Link to="/treatments/botox-in-queens" className="text-gray-600 hover:text-medspa-teal transition">Queens</Link></li>
+              <li><Link to="/treatments/botox-in-the-hamptons" className="text-gray-600 hover:text-medspa-teal transition">The Hamptons</Link></li>
             </ul>
           </div>
           

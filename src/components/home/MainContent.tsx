@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Check, Shield, Star, Search } from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TrustSignals from "./TrustSignals";
 
@@ -52,58 +52,6 @@ const MainContent = () => {
                 </Link>
               </Button>
             </div>
-          </div>
-        </div>
-        
-        {/* Why Choose Our Directory section */}
-        <div className="bg-white shadow-md rounded-lg p-8 mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-medspa-dark mb-6">
-            Why Choose Our NYC MedSpa Directory?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start">
-              <Check size={20} className="text-medspa-teal mr-3 mt-1" />
-              <div>
-                <h3 className="font-medium text-lg">Exclusive Listings</h3>
-                <p className="text-gray-600">Only top-tier NYC med spas are featured.</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <Check size={20} className="text-medspa-teal mr-3 mt-1" />
-              <div>
-                <h3 className="font-medium text-lg">Compare Top-Rated Clinics</h3>
-                <p className="text-gray-600">Read verified patient reviews & real before-and-afters.</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <Check size={20} className="text-medspa-teal mr-3 mt-1" />
-              <div>
-                <h3 className="font-medium text-lg">Certified Aesthetic Experts</h3>
-                <p className="text-gray-600">Every provider is licensed, insured & board-certified.</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <Check size={20} className="text-medspa-teal mr-3 mt-1" />
-              <div>
-                <h3 className="font-medium text-lg">Treatment Finder</h3>
-                <p className="text-gray-600">Search by Botox, fillers, laser hair removal, body sculpting & more.</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <Check size={20} className="text-medspa-teal mr-3 mt-1" />
-              <div>
-                <h3 className="font-medium text-lg">Exclusive Deals</h3>
-                <p className="text-gray-600">Access discounted packages & first-time patient specials.</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 text-center">
-            <Button asChild className="bg-medspa-cream text-medspa-teal border border-medspa-teal hover:bg-medspa-teal/10">
-              <Link to="/locations" className="flex items-center">
-                <Search size={18} className="mr-2" />
-                Search Med Spas Near You
-              </Link>
-            </Button>
           </div>
         </div>
       </div>
