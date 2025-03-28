@@ -31,11 +31,13 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
   return (
     <>
       <div className="luxury-card group overflow-hidden subtle-hover rounded-lg border bg-white shadow-sm">
-        <MedSpaCardMedia 
-          medSpa={medSpa} 
-          clinicLink={clinicLink} 
-          isMobile={isMobile} 
-        />
+        <div className="h-[200px]"> {/* Reduced height from default to 2/3 */}
+          <MedSpaCardMedia 
+            medSpa={medSpa} 
+            clinicLink={clinicLink} 
+            isMobile={isMobile} 
+          />
+        </div>
         <MedSpaCardContent 
           medSpa={medSpa} 
           clinicLink={clinicLink}

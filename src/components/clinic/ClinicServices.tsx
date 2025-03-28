@@ -24,7 +24,7 @@ const ClinicServices = ({ clinic, locationSlug }: ClinicServicesProps) => {
               return (
                 <Link 
                   key={serviceId}
-                  to={`/treatments/${serviceId}-in-${locationSlug}`}
+                  to={`/treatments/${serviceId}`}
                   className="flex items-center p-2 border border-gray-200 rounded-md hover:bg-gray-50 hover:border-medspa-teal/30"
                 >
                   <ChevronRight size={16} className="text-medspa-teal mr-2" />
