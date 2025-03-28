@@ -4,12 +4,16 @@ import { MapPin, ArrowRight } from "lucide-react";
 import MedSpaCard from "@/components/MedSpaCard";
 import { MedSpa } from "@/lib/types";
 import { Button } from "@/components/ui/button";
+import { medSpas } from "@/lib/medspas";
 
 interface LocationDirectoryProps {
   featuredMedSpas: MedSpa[];
 }
 
 const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
+  // Calculate total MedSpas in the directory
+  const totalMedSpas = medSpas.length;
+
   return (
     <section className="py-16">
       <div className="medspa-container">
@@ -73,23 +77,36 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
           </div>
         </div>
         
-        {featuredMedSpas.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {featuredMedSpas.map(medSpa => (
-              <MedSpaCard key={medSpa.id} medSpa={medSpa} />
-            ))}
-          </div>
-        ) : (
-          <div className="bg-medspa-blue/20 p-8 rounded-lg text-center">
-            <h3 className="text-xl font-medium mb-3">Premium MedSpa Profiles Coming Soon</h3>
-            <p className="text-gray-700 mb-5">
-              We're currently adding our curated selection of premium MedSpa providers across NYC.
+        <div className="mb-12">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-medspa-dark">
+              Featured Med Spas
+            </h2>
+            <p className="text-gray-600">
+              Discover from over {totalMedSpas} MedSpas in our directory
             </p>
-            <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
-              <Link to="/locations">Browse Locations</Link>
-            </Button>
           </div>
-        )}
+          
+          {featuredMedSpas.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6">
+              {featuredMedSpas.slice(0, 3).map(medSpa => (
+                <div key={medSpa.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <MedSpaCard medSpa={medSpa} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-medspa-blue/20 p-8 rounded-lg text-center">
+              <h3 className="text-xl font-medium mb-3">Premium MedSpa Profiles Coming Soon</h3>
+              <p className="text-gray-700 mb-5">
+                We're currently adding our curated selection of premium MedSpa providers across NYC.
+              </p>
+              <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90">
+                <Link to="/locations">Browse Locations</Link>
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
