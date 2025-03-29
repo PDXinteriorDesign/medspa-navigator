@@ -8,12 +8,15 @@ import ReviewsSection from "@/components/home/ReviewsSection";
 import FaqSection from "@/components/home/FaqSection";
 
 const Home = () => {
+  // Get top-rated MedSpas for the featured section
+  const featuredMedSpas = medSpas.filter(spa => spa.featured || spa.rating >= 4.8).slice(0, 3);
+  
   return (
     <div>
       <HeroSection />
       <MainContent />
       <PopularTreatments />
-      <LocationDirectory />
+      <LocationDirectory featuredMedSpas={featuredMedSpas} />
       <ReviewsSection />
       <FaqSection />
     </div>
