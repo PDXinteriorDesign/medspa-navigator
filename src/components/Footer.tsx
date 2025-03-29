@@ -27,16 +27,16 @@ const Footer = () => {
           <div>
             <h3 className="font-medium text-lg mb-4">Popular Locations</h3>
             <ul className="space-y-2">
-              <li><Link to="/treatments/botox-in-manhattan" className="text-gray-600 hover:text-medspa-teal transition">Manhattan</Link></li>
-              <li><Link to="/treatments/botox-in-brooklyn" className="text-gray-600 hover:text-medspa-teal transition">Brooklyn</Link></li>
-              <li><Link to="/treatments/botox-in-the-hamptons" className="text-gray-600 hover:text-medspa-teal transition">The Hamptons</Link></li>
+              <li><Link to="/manhattan" className="text-gray-600 hover:text-medspa-teal transition">Manhattan</Link></li>
+              <li><Link to="/brooklyn" className="text-gray-600 hover:text-medspa-teal transition">Brooklyn</Link></li>
+              <li><Link to="/the-hamptons" className="text-gray-600 hover:text-medspa-teal transition">The Hamptons</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-medium text-lg mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><Link to="/medspas" className="text-gray-600 hover:text-medspa-teal transition">Med Spa Directory</Link></li>
+              <li><Link to="/locations" className="text-gray-600 hover:text-medspa-teal transition">Med Spa Directory</Link></li>
               <li><Link to="/treatments" className="text-gray-600 hover:text-medspa-teal transition">All Treatments</Link></li>
             </ul>
           </div>
