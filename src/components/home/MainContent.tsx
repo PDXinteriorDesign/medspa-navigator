@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import TrustSignals from "./TrustSignals";
 import MedSpaCard from "@/components/MedSpaCard";
 import { medSpas } from "@/lib/medspas";
 
@@ -49,7 +48,6 @@ const MainContent = () => {
                 <span>Diode and Alexandrite laser hair removal for all skin types</span>
               </li>
             </ul>
-            <TrustSignals />
             <div className="mt-8 text-center">
               <Button asChild size="lg" className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
                 <Link to="/locations">

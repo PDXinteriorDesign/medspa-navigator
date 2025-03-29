@@ -10,7 +10,7 @@ interface LocationDirectoryProps {
   featuredMedSpas: MedSpa[];
 }
 
-const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
+const LocationDirectory = ({ featuredMedSpas = [] }: LocationDirectoryProps) => {
   // Calculate total MedSpas in the directory
   const totalMedSpas = medSpas.length;
 
@@ -58,20 +58,20 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
             </Link>
           </div>
           
-          {/* SoHo Section */}
+          {/* The Hamptons Section */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-serif font-bold mb-4">Highly Rated Med Spas in SoHo</h3>
+            <h3 className="text-xl font-serif font-bold mb-4">Highly Rated Med Spas in The Hamptons</h3>
             <ul className="space-y-4">
               <li className="flex">
                 <MapPin size={18} className="text-medspa-teal mr-2 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">SoHo Beauty Locations</p>
+                  <p className="font-medium">The Hamptons Beauty Locations</p>
                   <p className="text-sm text-gray-600">Coming Soon</p>
                 </div>
               </li>
             </ul>
-            <Link to="/soho" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
-              Search Med Spas in SoHo
+            <Link to="/the-hamptons" className="text-medspa-teal hover:text-medspa-teal/80 font-medium flex items-center mt-4">
+              Search Med Spas in The Hamptons
               <ArrowRight size={16} className="ml-1" />
             </Link>
           </div>
@@ -87,7 +87,7 @@ const LocationDirectory = ({ featuredMedSpas }: LocationDirectoryProps) => {
             </p>
           </div>
           
-          {featuredMedSpas.length > 0 ? (
+          {featuredMedSpas && featuredMedSpas.length > 0 ? (
             <div className="grid grid-cols-1 gap-6">
               {featuredMedSpas.slice(0, 3).map(medSpa => (
                 <div key={medSpa.id} className="bg-white rounded-lg shadow-md overflow-hidden">
