@@ -87,7 +87,7 @@ const LocationDirectory = ({ featuredMedSpas = [] }: LocationDirectoryProps) => 
             </p>
           </div>
           
-          {featuredMedSpas && featuredMedSpas.length > 0 ? (
+          {Array.isArray(featuredMedSpas) && featuredMedSpas.length > 0 ? (
             <div className="grid grid-cols-1 gap-6">
               {featuredMedSpas.slice(0, 3).map(medSpa => (
                 <div key={medSpa.id} className="bg-white rounded-lg shadow-md overflow-hidden">
