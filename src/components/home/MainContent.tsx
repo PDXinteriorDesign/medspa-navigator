@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TrustSignals from "./TrustSignals";
+import MedSpaCard from "@/components/MedSpaCard";
+import { medSpas } from "@/lib/medspas";
 
 const MainContent = () => {
+  // Get top-rated MedSpas for the featured section
+  const featuredMedSpas = medSpas.filter(spa => spa.featured || spa.rating >= 4.8).slice(0, 3);
+  
   return (
     <section className="py-16">
       <div className="medspa-container">
@@ -54,6 +59,28 @@ const MainContent = () => {
             </div>
           </div>
         </div>
+        
+        {/* Featured MedSpas Section */}
+        {featuredMedSpas.length > 0 && (
+          <div className="mt-16">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-medspa-dark mb-6">
+              Featured Med Spas
+            </h2>
+            <p className="text-gray-700 mb-8">
+              Discover our handpicked selection of {medSpas.length}+ top-rated med spas throughout NYC and The Hamptons.
+            </p>
+            <div className="space-y-6">
+              {featuredMedSpas.map(medSpa => (
+                <MedSpaCard key={medSpa.id} medSpa={medSpa} />
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Button asChild variant="outline" className="border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
+                <Link to="/locations">View All MedSpas</Link>
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
