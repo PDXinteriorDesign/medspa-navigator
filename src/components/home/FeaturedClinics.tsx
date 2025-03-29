@@ -1,12 +1,14 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Star, MapPin } from "lucide-react";
+import { Star, MapPin, Award } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { type MedSpa } from "@/lib/types";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import ClinicMap from "@/components/clinic/ClinicMap";
+import { Badge } from "@/components/ui/badge";
+import { services } from "@/lib/services";
 
 interface FeaturedClinicsProps {
   medSpas: MedSpa[];
@@ -16,6 +18,17 @@ const FeaturedClinics: React.FC<FeaturedClinicsProps> = ({ medSpas }) => {
   if (!medSpas?.length) {
     return null;
   }
+
+  // Helper function to get service names from ids
+  const getServiceNames = (serviceIds: string[]) => {
+    return serviceIds
+      .map(id => {
+        const service = services.find(s => s.id === id || s.slug === id);
+        return service ? service.name : null;
+      })
+      .filter(Boolean)
+      .slice(0, 3); // Only show up to 3 services
+  };
 
   return (
     <section className="py-8">
@@ -65,6 +78,23 @@ const FeaturedClinics: React.FC<FeaturedClinicsProps> = ({ medSpas }) => {
                     <MapPin size={16} className="text-medspa-teal mt-1 mr-2 flex-shrink-0" />
                     <p className="text-sm text-gray-700">{spa.address}</p>
                   </div>
+                  
+                  {/* Popular Services */}
+                  {spa.services && spa.services.length > 0 && (
+                    <div className="mb-3">
+                      <div className="flex items-center mb-2">
+                        <Award size={16} className="text-medspa-gold mr-2" />
+                        <p className="text-sm font-medium">Popular Services:</p>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {getServiceNames(spa.services).map((serviceName, index) => (
+                          <Badge key={index} variant="outline" className="bg-medspa-blue/10 text-medspa-teal border-medspa-teal/20">
+                            {serviceName}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   
                   <p className="text-gray-700 text-sm mb-4 line-clamp-3">
                     {spa.description}

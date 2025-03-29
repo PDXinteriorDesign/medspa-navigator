@@ -6,6 +6,7 @@ import PopularTreatments from "@/components/home/PopularTreatments";
 import LocationDirectory from "@/components/home/LocationDirectory";
 import ReviewsSection from "@/components/home/ReviewsSection";
 import FaqSection from "@/components/home/FaqSection";
+import Sitemap from "@/components/home/Sitemap";
 
 const Home = () => {
   // Get top-rated MedSpas for the featured section
@@ -19,6 +20,7 @@ const Home = () => {
       <LocationDirectory featuredMedSpas={featuredMedSpas} />
       <ReviewsSection />
       <FaqSection />
+      <Sitemap />
     </div>
   );
 };
