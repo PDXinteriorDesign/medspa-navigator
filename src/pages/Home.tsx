@@ -6,7 +6,6 @@ import PopularTreatments from "@/components/home/PopularTreatments";
 import LocationDirectory from "@/components/home/LocationDirectory";
 import ReviewsSection from "@/components/home/ReviewsSection";
 import FaqSection from "@/components/home/FaqSection";
-import Sitemap from "@/components/home/Sitemap";
 import FeaturedClinics from "@/components/home/FeaturedClinics";
 
 const Home = () => {
@@ -22,7 +21,6 @@ const Home = () => {
       <LocationDirectory featuredMedSpas={featuredMedSpas} />
       <ReviewsSection />
       <FaqSection />
-      <Sitemap />
     </div>
   );
 };
