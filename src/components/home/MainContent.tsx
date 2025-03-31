@@ -2,14 +2,8 @@
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import MedSpaCard from "@/components/MedSpaCard";
-import { medSpas } from "@/lib/medspas";
-import FeaturedClinics from "@/components/home/FeaturedClinics";
 
 const MainContent = () => {
-  // Get top-rated MedSpas for the featured section
-  const featuredMedSpas = medSpas.filter(spa => spa.featured || spa.rating >= 4.8).slice(0, 3);
-  
   return (
     <section className="py-16">
       <div className="medspa-container">
@@ -58,13 +52,6 @@ const MainContent = () => {
             </div>
           </div>
         </div>
-        
-        {/* Featured MedSpas Section - Replace with FeaturedClinics component */}
-        {featuredMedSpas.length > 0 && (
-          <div className="mt-16">
-            <FeaturedClinics medSpas={featuredMedSpas} />
-          </div>
-        )}
       </div>
     </section>
   );
