@@ -13,6 +13,7 @@ const Layout = () => {
           name="description" 
           content="Discover the best medical spas in NYC offering Botox, CoolSculpting, laser hair removal and more. Compare prices, read reviews, and book appointments."
         />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.medspasnyc.com" />
