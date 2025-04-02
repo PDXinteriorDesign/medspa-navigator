@@ -35,7 +35,7 @@ const Layout = () => {
         {/* Keywords for NYC Medspa Services */}
         <meta name="keywords" content="medical spa NYC, medspa New York, luxury medspa, Botox NYC, fillers Manhattan, laser treatment New York, CoolSculpting NYC, Upper East Side medspa, SoHo medical spa, Brooklyn aesthetic clinic, best med spa NYC, top medspa Manhattan, skincare treatments NYC, anti-aging NYC, cosmetic procedures New York, non-surgical treatments Manhattan" />
         
-        {/* Schema.org markup for Google */}
+        {/* Schema.org markup for Google - Modified to remove review/ratings */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

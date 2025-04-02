@@ -2,6 +2,7 @@
 import React from "react";
 import { StarIcon } from "lucide-react";
 import { Review } from "@/utils/serviceContent";
+import { Helmet } from "react-helmet";
 
 interface ServiceReviewsProps {
   serviceName: string;
@@ -11,6 +12,31 @@ interface ServiceReviewsProps {
 const ServiceReviews = ({ serviceName, reviews }: ServiceReviewsProps) => {
   return (
     <div className="bg-white rounded-lg shadow-sm p-5 mb-6">
+      <Helmet>
+        {/* Product ReviewCollection schema that complies with Google guidelines */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": `${serviceName} Service`,
+            "review": reviews.map(review => ({
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": review.rating,
+                "bestRating": 5
+              },
+              "author": {
+                "@type": "Person",
+                "name": review.author
+              },
+              "datePublished": review.date,
+              "reviewBody": review.text
+            }))
+          })}
+        </script>
+      </Helmet>
+
       <h3 className="text-lg font-medium mb-4">{serviceName} Reviews in NYC</h3>
       <div className="space-y-4">
         {reviews.map((review, index) => (

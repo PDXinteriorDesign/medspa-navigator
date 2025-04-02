@@ -56,40 +56,22 @@ const EnhancedServiceSchema = ({
       <meta property="twitter:description" content={metaDescription} />
       <meta property="twitter:image" content="https://medspasnyc.com/og-image.png" />
       
-      {/* Schema.org markup for Google */}
+      {/* Schema.org markup as Product type which is Google-approved for reviews */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalProcedure",
-          "name": serviceName,
+          "@type": "Product",
+          "name": `${serviceName} in ${cityName}`,
           "description": description,
-          "procedureType": "https://schema.org/CosmeticProcedure",
-          "provider": {
-            "@type": "MedicalBusiness",
-            "name": "MedSpasNYC",
-            "url": "https://medspasnyc.com"
-          },
-          "areaServed": [
-            {
-              "@type": "City",
-              "name": "New York City"
-            },
-            {
-              "@type": "Place",
-              "name": "Manhattan"
-            },
-            {
-              "@type": "Place",
-              "name": "Brooklyn"
-            }
-          ],
+          "category": "Medical Spa Services",
           "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "priceCurrency": "USD"
-            }
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "brand": {
+            "@type": "Brand",
+            "name": "MedSpasNYC"
           },
           "review": {
             "@type": "Review",

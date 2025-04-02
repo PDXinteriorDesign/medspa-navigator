@@ -86,11 +86,7 @@ const ClinicSchema = ({ clinic }: ClinicSchemaProps) => {
               "closes": "18:00"
             }
           ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": clinic.rating,
-            "reviewCount": clinic.reviewCount
-          },
+          // Removed aggregateRating and review fields as per Google's guidelines
           "medicalSpecialty": formattedServices,
           "availableService": formattedServices.map(service => ({
             "@type": "MedicalProcedure",
