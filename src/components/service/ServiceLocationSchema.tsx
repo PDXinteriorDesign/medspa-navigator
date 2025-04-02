@@ -19,24 +19,28 @@ const ServiceLocationSchema = ({ serviceName, locationName, description }: Servi
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalProcedure",
+          "@type": "Product",
           "name": `${serviceName} in ${locationName}`,
           "description": `${serviceName} treatments available in ${locationName}, NYC.`,
-          "procedureType": "https://schema.org/CosmeticProcedure",
-          "provider": {
-            "@type": "MedicalBusiness",
-            "name": "MedSpasNYC",
-            "url": "https://medspasnyc.com"
-          },
-          "areaServed": {
-            "@type": "Place",
-            "name": locationName,
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": locationName,
-              "addressRegion": "NY",
-              "addressCountry": "US"
+          "category": "Medical Spa Service",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "areaServed": {
+              "@type": "Place",
+              "name": locationName,
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": locationName,
+                "addressRegion": "NY",
+                "addressCountry": "US"
+              }
             }
+          },
+          "brand": {
+            "@type": "Brand",
+            "name": "MedSpasNYC"
           }
         })}
       </script>

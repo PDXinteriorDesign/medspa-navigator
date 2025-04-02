@@ -18,18 +18,18 @@ const ServiceSchema = ({ name, description }: ServiceSchemaProps) => {
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalProcedure",
+          "@type": "Product",
           "name": name,
           "description": description,
-          "procedureType": "https://schema.org/CosmeticProcedure",
-          "provider": {
-            "@type": "MedicalBusiness",
-            "name": "MedSpasNYC",
-            "url": "https://medspasnyc.com"
+          "category": "Medical Spa Services",
+          "brand": {
+            "@type": "Brand",
+            "name": "MedSpasNYC"
           },
-          "areaServed": {
-            "@type": "City",
-            "name": "New York City"
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
           }
         })}
       </script>
