@@ -65,6 +65,7 @@ export default {
 				},
 				medspa: {
 					blue: '#E6F4F1',
+					darkblue: '#0A3D62',
 					teal: '#66B2B2',
 					gold: '#D4AF37',
 					cream: '#F9F7F4',

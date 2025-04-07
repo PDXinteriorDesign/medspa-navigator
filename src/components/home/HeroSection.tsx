@@ -71,13 +71,13 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative bg-medspa-blue py-20">
+    <section className="relative bg-[#0A3D62] py-20">
       <div className="medspa-container mx-auto max-w-6xl">
         <div className="max-w-2xl mx-auto text-center md:text-left md:mx-0">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-medspa-dark mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
             Find the Best MedSpas in NYC
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-8">
+          <p className="text-lg md:text-xl text-gray-100 mb-8">
             Discover top-rated medical spas in New York City offering premium beauty and wellness treatments.
           </p>
           
@@ -175,12 +175,12 @@ const HeroSection = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
+            <Button asChild className="bg-[#0A3D62] hover:bg-[#0A3D62]/90 text-white">
               <Link to="/locations">
                 Browse Directory
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
+            <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
               <Link to="/services">
                 Explore Services
               </Link>
@@ -199,7 +199,7 @@ const HeroSection = () => {
           }}
           aria-hidden="true"
         >
-          <div className="absolute inset-0 bg-medspa-blue/30 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#0A3D62]/40 mix-blend-multiply"></div>
         </div>
       )}
     </section>
