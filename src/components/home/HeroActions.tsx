@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const HeroActions = () => {
   return (
     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-      <Button asChild className="bg-[#0A3D62] hover:bg-[#0A3D62]/90 text-white">
+      <Button asChild className="bg-medspa-teal hover:bg-medspa-teal/90 text-white">
         <Link to="/locations">
           Browse Directory
         </Link>

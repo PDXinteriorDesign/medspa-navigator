@@ -30,7 +30,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-[#0A3D62] py-20">
+    <section className="relative bg-[#0A3D62] py-20 mt-4">
       <div className="medspa-container mx-auto max-w-6xl">
         <div className="max-w-2xl mx-auto text-center md:text-left md:mx-0">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
