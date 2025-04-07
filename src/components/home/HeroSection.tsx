@@ -1,23 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { useState, useMemo } from "react";
-import { Search, MapPin, Grid3X3 } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
+import { useMemo } from "react";
 import { locations } from "@/lib/locations";
 import { locationDetails } from "@/lib/locationData";
-import { services } from "@/lib/services";
 import { useIsMobile } from "@/hooks/use-mobile";
+import SearchBar from "./search/SearchBar";
+import HeroActions from "./HeroActions";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
-  const [selectedService, setSelectedService] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState("");
   const isMobile = useIsMobile();
   
   const allLocations = useMemo(() => {
@@ -40,28 +29,6 @@ const HeroSection = () => {
     return combinedLocations;
   }, []);
 
-  const handleSearch = () => {
-    if (selectedService && selectedLocation) {
-      const service = services.find(s => s.id === selectedService);
-      const location = allLocations.find(l => l.id === selectedLocation);
-      if (service && location) {
-        navigate(`/${service.slug}/${location.slug}`);
-      }
-    } else if (selectedService) {
-      const service = services.find(s => s.id === selectedService);
-      if (service) {
-        navigate(`/treatments/${service.slug}`);
-      }
-    } else if (selectedLocation) {
-      const location = allLocations.find(l => l.id === selectedLocation);
-      if (location) {
-        navigate(`/${location.slug}`);
-      }
-    } else {
-      navigate("/locations");
-    }
-  };
-
   return (
     <section className="relative bg-[#0A3D62] py-20">
       <div className="medspa-container mx-auto max-w-6xl">
@@ -73,106 +40,9 @@ const HeroSection = () => {
             Discover top-rated medical spas in New York City offering premium beauty and wellness treatments.
           </p>
           
-          <div className="bg-white p-4 rounded-lg shadow-md mb-8 mx-auto">
-            <div className="flex flex-col md:flex-row gap-3">
-              <div className="flex-1">
-                <Select value={selectedService} onValueChange={setSelectedService}>
-                  <SelectTrigger className="w-full">
-                    <div className="flex items-center">
-                      <Grid3X3 size={16} className="mr-2 text-medspa-teal" />
-                      <SelectValue placeholder="By Treatment" />
-                    </div>
-                  </SelectTrigger>
-                  <SelectContent className="w-[800px] max-h-[400px] overflow-y-auto bg-white">
-                    <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="space-y-3">
-                        <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Popular Treatments</h3>
-                        <div className="flex flex-col gap-1">
-                          {services.slice(0, 5).map((service) => (
-                            <SelectItem key={`popular-${service.id}`} value={service.id} className="cursor-pointer">
-                              {service.name}
-                            </SelectItem>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Injectables</h3>
-                        <div className="flex flex-col gap-1">
-                          <SelectItem value="botox" className="cursor-pointer">Botox</SelectItem>
-                          <SelectItem value="micro-botox" className="cursor-pointer">MicroBotox</SelectItem>
-                          <SelectItem value="fillers" className="cursor-pointer">Fillers</SelectItem>
-                          <SelectItem value="kybella" className="cursor-pointer">Kybella</SelectItem>
-                          <SelectItem value="prp" className="cursor-pointer">PRP Injections</SelectItem>
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Laser Treatments</h3>
-                        <div className="flex flex-col gap-1">
-                          <SelectItem value="laser-hair-removal" className="cursor-pointer">Laser Hair Removal</SelectItem>
-                          <SelectItem value="photofacials" className="cursor-pointer">Photofacials</SelectItem>
-                          <SelectItem value="carbon-laser-facial" className="cursor-pointer">Carbon Laser Facial</SelectItem>
-                          <SelectItem value="laser-resurfacing" className="cursor-pointer">Laser Resurfacing</SelectItem>
-                          <SelectItem value="tattoo-removal" className="cursor-pointer">Tattoo Removal</SelectItem>
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Body Treatments</h3>
-                        <div className="flex flex-col gap-1">
-                          <SelectItem value="coolsculpting" className="cursor-pointer">CoolSculpting</SelectItem>
-                          <SelectItem value="weight-management" className="cursor-pointer">Weight Management</SelectItem>
-                          <SelectItem value="radio-ultrasound-therapy" className="cursor-pointer">Radio & Ultrasound</SelectItem>
-                          <SelectItem value="vaginal-rejuvenation" className="cursor-pointer">Vaginal Rejuvenation</SelectItem>
-                          <SelectItem value="microdermabrasion" className="cursor-pointer">Microdermabrasion</SelectItem>
-                        </div>
-                      </div>
-                    </div>
-                  </SelectContent>
-                </Select>
-              </div>
-              
-              <div className="flex-1">
-                <Select value={selectedLocation} onValueChange={setSelectedLocation}>
-                  <SelectTrigger className="w-full">
-                    <div className="flex items-center">
-                      <MapPin size={16} className="mr-2 text-medspa-teal" />
-                      <SelectValue placeholder="By Location" />
-                    </div>
-                  </SelectTrigger>
-                  <SelectContent className="max-h-[300px] overflow-y-auto bg-white">
-                    {allLocations.map((location) => (
-                      <SelectItem key={location.id} value={location.id}>
-                        {location.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              
-              <Button 
-                onClick={handleSearch}
-                className="bg-medspa-teal hover:bg-medspa-teal/90 text-white"
-              >
-                <Search size={18} />
-                <span className="ml-1">Search</span>
-              </Button>
-            </div>
-          </div>
+          <SearchBar allLocations={allLocations} />
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <Button asChild className="bg-[#0A3D62] hover:bg-[#0A3D62]/90 text-white">
-              <Link to="/locations">
-                Browse Directory
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className="border-white text-white bg-medspa-teal hover:bg-medspa-teal/80">
-              <Link to="/services">
-                Explore Services
-              </Link>
-            </Button>
-          </div>
+          <HeroActions />
         </div>
       </div>
       {!isMobile && (
