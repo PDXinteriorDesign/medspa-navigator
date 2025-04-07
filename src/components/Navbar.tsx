@@ -9,11 +9,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm">
+    <nav className="bg-medspa-darkblue shadow-sm">
       <div className="medspa-container">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-serif font-bold text-medspa-teal">MedSpas<span className="text-medspa-gold">NYC</span></span>
+            <span className="text-2xl font-serif font-bold text-white">MedSpas<span className="text-medspa-gold">NYC</span></span>
           </Link>
           
           <DesktopNavLinks />
@@ -21,7 +21,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-medspa-dark focus:outline-none"
+              className="text-white focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

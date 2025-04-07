@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState, useMemo } from "react";
@@ -21,16 +20,13 @@ const HeroSection = () => {
   const [selectedLocation, setSelectedLocation] = useState("");
   const isMobile = useIsMobile();
   
-  // Memoize locations to avoid recalculating on every render
   const allLocations = useMemo(() => {
-    // Combine locations from both sources, avoiding duplicates
     const combinedLocations = [...locationDetails.map(location => ({
       id: location.id,
       name: location.name,
       slug: location.slug
     }))];
     
-    // Add locations from the locations array that aren't already included
     locations.forEach(location => {
       if (!combinedLocations.some(loc => loc.id === location.id || loc.slug === location.id)) {
         combinedLocations.push({
@@ -46,26 +42,22 @@ const HeroSection = () => {
 
   const handleSearch = () => {
     if (selectedService && selectedLocation) {
-      // Navigate to specific service in specific location
       const service = services.find(s => s.id === selectedService);
       const location = allLocations.find(l => l.id === selectedLocation);
       if (service && location) {
         navigate(`/${service.slug}/${location.slug}`);
       }
     } else if (selectedService) {
-      // Navigate to service page
       const service = services.find(s => s.id === selectedService);
       if (service) {
         navigate(`/treatments/${service.slug}`);
       }
     } else if (selectedLocation) {
-      // Navigate to location page - FIXED: removed "locations/" prefix
       const location = allLocations.find(l => l.id === selectedLocation);
       if (location) {
         navigate(`/${location.slug}`);
       }
     } else {
-      // Navigate to general directory
       navigate("/locations");
     }
   };
@@ -81,7 +73,6 @@ const HeroSection = () => {
             Discover top-rated medical spas in New York City offering premium beauty and wellness treatments.
           </p>
           
-          {/* Search Filter */}
           <div className="bg-white p-4 rounded-lg shadow-md mb-8 mx-auto">
             <div className="flex flex-col md:flex-row gap-3">
               <div className="flex-1">
@@ -94,7 +85,6 @@ const HeroSection = () => {
                   </SelectTrigger>
                   <SelectContent className="w-[800px] max-h-[400px] overflow-y-auto bg-white">
                     <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                      {/* Column 1: Popular Treatments */}
                       <div className="space-y-3">
                         <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Popular Treatments</h3>
                         <div className="flex flex-col gap-1">
@@ -106,7 +96,6 @@ const HeroSection = () => {
                         </div>
                       </div>
                       
-                      {/* Column 2: Injectables */}
                       <div className="space-y-3">
                         <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Injectables</h3>
                         <div className="flex flex-col gap-1">
@@ -118,7 +107,6 @@ const HeroSection = () => {
                         </div>
                       </div>
                       
-                      {/* Column 3: Laser Treatments */}
                       <div className="space-y-3">
                         <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Laser Treatments</h3>
                         <div className="flex flex-col gap-1">
@@ -130,7 +118,6 @@ const HeroSection = () => {
                         </div>
                       </div>
                       
-                      {/* Column 4: Body Treatments */}
                       <div className="space-y-3">
                         <h3 className="font-serif font-medium text-sm text-medspa-dark mb-2 pb-1 border-b border-gray-100">Body Treatments</h3>
                         <div className="flex flex-col gap-1">
@@ -180,7 +167,7 @@ const HeroSection = () => {
                 Browse Directory
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button asChild variant="outline" className="border-white text-white bg-medspa-teal hover:bg-medspa-teal/80">
               <Link to="/services">
                 Explore Services
               </Link>

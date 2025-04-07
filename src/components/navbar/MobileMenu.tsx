@@ -14,21 +14,21 @@ const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
       <div className="flex flex-col space-y-4">
         <Link 
           to="/treatments" 
-          className="text-medspa-dark hover:text-medspa-teal transition py-2"
+          className="text-white hover:text-medspa-teal transition py-2 px-4 border border-white/20 rounded"
           onClick={() => setIsOpen(false)}
         >
           Treatments
         </Link>
         <Link 
           to="/locations" 
-          className="text-medspa-dark hover:text-medspa-teal transition py-2"
+          className="text-white hover:text-medspa-teal transition py-2 px-4 border border-white/20 rounded"
           onClick={() => setIsOpen(false)}
         >
           Locations
         </Link>
         <Link 
           to="/about" 
-          className="text-medspa-dark hover:text-medspa-teal transition py-2"
+          className="text-white hover:text-medspa-teal transition py-2 px-4 border border-white/20 rounded"
           onClick={() => setIsOpen(false)}
         >
           About Us
