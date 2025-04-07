@@ -26,12 +26,6 @@ import MidtownLanding from "../pages/locations/Midtown";
 import BrooklynLanding from "../pages/locations/Brooklyn";
 import WilliamsburgLanding from "../pages/locations/Williamsburg";
 import HamptonsLanding from "../pages/locations/Hamptons";
-import ChelseaLanding from "../pages/locations/Chelsea"; 
-import MontaukLanding from "../pages/locations/Montauk";
-import UpperWestSideLanding from "../pages/locations/UpperWestSide";
-import SouthamptonLanding from "../pages/locations/Southampton";
-import EastHamptonLanding from "../pages/locations/EastHampton";
-import BridgehamptonSagHarborLanding from "../pages/locations/BridgehamptonSagHarbor";
 
 const AppRoutes = () => {
   return (
@@ -78,12 +72,6 @@ const AppRoutes = () => {
         <Route path="brooklyn" element={<BrooklynLanding />} />
         <Route path="williamsburg" element={<WilliamsburgLanding />} />
         <Route path="the-hamptons" element={<HamptonsLanding />} />
-        <Route path="chelsea" element={<ChelseaLanding />} />
-        <Route path="montauk" element={<MontaukLanding />} />
-        <Route path="upper-west-side" element={<UpperWestSideLanding />} />
-        <Route path="southampton" element={<SouthamptonLanding />} />
-        <Route path="east-hampton" element={<EastHamptonLanding />} />
-        <Route path="bridgehampton-sag-harbor" element={<BridgehamptonSagHarborLanding />} />
         
         {/* This route should be more specific to avoid catching treatment location URLs */}
         <Route path=":location/:clinicId" element={<ClinicDetail />} />

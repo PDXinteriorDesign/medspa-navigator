@@ -5,13 +5,13 @@ const DesktopNavLinks = () => {
   return (
     <div className="hidden md:flex items-center space-x-6">
       <div className="flex items-center space-x-6">
-        <Link to="/treatments" className="text-medspa-dark hover:text-[#0A3D62] transition">
+        <Link to="/treatments" className="text-medspa-darkblue hover:text-medspa-teal transition">
           Treatments
         </Link>
-        <Link to="/locations" className="text-medspa-dark hover:text-[#0A3D62] transition">
+        <Link to="/locations" className="text-medspa-darkblue hover:text-medspa-teal transition">
           Locations
         </Link>
-        <Link to="/about" className="text-medspa-dark hover:text-[#0A3D62] transition">
+        <Link to="/about" className="text-medspa-darkblue hover:text-medspa-teal transition">
           About Us
         </Link>
       </div>
