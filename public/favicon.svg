@@ -1,6 +1,7 @@
 
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 400 400" fill="none">
-  <text x="10" y="240" font-family="Inter, sans-serif" font-size="110" font-weight="500">
-    <tspan fill="#5BADA6">MedSpas</tspan><tspan fill="#E1B12C">NYC</tspan>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="4" fill="#0A3D62"/>
+  <text x="3" y="20" font-family="Inter, sans-serif" font-size="10" font-weight="600">
+    <tspan fill="#5BADA6">M</tspan><tspan fill="#E1B12C">NYC</tspan>
   </text>
 </svg>

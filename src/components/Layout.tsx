@@ -14,6 +14,8 @@ const Layout = () => {
           content="Discover the best medical spas in NYC offering Botox, CoolSculpting, laser hair removal and more. Compare prices, read reviews, and book appointments."
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <meta name="theme-color" content="#0A3D62" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.medspasnyc.com" />
