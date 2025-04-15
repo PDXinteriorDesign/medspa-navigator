@@ -1,9 +1,12 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Last updated: 2025-04-15 -->
+  
   <!-- Home page -->
   <url>
     <loc>https://www.medspasnyc.com/</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,21 +14,25 @@
   <!-- Main pages -->
   <url>
     <loc>https://www.medspasnyc.com/about</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/locations</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/faq</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -33,76 +40,91 @@
   <!-- Treatment pages -->
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/fillers</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/laser-hair-removal</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/coolsculpting</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/micro-botox</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/prp</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/kybella</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/microneedling</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/chemical-peels</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/hydrofacials</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/photofacials</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/carbon-laser-facial</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/weight-management</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/radio-ultrasound-therapy</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/vaginal-rejuvenation</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -110,159 +132,154 @@
   <!-- Location pages -->
   <url>
     <loc>https://www.medspasnyc.com/manhattan</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/brooklyn</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/soho</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/tribeca</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/midtown</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/upper-east-side</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.medspasnyc.com/upper-west-side</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.medspasnyc.com/chelsea</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/williamsburg</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/the-hamptons</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.medspasnyc.com/montauk</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medspasnyc.com/southampton</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medspasnyc.com/east-hampton</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medspasnyc.com/bridgehampton-sag-harbor</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
-  <!-- Popular treatment + location combinations -->
+  <!-- Treatment + Location combinations (implemented pages only) -->
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox/manhattan</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox/brooklyn</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox/soho</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox/tribeca</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox/midtown</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox/upper-east-side</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox/williamsburg</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/botox/the-hamptons</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/botox/the-hamptons</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/botox-in-the-hamptons</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://www.medspasnyc.com/treatments/fillers/upper-east-side</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/fillers/the-hamptons</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/laser-hair-removal/brooklyn</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/laser-hair-removal/the-hamptons</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/coolsculpting/soho</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/coolsculpting/the-hamptons</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/treatments/laser-hair-removal/manhattan</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -270,36 +287,43 @@
   <!-- Alternative URL formats -->
   <url>
     <loc>https://www.medspasnyc.com/botox-in-manhattan</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/botox-in-brooklyn</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/botox-in-soho</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/botox-in-tribeca</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/botox-in-midtown</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/botox-in-upper-east-side</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.medspasnyc.com/botox-in-williamsburg</loc>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
