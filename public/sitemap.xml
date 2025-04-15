@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Home page -->
@@ -185,22 +186,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.medspasnyc.com/treatments/fillers/upper-east-side</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medspasnyc.com/treatments/laser-hair-removal/brooklyn</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medspasnyc.com/treatments/coolsculpting/soho</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.medspasnyc.com/treatments/botox/tribeca</loc>
+    <loc>https://www.medspasnyc.com/treatments/botox/brooklyn</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -210,7 +196,110 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.medspasnyc.com/treatments/botox/tribeca</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/botox/midtown</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/botox/upper-east-side</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/botox/williamsburg</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/botox/the-hamptons</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/botox/the-hamptons</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/botox-in-the-hamptons</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/fillers/upper-east-side</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/fillers/the-hamptons</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/laser-hair-removal/brooklyn</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/laser-hair-removal/the-hamptons</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/coolsculpting/soho</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/treatments/coolsculpting/the-hamptons</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.medspasnyc.com/treatments/laser-hair-removal/manhattan</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Alternative URL formats -->
+  <url>
+    <loc>https://www.medspasnyc.com/botox-in-manhattan</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/botox-in-brooklyn</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/botox-in-soho</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/botox-in-tribeca</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/botox-in-midtown</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/botox-in-upper-east-side</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.medspasnyc.com/botox-in-williamsburg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
