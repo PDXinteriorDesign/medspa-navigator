@@ -11,6 +11,7 @@ import ServiceLocationSidebar from "@/components/service/ServiceLocationSidebar"
 import { getLocationContent, getLocationFaqs, type LocationContent } from "@/utils/locationContent";
 import { generateLocationKeywords } from "@/utils/keywordGenerator";
 import { useNavigate } from "react-router-dom";
+import FillersLocationSeoContent from "@/components/service/FillersLocationSeoContent";
 
 interface TreatmentLocationTemplateProps {
   serviceSlug: string;
@@ -71,13 +72,26 @@ const TreatmentLocationTemplate = ({
   // Location-specific keywords
   const locationKeywords = generateLocationKeywords(treatment.name, locationName);
   
+  // For Fillers treatment, add additional keywords specifically for "dermal fillers"
+  const enhancedKeywords = serviceSlug === "fillers" ? [
+    ...locationKeywords,
+    `dermal fillers ${locationName}`,
+    `dermal fillers in ${locationName}`,
+    `best dermal fillers ${locationName}`,
+    `${locationName} dermal filler treatment`,
+    `dermal filler specialist ${locationName}`,
+    `juvederm ${locationName}`,
+    `restylane ${locationName}`,
+    `lip fillers ${locationName}`
+  ] : locationKeywords;
+  
   return (
     <>
       <ServiceLocationMetadata 
         serviceName={treatment.name}
         serviceDescription={treatment.description}
         locationName={locationName}
-        locationKeywords={locationKeywords}
+        locationKeywords={enhancedKeywords}
       />
     
       <div className="medspa-container py-12">
@@ -108,6 +122,11 @@ const TreatmentLocationTemplate = ({
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
+              {/* Add the SEO content specifically for fillers pages */}
+              {serviceSlug === "fillers" && (
+                <FillersLocationSeoContent locationName={locationName} />
+              )}
+              
               <ServiceLocationMainContent
                 serviceName={treatment.name}
                 serviceSlug={treatment.slug}
