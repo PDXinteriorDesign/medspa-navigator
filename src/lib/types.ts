@@ -1,4 +1,3 @@
-
 export type Location = "manhattan" | "brooklyn" | "soho" | "tribeca" | "williamsburg" | "midtown" | "upper-east-side" | "the-hamptons";
 
 export type Service = {
@@ -9,7 +8,7 @@ export type Service = {
   imageUrl: string;
 };
 
-export type MedSpa = {
+export interface MedSpa {
   id: string;
   name: string;
   slug: string;
@@ -17,7 +16,7 @@ export type MedSpa = {
   imageUrl: string;
   address: string;
   location: Location;
-  services: string[]; // Array of service IDs
+  services: string[];
   featured: boolean;
   rating: number;
   reviewCount: number;
@@ -25,5 +24,6 @@ export type MedSpa = {
     lat: number;
     lng: number;
   };
-  verified?: boolean;
-};
+  verified: boolean;
+  phone?: string;
+}

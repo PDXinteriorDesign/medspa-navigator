@@ -24,5 +24,6 @@ export const jectBridgehampton: MedSpa = {
     lat: 40.9373,
     lng: -72.3036
   },
-  verified: true
+  verified: true,
+  phone: "(917) 573-6806"
 };

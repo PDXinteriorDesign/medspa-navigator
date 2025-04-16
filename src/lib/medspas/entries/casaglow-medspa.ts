@@ -30,5 +30,6 @@ export const casaglowMedSpa: MedSpa = {
     lat: 40.7402,
     lng: -73.9883
   },
-  verified: true
+  verified: true,
+  phone: "(646) 922-7568"
 };

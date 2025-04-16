@@ -29,5 +29,6 @@ export const laVitaMedSpa: MedSpa = {
     lat: 40.6351,
     lng: -74.0086
   },
-  verified: true
+  verified: true,
+  phone: "(929) 866-5055"
 };

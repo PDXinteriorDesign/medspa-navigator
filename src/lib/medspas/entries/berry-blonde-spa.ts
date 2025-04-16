@@ -28,5 +28,6 @@ export const berryBlondeSpa: MedSpa = {
     lat: 40.7644,
     lng: -73.9680
   },
-  verified: true
+  verified: true,
+  phone: "(917) 446-7720"
 };

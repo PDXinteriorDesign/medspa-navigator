@@ -32,5 +32,6 @@ export const skinneyMedSpa: MedSpa = {
     lat: 40.7382,
     lng: -73.9924
   },
-  verified: true
+  verified: true,
+  phone: "(212) 754-6639"
 };

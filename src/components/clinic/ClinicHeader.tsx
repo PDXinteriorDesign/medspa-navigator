@@ -42,7 +42,7 @@ const ClinicHeader = ({ clinic }: ClinicHeaderProps) => {
       
       <div className="flex items-start mb-4">
         <Phone size={20} className="text-medspa-teal mt-1 mr-2 flex-shrink-0" />
-        <p className="text-gray-700">212-555-{Math.floor(1000 + Math.random() * 9000)}</p>
+        <p className="text-gray-700">{clinic.phone || "Not available"}</p>
       </div>
       
       <div className="flex items-start mb-6">

@@ -29,5 +29,6 @@ export const tribecaMedSpa: MedSpa = {
     lat: 40.7191,
     lng: -74.0065
   },
-  verified: true
+  verified: true,
+  phone: "(212) 925-9500"
 };

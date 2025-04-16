@@ -1,4 +1,3 @@
-
 import React from "react";
 import { MedSpa } from "@/lib/types";
 import { Link } from "react-router-dom";
@@ -56,7 +55,7 @@ const MedSpaDesktopListItem = ({ medSpa, onClaimClick, treatmentName }: MedSpaDe
             </CardDescription>
             <CardDescription className="text-sm text-gray-600 flex items-start mt-1">
               <Phone size={14} className="text-medspa-teal mr-1 mt-0.5 flex-shrink-0" />
-              212-555-{Math.floor(1000 + Math.random() * 9000)}
+              {medSpa.phone || "Not available"}
             </CardDescription>
           </CardHeader>
           <CardContent className="py-2">

@@ -29,5 +29,6 @@ export const deepBlueMedSpa: MedSpa = {
     lat: 40.7772,
     lng: -73.9595
   },
-  verified: true
+  verified: true,
+  phone: "(646) 480-6226"
 };

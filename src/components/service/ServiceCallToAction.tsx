@@ -15,7 +15,7 @@ const ServiceCallToAction = ({ serviceName }: ServiceCallToActionProps) => {
       </p>
       <div className="space-y-3">
         <Button asChild className="w-full bg-medspa-teal hover:bg-medspa-teal/90">
-          <a href={`tel:+1234567890`}>Call to Book Now</a>
+          <a href="tel:+18008882323">Call to Book Now</a>
         </Button>
         <Button variant="outline" className="w-full border-medspa-teal text-medspa-teal hover:bg-medspa-teal/10">
           Get Price Quote

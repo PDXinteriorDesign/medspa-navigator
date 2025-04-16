@@ -28,5 +28,6 @@ export const skinovaMedSpa: MedSpa = {
     lat: 40.7484,
     lng: -73.9887
   },
-  verified: true
+  verified: true,
+  phone: "(212) 339-3993"
 };
