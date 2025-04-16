@@ -68,6 +68,26 @@ const ServiceLocationSidebar = ({
         </div>
       );
     }
+    
+    // Add extra content for fillers
+    if (serviceSlug === "fillers") {
+      return (
+        <div className="bg-white rounded-lg shadow-sm p-5 mb-6">
+          <h3 className="text-lg font-medium mb-3">Dermal Fillers in {locationName}</h3>
+          <div className="text-sm text-gray-700">
+            <p className="mb-2">
+              <strong>Dermal fillers</strong> remain one of the most sought-after cosmetic treatments in {locationName}, 
+              providing immediate results with minimal downtime. Popular options include Juvederm, Restylane, and Radiesse.
+            </p>
+            <p>
+              The best {locationName} providers understand that treatment is both a science 
+              and an art, prioritizing natural-looking enhancement that complements your unique facial structure.
+            </p>
+          </div>
+        </div>
+      );
+    }
+    
     return null;
   };
 

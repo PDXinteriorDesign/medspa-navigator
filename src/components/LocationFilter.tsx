@@ -31,20 +31,30 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
     return location ? location.name : "";
   };
 
+  // Create a set of location IDs to prevent duplicates
+  const locationIdSet = new Set();
+  
   // Combine locations from both sources, ensuring no duplicates
-  const allLocations = [...locationDetails.map(location => ({
-    id: location.id,
-    name: location.name,
-    slug: location.slug
-  }))];
+  const allLocations = locationDetails
+    .filter(location => {
+      // Only add if not already in the set
+      if (!locationIdSet.has(location.id)) {
+        locationIdSet.add(location.id);
+        return true;
+      }
+      return false;
+    })
+    .map(location => ({
+      id: location.id,
+      name: location.name,
+      slug: location.slug
+    }));
   
   // Only add locations from the locations array that aren't already included
   locations.forEach(location => {
-    // Check if this location already exists in allLocations
-    const isDuplicate = allLocations.some(loc => loc.id === location.id);
-    
-    // Only add if not already in the list
-    if (!isDuplicate) {
+    // Skip if this ID is already in our set
+    if (!locationIdSet.has(location.id)) {
+      locationIdSet.add(location.id);
       allLocations.push({
         id: location.id,
         name: location.name,
@@ -76,7 +86,7 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
               className={currentLocation === location.id ? "text-medspa-teal font-medium" : ""}
             >
               <Link 
-                to={serviceSlug ? `/${serviceSlug}/${location.slug}` : `/${location.slug}`}
+                to={serviceSlug ? `/treatments/${serviceSlug}/${location.slug}` : `/${location.slug}`}
                 className="w-full"
               >
                 <span className="flex items-center">
