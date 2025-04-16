@@ -23,7 +23,7 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
     if (!currentLocation) return "";
     
     // Check in locationDetails first
-    const locationDetail = locationDetails.find(loc => loc.id === currentLocation);
+    const locationDetail = locationDetails.find(loc => loc.id === currentLocation || loc.slug === currentLocation);
     if (locationDetail) return locationDetail.name;
     
     // If not found, check in locations array
@@ -31,34 +31,33 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
     return location ? location.name : "";
   };
 
-  // Create a set of location IDs to prevent duplicates
+  // Create a unique list of locations, prioritizing locationDetails
+  const uniqueLocations = [];
   const locationIdSet = new Set();
   
-  // Combine locations from both sources, ensuring no duplicates
-  const allLocations = locationDetails
-    .filter(location => {
-      // Only add if not already in the set
-      if (!locationIdSet.has(location.id)) {
-        locationIdSet.add(location.id);
-        return true;
-      }
-      return false;
-    })
-    .map(location => ({
-      id: location.id,
-      name: location.name,
-      slug: location.slug
-    }));
+  // First add all locationDetails entries
+  locationDetails.forEach(location => {
+    // Map "hamptons" id to "the-hamptons" for consistency
+    const locationId = location.id === "hamptons" ? "the-hamptons" : location.id;
+    
+    if (!locationIdSet.has(locationId)) {
+      locationIdSet.add(locationId);
+      uniqueLocations.push({
+        id: locationId,
+        name: location.name,
+        slug: location.slug
+      });
+    }
+  });
   
-  // Only add locations from the locations array that aren't already included
+  // Then add locations that aren't already in the set
   locations.forEach(location => {
-    // Skip if this ID is already in our set
     if (!locationIdSet.has(location.id)) {
       locationIdSet.add(location.id);
-      allLocations.push({
+      uniqueLocations.push({
         id: location.id,
         name: location.name,
-        slug: location.id // Use id as slug for these locations
+        slug: location.id
       });
     }
   });
@@ -78,15 +77,15 @@ const LocationFilter = ({ serviceSlug, currentLocation }: LocationFilterProps) =
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-[200px] max-h-[300px] overflow-y-auto bg-white">
-          {/* All locations from the combined sources */}
-          {allLocations.map((location) => (
+          {/* Display unique locations */}
+          {uniqueLocations.map((location) => (
             <DropdownMenuItem 
               key={location.id} 
               asChild 
               className={currentLocation === location.id ? "text-medspa-teal font-medium" : ""}
             >
               <Link 
-                to={serviceSlug ? `/treatments/${serviceSlug}/${location.slug}` : `/${location.slug}`}
+                to={serviceSlug ? `/treatments/${serviceSlug}/${location.slug || location.id}` : `/${location.slug || location.id}`}
                 className="w-full"
               >
                 <span className="flex items-center">
