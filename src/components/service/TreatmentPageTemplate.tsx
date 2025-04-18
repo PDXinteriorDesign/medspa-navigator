@@ -42,8 +42,14 @@ const TreatmentPageTemplate = ({
     window.scrollTo(0, 0);
   }, []);
   
+  console.log(`TreatmentPageTemplate loaded for ${treatmentName} (${serviceSlug})`);
+  
   const service = getServiceBySlug(serviceSlug);
   const medSpasWithService = getMedSpasByService(serviceSlug);
+  
+  // Log the results for debugging
+  console.log(`Found service:`, service);
+  console.log(`Found ${medSpasWithService.length} medSpas offering ${serviceSlug}`);
   
   const fallbackService = {
     id: serviceSlug,

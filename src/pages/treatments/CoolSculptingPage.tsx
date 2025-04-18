@@ -7,6 +7,9 @@ const CoolSculptingPage = () => {
   const serviceSlug = "coolsculpting";
   const customHeroImage = "https://images.pexels.com/photos/7675410/pexels-photo-7675410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
   
+  // Add debugging to verify treatment loading
+  console.log(`Loading CoolSculpting page with serviceSlug: ${serviceSlug}`);
+  
   const enhancedContent = {
     introduction: [
       `CoolSculpting is New York City's premier non-invasive fat reduction procedure, using FDA-approved cryolipolysis technology to target and eliminate stubborn fat cells without surgery or downtime. This innovative treatment is particularly popular in image-conscious Manhattan and Brooklyn, where it helps clients achieve more sculpted physiques without disrupting their busy NYC lifestyles.`,
