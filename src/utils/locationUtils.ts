@@ -13,7 +13,7 @@ export const getLocationSlug = (address: string, location: string): string => {
   return location.toLowerCase().replace(/\s+/g, "-");
 };
 
-// Enhanced function to determine if a clinic belongs to a broader location
+// New function to determine if a clinic belongs to a broader location
 export const isInBroaderLocation = (address: string, broaderLocation: string): boolean => {
   const normalizedAddress = address.toLowerCase();
   const normalizedLocation = broaderLocation.toLowerCase();
@@ -27,27 +27,14 @@ export const isInBroaderLocation = (address: string, broaderLocation: string): b
     return true;
   }
   
-  // Enhanced location check for Manhattan addresses
-  if (normalizedBroaderLocation === "manhattan") {
-    // Check for Manhattan and specific Manhattan areas in address
-    if (normalizedAddress.includes("new york, ny") || 
-        normalizedAddress.includes("new york, new york") || 
-        normalizedAddress.includes("ny, ny") ||
-        normalizedAddress.includes("manhattan")) {
-      return true;
-    }
-    
-    // Check for specific Manhattan neighborhoods
-    return ["upper east side", "soho", "tribeca", "midtown", "chelsea", 
-            "upper west side", "downtown", "flatiron", "gramercy", 
-            "east village", "west village", "financial district",
-            "greenwich village", "murray hill"].some(neighborhood => 
-              normalizedAddress.includes(neighborhood)
-            );
+  // Special cases for neighborhoods within broader locations
+  if (normalizedLocation === "manhattan") {
+    return ["upper east side", "soho", "tribeca", "midtown", "chelsea", "upper west side"]
+      .some(neighborhood => normalizedAddress.includes(neighborhood));
   }
   
   if (normalizedLocation === "brooklyn") {
-    return ["williamsburg", "dumbo", "park slope", "brooklyn heights"]
+    return ["williamsburg"]
       .some(neighborhood => normalizedAddress.includes(neighborhood));
   }
   
@@ -69,26 +56,31 @@ export const getClinicLocations = (address: string, primaryLocation: string): st
     locations.push(specificLocation);
   }
   
-  // Add Manhattan for Manhattan neighborhoods
-  if (["upper-east-side", "upper-west-side", "midtown", "soho", "tribeca", 
-       "chelsea", "flatiron", "gramercy", "east-village", "west-village"].includes(specificLocation) ||
-      address.toLowerCase().includes("new york, ny") ||
-      address.toLowerCase().includes("manhattan")) {
+  // Add Manhattan for Upper East Side and other Manhattan neighborhoods
+  if (address.toLowerCase().includes("upper east side") || 
+      address.toLowerCase().includes("soho") || 
+      address.toLowerCase().includes("tribeca") || 
+      address.toLowerCase().includes("midtown") ||
+      address.toLowerCase().includes("chelsea") ||
+      address.toLowerCase().includes("upper west side")) {
     if (!locations.includes("manhattan")) {
       locations.push("manhattan");
     }
   }
   
-  // Add Brooklyn for Williamsburg and other Brooklyn neighborhoods
-  if (specificLocation === "williamsburg" || 
-      ["dumbo", "park-slope", "brooklyn-heights"].includes(specificLocation)) {
+  // Add Brooklyn for Williamsburg
+  if (address.toLowerCase().includes("williamsburg")) {
     if (!locations.includes("brooklyn")) {
       locations.push("brooklyn");
     }
   }
   
   // Add Hamptons for related locations
-  if (["southampton", "east-hampton", "bridgehampton", "sag-harbor", "montauk"].includes(specificLocation)) {
+  if (address.toLowerCase().includes("southampton") || 
+      address.toLowerCase().includes("east hampton") || 
+      address.toLowerCase().includes("bridgehampton") || 
+      address.toLowerCase().includes("sag harbor") ||
+      address.toLowerCase().includes("montauk")) {
     if (!locations.includes("the-hamptons")) {
       locations.push("the-hamptons");
     }
