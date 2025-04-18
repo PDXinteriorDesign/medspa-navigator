@@ -8,6 +8,7 @@ interface ServiceLocationMetadataProps {
   serviceDescription: string;
   locationName: string;
   locationKeywords: string[];
+  seoKeywords?: string[];
   isNYC?: boolean;
 }
 
@@ -16,30 +17,27 @@ const ServiceLocationMetadata = ({
   serviceDescription,
   locationName,
   locationKeywords,
+  seoKeywords = [],
   isNYC = false
 }: ServiceLocationMetadataProps) => {
   // Add NYC-specific modifiers to keywords for better local SEO
-  const enhancedKeywords = isNYC ? [
+  const enhancedKeywords = [
     ...locationKeywords,
-    `${serviceName} NYC specialists`,
-    `${serviceName} New York City`,
-    `top ${serviceName} providers Manhattan`,
-    `best ${serviceName} clinics New York`,
-    `luxury ${serviceName} treatment New York City`,
-    `${serviceName} near me NYC`,
-    `${serviceName} cost New York`,
-    `${serviceName} Upper East Side`,
-    `${serviceName} SoHo`,
-    `${serviceName} Tribeca`,
-    `${serviceName} Midtown`,
-    `${serviceName} Brooklyn`,
-    `premium ${serviceName} medical spa NYC`
-  ] : locationKeywords;
+    ...seoKeywords,
+    `${serviceName} ${locationName} specialists`,
+    `${serviceName} New York City ${locationName}`,
+    `top ${serviceName} providers ${locationName}`,
+    `best ${serviceName} clinics ${locationName}`,
+    `luxury ${serviceName} treatment ${locationName}`,
+    `${serviceName} near me ${locationName}`,
+    `${serviceName} cost ${locationName} NYC`,
+    `premium ${serviceName} medical spa ${locationName}`
+  ];
 
   return (
     <EnhancedServiceSchema 
-      serviceName={serviceName} 
-      description={serviceDescription}
+      serviceName={`${serviceName} in ${locationName}`}
+      description={`Find the best ${serviceName} providers in ${locationName}, NYC. ${serviceDescription}`}
       keywords={enhancedKeywords}
       cityName={isNYC ? "NYC" : locationName}
     />
