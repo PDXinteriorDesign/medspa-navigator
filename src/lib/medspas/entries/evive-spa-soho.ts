@@ -12,7 +12,9 @@ export const eviveSpaSoho: MedSpa = {
   services: [
     "facials",
     "massage",
-    "body-treatments"
+    "body-treatments",
+    "botox", // Added Botox to services
+    "fillers"  // Added fillers to services
   ],
   featured: false,
   rating: 4.5,

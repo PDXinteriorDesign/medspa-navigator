@@ -7,6 +7,7 @@ import ServiceIntroSection from "./ServiceIntroSection";
 import ServiceFaqs from "./ServiceFaqs";
 import { Link } from "react-router-dom";
 import { getBotoxManhattanFaqs } from "@/utils/serviceContent/locationFaqs/botoxManhattanFaqs";
+import LocationNoResults from "./LocationNoResults";
 
 interface TreatmentLocationContentProps {
   serviceName: string;
@@ -25,6 +26,9 @@ const TreatmentLocationContent = ({
   medSpasInLocation,
   locationFaqs
 }: TreatmentLocationContentProps) => {
+  
+  // Log for debugging
+  console.log(`TreatmentLocationContent: ${serviceName} in ${locationName}, found ${medSpasInLocation.length} medspas`);
   
   const isTargetedPage = serviceSlug === "botox" && locationName === "Manhattan";
   const faqs = isTargetedPage ? getBotoxManhattanFaqs() : locationFaqs;
@@ -66,12 +70,20 @@ const TreatmentLocationContent = ({
         reducedHeight={true}
       />
       
-      <ServiceMedSpaListing
-        medSpasInLocation={medSpasInLocation}
-        serviceName={serviceName}
-        serviceSlug={serviceSlug}
-        locationName={locationName}
-      />
+      {medSpasInLocation.length > 0 ? (
+        <ServiceMedSpaListing
+          medSpasInLocation={medSpasInLocation}
+          serviceName={serviceName}
+          serviceSlug={serviceSlug}
+          locationName={locationName}
+        />
+      ) : (
+        <LocationNoResults 
+          serviceName={serviceName}
+          serviceSlug={serviceSlug}
+          locationName={locationName}
+        />
+      )}
       
       <ServiceIntroSection>
         {isTargetedPage ? renderTargetedBotoxContent() : null}
