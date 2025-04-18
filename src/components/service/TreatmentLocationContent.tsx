@@ -1,12 +1,12 @@
 
 import React from "react";
-import ServiceHero from "./ServiceHero";
-import ServiceFaqs from "./ServiceFaqs";
 import { MedSpa } from "@/lib/types";
+import ServiceHero from "./ServiceHero";
+import ServiceMedSpaListing from "./ServiceMedSpaListing";
 import ServiceIntroSection from "./ServiceIntroSection";
-import TreatmentLocationIntro from "./TreatmentLocationIntro";
-import TreatmentLocationFaqs from "./TreatmentLocationFaqs";
-import MedSpaList from "@/components/location/MedSpaList";
+import ServiceFaqs from "./ServiceFaqs";
+import { Link } from "react-router-dom";
+import { getBotoxManhattanFaqs } from "@/utils/serviceContent/locationFaqs/botoxManhattanFaqs";
 
 interface TreatmentLocationContentProps {
   serviceName: string;
@@ -25,10 +25,37 @@ const TreatmentLocationContent = ({
   medSpasInLocation,
   locationFaqs
 }: TreatmentLocationContentProps) => {
-  // Get location-specific FAQs, either from props or generated from the utility component
-  const faqs = locationFaqs && locationFaqs.length > 0 
-    ? locationFaqs 
-    : TreatmentLocationFaqs({ serviceName, locationName, locationFaqs });
+  
+  const isTargetedPage = serviceSlug === "botox" && locationName === "Manhattan";
+  const faqs = isTargetedPage ? getBotoxManhattanFaqs() : locationFaqs;
+  
+  const renderTargetedBotoxContent = () => (
+    <div className="prose max-w-none">
+      <h2 className="text-2xl font-serif font-medium mb-5 tracking-tight">
+        The Best Botox in Manhattan: Premium Providers & Expert Treatments
+      </h2>
+      
+      <div className="text-gray-700 space-y-4 mb-8">
+        <p>
+          Finding the best Botox in Manhattan requires careful consideration of provider expertise, clinic reputation, and treatment approach. Manhattan's premier Botox specialists are concentrated in prestigious neighborhoods like the <Link to="/treatments/botox/upper-east-side" className="text-medspa-blue hover:underline">Upper East Side</Link>, <Link to="/treatments/botox/midtown" className="text-medspa-blue hover:underline">Midtown</Link>, and <Link to="/treatments/botox/soho" className="text-medspa-blue hover:underline">SoHo</Link>.
+        </p>
+        
+        <h3 className="text-xl font-medium mt-6 mb-3">
+          Why Choose Manhattan for Your Botox Treatment?
+        </h3>
+        <p>
+          Manhattan's Botox providers are among the most sought-after in New York City, known for their precision, expertise, and natural-looking results. Whether you're seeking treatment in <Link to="/treatments/botox/tribeca" className="text-medspa-blue hover:underline">Tribeca</Link> or the Upper East Side, Manhattan's elite practitioners offer unparalleled expertise in facial aesthetics.
+        </p>
+        
+        <h3 className="text-xl font-medium mt-6 mb-3">
+          Best Manhattan Neighborhoods for Botox Treatments
+        </h3>
+        <p>
+          Each Manhattan neighborhood offers unique advantages for Botox treatments. The Upper East Side is known for its luxury medical spas and board-certified dermatologists, while SoHo clinics often combine cutting-edge techniques with a modern aesthetic approach.
+        </p>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -39,33 +66,15 @@ const TreatmentLocationContent = ({
         reducedHeight={true}
       />
       
-      {/* Use the standardized MedSpaList component for consistency */}
-      <div className="mt-8 mb-10">
-        <h3 className="text-xl font-serif font-medium mb-6">
-          {serviceName} Providers in {locationName}
-        </h3>
-        
-        {medSpasInLocation.length > 0 ? (
-          <MedSpaList 
-            medSpas={medSpasInLocation} 
-            locationName={locationName} 
-            treatmentName={serviceName} 
-          />
-        ) : (
-          <div className="bg-medspa-blue/30 p-8 rounded-lg text-center border border-medspa-blue/20 mb-8">
-            <h3 className="text-xl font-medium mb-3">Personalized Recommendations</h3>
-            <p className="text-gray-700 mb-5">
-              Our curators are currently finalizing our selection of premium {serviceName} providers in {locationName}.
-            </p>
-          </div>
-        )}
-      </div>
+      <ServiceMedSpaListing
+        medSpasInLocation={medSpasInLocation}
+        serviceName={serviceName}
+        serviceSlug={serviceSlug}
+        locationName={locationName}
+      />
       
       <ServiceIntroSection>
-        <TreatmentLocationIntro
-          serviceName={serviceName}
-          locationName={locationName}
-        />
+        {isTargetedPage ? renderTargetedBotoxContent() : null}
       </ServiceIntroSection>
       
       <ServiceFaqs 
