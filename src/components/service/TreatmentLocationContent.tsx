@@ -29,6 +29,15 @@ const TreatmentLocationContent = ({
   const isTargetedPage = serviceSlug === "botox" && locationName === "Manhattan";
   const faqs = isTargetedPage ? getBotoxManhattanFaqs() : locationFaqs;
   
+  // Debug log for Manhattan pages to trace the issue
+  if (locationName === "Manhattan") {
+    console.log(`Rendering ${serviceName} in ${locationName} page`);
+    console.log(`Found ${medSpasInLocation.length} med spas with this service`);
+    if (medSpasInLocation.length > 0) {
+      console.log(`First med spa: ${medSpasInLocation[0].name}, location: ${medSpasInLocation[0].location}`);
+    }
+  }
+  
   const renderTargetedBotoxContent = () => (
     <div className="prose max-w-none">
       <h2 className="text-2xl font-serif font-medium mb-5 tracking-tight">

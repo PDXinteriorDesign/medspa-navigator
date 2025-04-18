@@ -12,7 +12,9 @@ export const eviveSpaSoho: MedSpa = {
   services: [
     "facials",
     "massage",
-    "body-treatments"
+    "body-treatments",
+    "botox",
+    "kybella"
   ],
   featured: false,
   rating: 4.5,

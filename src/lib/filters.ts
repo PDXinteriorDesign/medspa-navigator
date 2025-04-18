@@ -5,10 +5,24 @@ import { isInBroaderLocation } from "@/utils/locationUtils";
 
 // Helper function to get services by location
 export const getServicesByLocation = (serviceSlug: string, location: Location): MedSpa[] => {
-  return medSpas.filter(
-    medSpa => (medSpa.location === location || isInBroaderLocation(medSpa.address, location)) && 
-    medSpa.services.includes(serviceSlug)
-  );
+  // Debug the filtering process
+  console.log(`Filtering for service: ${serviceSlug} in location: ${location}`);
+  
+  const filteredSpas = medSpas.filter(medSpa => {
+    const locationMatch = medSpa.location === location || isInBroaderLocation(medSpa.address, location);
+    const serviceMatch = medSpa.services.includes(serviceSlug);
+    
+    // Log individual checks for Manhattan spas
+    if (location === "manhattan") {
+      console.log(`Checking: ${medSpa.name}, Location: ${medSpa.location}, Address: ${medSpa.address}`);
+      console.log(`Location match: ${locationMatch}, Service match: ${serviceMatch}`);
+    }
+    
+    return locationMatch && serviceMatch;
+  });
+  
+  console.log(`Found ${filteredSpas.length} medspas offering ${serviceSlug} in ${location}`);
+  return filteredSpas;
 };
 
 // Helper function to get MedSpas by service
