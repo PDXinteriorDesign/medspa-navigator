@@ -1,3 +1,4 @@
+
 import React from "react";
 import { MedSpa } from "@/lib/types";
 import { Link } from "react-router-dom";
@@ -21,21 +22,19 @@ const MedSpaDesktopListItem = ({ medSpa, onClaimClick, treatmentName }: MedSpaDe
   return (
     <Card className="overflow-hidden">
       <div className="md:flex">
-        <div className="md:w-1/3 flex flex-col">
-          <AspectRatio ratio={1/1} className="h-full">
-            {medSpa.coordinates ? (
-              <ClinicMap clinic={medSpa} />
-            ) : (
-              <img 
-                src={medSpa.imageUrl} 
-                alt={medSpa.name} 
-                className="h-full w-full object-cover"
-                loading="lazy" 
-                width="400"
-                height="400"
-              />
-            )}
-          </AspectRatio>
+        <div className="md:w-1/3 h-[300px]"> {/* Fixed height for the map/image container */}
+          {medSpa.coordinates ? (
+            <ClinicMap clinic={medSpa} />
+          ) : (
+            <img 
+              src={medSpa.imageUrl} 
+              alt={medSpa.name} 
+              className="h-full w-full object-cover"
+              loading="lazy" 
+              width="400"
+              height="400"
+            />
+          )}
         </div>
         <div className="md:w-2/3">
           <CardHeader className="py-4">

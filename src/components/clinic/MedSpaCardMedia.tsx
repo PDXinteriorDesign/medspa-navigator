@@ -14,11 +14,13 @@ interface MedSpaCardMediaProps {
 
 const MedSpaCardMedia = ({ medSpa, clinicLink, isMobile }: MedSpaCardMediaProps) => {
   return (
-    <div className="relative">
-      <Link to={clinicLink}>
-        <AspectRatio ratio={16/9}>
+    <div className="relative h-full">
+      <Link to={clinicLink} className="block h-full">
+        <div className="h-full w-full">
           {medSpa.coordinates ? (
-            <ClinicMap clinic={medSpa} />
+            <div className="h-full w-full">
+              <ClinicMap clinic={medSpa} />
+            </div>
           ) : (
             <img 
               src={medSpa.imageUrl} 
@@ -29,7 +31,7 @@ const MedSpaCardMedia = ({ medSpa, clinicLink, isMobile }: MedSpaCardMediaProps)
               height={isMobile ? "225" : "338"} 
             />
           )}
-        </AspectRatio>
+        </div>
       </Link>
       {medSpa.featured && (
         <Badge className={`absolute top-${isMobile ? '2' : '3'} right-${isMobile ? '2' : '3'} bg-medspa-gold/90 hover:bg-medspa-gold text-white ${isMobile ? 'text-xs' : ''} font-medium`}>

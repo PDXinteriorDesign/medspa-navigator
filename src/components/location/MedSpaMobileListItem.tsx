@@ -3,7 +3,6 @@ import React from "react";
 import { MedSpa } from "@/lib/types";
 import { Link } from "react-router-dom";
 import { getClinicLocations } from "@/utils/locationUtils";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Sparkles, Info, ShieldCheck } from "lucide-react";
@@ -22,7 +21,7 @@ const MedSpaMobileListItem = ({ medSpa, onClaimClick, treatmentName }: MedSpaMob
   return (
     <Card className="overflow-hidden">
       <div className="flex flex-col">
-        <AspectRatio ratio={16/9}>
+        <div className="h-[180px]"> {/* Fixed height for map container on mobile */}
           {medSpa.coordinates ? (
             <ClinicMap clinic={medSpa} />
           ) : (
@@ -35,7 +34,7 @@ const MedSpaMobileListItem = ({ medSpa, onClaimClick, treatmentName }: MedSpaMob
               height="225"
             />
           )}
-        </AspectRatio>
+        </div>
         <CardHeader className="py-3 px-4">
           <div className="flex items-start justify-between">
             <CardTitle className="text-lg font-serif">{medSpa.name}</CardTitle>

@@ -1,7 +1,6 @@
 
 import React from "react";
 import { MedSpa } from "@/lib/types";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { MapPin } from "lucide-react";
 
 interface ClinicMapProps {

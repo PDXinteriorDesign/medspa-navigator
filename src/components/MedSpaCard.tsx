@@ -31,7 +31,7 @@ const MedSpaCard = ({ medSpa }: MedSpaCardProps) => {
   return (
     <>
       <div className="luxury-card group overflow-hidden subtle-hover rounded-lg border bg-white shadow-sm">
-        <div className="h-[200px]"> {/* Reduced height from default to 2/3 */}
+        <div className="h-[240px] md:h-[280px]"> {/* Increased fixed height for proper aspect ratio */}
           <MedSpaCardMedia 
             medSpa={medSpa} 
             clinicLink={clinicLink} 
