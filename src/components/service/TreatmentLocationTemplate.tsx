@@ -17,12 +17,14 @@ interface TreatmentLocationTemplateProps {
   serviceSlug: string;
   location: Location;
   customContent?: React.ReactNode;
+  seoKeywords?: string[]; // Added seoKeywords as optional prop
 }
 
 const TreatmentLocationTemplate = ({ 
   serviceSlug, 
   location,
-  customContent
+  customContent,
+  seoKeywords = [] // Add default empty array
 }: TreatmentLocationTemplateProps) => {
   const navigate = useNavigate();
   
@@ -85,13 +87,16 @@ const TreatmentLocationTemplate = ({
     `lip fillers ${locationName}`
   ] : locationKeywords;
   
+  // Combine default locationKeywords with custom seoKeywords if provided
+  const combinedKeywords = [...enhancedKeywords, ...seoKeywords];
+  
   return (
     <>
       <ServiceLocationMetadata 
         serviceName={treatment.name}
         serviceDescription={treatment.description}
         locationName={locationName}
-        locationKeywords={enhancedKeywords}
+        locationKeywords={combinedKeywords}
       />
     
       <div className="medspa-container py-12">
