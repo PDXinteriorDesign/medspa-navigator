@@ -4,7 +4,6 @@ import { berryBlondeSpa } from "./entries/berry-blonde-spa";
 import { deepBlueMedSpa } from "./entries/deep-blue-med-spa";
 import { tribecaMedSpa } from "./entries/tribeca-medspa";
 import { casaglowMedSpa } from "./entries/casaglow-medspa";
-import { skinneyMedSpa } from "./entries/skinney-medspa";
 import { skinovaMedSpa } from "./entries/skinova-medspa";
 import { trifectaMedSpaDowntown } from "./entries/trifecta-med-spa-downtown";
 import { laVitaMedSpa } from "./entries/la-vita-medspa";
@@ -30,7 +29,6 @@ import { medSpaPhones } from "./phoneData";
 // Import missing entries
 import { springStreetDermatologySoho } from "./entries/spring-street-dermatology-soho";
 import { studiomdSoho } from "./entries/studiomd-soho";
-import { airemAestheticSpaBridgehampton } from "./entries/airem-aesthetic-spa-bridgehampton";
 
 // Import new entries
 import { evolveMedSpaTribeca } from "./entries/evolve-med-spa-tribeca";
@@ -65,7 +63,6 @@ export const medSpas: MedSpa[] = [
   deepBlueMedSpa,
   tribecaMedSpa,
   casaglowMedSpa,
-  skinneyMedSpa,
   skinovaMedSpa,
   trifectaMedSpaDowntown,
   laVitaMedSpa,
@@ -85,7 +82,7 @@ export const medSpas: MedSpa[] = [
   rejuvaliftAestheticsSouthampton,
   hamptonsSkinCosmeticsWesthamptonBeach,
   roweMedspaHamptons,
-  airemAestheticSpaBridgehampton,
+  // Removed AIREM and SKINNEY MedSpas
   // Add new entries
   evolveMedSpaTribeca,
   tribecaSpaOfTranquility,
@@ -109,3 +106,4 @@ export const medSpas: MedSpa[] = [
   radiantBeautyAndHealth,
   revivalMedSpa
 ].map(applyMissingPhoneNumbers);
+
