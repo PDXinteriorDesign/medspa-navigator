@@ -20,7 +20,7 @@ const MedSpaList = ({ medSpas, locationName, treatmentName }: MedSpaListProps) =
   }
 
   return (
-    <div className="space-y-6">
+    <div className={isMobile ? "space-y-4" : "space-y-6"}>
       {medSpas.map((medSpa) => (
         <React.Fragment key={medSpa.id}>
           {isMobile ? (
