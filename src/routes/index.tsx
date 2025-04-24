@@ -26,6 +26,7 @@ import MidtownLanding from "../pages/locations/Midtown";
 import BrooklynLanding from "../pages/locations/Brooklyn";
 import WilliamsburgLanding from "../pages/locations/Williamsburg";
 import HamptonsLanding from "../pages/locations/Hamptons";
+import FlushingLanding from "../pages/locations/Flushing";
 
 const AppRoutes = () => {
   return (
@@ -72,6 +73,7 @@ const AppRoutes = () => {
         <Route path="brooklyn" element={<BrooklynLanding />} />
         <Route path="williamsburg" element={<WilliamsburgLanding />} />
         <Route path="the-hamptons" element={<HamptonsLanding />} />
+        <Route path="flushing" element={<FlushingLanding />} />
         
         {/* This route should be more specific to avoid catching treatment location URLs */}
         <Route path=":location/:clinicId" element={<ClinicDetail />} />

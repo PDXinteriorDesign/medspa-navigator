@@ -11,6 +11,7 @@ import MidtownLanding from "../pages/locations/Midtown";
 import BrooklynLanding from "../pages/locations/Brooklyn";
 import WilliamsburgLanding from "../pages/locations/Williamsburg";
 import HamptonsLanding from "../pages/locations/Hamptons";
+import FlushingLanding from "../pages/locations/Flushing";
 
 const LocationLandingRoutes = (
   <>
@@ -23,6 +24,7 @@ const LocationLandingRoutes = (
     <Route path="locations/brooklyn" element={<Navigate to="/brooklyn" replace />} />
     <Route path="locations/williamsburg" element={<Navigate to="/williamsburg" replace />} />
     <Route path="locations/the-hamptons" element={<Navigate to="/the-hamptons" replace />} />
+    <Route path="locations/flushing" element={<Navigate to="/flushing" replace />} />
   </>
 );
 
