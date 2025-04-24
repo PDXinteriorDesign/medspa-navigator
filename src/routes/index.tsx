@@ -61,9 +61,6 @@ const AppRoutes = () => {
         
         <Route path="locations" element={<Locations />} />
         
-        {/* Redirect location pages with 'locations/' prefix to direct URL */}
-        <Route path="locations/:locationSlug" element={<Navigate to="/:locationSlug" replace />} />
-        
         {/* Direct location URLs - place BEFORE the clinic detail route to avoid conflicts */}
         <Route path="manhattan" element={<ManhattanLanding />} />
         <Route path="soho" element={<SoHoLanding />} />
@@ -74,6 +71,9 @@ const AppRoutes = () => {
         <Route path="williamsburg" element={<WilliamsburgLanding />} />
         <Route path="the-hamptons" element={<HamptonsLanding />} />
         <Route path="flushing" element={<FlushingLanding />} />
+        
+        {/* We ALSO need a route for LocationDetail with the parameter for URL locations/locationSlug */}
+        <Route path="locations/:locationSlug" element={<LocationDetail />} />
         
         {/* This route should be more specific to avoid catching treatment location URLs */}
         <Route path=":location/:clinicId" element={<ClinicDetail />} />

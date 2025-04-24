@@ -17,9 +17,9 @@ const Flushing = () => {
     );
   }
   
-  // Instead of passing locationSlug as a prop, we'll use Navigate to redirect to the location detail page
-  // This allows LocationDetail to get the locationSlug from useParams as it expects
-  return <Navigate to={`/locations/${locationSlug}`} replace />;
+  // Instead of redirecting to /locations/flushing, redirect directly to /flushing
+  // This matches the route pattern in the router
+  return <Navigate to={`/${locationSlug}`} replace />;
 };
 
 export default Flushing;
