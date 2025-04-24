@@ -17,12 +17,21 @@ const LocationMedSpaCard = ({ medSpa }: LocationMedSpaCardProps) => {
   const locationSlug = locations[0] || "locations";
   const clinicLink = `/${locationSlug}/${medSpa.slug || medSpa.id}`;
 
+  // Default coordinates for Flushing if not provided
+  const enhancedMedSpa = {
+    ...medSpa,
+    coordinates: medSpa.coordinates || {
+      lat: 40.7587,
+      lng: -73.8335
+    }
+  };
+
   return (
     <>
       <Card className="overflow-hidden subtle-hover">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="h-[240px] relative">
-            <ClinicMap clinic={medSpa} interactive={false} />
+            <ClinicMap clinic={enhancedMedSpa} interactive={false} />
           </div>
           
           <div className="p-5">

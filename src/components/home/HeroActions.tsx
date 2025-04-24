@@ -11,8 +11,8 @@ const HeroActions = () => {
         </Link>
       </Button>
       <Button asChild variant="outline" className="border-white text-white bg-medspa-teal hover:bg-medspa-teal/80">
-        <Link to="/services">
-          Explore Services
+        <Link to="/treatments">
+          Explore Treatments
         </Link>
       </Button>
     </div>
