@@ -12,5 +12,7 @@ export const newYouAesthetics: MedSpa = {
   reviewCount: 31,
   description: "New You Aesthetics delivers personalized beauty solutions using advanced techniques and premium products in a comfortable, professional setting.",
   services: ["botox", "fillers", "microneedling", "facials"],
-  featured: false
+  featured: false,
+  imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3",
+  verified: true
 };

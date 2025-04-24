@@ -12,5 +12,7 @@ export const everYoungMedicalAesthetics: MedSpa = {
   reviewCount: 56,
   description: "EverYoung Medical Aesthetics provides comprehensive aesthetic services with a focus on natural-looking results and patient satisfaction.",
   services: ["botox", "fillers", "prp", "chemical-peels"],
-  featured: false
+  featured: false,
+  imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3",
+  verified: true
 };

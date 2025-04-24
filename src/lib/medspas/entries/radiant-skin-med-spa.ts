@@ -12,5 +12,7 @@ export const radiantSkinMedSpa: MedSpa = {
   reviewCount: 42,
   description: "Radiant Skin Med Spa offers advanced aesthetic treatments in a modern, welcoming environment. Our expert team specializes in customized skincare solutions and cutting-edge beauty treatments.",
   services: ["botox", "fillers", "laser-hair-removal", "facials"],
-  featured: false
+  featured: false,
+  imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3",
+  verified: true
 };

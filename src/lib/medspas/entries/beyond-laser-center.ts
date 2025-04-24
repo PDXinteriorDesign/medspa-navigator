@@ -11,5 +11,7 @@ export const beyondLaserCenter: MedSpa = {
   reviewCount: 45,
   description: "Beyond Laser Center specializes in advanced laser treatments and aesthetic procedures, offering the latest technology in a modern, clinical setting.",
   services: ["laser-hair-removal", "laser-resurfacing", "tattoo-removal", "skin-tightening"],
-  featured: false
+  featured: false,
+  imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3",
+  verified: true
 };

@@ -12,5 +12,7 @@ export const vogueLaserClinic: MedSpa = {
   reviewCount: 38,
   description: "Vogue Laser Clinic combines state-of-the-art technology with expert care to deliver outstanding results in laser treatments and aesthetic procedures.",
   services: ["laser-hair-removal", "laser-resurfacing", "coolsculpting", "microdermabrasion"],
-  featured: false
+  featured: false,
+  imageUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3",
+  verified: true
 };
