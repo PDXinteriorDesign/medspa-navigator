@@ -7,6 +7,7 @@ export const beyondLaserCenter: MedSpa = {
   slug: "beyond-laser-center",
   location: "flushing",
   address: "136-19 38th Ave, Flushing, NY 11354",
+  phone: "(718) 888-7890", // Added phone number
   rating: 4.7,
   reviewCount: 45,
   description: "Beyond Laser Center specializes in advanced laser treatments and aesthetic procedures, offering the latest technology in a modern, clinical setting.",

@@ -55,5 +55,5 @@ export const medSpaPhones: Record<string, string> = {
   "vogue-laser-clinic": "(718) 888-5678",
   "everyoung-medical-aesthetics": "(718) 888-9012",
   "new-you-aesthetics": "(718) 888-3456",
-  "beyond-laser-center": "(718) 888-3456"
+  "beyond-laser-center": "(718) 888-7890"
 };
