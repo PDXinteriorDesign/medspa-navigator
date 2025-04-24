@@ -1,6 +1,6 @@
 
 import React from "react";
-import LocationDetail from "../LocationDetail";
+import { Navigate } from "react-router-dom";
 import { getLocationBySlug } from "@/lib/locationData";
 
 const Flushing = () => {
@@ -17,7 +17,9 @@ const Flushing = () => {
     );
   }
   
-  return <LocationDetail locationSlug={locationSlug} />;
+  // Instead of passing locationSlug as a prop, we'll use Navigate to redirect to the location detail page
+  // This allows LocationDetail to get the locationSlug from useParams as it expects
+  return <Navigate to={`/locations/${locationSlug}`} replace />;
 };
 
 export default Flushing;
