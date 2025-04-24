@@ -141,11 +141,20 @@ export const locationDetails: LocationDetail[] = [
     slug: "flushing",
     name: "Flushing",
     shortDescription: "Queens' premier destination for advanced aesthetic treatments",
-    description: "Flushing has emerged as a vibrant hub for aesthetic medicine, offering a diverse range of cutting-edge treatments and personalized care. The neighborhood's medical spas combine modern technology with traditional wellness approaches, creating unique experiences that cater to its multicultural community and discerning clientele.",
-    imageUrl: "https://images.unsplash.com/photo-1622133043744-62402fbd2e70?ixlib=rb-4.0.3",
+    description: "Flushing has emerged as a vibrant hub for aesthetic medicine, combining traditional Eastern wellness philosophies with cutting-edge Western treatments. The neighborhood's diverse medical spas offer sophisticated treatments in modern facilities, attracting clients seeking both innovation and value. From advanced laser therapies to personalized skincare solutions, Flushing's aesthetic centers deliver premium services in a uniquely multicultural setting.",
+    imageUrl: "/lovable-uploads/e87541f6-3548-4e4c-a9ec-9ce9b67f436e.png",
     medspaCount: 5,
     featured: false,
-    subAreas: []
+    subAreas: [
+      {
+        id: "downtown-flushing",
+        name: "Downtown Flushing",
+        description: "Downtown Flushing's medical spas combine luxury with accessibility, offering state-of-the-art treatments in modern facilities. The area has become a destination for those seeking quality aesthetic services at competitive prices.",
+        clientele: "Young professionals, local residents, and visitors seeking quality treatments",
+        popularServices: ["Laser Treatments", "Facial Rejuvenation", "Body Contouring", "Anti-Aging Therapies"],
+        imageUrl: "/lovable-uploads/e87541f6-3548-4e4c-a9ec-9ce9b67f436e.png"
+      }
+    ]
   }
 ];
 
