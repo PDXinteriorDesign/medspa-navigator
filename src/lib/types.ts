@@ -1,4 +1,13 @@
-export type Location = "manhattan" | "brooklyn" | "soho" | "tribeca" | "williamsburg" | "midtown" | "upper-east-side" | "the-hamptons";
+export type Location = 
+  | "manhattan"
+  | "brooklyn"
+  | "soho"
+  | "tribeca"
+  | "williamsburg"
+  | "midtown"
+  | "upper-east-side"
+  | "the-hamptons"
+  | "flushing";
 
 export type Service = {
   id: string;

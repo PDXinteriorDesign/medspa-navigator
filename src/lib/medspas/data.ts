@@ -1,4 +1,3 @@
-
 import { MedSpa } from "../types";
 import { berryBlondeSpa } from "./entries/berry-blonde-spa";
 import { deepBlueMedSpa } from "./entries/deep-blue-med-spa";
@@ -49,6 +48,11 @@ import { perfectMedSpa } from "./entries/perfect-med-spa";
 import { cliniqueDesChampsElysees } from "./entries/clinique-des-champs-elysees";
 import { radiantBeautyAndHealth } from "./entries/radiant-beauty-and-health";
 import { revivalMedSpa } from "./entries/revival-med-spa";
+import { radiantSkinMedSpa } from "./entries/radiant-skin-med-spa";
+import { vogueLaserClinic } from "./entries/vogue-laser-clinic";
+import { everYoungMedicalAesthetics } from "./entries/everyoung-medical-aesthetics";
+import { newYouAesthetics } from "./entries/new-you-aesthetics";
+import { beyondLaserCenter } from "./entries/beyond-laser-center";
 
 // Apply phone numbers to any entries that don't have them explicitly defined
 const applyMissingPhoneNumbers = (spa: MedSpa): MedSpa => {
@@ -104,6 +108,10 @@ export const medSpas: MedSpa[] = [
   perfectMedSpa,
   cliniqueDesChampsElysees,
   radiantBeautyAndHealth,
-  revivalMedSpa
+  revivalMedSpa,
+  radiantSkinMedSpa,
+  vogueLaserClinic,
+  everYoungMedicalAesthetics,
+  newYouAesthetics,
+  beyondLaserCenter
 ].map(applyMissingPhoneNumbers);
-

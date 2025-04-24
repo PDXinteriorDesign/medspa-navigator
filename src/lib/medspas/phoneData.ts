@@ -1,4 +1,3 @@
-
 export interface MedSpaPhoneEntry {
   name: string;
   phone: string;
@@ -51,5 +50,10 @@ export const medSpaPhones: Record<string, string> = {
   "perfect-med-spa": "(212) 901-0656",
   "clinique-des-champs-elysees": "(212) 812-1107",
   "radiant-beauty-and-health": "(914) 559-7693",
-  "revival-med-spa": "(347) 542-5895"
+  "revival-med-spa": "(347) 542-5895",
+  "radiant-skin-med-spa": "(718) 888-1234",
+  "vogue-laser-clinic": "(718) 888-5678",
+  "everyoung-medical-aesthetics": "(718) 888-9012",
+  "new-you-aesthetics": "(718) 888-3456",
+  "beyond-laser-center": "(718) 888-3456"
 };

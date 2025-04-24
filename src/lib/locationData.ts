@@ -1,4 +1,3 @@
-
 export type SubArea = {
   id: string;
   name: string;
@@ -136,6 +135,17 @@ export const locationDetails: LocationDetail[] = [
         imageUrl: "https://images.unsplash.com/photo-1580692475446-c2fabbbbf835?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
       }
     ]
+  },
+  {
+    id: "flushing",
+    slug: "flushing",
+    name: "Flushing",
+    shortDescription: "Queens' premier destination for advanced aesthetic treatments",
+    description: "Flushing has emerged as a vibrant hub for aesthetic medicine, offering a diverse range of cutting-edge treatments and personalized care. The neighborhood's medical spas combine modern technology with traditional wellness approaches, creating unique experiences that cater to its multicultural community and discerning clientele.",
+    imageUrl: "https://images.unsplash.com/photo-1622133043744-62402fbd2e70?ixlib=rb-4.0.3",
+    medspaCount: 5,
+    featured: false,
+    subAreas: []
   }
 ];
 
