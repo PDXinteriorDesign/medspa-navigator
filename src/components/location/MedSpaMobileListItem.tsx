@@ -57,17 +57,17 @@ const MedSpaMobileListItem = ({ medSpa, treatmentName }: MedSpaMobileListItemPro
 
           <p className="text-sm text-gray-700 line-clamp-2 mb-4">{medSpa.description}</p>
 
-          <div className="flex items-center justify-between gap-2">
+          <div className="space-y-2">
             <Button 
               asChild 
               variant="outline" 
-              className="flex-1 h-9"
+              className="w-full h-9"
             >
               <Link to={clinicLink}>View Details</Link>
             </Button>
             <Button 
               onClick={() => setIsClaimDialogOpen(true)}
-              className="bg-medspa-teal hover:bg-medspa-teal/90 h-9"
+              className="w-full bg-medspa-teal hover:bg-medspa-teal/90 h-9"
             >
               <ShieldCheck size={14} className="mr-1" />
               Claim
