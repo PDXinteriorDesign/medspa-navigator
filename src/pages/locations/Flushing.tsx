@@ -2,7 +2,6 @@
 import React from "react";
 import LocationDetail from "../LocationDetail";
 import { getLocationBySlug } from "@/lib/locationData";
-import { useParams } from "react-router-dom";
 
 const Flushing = () => {
   // Since we're on a specific location page, we know the locationSlug
@@ -18,7 +17,7 @@ const Flushing = () => {
     );
   }
   
-  return <LocationDetail />;
+  return <LocationDetail locationSlug={locationSlug} />;
 };
 
 export default Flushing;
