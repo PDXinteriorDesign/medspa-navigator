@@ -20,7 +20,8 @@ export const laVitaMedSpa: MedSpa = {
     "body-treatments",
     "laser-hair-removal",
     "hair-regrowth",
-    "hydrafacial"
+    "hydrafacial",
+    "chemical-peels"
   ],
   featured: true,
   rating: 5.0,

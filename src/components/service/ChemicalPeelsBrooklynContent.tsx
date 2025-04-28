@@ -1,13 +1,28 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { getServicesByLocation } from "@/lib/filters";
+import ServiceMedSpaListing from "@/components/service/ServiceMedSpaListing";
 
 const ChemicalPeelsBrooklynContent = () => {
+  // Get the medical spas in Brooklyn that offer chemical peels
+  const chemicalPeelsMedSpasInBrooklyn = getServicesByLocation("chemical-peels", "brooklyn");
+  
   return (
     <div className="prose max-w-none">
       <h2 className="text-2xl font-serif font-medium mb-5 tracking-tight">
         Chemical Peels in Brooklyn: Expert Treatments for Skin Rejuvenation
       </h2>
+      
+      {/* Display medical spas listing */}
+      <div className="my-8">
+        <ServiceMedSpaListing 
+          medSpasInLocation={chemicalPeelsMedSpasInBrooklyn}
+          serviceName="Chemical Peels"
+          serviceSlug="chemical-peels"
+          locationName="Brooklyn"
+        />
+      </div>
       
       <div className="text-gray-700 space-y-4 mb-8">
         <p>
