@@ -8,7 +8,7 @@ export const astoriaLaserCenterSpa: MedSpa = {
   description: "Astoria Laser Center & Spa offers professional laser hair removal, skin tightening, acne treatments, and anti-aging facials in a comfortable and welcoming environment.",
   imageUrl: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
   address: "31-85 33rd St, Astoria, NY 11106",
-  location: "brooklyn",
+  location: "queens",
   services: [
     "laser-hair-removal",
     "skin-treatments",

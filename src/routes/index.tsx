@@ -27,6 +27,7 @@ import BrooklynLanding from "../pages/locations/Brooklyn";
 import WilliamsburgLanding from "../pages/locations/Williamsburg";
 import HamptonsLanding from "../pages/locations/Hamptons";
 import FlushingLanding from "../pages/locations/Flushing";
+import QueensLanding from "../pages/locations/Queens";
 
 const AppRoutes = () => {
   return (
@@ -71,6 +72,7 @@ const AppRoutes = () => {
         <Route path="williamsburg" element={<WilliamsburgLanding />} />
         <Route path="the-hamptons" element={<HamptonsLanding />} />
         <Route path="flushing" element={<FlushingLanding />} />
+        <Route path="queens" element={<QueensLanding />} />
         
         {/* We ALSO need a route for LocationDetail with the parameter for URL locations/locationSlug */}
         <Route path="locations/:locationSlug" element={<LocationDetail />} />

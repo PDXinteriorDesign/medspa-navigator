@@ -11,7 +11,8 @@ export const locations: { id: Location; name: string }[] = [
   { id: "midtown", name: "Midtown" },
   { id: "upper-east-side", name: "Upper East Side" },
   { id: "the-hamptons", name: "The Hamptons" },
-  { id: "flushing", name: "Flushing" }
+  { id: "flushing", name: "Flushing" },
+  { id: "queens", name: "Queens" }
 ];
 
 // Helper function to get location name

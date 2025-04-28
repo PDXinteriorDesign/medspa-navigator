@@ -8,7 +8,7 @@ export const skinGlowAesthetics: MedSpa = {
   description: "Skin Glow Aesthetics specializes in advanced facial treatments, including chemical peels, microdermabrasion, and LED light therapy to rejuvenate and refresh your skin.",
   imageUrl: "https://images.unsplash.com/photo-1607008829749-c0f284a49841?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   address: "70-20 Austin St, Forest Hills, NY 11375",
-  location: "brooklyn",
+  location: "queens",
   services: [
     "facial-treatments",
     "chemical-peels",

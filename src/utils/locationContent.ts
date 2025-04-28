@@ -1,4 +1,3 @@
-
 import { Location } from "@/lib/data";
 
 export interface LocationProvider {
@@ -80,7 +79,8 @@ export const getLocationContent = (serviceName: string, locationName: string): L
     case "Queens":
       content.paragraphs.push(`Queens offers some of the most diverse ${serviceName} providers in NYC, with practitioners trained in techniques from around the world. Many clients appreciate the attentive service and competitive pricing found at Queens MedSpas.`);
       content.popularProviders = [
-        { name: "Queens Laser Spa", address: "101 Queens Blvd, Forest Hills", rating: 4.3, reviewCount: 62 }
+        { name: "Med Aesthetics Astoria", address: "28-10 Steinway St, Astoria", rating: 4.9, reviewCount: 195 },
+        { name: "LIC Med Spa", address: "10-20 47th Rd, Long Island City", rating: 4.6, reviewCount: 165 }
       ];
       content.nearbyNeighborhoods = [
         { name: "Brooklyn", slug: "brooklyn" },
@@ -153,7 +153,7 @@ const getTopProviders = (locationName: string): string => {
     case "Brooklyn":
       return "Brooklyn Beauty Clinic, Williamsburg Aesthetic Center, and Park Slope MedSpa";
     case "Queens":
-      return "Queens Laser Spa, Astoria Beauty Clinic, and Forest Hills Aesthetics";
+      return "Med Aesthetics Astoria, LIC Med Spa, Skin Glow Aesthetics, and Astoria Laser Center & Spa";
     case "Bronx":
       return "Bronx Aesthetic Studio, Riverdale Beauty Center, and Fordham MedSpa";
     case "Staten Island":

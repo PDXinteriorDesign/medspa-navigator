@@ -155,6 +155,50 @@ export const locationDetails: LocationDetail[] = [
         imageUrl: "/lovable-uploads/e87541f6-3548-4e4c-a9ec-9ce9b67f436e.png"
       }
     ]
+  },
+  {
+    id: "queens",
+    slug: "queens",
+    name: "Queens",
+    shortDescription: "Discover Queens' diverse aesthetic scene with personalized treatments and exceptional value",
+    description: "Queens offers a diverse aesthetic landscape that combines technical expertise with cultural diversity. From Astoria's trendy clinics to Forest Hills' established practices, Queens provides a range of options with practitioners trained in techniques from around the world. The borough's medspas are known for their personalized approach and competitive pricing, making premium aesthetic treatments accessible to a broader clientele. Neighborhoods like Bayside, Long Island City, and Flushing each bring their unique character to the borough's beauty scene.",
+    imageUrl: "https://images.unsplash.com/photo-1589395937783-0ea0aceb7ad8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    medspaCount: 8,
+    featured: false,
+    subAreas: [
+      {
+        id: "astoria",
+        name: "Astoria",
+        description: "Astoria's aesthetic scene blends trendy, modern approaches with personalized care. The neighborhood's medspas cater to a diverse clientele with innovative treatments and multilingual services.",
+        clientele: "Young professionals, families, and diverse local residents seeking accessible luxury treatments",
+        popularServices: ["Laser Hair Removal", "Injectable Treatments", "HydraFacial", "Microneedling"],
+        imageUrl: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+      },
+      {
+        id: "forest-hills",
+        name: "Forest Hills",
+        description: "Forest Hills offers sophisticated aesthetic services in elegant settings. The area's medspas cater to discerning clients who appreciate personalized attention and thorough consultations.",
+        clientele: "Established professionals, local residents, and clients seeking premium services at reasonable prices",
+        popularServices: ["Chemical Peels", "Advanced Facials", "Body Contouring", "Skin Rejuvenation"],
+        imageUrl: "https://images.unsplash.com/photo-1607008829749-c0f284a49841?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      },
+      {
+        id: "bayside",
+        name: "Bayside",
+        description: "Bayside's medical spas focus on holistic beauty and wellness, often incorporating both cutting-edge technology and traditional approaches. The neighborhood is known for its attentive service and thorough consultations.",
+        clientele: "Health-conscious residents, working professionals, and clients seeking comprehensive wellness solutions",
+        popularServices: ["Laser Resurfacing", "Body Treatments", "Customized Facials", "Wellness Therapies"],
+        imageUrl: "https://images.pexels.com/photos/5069608/pexels-photo-5069608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      },
+      {
+        id: "long-island-city",
+        name: "Long Island City",
+        description: "Long Island City's aesthetic clinics embody a modern, efficient approach with streamlined services for busy professionals. The area is becoming known for specialized body contouring and skin treatments.",
+        clientele: "Urban professionals, young residents, and Manhattan commuters seeking convenient, quality treatments",
+        popularServices: ["Body Sculpting", "Laser Hair Removal", "Express Facial Treatments", "Non-Invasive Procedures"],
+        imageUrl: "https://images.pexels.com/photos/5069611/pexels-photo-5069611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      }
+    ]
   }
 ];
 

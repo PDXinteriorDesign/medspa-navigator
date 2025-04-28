@@ -7,7 +7,8 @@ export type Location =
   | "midtown"
   | "upper-east-side"
   | "the-hamptons"
-  | "flushing";
+  | "flushing"
+  | "queens";
 
 export type Service = {
   id: string;
