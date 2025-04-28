@@ -11,7 +11,7 @@ const QueensLanding = () => {
     <>
       <LocationHeroOnly
         name="Queens"
-        imageUrl="https://images.unsplash.com/photo-1589395937783-0ea0aceb7ad8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+        imageUrl="/lovable-uploads/d1dc3bd2-1851-43b0-96b8-a263de546b2b.png"
         shortDescription="Discover Queens' diverse aesthetic scene with personalized treatments and exceptional value"
         medspaCount={queensMedSpas.length}
       />

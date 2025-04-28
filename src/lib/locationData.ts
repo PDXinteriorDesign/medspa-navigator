@@ -162,7 +162,7 @@ export const locationDetails: LocationDetail[] = [
     name: "Queens",
     shortDescription: "Discover Queens' diverse aesthetic scene with personalized treatments and exceptional value",
     description: "Queens offers a diverse aesthetic landscape that combines technical expertise with cultural diversity. From Astoria's trendy clinics to Forest Hills' established practices, Queens provides a range of options with practitioners trained in techniques from around the world. The borough's medspas are known for their personalized approach and competitive pricing, making premium aesthetic treatments accessible to a broader clientele. Neighborhoods like Bayside, Long Island City, and Flushing each bring their unique character to the borough's beauty scene.",
-    imageUrl: "https://images.unsplash.com/photo-1589395937783-0ea0aceb7ad8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    imageUrl: "/lovable-uploads/d1dc3bd2-1851-43b0-96b8-a263de546b2b.png",
     medspaCount: 8,
     featured: false,
     subAreas: [
