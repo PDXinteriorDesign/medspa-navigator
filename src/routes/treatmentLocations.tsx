@@ -14,6 +14,7 @@ import PhotofacialsRoutes from "./treatments/photofacialsRoutes";
 import LaserResurfacingRoutes from "./treatments/laserResurfacingRoutes";
 import CoolSculptingRoutes from "./treatments/coolSculptingRoutes";
 import WeightManagementRoutes from "./treatments/weightManagementRoutes";
+import ChemicalPeelsRoutes from "./treatments/chemicalPeelsRoutes";
 
 const TreatmentLocationRoutes = (
   <>
@@ -52,6 +53,9 @@ const TreatmentLocationRoutes = (
     
     {/* Weight Management Routes */}
     {WeightManagementRoutes}
+    
+    {/* Chemical Peels Routes */}
+    {ChemicalPeelsRoutes}
   </>
 );
 
