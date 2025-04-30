@@ -1,4 +1,3 @@
-
 import { MedSpa } from "../types";
 import { berryBlondeSpa } from "./entries/berry-blonde-spa";
 import { deepBlueMedSpa } from "./entries/deep-blue-med-spa";
@@ -48,22 +47,10 @@ import { sovousMedspa } from "./entries/sovous-medspa";
 import { perfectMedSpa } from "./entries/perfect-med-spa";
 import { cliniqueDesChampsElysees } from "./entries/clinique-des-champs-elysees";
 import { radiantBeautyAndHealth } from "./entries/radiant-beauty-and-health";
-import { revivalMedSpa } from "./entries/revival-med-spa";
 import { radiantSkinMedSpa } from "./entries/radiant-skin-med-spa";
-import { vogueLaserClinic } from "./entries/vogue-laser-clinic";
 import { everYoungMedicalAesthetics } from "./entries/everyoung-medical-aesthetics";
-import { newYouAesthetics } from "./entries/new-you-aesthetics";
-import { beyondLaserCenter } from "./entries/beyond-laser-center";
-
-// Import new Brooklyn area clinics
-import { baysideLaserWellnessCenter } from "./entries/bayside-laser-wellness-center";
-import { skinBodyMedSpa } from "./entries/skin-body-med-spa";
-import { forestHillsMedSpa } from "./entries/forest-hills-med-spa";
-import { skinGlowAesthetics } from "./entries/skin-glow-aesthetics";
 import { astoriaLaserCenterSpa } from "./entries/astoria-laser-center-spa";
 import { medAestheticsAstoria } from "./entries/med-aesthetics-astoria";
-import { licMedSpa } from "./entries/lic-med-spa";
-import { sculptologyLic } from "./entries/sculptology-lic";
 
 // Apply phone numbers to any entries that don't have them explicitly defined
 const applyMissingPhoneNumbers = (spa: MedSpa): MedSpa => {
@@ -97,7 +84,6 @@ export const medSpas: MedSpa[] = [
   rejuvaliftAestheticsSouthampton,
   hamptonsSkinCosmeticsWesthamptonBeach,
   roweMedspaHamptons,
-  // Removed AIREM and SKINNEY MedSpas
   // Add new entries
   evolveMedSpaTribeca,
   tribecaSpaOfTranquility,
@@ -119,19 +105,9 @@ export const medSpas: MedSpa[] = [
   perfectMedSpa,
   cliniqueDesChampsElysees,
   radiantBeautyAndHealth,
-  revivalMedSpa,
   radiantSkinMedSpa,
-  vogueLaserClinic,
   everYoungMedicalAesthetics,
-  newYouAesthetics,
-  beyondLaserCenter,
-  // Add new Brooklyn area clinics
-  baysideLaserWellnessCenter,
-  skinBodyMedSpa,
-  forestHillsMedSpa,
-  skinGlowAesthetics,
+  // Keep only existing Queens area clinics that are valid
   astoriaLaserCenterSpa,
-  medAestheticsAstoria,
-  licMedSpa,
-  sculptologyLic
+  medAestheticsAstoria
 ].map(applyMissingPhoneNumbers);
