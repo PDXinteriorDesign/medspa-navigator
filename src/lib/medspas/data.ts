@@ -50,8 +50,6 @@ import { cliniqueDesChampsElysees } from "./entries/clinique-des-champs-elysees"
 import { radiantBeautyAndHealth } from "./entries/radiant-beauty-and-health";
 import { radiantSkinMedSpa } from "./entries/radiant-skin-med-spa";
 import { everYoungMedicalAesthetics } from "./entries/everyoung-medical-aesthetics";
-import { astoriaLaserCenterSpa } from "./entries/astoria-laser-center-spa";
-import { medAestheticsAstoria } from "./entries/med-aesthetics-astoria";
 
 // Import new Flushing/Queens med spas
 import { flushingMedicalSpa } from "./entries/flushing-medical-spa";
@@ -119,9 +117,7 @@ export const medSpas: MedSpa[] = [
   radiantBeautyAndHealth,
   radiantSkinMedSpa,
   everYoungMedicalAesthetics,
-  // Queens area clinics
-  astoriaLaserCenterSpa,
-  medAestheticsAstoria,
+  // Queens area clinics - removed the two Astoria listings
   // New Flushing/Queens med spas
   flushingMedicalSpa,
   prepPrimeMedSpa,
