@@ -3,15 +3,22 @@ import { MedSpa } from "../../types";
 
 export const radiantSkinMedSpa: MedSpa = {
   id: "radiant-skin-med-spa",
-  name: "Radiant Skin Med Spa",
+  name: "Radiant Med Spa",
   slug: "radiant-skin-med-spa",
-  location: "flushing",
-  address: "136-20 38th Ave, Flushing, NY 11354",
-  phone: "(718) 888-1234",
+  location: "queens",
+  address: "642 Diellen Lane, Elmont, NY 11003",
+  phone: "(516) 366-0114",
   rating: 4.8,
   reviewCount: 42,
-  description: "Radiant Skin Med Spa offers advanced aesthetic treatments in a modern, welcoming environment. Our expert team specializes in customized skincare solutions and cutting-edge beauty treatments.",
-  services: ["botox", "fillers", "laser-hair-removal", "facials"],
+  description: "Radiant Med Spa specializes in aesthetic treatments aimed at enhancing natural beauty and promoting youthful skin. Their services include injectables like Botox and dermal fillers, laser skin resurfacing, ultrasound-guided injections, VI Peel treatments, and more.",
+  services: [
+    "botox", 
+    "fillers", 
+    "laser-skin-resurfacing", 
+    "chemical-peels", 
+    "fat-reduction", 
+    "spider-vein-treatments"
+  ],
   featured: false,
   imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3",
   verified: true
