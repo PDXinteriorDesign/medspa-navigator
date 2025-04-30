@@ -13,7 +13,9 @@ export const getLocationSlug = (address: string, location: string): string => {
   if (address.toLowerCase().includes("forest hills")) return "queens";
   if (address.toLowerCase().includes("bayside")) return "queens";
   if (address.toLowerCase().includes("long island city") || address.toLowerCase().includes("lic")) return "queens";
-  if (address.toLowerCase().includes("flushing")) return "queens";
+  if (address.toLowerCase().includes("flushing")) return "flushing";
+  if (address.toLowerCase().includes("st. albans") || address.toLowerCase().includes("saint albans")) return "queens";
+  if (address.toLowerCase().includes("rosedale")) return "queens";
   
   // Default fallback
   return location.toLowerCase().replace(/\s+/g, "-");
@@ -85,6 +87,15 @@ export const isInBroaderLocation = (address: string, broaderLocation: string): b
       .some(area => normalizedAddress.includes(area));
   }
   
+  if (normalizedLocation === "queens") {
+    return ["astoria", "forest hills", "bayside", "long island city", "flushing", "st. albans", "saint albans", "rosedale"]
+      .some(area => normalizedAddress.includes(area));
+  }
+  
+  if (normalizedLocation === "flushing") {
+    return normalizedAddress.includes("flushing");
+  }
+  
   return false;
 };
 
@@ -135,7 +146,16 @@ export const getClinicLocations = (address: string, primaryLocation: string): st
       address.toLowerCase().includes("bayside") || 
       address.toLowerCase().includes("long island city") ||
       address.toLowerCase().includes("lic") ||
-      address.toLowerCase().includes("flushing")) {
+      address.toLowerCase().includes("st. albans") ||
+      address.toLowerCase().includes("saint albans") ||
+      address.toLowerCase().includes("rosedale")) {
+    if (!locations.includes("queens")) {
+      locations.push("queens");
+    }
+  }
+  
+  // Add Queens for Flushing locations
+  if (address.toLowerCase().includes("flushing")) {
     if (!locations.includes("queens")) {
       locations.push("queens");
     }

@@ -1,3 +1,4 @@
+
 import { MedSpa } from "../types";
 import { berryBlondeSpa } from "./entries/berry-blonde-spa";
 import { deepBlueMedSpa } from "./entries/deep-blue-med-spa";
@@ -51,6 +52,17 @@ import { radiantSkinMedSpa } from "./entries/radiant-skin-med-spa";
 import { everYoungMedicalAesthetics } from "./entries/everyoung-medical-aesthetics";
 import { astoriaLaserCenterSpa } from "./entries/astoria-laser-center-spa";
 import { medAestheticsAstoria } from "./entries/med-aesthetics-astoria";
+
+// Import new Flushing/Queens med spas
+import { flushingMedicalSpa } from "./entries/flushing-medical-spa";
+import { prepPrimeMedSpa } from "./entries/prep-prime-med-spa";
+import { glamoiMedSpa } from "./entries/glamoi-med-spa";
+import { usEvergreenMedspa } from "./entries/us-evergreen-medspa";
+import { drWwMedSpa } from "./entries/dr-ww-med-spa";
+import { beautyIconMedSpa } from "./entries/beauty-icon-med-spa";
+import { wellnessMedArt } from "./entries/wellness-med-art";
+import { skinesteemByBBeckford } from "./entries/skinesteem-by-b-beckford";
+import { revolveMedSpa } from "./entries/revolve-med-spa";
 
 // Apply phone numbers to any entries that don't have them explicitly defined
 const applyMissingPhoneNumbers = (spa: MedSpa): MedSpa => {
@@ -107,7 +119,17 @@ export const medSpas: MedSpa[] = [
   radiantBeautyAndHealth,
   radiantSkinMedSpa,
   everYoungMedicalAesthetics,
-  // Keep only existing Queens area clinics that are valid
+  // Queens area clinics
   astoriaLaserCenterSpa,
-  medAestheticsAstoria
+  medAestheticsAstoria,
+  // New Flushing/Queens med spas
+  flushingMedicalSpa,
+  prepPrimeMedSpa,
+  glamoiMedSpa,
+  usEvergreenMedspa,
+  drWwMedSpa,
+  beautyIconMedSpa,
+  wellnessMedArt,
+  skinesteemByBBeckford,
+  revolveMedSpa
 ].map(applyMissingPhoneNumbers);
